@@ -1,0 +1,12 @@
+body{
+    color:red;
+}
+
+.pepito:hover{
+    color:violet;
+}
+
+.visible {
+    display:none;
+}
+

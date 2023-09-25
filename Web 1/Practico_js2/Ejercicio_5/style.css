@@ -1,0 +1,8 @@
+.oculto{
+visibility:hidden;
+}
+
+.visible{
+visibility: visible;
+color:red;
+}
