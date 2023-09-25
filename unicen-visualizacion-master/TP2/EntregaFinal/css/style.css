@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 nav{
     display: flex;
     background-color: #007A66;
@@ -8,8 +8,7 @@ nav{
 }
 
 
-ul.navegacion.show{
-=======
+
 body {
     font-family: Roboto;
     font-style: normal;
@@ -39,7 +38,23 @@ h2 {
     font-weight: 400;
     letter-spacing: 1.19px;
 }
+/* MENU DE NAVEGACIÓN */
 
+ul.navegacion{
+    display:none;
+    flex-direction:column;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 10px;
+    background-color: #007A66;
+    color: #F9FEFD;
+    text-transform: uppercase;
+    width: fit-content;
+    
+}
+ul.navegacion.show{
+    display: flex;
+}
 /* IMAGEN DE LA CARD */
 .card {
     width: 220px;
@@ -57,7 +72,6 @@ h2 {
 .card img {
     margin: 14px;
     margin-top: 13px;
-
     width: 192px;
     height: 148px;
     flex-shrink: 0;
@@ -95,27 +109,6 @@ h2 {
 
 }
 
-/* MENU DE NAVEGACIÓN */
-ul.navegacion.show {
->>>>>>> ee42d9232783edb34327193cc103d9c646002d16
-    display: flex;
-}
-
-
-<<<<<<< HEAD
-ul.navegacion{
-    display:none;
-    flex-direction:column;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding: 10px;
-    background-color: #007A66;
-    color: #F9FEFD;
-    text-transform: uppercase;
-    width: fit-content;
-    
-}
-
 .input{
     background-color: #F9FEFD;
     opacity: 0.8;
@@ -133,11 +126,10 @@ ul.navegacion{
 
 }
 
-=======
 ul.navegacion {
     display: none;
     flex-direction: column;
     margin: 0px;
     padding: 0px;
 }
->>>>>>> ee42d9232783edb34327193cc103d9c646002d16
+
