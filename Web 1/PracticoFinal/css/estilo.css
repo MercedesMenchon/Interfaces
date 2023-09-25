@@ -1,0 +1,26 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #7bdeb8;
+}
+.pincipal{
+    display:flex;
+}
+ div{
+    display: column;
+    border: 5px solid #b4e3e0;
+    text-align: center;
+ }
+
+.lista {
+    text-decoration:  white;
+    font-family: Arial, Helvetica, sans-serif;
+
+} 
+
+footer{
+text-align: right;
+color: grey;
+}
+

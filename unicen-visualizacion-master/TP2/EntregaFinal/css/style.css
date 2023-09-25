@@ -1,11 +1,97 @@
-ul.navegacion.show{
+body {
+    font-family: Roboto;
+    font-style: normal;
+    line-height: normal;
+    color: var(--negro, #20423C);
+
+}
+
+/* titulo secundario */
+h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1.1px;
+}
+
+
+.textoChico {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.precio {
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1.19px;
+}
+
+/* IMAGEN DE LA CARD */
+.card {
+    width: 220px;
+    height: 280px;
+    flex-shrink: 0;
+    display: Column;
+    border-radius: 8px;
+    border: 1px solid var(--secundarioL1, rgba(15, 65, 161, 0.85));
+    background: var(--blanco, #F9FEFD);
+    /* sombra1 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.card img {
+    margin: 14px;
+    margin-top: 13px;
+
+    width: 192px;
+    height: 148px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+
+.card h2 {
+    margin: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.card .precio {
+    margin: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card .textoChico {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    margin:0;
+    margin-bottom: 14px;
+      padding-left: 14px;
+    padding-right:14px;
+        white-space:unset;
+    text-overflow: ellipsis;
+
+}
+
+/* MENU DE NAVEGACIÓN */
+ul.navegacion.show {
     display: flex;
 }
 
 
-ul.navegacion{
-    display:none;
-    flex-direction:column;
+ul.navegacion {
+    display: none;
+    flex-direction: column;
     margin: 0px;
     padding: 0px;
 }
