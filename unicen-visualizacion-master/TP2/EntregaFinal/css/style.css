@@ -1,0 +1,11 @@
+ul.navegacion.show{
+    display: flex;
+}
+
+
+ul.navegacion{
+    display:none;
+    flex-direction:column;
+    margin: 0px;
+    padding: 0px;
+}
