@@ -112,10 +112,10 @@ ul.navegacion.show{
 
 }
   
-.CarritoCompra{
+.carritoCompra, .like {
   display:none;
 }
-.card:hover .CarritoCompra {
+.card:hover .carritoCompra {
     display:flex;
     position: absolute;
     width: 70px;
