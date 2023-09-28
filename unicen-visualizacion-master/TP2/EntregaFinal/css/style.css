@@ -60,7 +60,8 @@ ul.navegacion.show{
     width: 220px;
     height: 280px;
     flex-shrink: 0;
-    display: Column;
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     border: 1px solid var(--secundarioL1, rgba(15, 65, 161, 0.85));
     background: var(--blanco, #F9FEFD);
@@ -70,6 +71,7 @@ ul.navegacion.show{
 
 
 .card img {
+    position: absolute;
     margin: 14px;
     margin-top: 13px;
     width: 192px;
@@ -80,17 +82,17 @@ ul.navegacion.show{
 }
 
 .card h2 {
-    margin: 0;
+    margin-top: 172px;
+    margin-bottom: 5px;
     padding-left: 14px;
     padding-right: 14px;
 }
 
 .card .precio {
-    margin: 0;
+    display: flex;
+    margin: 0px;
     padding-left: 14px;
     padding-right: 14px;
-
-    display: flex;
     justify-content: flex-end;
 }
 
@@ -100,6 +102,7 @@ ul.navegacion.show{
     line-clamp: 2;
     -webkit-line-clamp: 4;
     overflow: hidden;
+    text-align: justify;
     margin:0;
     margin-bottom: 14px;
     padding-left: 14px;
@@ -108,16 +111,21 @@ ul.navegacion.show{
     text-overflow: ellipsis;
 
 }
+  
 .CarritoCompra{
-    display:none;
+  display:none;
 }
 .card:hover .CarritoCompra {
     display:flex;
-    position:relative;
+    position: absolute;
     width: 70px;
 height: 69.32px;
 flex-shrink: 0;
 border-radius: 8px;
+margin: 75px;
+margin-top:110px ;
+
+
 
 
 }
