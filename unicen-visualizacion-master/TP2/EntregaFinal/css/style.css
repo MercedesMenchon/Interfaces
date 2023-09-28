@@ -143,10 +143,8 @@ ul.navegacion.show{
 
 }
   
-.CarritoCompra{
-  display:none;
-}
-.card:hover .CarritoCompra {
+
+.card:hover .carritoCompraShow, .carritoCompraShow {
     display:flex;
     position: absolute;
     width: 70px;
@@ -155,11 +153,23 @@ flex-shrink: 0;
 border-radius: 8px;
 margin: 75px;
 margin-top:110px ;
+}
 
-
-
+.card:hover .likeShow, .likeShow{
+    display:flex;
+    margin-left: 166px;
+  margin-right: 0px;
+ margin-top: 0px;
+    position: absolute; 
+    width: 54px;
+    height: 54px;
+flex-shrink: 0;
+border-radius: 8px;
 
 }
+.hoverCard  {
+    display:none;
+  }
 
 
 

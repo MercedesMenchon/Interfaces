@@ -10,3 +10,15 @@ function iniciarPagina(){
         document.querySelector(".navegacion").classList.toggle("show");
     }
 }
+
+
+
+/* CARD */
+
+document.querySelector('#btn-addLike').addEventListener("click", darLike());
+
+
+function darLike(){
+    document.querySelector("#btn-addLike").classList.toggle(".likeShow");
+    
+}
