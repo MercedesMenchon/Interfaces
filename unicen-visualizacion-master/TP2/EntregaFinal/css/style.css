@@ -108,6 +108,19 @@ ul.navegacion.show{
     text-overflow: ellipsis;
 
 }
+.CarritoCompra{
+    display:none;
+}
+.card:hover .CarritoCompra {
+    display:flex;
+    position:relative;
+    width: 70px;
+height: 69.32px;
+flex-shrink: 0;
+border-radius: 8px;
+
+
+}
 
 .input{
     background-color: #F9FEFD;
