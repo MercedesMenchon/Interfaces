@@ -114,7 +114,8 @@ li.menu:hover {
 div.encabezado {
     color: var(--blanco, #F9FEFD);
     background: var(--primarioL1, #0A957E);
-    background-image: url(Images/fondoEncabezado.png);
+ background-image:url('../Images/fondoEncabezado.png') ;
+ 
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -164,7 +165,6 @@ div.encabezado {
     height: 148px;
     flex-shrink: 0;
     border-radius: 9px;
-    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
 }
 
 .card h2 {
@@ -197,10 +197,18 @@ div.encabezado {
     text-overflow: ellipsis;
 
 }
+/*
+.card {
+    filter:grayscale(75%);
+}
+*/
 
+.hoverCard {
+    display: none;
+   
+}
 
-.card:hover .carritoCompraShow,
-.carritoCompraShow {
+.card .carritoCompraShow {
     display: flex;
     position: absolute;
     width: 70px;
@@ -209,10 +217,11 @@ div.encabezado {
     border-radius: 8px;
     margin: 75px;
     margin-top: 110px;
+    
 }
 
-.card:hover .likeShow,
-.likeShow {
+.card .likeShow,
+.card .likeShowFijo {
     display: flex;
     margin-left: 166px;
     margin-right: 0px;
@@ -225,6 +234,4 @@ div.encabezado {
 
 }
 
-.hoverCard {
-    display: none;
-}
+
