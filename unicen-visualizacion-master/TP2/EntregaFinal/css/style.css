@@ -67,9 +67,9 @@ ul.navegacion {
     padding: 20px;
     color: #F9FEFD;
     text-transform: uppercase;
-    width:max-content;
+    width: max-content;
     background: var(--primario, #007A66);
-    }
+}
 
 ul.navegacion.show {
     display: flex;
@@ -78,12 +78,14 @@ ul.navegacion.show {
 li.menu {
     border-radius: 8px;
     padding: 10px 15px;
-    }
+}
 
 li.menu:hover {
-    
-background: var(--primarioL2, #11D2B2);;
+
+    background: var(--primarioL2, #11D2B2);
+    ;
 }
+
 /*input de busqueda de navegacion*/
 .input {
     background-color: #F9FEFD;
@@ -104,6 +106,39 @@ background: var(--primarioL2, #11D2B2);;
     width: 50px;
     height: 35px;
     background-color: #007A66;
+}
+
+
+/*encabezado*/
+
+div.encabezado {
+    color: var(--blanco, #F9FEFD);
+    background: var(--primarioL1, #0A957E);
+    background-image: url(Images/fondoEncabezado.png);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+   
+}
+
+/* boton explora*/
+.btn_ingresa {
+    margin: 34px;
+    width: 114px;
+    height: 24px;
+    background: var(--acento, #D51EF3);
+    border-radius: 8px;
+    color: var(--blanco, #F9FEFD);
+    text-align: center;
+    font-size: 14px;
+    font-family: Roboto;
+
+}
+
+.btn_ingresa:hover {
+    width: 151px;
+    height: 37px;
+    font-size: 30px;
 }
 
 /* IMAGEN DE LA CARD */
