@@ -48,16 +48,13 @@ nav {
     padding-left: 20px;
     padding-right: 20px;
 
-
 }
 
 
 .login {
     display: flex;
     align-items: center;
-
 }
-
 /* MENU DE NAVEGACIÓN */
 
 ul.navegacion {
@@ -69,6 +66,7 @@ ul.navegacion {
     text-transform: uppercase;
     width: max-content;
     background: var(--primario, #007A66);
+    
 }
 
 ul.navegacion.show {
