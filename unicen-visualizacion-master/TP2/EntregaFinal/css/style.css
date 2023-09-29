@@ -7,6 +7,61 @@
     outline: none;
 }
 
+.container {
+    display: grid;
+    grid-template-areas:
+        "nav nav"
+        "menu header"
+        "menu main "
+        "foot foot";
+        grid-template-columns: 1fr 5fr;
+}
+
+
+nav {
+    grid-area: nav;
+    background-color: #007A66;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.header {
+    grid-area: header;
+    color: var(--blanco, #F9FEFD);
+    background: var(--primarioL1, #0A957E);
+    background-image: url('../Images/fondoEncabezado.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main {
+    grid-area: main;
+    background: var(--primarioL1, #0A957E)
+}
+
+.desplegable {
+    grid-area: menu;
+    background: var(--primarioL1, #0A957E)
+}
+
+footer {
+    grid-area: foot;
+    height: 400px;
+    background: var(--primario, #007A66);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--blanco, #F9FEFD);
+    ;
+}
+
+
 
 body {
     font-family: Roboto;
@@ -38,15 +93,11 @@ h2 {
     letter-spacing: 1.19px;
 }
 
-
-nav {
-    display: flex;
-    background-color: #007A66;
-    height: 80px;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+.breadCrums {
+    color: var(--primarioL2, #11D2B2);
+    background: var(--secundario, #003C8A);
+    width: 100%;
+    height: 30px;
 
 }
 
@@ -55,6 +106,7 @@ nav {
     display: flex;
     align-items: center;
 }
+
 /* MENU DE NAVEGACIÓN */
 
 ul.navegacion {
@@ -66,7 +118,7 @@ ul.navegacion {
     text-transform: uppercase;
     width: max-content;
     background: var(--primario, #007A66);
-    
+
 }
 
 ul.navegacion.show {
@@ -106,19 +158,6 @@ li.menu:hover {
     background-color: #007A66;
 }
 
-
-/*encabezado*/
-
-div.encabezado {
-    color: var(--blanco, #F9FEFD);
-    background: var(--primarioL1, #0A957E);
- background-image:url('../Images/fondoEncabezado.png') ;
- 
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-   
-}
 
 /* boton explora*/
 .btn_ingresa {
@@ -195,6 +234,7 @@ div.encabezado {
     text-overflow: ellipsis;
 
 }
+
 /*
 .card {
     filter:grayscale(75%);
@@ -203,7 +243,7 @@ div.encabezado {
 
 .hoverCard {
     display: none;
-   
+
 }
 
 .card .carritoCompraShow {
@@ -215,7 +255,7 @@ div.encabezado {
     border-radius: 8px;
     margin: 75px;
     margin-top: 110px;
-    
+
 }
 
 .card .likeShow,
@@ -231,5 +271,3 @@ div.encabezado {
     border-radius: 8px;
 
 }
-
-
