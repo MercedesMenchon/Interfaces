@@ -11,26 +11,15 @@ function iniciarPagina(){
     }
 }
 
-
- //document.querySelectorAll(".Card").addEventListener("mouseover", hacerHoverCarrito);
+/*CARDS AGREGAR FAVORITO*/ 
  
- //DEFINOE EL JSON
-
-
-//CARGO EL JSON
  let cards = document.querySelectorAll(".card");
- let payCards =document.querySelectorAll(".payCard");
- let cardEstadoCarrito=[];
- for(let i =0;i<payCards.length;i++){
+ let botonesCarritos =[];
+ let botonesAddCarrito = document.querySelectorAll("#btn-addCarrito");
+ let botonesDropCarrito = document.querySelectorAll("#btn-dropCarrito");
 
-    let nuevoPayCard ={
-        card: payCards[i],
-        compraCard: false
-    }
-cardEstadoCarrito.push(nuevoPayCard);
-console.table(cardEstadoCarrito);
-cardEstadoCarrito[i].card.addEventListener("mouseover", hacerHoverCarrito);
- }
+
+
 
 
  for(let i =0;i<cards.length;i++){
@@ -50,38 +39,63 @@ function addLike(){
 }
 }
 
+/*CARDS AGREGAR AL CARRITO*/ 
+
+let payCards =document.querySelectorAll(".payCard");
+/*let cardEstadoCarrito=[];
+
+for(let i =0;i<payCards.length;i++){
+
+   let nuevoPayCard ={
+       payCard: payCards[i],
+       BotonAddCarrito : botonesAddCarrito[i],
+       BotonDropCarrito: botonesDropCarrito[i],
+       compraCard: false
+   }
+cardEstadoCarrito.push(nuevoPayCard);
+
+}*/
+//console.table(cardEstadoCarrito);
+for(let i=0; i< payCards.length; i++){
+    payCards[i].addEventListener("mouseover", hacerHoverCarrito);
+    payCards[i].addEventListener("mouseout", hacerHoverCarrito);
+    payCards[i].querySelector("#btn-addCarrito").addEventListener("click", modificarCarrito);
+    payCards[i].querySelector("#btn-dropCarrito").addEventListener("click", modificarCarrito);
+ }
+/*
+for(let i=0; i< cardEstadoCarrito.length; i++){
+   cardEstadoCarrito[i].payCard.addEventListener("mouseover", hacerHoverCarrito);
+   cardEstadoCarrito[i].payCard.addEventListener("mouseout", hacerHoverCarrito);
+   cardEstadoCarrito[i].BotonAddCarrito.addEventListener("click", modificarCarrito);
+   cardEstadoCarrito[i].BotonDropCarrito.addEventListener("click", modificarCarrito);
+}
+*/
+   function hacerHoverCarrito(){
+    
+    this.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
+
+}
+
+function modificarCarrito(){
+    this.parentNode.querySelector("#btn-dropCarrito").classList.toggle("carritoCompraShow");
+ }
+
+
+/*CARDS FREE*/
+let freeCards =document.querySelectorAll(".freeCard");
+
+for(let i=0; i< freeCards.length; i++){
+  //  cardEstadoCarrito[i].payCard.addEventListener("mouseover", hacerHoverFree);
+}
 //document.querySelector(".freeCard").addEventListener("mouseover", hacerHoverfav);
 //document.querySelector(".freeCard").addEventListener("mouseover", playJuego);
 
 
 
 
-function hacerHoverCarrito(){
-
-   if(!this.compraCard){
-    this.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
-   this.querySelector("#btn-addCarrito").addEventListener("click", modificarCarrito);
-       }
-   if(this.compraCard){
-    this.querySelector("#btn-dropCarrito").addEventListener("click", modificarCarrito);
-       
-}
-   this.addEventListener("mouseout", hacerHoverCarrito);
-}
-//ARREGLAR
-function modificarCarrito(){
-    //this.compraCard=!this.compraCard;
-    this.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
-this.querySelector("#btn-dropCarrito").classList.toggle("carritoCompraShow");
-} 
-
-
-
-
-
 
 //function playJuego(){
-  //  document.querySelector("#btn-play").classList.toggle("likeShow"); 
-    //document.querySelector("#btn-play").addEventListener("click",addLike);
- //document.querySelector(".btn-play").addEventListener("mouseout", hacerHoverfav);
+ //  document.querySelector("#btn-play").classList.toggle("likeShow"); 
+   //document.querySelector("#btn-play").addEventListener("click",addLike);
+//document.querySelector(".btn-play").addEventListener("mouseout", hacerHoverfav);
 //}
