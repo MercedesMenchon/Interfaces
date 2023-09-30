@@ -12,39 +12,76 @@ function iniciarPagina(){
 }
 
 
-document.querySelector(".card").addEventListener("mouseover", hacerHoverCarrito);
-document.querySelector(".card").addEventListener("mouseover", hacerHoverfav);
+ //document.querySelectorAll(".Card").addEventListener("mouseover", hacerHoverCarrito);
+ 
+ //DEFINOE EL JSON
 
 
-/* CARD */
-var compraCard=false;
+//CARGO EL JSON
+ let cards = document.querySelectorAll(".card");
+ let payCards =document.querySelectorAll(".payCard");
+ let cardEstadoCarrito=[];
+ for(let i =0;i<payCards.length;i++){
 
-function hacerHoverCarrito(){
-   if(!compraCard){
-    document.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
-    document.querySelector("#btn-addCarrito").addEventListener("click", modificarCarrito);
-       }
-   if(compraCard){
-    document.querySelector("#btn-dropCarrito").addEventListener("click", modificarCarrito);
-  }
-   document.querySelector(".card").addEventListener("mouseout", hacerHoverCarrito);
-}
-
-
-function modificarCarrito(){
-    compraCard=!compraCard;
-    document.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
-    document.querySelector("#btn-dropCarrito").classList.toggle("carritoCompraShow");
-}
+    let nuevoPayCard ={
+        card: payCards[i],
+        compraCard: false
+    }
+cardEstadoCarrito.push(nuevoPayCard);
+console.table(cardEstadoCarrito);
+cardEstadoCarrito[i].card.addEventListener("mouseover", hacerHoverCarrito);
+ }
 
 
+ for(let i =0;i<cards.length;i++){
+    cards[i].addEventListener("mouseover", hacerHoverfav);
+ }
+console.log(cards);
 
 function hacerHoverfav(){
- 
-        document.querySelector("#btn-addLike").classList.toggle("likeShow"); 
-        document.querySelector("#btn-addLike").addEventListener("click",addLike);
-     document.querySelector(".card").addEventListener("mouseout", hacerHoverfav);
- }
- function addLike(){
-       document.querySelector("#btn-addLike").classList.toggle("likeShowFijo");
+    
+    let botonlike =  this.querySelector("#btn-addLike");
+    botonlike.classList.toggle("likeShow"); 
+   this.querySelector("#btn-addLike").addEventListener("click",addLike);
+ this.addEventListener("mouseout", hacerHoverfav);
+
+function addLike(){
+    botonlike.classList.toggle("likeShowFijo");
 }
+}
+
+//document.querySelector(".freeCard").addEventListener("mouseover", hacerHoverfav);
+//document.querySelector(".freeCard").addEventListener("mouseover", playJuego);
+
+
+
+
+function hacerHoverCarrito(){
+
+   if(!this.compraCard){
+    this.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
+   this.querySelector("#btn-addCarrito").addEventListener("click", modificarCarrito);
+       }
+   if(this.compraCard){
+    this.querySelector("#btn-dropCarrito").addEventListener("click", modificarCarrito);
+       
+}
+   this.addEventListener("mouseout", hacerHoverCarrito);
+}
+//ARREGLAR
+function modificarCarrito(){
+    //this.compraCard=!this.compraCard;
+    this.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
+this.querySelector("#btn-dropCarrito").classList.toggle("carritoCompraShow");
+} 
+
+
+
+
+
+
+//function playJuego(){
+  //  document.querySelector("#btn-play").classList.toggle("likeShow"); 
+    //document.querySelector("#btn-play").addEventListener("click",addLike);
+ //document.querySelector(".btn-play").addEventListener("mouseout", hacerHoverfav);
+//}

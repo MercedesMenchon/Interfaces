@@ -323,9 +323,7 @@ background: var(--gratis, rgba(35, 209, 52, 0.79));
     border-radius: 8px;
 
 }
-.card .DescripcionPrecio{
-    flex-direction: row;
-}
+
 .card:hover .grey {
     filter:grayscale(50%);
 }
