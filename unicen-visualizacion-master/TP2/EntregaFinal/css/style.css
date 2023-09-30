@@ -7,6 +7,47 @@
     outline: none;
 }
 
+body {
+    font-family: Roboto;
+    font-style: normal;
+    line-height: normal;
+    color: var(--negro, #20423C);
+
+}
+
+/* titulo secundario */
+h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1.1px;
+}
+
+/* titulo terciario */
+h3 {
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.6px;
+text-decoration-line: underline;
+}
+
+.textoChico {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.precio {
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1.19px;
+}
+
+
 .container {
     display: grid;
     grid-template-areas:
@@ -28,80 +69,6 @@ nav {
     padding-left: 20px;
     padding-right: 20px;
 }
-
-
-.header {
-    grid-area: header;
-    color: var(--blanco, #F9FEFD);
-    background: var(--primarioL1, #0A957E);
-    background-image: url('../Images/fondoEncabezado.png');
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main {
-    grid-area: main;
-    background: var(--primarioL1, #0A957E)
-}
-
-.desplegable {
-    grid-area: menu;
-    background: var(--primarioL1, #0A957E)
-}
-
-footer {
-    grid-area: foot;
-    height: 400px;
-    background: var(--primario, #007A66);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: var(--blanco, #F9FEFD);
-    ;
-}
-
-
-
-body {
-    font-family: Roboto;
-    font-style: normal;
-    line-height: normal;
-    color: var(--negro, #20423C);
-
-}
-
-/* titulo secundario */
-h2 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: 1.1px;
-}
-
-
-.textoChico {
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-.precio {
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: 1.19px;
-}
-
-.breadCrums {
-    color: var(--primarioL2, #11D2B2);
-    background: var(--secundario, #003C8A);
-    width: 100%;
-    height: 30px;
-
-}
-
-
 .login {
     display: flex;
     align-items: center;
@@ -178,6 +145,77 @@ li.menu:hover {
     height: 37px;
     font-size: 30px;
 }
+
+
+.header {
+    grid-area: header;
+    color: var(--blanco, #F9FEFD);
+    background: var(--primarioL1, #0A957E);
+    background-image: url('../Images/fondoEncabezado.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.breadCrums {
+    color: var(--primarioL2, #11D2B2);
+    background: var(--secundario, #003C8A);
+    width: 100%;
+    height: 30px;
+
+}
+
+
+.main {
+    grid-area: main;
+    background: var(--primarioL1, #0A957E)
+}
+
+.desplegable {
+    grid-area: menu;
+    background: var(--primarioL1, #0A957E)
+}
+
+footer {
+    grid-area: foot;
+    height: 400px;
+    background: var(--primario, #007A66);
+    display:block;
+    color: var(--blanco, #F9FEFD);
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.descripcionFooter{
+    text-align: center;
+    padding: 19px;
+    margin: 11px 85px;
+    display: block;
+    font-size: 14px;
+       
+}
+
+.footer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+
+.footer ul{
+    display: flex;
+    align-items: center;
+   
+} 
+
+.footer ul li{
+  
+   
+}
+
 
 /* IMAGEN DE LA CARD */
 .card {
