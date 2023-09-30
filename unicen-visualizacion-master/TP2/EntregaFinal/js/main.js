@@ -42,37 +42,16 @@ function addLike(){
 /*CARDS AGREGAR AL CARRITO*/ 
 
 let payCards =document.querySelectorAll(".payCard");
-/*let cardEstadoCarrito=[];
 
-for(let i =0;i<payCards.length;i++){
-
-   let nuevoPayCard ={
-       payCard: payCards[i],
-       BotonAddCarrito : botonesAddCarrito[i],
-       BotonDropCarrito: botonesDropCarrito[i],
-       compraCard: false
-   }
-cardEstadoCarrito.push(nuevoPayCard);
-
-}*/
-//console.table(cardEstadoCarrito);
 for(let i=0; i< payCards.length; i++){
     payCards[i].addEventListener("mouseover", hacerHoverCarrito);
     payCards[i].addEventListener("mouseout", hacerHoverCarrito);
     payCards[i].querySelector("#btn-addCarrito").addEventListener("click", modificarCarrito);
     payCards[i].querySelector("#btn-dropCarrito").addEventListener("click", modificarCarrito);
  }
-/*
-for(let i=0; i< cardEstadoCarrito.length; i++){
-   cardEstadoCarrito[i].payCard.addEventListener("mouseover", hacerHoverCarrito);
-   cardEstadoCarrito[i].payCard.addEventListener("mouseout", hacerHoverCarrito);
-   cardEstadoCarrito[i].BotonAddCarrito.addEventListener("click", modificarCarrito);
-   cardEstadoCarrito[i].BotonDropCarrito.addEventListener("click", modificarCarrito);
-}
-*/
+
    function hacerHoverCarrito(){
-    
-    this.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
+        this.querySelector("#btn-addCarrito").classList.toggle("carritoCompraShow");
 
 }
 
@@ -85,17 +64,12 @@ function modificarCarrito(){
 let freeCards =document.querySelectorAll(".freeCard");
 
 for(let i=0; i< freeCards.length; i++){
-  //  cardEstadoCarrito[i].payCard.addEventListener("mouseover", hacerHoverFree);
+    freeCards[i].addEventListener("mouseover", hacerHoverPlay);
+    freeCards[i].addEventListener("mouseout", hacerHoverPlay);
+
 }
-//document.querySelector(".freeCard").addEventListener("mouseover", hacerHoverfav);
-//document.querySelector(".freeCard").addEventListener("mouseover", playJuego);
 
+function hacerHoverPlay(){
+   this.querySelector("#btn-play").classList.toggle("play");
+ }
 
-
-
-
-//function playJuego(){
- //  document.querySelector("#btn-play").classList.toggle("likeShow"); 
-   //document.querySelector("#btn-play").addEventListener("click",addLike);
-//document.querySelector(".btn-play").addEventListener("mouseout", hacerHoverfav);
-//}
