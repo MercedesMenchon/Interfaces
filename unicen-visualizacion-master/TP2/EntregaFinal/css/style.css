@@ -92,6 +92,17 @@ h2 {
     font-weight: 400;
     letter-spacing: 1.19px;
 }
+.precioConDescuento{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1.19px;
+    text-decoration:line-through;
+}
+.textoGratis{
+font-size: 17px;
+font-weight: 400;
+letter-spacing: 1.19px;
+}
 
 .breadCrums {
     color: var(--primarioL2, #11D2B2);
@@ -235,18 +246,25 @@ li.menu:hover {
 
 }
 
-/*
-.card {
-    filter:grayscale(75%);
+
+.card .play{
+display: flex;
+width: 70px;
+height: 69.319px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+border-radius: 8px;
+background: var(--gratis, rgba(35, 209, 52, 0.79));
 }
-*/
+
 
 .hoverCard {
     display: none;
 
 }
 
-.card .carritoCompraShow {
+.card .carritoCompraShow{
     display: flex;
     position: absolute;
     width: 70px;
@@ -270,4 +288,10 @@ li.menu:hover {
     flex-shrink: 0;
     border-radius: 8px;
 
+}
+.card .DescripcionPrecio{
+    flex-direction: row;
+}
+.card:hover .grey {
+    filter:grayscale(50%);
 }
