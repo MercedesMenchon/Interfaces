@@ -175,9 +175,8 @@ nav {
     align-items: center;
     color: #F9FEFD;
 }
-.ocultarFormulario {
-    display:none;
-}
+
+
 .form {
     display:flex;
     align-items: center;
@@ -204,7 +203,9 @@ nav {
 .form>div>input{
     width: 70%;
 }
-
+.ocultarFormulario {
+    display:none;
+}
 /* MENU DE NAVEGACIÓN */
 
 ul.navegacion {
