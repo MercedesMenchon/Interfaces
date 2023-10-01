@@ -5,6 +5,8 @@
     text-decoration: none;
     border: none;
     outline: none;
+ 
+    
 }
 
 body {
@@ -12,6 +14,7 @@ body {
     font-style: normal;
     line-height: normal;
     color: var(--negro, #20423C);
+    background-color: #007A66;
 
 }
 
@@ -57,6 +60,93 @@ font-size: 17px;
 font-weight: 400;
 letter-spacing: 1.19px;
 }
+/*BOTONES*/
+.btn-primario{
+    border-radius: 16px;
+    width: 150px;
+    height: 21px;
+    flex-shrink: 0;
+   background-color: #D51EF3;
+   color:#F9FEFD;
+    font-family: Roboto;
+    font-size: 11.971px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-items: center;
+}
+.btn-primario .click{
+    background-color:  var(--primarioL1, #0A957E);
+
+    
+}
+.btn-primario:hover{
+    filter:grayscale(25%);
+}
+
+.btn-secundario{
+    border-radius: 16px;
+width: 147px;
+height: 21px;
+flex-shrink: 0;
+    fill: var(--blanco, #F9FEFD);
+    stroke-width: 2px;
+    stroke: var(--acento, #D51EF3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.btn-secundario .click{
+    fill: var(--blanco, #F9FEFD);
+
+stroke: var(--primario, #007A66);
+
+
+}
+.btn-secundario:hover {
+    filter:grayscale(25%);
+}
+
+.btn-terciario{
+    border-radius: 16px;
+    color: var(--primarioL2, #11D2B2);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    font-size: 11.971px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+.btn-terciario .click{
+    color: var(--acento, #D51EF3);
+}
+.btn-terciario:hover {
+    color: rgba(17, 210, 178, 0.50);
+}
+
+.btn-facebook{
+
+    width: 200px;
+    color:#F9FEFD;
+background: #3B5998;
+}
+.btn-facebook img,
+.btn-google img{
+   margin-right: 5%;
+    height: 85%;
+    background-color: inherit;
+}
+.btn-google{
+    width: 200px;
+    color:#F9FEFD;
+background:#DB4A39;
+}
+
+.btn-login{
+    border-radius: 0px;
+    width: 50%;
+}
+
+
 
 
 .container {
@@ -88,6 +178,36 @@ nav {
     
 }
 
+
+.form {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    border-color:#11D2B2;
+    background:#F9FEFD;
+    border-width: 0.25em;
+    border-style:solid;
+   padding: 2em;
+}
+.form .botones{
+    display:flex;
+}
+.form>div{
+    width: 80%;
+    background: #007A66;
+    border-color:#003C8A;
+    border-width: 0.25em;
+    border-style:solid;
+   padding: 0em;
+}
+.form>div>input{
+    width: 70%;
+}
+.ocultarFormulario {
+    display:none;
+}
 /* MENU DE NAVEGACIÓN */
 
 ul.navegacion {
@@ -284,13 +404,14 @@ footer {
 
 
 .card .play{
-display: flex;
-width: 70px;
-height: 69.319px;
-justify-content: center;
-align-items: center;
-flex-shrink: 0;
-border-radius: 8px;
+    display: flex;
+    position: absolute;
+    width: 70px;
+    height: 69.32px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    margin: 75px;
+    margin-top: 110px;
 background: var(--gratis, rgba(35, 209, 52, 0.79));
 }
 
@@ -325,9 +446,24 @@ background: var(--gratis, rgba(35, 209, 52, 0.79));
     border-radius: 8px;
 
 }
-.card .DescripcionPrecio{
-    flex-direction: row;
-}
+
 .card:hover .grey {
     filter:grayscale(50%);
+}
+
+.carrousel{
+width: 90%;
+max-width: 120em;
+
+background-color: chartreuse;
+}
+
+.carrousel .grande{
+    padding: 10px;
+width: 200%;
+display: flex;
+flex-flow: row nowrap;
+align-items: center;
+justify-content: flex-start;
+background-color: orange;
 }
