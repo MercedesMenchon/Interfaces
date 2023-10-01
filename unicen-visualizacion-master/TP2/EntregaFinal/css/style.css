@@ -73,17 +73,19 @@ letter-spacing: 1.19px;
 nav {
     grid-area: nav;
     background-color: #007A66;
-    height: 80px;
+     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+    
 }
 .login {
     display: flex;
     align-items: center;
     color: #F9FEFD;
+    
 }
 
 /* MENU DE NAVEGACIÓN */
@@ -97,7 +99,7 @@ ul.navegacion {
     text-transform: uppercase;
     width: max-content;
     background: var(--primario, #007A66);
-
+    
 }
 
 ul.navegacion.show {
