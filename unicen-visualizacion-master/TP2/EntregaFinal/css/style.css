@@ -227,10 +227,10 @@ nav {
 
 /* MENU DE NAVEGACIÓN */
 .desplegable {
-    margin:auto;
+    margin: auto;
     background: var(--primarioL1, #0A957E);
     top: 79px;
-    position:absolute;
+    position: absolute;
     display: grid;
     grid-auto-rows: max-content;
     z-index: 1000;
@@ -249,30 +249,45 @@ ul.navegacion {
 
 }
 
-ul.navegacion.show{
-    display:flex;
+ul.navegacion.show {
+    display: flex;
 }
 
-li.menu {
+.navegacion>.menu {
     border-radius: 8px;
     padding: 10px 15px;
-   }
+    align-items: center;
+    display: flex;
+}
 
-li.menu:hover {
+.menu:hover {
     background: var(--primarioL2, #11D2B2);
-    
+
+}
+
+.menu>img {
+    padding-right: 20px;
 }
 
 
 
-.navegacion li > ul{
-    display:none;
+.navegacion li:hover>ul {
+    display: flex;
+    border-radius: 8px;
+
 }
 
-.navegacion li:hover > ul{
-   display:flex;
-    
+
+.navegacion li>ul {
+    display: none;
 }
+
+img.idioma {
+    width: 20px;
+    height: 20px;
+    border-radius: 30px 30px;
+}
+
 
 
 /*input de busqueda de navegacion*/
@@ -353,7 +368,6 @@ footer {
     background: var(--primario, #007A66);
     display: block;
     color: var(--blanco, #F9FEFD);
-    justify-content: space-between;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
@@ -363,8 +377,8 @@ footer {
 .descripcionFooter {
     text-align: center;
     padding: 19px;
-    margin: 11px 85px;
-    display: block;
+    margin: auto 85px;
+    
     font-size: 14px;
 
 }
@@ -373,15 +387,68 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    margin-left: 30px;
+    margin-top:30px
 
 }
 
-.footer ul {
+.footer div .likeRedes li{
+    display: block;
+    margin-left: 40px;
+    margin-right: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+.footer>div{
+    display: flex;
+    margin-left:30px;
+}
+
+.footer ul{
     display: flex;
     align-items: center;
+    
+}
+
+.footer ul li{
+    display: flex;
+    align-items: center;
+    
 
 }
 
+
+.footer .logoFooter{
+    display: block;
+    text-align: center;
+        
+}
+
+.footer ul li button {
+    padding-right: 5px;
+    padding-left:50px;
+    background-color: #007A66;
+    
+
+}
+
+.footer ul li button img {
+    border-color: var(--negro, #20423C);
+    background-color: var(--primarioL1, #007A66);
+    border: 5px solid #20423C;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+
+.footer ul li button img:hover {
+   border: 5px solid var(--primarioL1, #D51EF3);
+}
+.footer ul li h3:hover {
+    color: var(--primarioL1, #11D2B2);
+ }
 
 /* IMAGEN DE LA CARD */
 .card {
