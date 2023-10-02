@@ -228,13 +228,12 @@ nav {
 /* MENU DE NAVEGACIÓN */
 .desplegable {
     margin:auto;
-   /* grid-area: menu;*/
     background: var(--primarioL1, #0A957E);
     top: 79px;
     position:absolute;
-    /*overflow-y: auto;*/
     display: grid;
     grid-auto-rows: max-content;
+    z-index: 1000;
 }
 
 
@@ -251,7 +250,7 @@ ul.navegacion {
 }
 
 ul.navegacion.show{
-    display: flex;
+    display:flex;
 }
 
 li.menu {
@@ -271,8 +270,7 @@ li.menu:hover {
 }
 
 .navegacion li:hover > ul{
-    float:right;
-    display:block;
+   display:flex;
     
 }
 
