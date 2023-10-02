@@ -231,8 +231,8 @@ nav {
    /* grid-area: menu;*/
     background: var(--primarioL1, #0A957E);
     top: 79px;
-    position:fixed;
-    overflow-y: auto;
+    position:absolute;
+    /*overflow-y: auto;*/
     display: grid;
     grid-auto-rows: max-content;
 }
