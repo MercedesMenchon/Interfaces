@@ -172,8 +172,8 @@ h3 {
     display: grid;
     grid-template-areas:
         "nav nav"
-        "menu header"
-        "menu main "
+        "header header"
+        "main main "
         "foot foot";
     grid-template-columns: 1fr 5fr;
 }
@@ -211,6 +211,12 @@ nav {
 
 }
 
+
+.login >button{
+    background-color: var(--primario);
+    padding: 10px;
+
+}
 form {
 
     display: flex;
@@ -267,7 +273,7 @@ form>div>input {
 /* MENU DE NAVEGACIÓN */
 
 .desplegable {
-    margin: auto;
+   
     background: var(--primarioL1);
     top: 79px;
     position: absolute;
@@ -281,7 +287,7 @@ ul.navegacion {
     display: none;
     flex-direction: column;
     margin: 2px;
-    padding: 20px;
+    padding: 5px 20px;
     color: var(--blanco);
     text-transform: uppercase;
     width: max-content;
@@ -332,10 +338,7 @@ img.idioma {
 
 
 li.menu:hover {
-
     background: var(--primarioL2);
-
-    ;
 }
 
 /*input de busqueda de navegacion*/
@@ -353,12 +356,14 @@ li.menu:hover {
 
 
 
-/*img hamburguesa*/
-
-.btn_menu .menuHamburguesa {
-    width: 50px;
-    height: 35px;
+/*boton  hamburguesa*/
+.btn_menu{
     background-color: var(--primario);
+}
+.btn_menu .menuHamburguesa {
+    width: 28px;
+    height: 20px;
+    
 }
 
 
@@ -373,6 +378,8 @@ li.menu:hover {
     text-align: center;
     font-size: 14px;
     font-family: Roboto;
+    
+    
 
 }
 
@@ -380,6 +387,7 @@ li.menu:hover {
     width: 151px;
     height: 37px;
     font-size: 30px;
+   
 }
 
 
@@ -387,11 +395,12 @@ li.menu:hover {
     grid-area: header;
     color: var(--blanco);
     background: var(--primarioL1);
-
     background-image: url('../Images/fondoEncabezado.png');
     display: flex;
     flex-direction: column;
     align-items: center;
+  
+  
 }
 
 .breadCrums {
@@ -525,6 +534,8 @@ footer {
     background: var(--blanco);
     /* sombra1 */
     box-shadow: 0px 4px 4px 0px var(--negro);
+    scroll-snap-align:center; /*agregado*/
+    margin-right: 19px;/*agregado*/
 }
 
 
@@ -618,17 +629,39 @@ footer {
     filter: grayscale(50%);
 }
 
-.carrousel {
+/*.carrousel {
     width: 90%;
     max-width: 120em;
-}
+}*/
 
 .carrousel .grande {
     padding: 10px;
-    width: 200%;
+   /* width: 200%;*/
+   width: 90%; /*agregado*/
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: flex-start;
+    overflow-x: scroll;/*agregado*/
+    scroll-snap-type: x mandatory;/*agregado*/
 
 }
+
+.pruebaCarrucel {
+    display: flex;
+    width: 90%;
+    max-width: 120em;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+   
+}
+
+.pruebaCarrucel img{
+   object-fit: cover; /*respeta el tamaño de la imagen*/
+    width: 100%;
+    scroll-snap-align:center;
+    margin: auto 10px;
+}
+
+
