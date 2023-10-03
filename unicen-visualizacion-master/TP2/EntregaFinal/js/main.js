@@ -5,11 +5,17 @@ document.addEventListener("DOMContentLoaded", iniciarPagina);
 
 function iniciarPagina() {
     document.querySelector(".btn_menu").addEventListener("click", mostrarNav);
+    document.querySelector(".btn_log").addEventListener("click", mostrarLog);
 
     function mostrarNav() {
-        document.querySelector(".navegacion").classList.toggle("show");
+        document.querySelector(".hamburguesa").classList.toggle("show");
+    }
+
+    function mostrarLog() {
+        document.querySelector(".log").classList.toggle("show");
     }
 }
+
 
 
 /*CARDS AGREGAR FAVORITO*/

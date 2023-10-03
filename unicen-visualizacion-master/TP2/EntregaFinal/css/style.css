@@ -169,6 +169,7 @@ h3 {
 }
 
 .container {
+
     display: grid;
     grid-template-areas:
         "nav nav"
@@ -176,6 +177,7 @@ h3 {
         "main main "
         "foot foot";
     grid-template-columns: 1fr 5fr;
+
 }
 
 
@@ -204,7 +206,7 @@ nav {
 }
 
 
-.login {
+.login, .btn_log {
     display: flex;
     align-items: center;
     color: var(--blanco);
@@ -295,6 +297,7 @@ ul.navegacion {
 
 }
 
+
 ul.navegacion.show {
     display: flex;
 }
@@ -366,30 +369,7 @@ li.menu:hover {
     
 }
 
-
-/* boton explora*/
-.btn_ingresa {
-    margin: 34px;
-    width: 114px;
-    height: 24px;
-    background: var(--acento);
-    border-radius: 8px;
-    color: var(--blanco);
-    text-align: center;
-    font-size: 14px;
-    font-family: Roboto;
-    
-    
-
-}
-
-.btn_ingresa:hover {
-    width: 151px;
-    height: 37px;
-    font-size: 30px;
-   
-}
-
+/*header*/
 
 .header {
     grid-area: header;
@@ -399,15 +379,47 @@ li.menu:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+    contain:content;
+    height: 150px;
+   
+}
+
+.header>div.explora{
+    text-align: center;
   
 }
+/* boton explora*/
+.btn_ingresa {
+    margin: 10px 0px;
+    width: 8%;
+    height: auto;
+    background: var(--acento);
+    border-radius: 8px;
+    color: var(--blanco);
+    text-align: center;
+    font-size: 100%;
+    font-family: Roboto;
+    text-transform: capitalize;
+    position: absolute;
+    
+
+}
+
+.btn_ingresa:hover {
+    width: 10%;
+    height: auto;
+    padding: 2px;
+}
+
+
+
 
 .breadCrums {
     color: var(--primarioL2);
     background: var(--secundario);
     width: 100%;
     height: 30px;
+ 
 
 }
 
@@ -536,6 +548,7 @@ footer {
     box-shadow: 0px 4px 4px 0px var(--negro);
     scroll-snap-align:center; /*agregado*/
     margin-right: 19px;/*agregado*/
+    contain:content;
 }
 
 
@@ -629,15 +642,11 @@ footer {
     filter: grayscale(50%);
 }
 
-/*.carrousel {
-    width: 90%;
-    max-width: 120em;
-}*/
 
-.carrousel .grande {
-    padding: 10px;
+.carrousel>div {
+    padding: 2%;
    /* width: 200%;*/
-   width: 90%; /*agregado*/
+   width: 96%; /*agregado*/
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -647,21 +656,9 @@ footer {
 
 }
 
-.pruebaCarrucel {
-    display: flex;
-    width: 90%;
-    max-width: 120em;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-
-   
+.carrousel>div::-webkit-scrollbar {
+    display: none;
 }
 
-.pruebaCarrucel img{
-   object-fit: cover; /*respeta el tamaño de la imagen*/
-    width: 100%;
-    scroll-snap-align:center;
-    margin: auto 10px;
-}
 
 
