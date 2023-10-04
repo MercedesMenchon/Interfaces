@@ -352,6 +352,11 @@ ul.navegacion.show {
 
 }
 
+ul.idioma{
+    position: absolute;
+    margin-left: 81%;
+    border: 3px solid var(--acento);
+}
 
 .navegacion li>ul {
     display: none;
