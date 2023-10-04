@@ -39,6 +39,15 @@ body {
 }
 
 /* titulo secundario */
+h1{
+color: var(--blanco);
+    text-transform: capitalize;
+font-size: 40px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+letter-spacing: 3.2px;
+}
 h2 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -236,9 +245,8 @@ form {
 }
 
 form>div {
-    padding: 0.2em;
-    align-items: center;
-   
+    padding: 0.5em;
+    align-items: center;   
     display: flex;
     flex-direction: row;
 }
@@ -439,6 +447,9 @@ li.menu:hover {
 
 
 .main {
+    padding: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     grid-area: main;
     background: var(--primarioL1);
 
