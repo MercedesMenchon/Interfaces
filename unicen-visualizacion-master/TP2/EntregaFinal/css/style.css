@@ -386,19 +386,20 @@ li.menu:hover {
     grid-area: header;
     color: var(--blanco);
     background: var(--primarioL1);
-    background-image: url('../Images/fondoEncabezado.png');
     display: flex;
     flex-direction: column;
     align-items: center;
-    contain:content;
-    height: 150px;
-   
 }
 
 .header>div.explora{
     text-align: center;
-  
+    background-image: url('../Images/fondoEncabezado.png');
+    contain:content;
+    height: 110px;
+    width: 100%;
+    
 }
+
 /* boton explora*/
 .btn_ingresa {
     margin: 10px 0px;
@@ -412,6 +413,7 @@ li.menu:hover {
     font-family: Roboto;
     text-transform: capitalize;
     position: absolute;
+  
     
 
 }
