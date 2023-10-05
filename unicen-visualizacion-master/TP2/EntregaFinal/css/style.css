@@ -48,6 +48,7 @@ h1 {
 }
 
 h2 {
+    color:var(--blanco);
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 22px;
@@ -716,4 +717,94 @@ footer {
 
 .carrousel>div::-webkit-scrollbar {
     display: none;
+}
+
+/* 4 EN LINEA*/
+
+.juego{
+    display:flex;
+    height: 80%;
+    width: 92%;
+    margin: 4%;
+    background-color: var(--secundario);
+}
+.juego>div{
+    display:flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.column1{
+    height: 100%;
+    width:25%;
+    padding: 4%;
+}
+
+
+.compartir{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.compartir>li>img,
+.column1>img {
+    border-radius: 25px;
+    margin:30%;
+    width: 90%;
+    height:90%;
+}
+.column1>img{
+    border-radius: 0px;
+}
+
+.video{
+    contain: content;
+    padding-right: 10%;
+    padding-left: 10%;
+    height: 20%;
+}
+.video>image{
+    
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+.btn-PlayVideo{
+    position: absolute;
+    height: 5%;
+    width: 5%;
+    padding: 0%;
+}
+
+
+.column2{
+    height: 100%;
+    width: 50%;
+    padding: 4%;
+}
+
+.column2>div{
+    display:flex;
+   
+}
+
+.descargas{
+    flex-direction: row;
+justify-content: space-between;
+}
+.descargas>img{
+    width: 30%;
+    padding: 10%;
+}
+
+.sonido{
+flex-direction: row-reverse;
+padding: 3%;
+}
+
+.juego{
+    
+    height: 100%;
+    width: 100%;
 }
