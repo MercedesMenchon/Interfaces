@@ -30,7 +30,7 @@
 }
 
 body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
     line-height: normal;
     color: var(--negro);
@@ -40,82 +40,80 @@ body {
 
 h1 {
     color: var(--blanco);
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    letter-spacing: 3.2px;
+    font-size: 200%;
+    font-weight: 800%;
+    letter-spacing: 5%;
 }
 
 h2 {
-    color:var(--blanco);
+    color: var(--blanco);
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: 1.1px;
+    font-size: 150%;
+    font-weight: 400%;
+    letter-spacing: 5%;
 }
 
 /* titulo terciario */
 h3 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-size: 80%;
+    font-weight: 400%;
     letter-spacing: 0.6px;
     text-decoration-line: underline;
 }
 
 .textoChico {
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    font-size: 60%;
+    font-weight: 400%;
+    letter-spacing: 5%;
 }
 
-.precio {
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: 1.19px;
+.precio,
+.precioConDescuento,
+.textoGratis {
+    font-size: 110%;
+    font-weight: 400%;
+    letter-spacing: 5%;
 }
 
 .precioConDescuento {
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: 1.19px;
     text-decoration: line-through;
 }
 
 .textoGratis {
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: 1.19px;
     color: var(--gratis);
 }
 
+.textoBotones {
+    text-transform: uppercase;
+    font-weight: 100%;
+    font-size: 80%;
+}
+
+
+
 /*BOTONES*/
-.btn-primario {
-    display: flex;
-    align-items: center;
+
+.btn-primario,
+.btn-secundario {
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-    width: 150px;
-    height: 21px;
+}
+
+.btn-primario {
+    width: 100%;
+    height: auto;
     background-color: var(--acento);
     color: var(--blanco);
-    font-family: Roboto;
-    font-size: 11.971px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    padding: 2% 5%;
+    margin: 2%;
 
 
 }
 
 .btn-primario.click {
     background-color: var(--primarioL1);
-
 
 }
 
@@ -125,14 +123,11 @@ h3 {
 
 .btn-secundario {
     display: flex;
-    align-items: center;
-    align-items: center;
-    border-radius: 16px;
-    width: 147px;
-    height: 21px;
+    height: auto;
+    text-transform: capitalize;
     flex-shrink: 0;
     fill: var(--blanco);
-    stroke-width: 2px;
+    stroke-width: 2%;
     stroke: var(--acento);
     filter: drop-shadow(0px 4px 4px --negro);
 }
@@ -165,9 +160,9 @@ h3 {
     color: rgba(17, 210, 178, 0.50);
 }
 
-.btn-facebook {
-
-    width: 200px;
+.btn-facebook,
+.btn-google {
+    width: 100%;
     color: var(--blanco);
     background: #3B5998;
 }
@@ -175,14 +170,19 @@ h3 {
 .btn-facebook>img,
 .btn-google>img {
     margin: 5%;
-    height: 85%;
+    width: 10%;
     background-color: inherit;
+    justify-content: center;
 }
 
+
+
 .btn-google {
-    width: 200px;
-    color: var(--blanco);
     background: #DB4A39;
+}
+
+.btn-facebook {
+    background: #3B5998;
 }
 
 .container {
@@ -254,7 +254,7 @@ form {
 form>div {
     padding: 0.2em;
     align-items: center;
-
+    white-space: nowrap;
     display: flex;
     flex-direction: row;
 }
@@ -353,7 +353,7 @@ ul.navegacion.show {
 
 }
 
-ul.idioma{
+ul.idioma {
     position: absolute;
     margin-left: 81%;
     border: 3px solid var(--acento);
@@ -444,7 +444,6 @@ button {
     color: var(--blanco);
     text-align: center;
     font-size: 100%;
-    font-family: Roboto;
     text-transform: capitalize;
 
 
@@ -507,10 +506,10 @@ footer {
 .descripcionFooter {
     text-align: center;
     padding: 19px;
-    margin: auto 85px;
-    font-size: 14px;
-   line-height:20px;
-   
+    margin: auto 15%;
+    font-size: 90%;
+    line-height: 120%;
+
 
 }
 
@@ -518,19 +517,21 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    margin-left: 30px;
-    margin-top: 30px
+    margin-top: 2%;
 }
 
 .footer div .likeRedes li {
     display: block;
-    margin-left: 40px;
-    margin-right: 50px;
+    margin-right: 20%;
     text-align: center;
     text-transform: uppercase;
 
 }
 
+.centro{
+    justify-content:right;
+    margin-right: 1%;
+}
 .footer>div {
     display: flex;
     margin-left: 30px;
@@ -558,6 +559,7 @@ footer {
 .footer .logoFooter {
     display: block;
     text-align: center;
+margin-left: 15%;
 
 }
 
@@ -601,9 +603,7 @@ footer {
     /* sombra1 */
     box-shadow: 0px 4px 4px 0px var(--negro);
     scroll-snap-align: center;
-    /*agregado*/
     margin-right: 19px;
-    /*agregado*/
     contain: content;
 }
 
@@ -616,6 +616,7 @@ footer {
     height: 148px;
     flex-shrink: 0;
     border-radius: 9px;
+    
 }
 
 .card h2 {
@@ -623,6 +624,7 @@ footer {
     margin-bottom: 5px;
     padding-left: 14px;
     padding-right: 14px;
+    color: var(--primarioS2);
 }
 
 .card .precio {
@@ -634,7 +636,6 @@ footer {
 }
 
 .card .textoChico {
-    display: -webkit-box;
     -webkit-box-orient: vertical;
     line-clamp: 2;
     -webkit-line-clamp: 4;
@@ -696,6 +697,7 @@ footer {
 
 .card:hover .grey {
     filter: grayscale(50%);
+    
 }
 
 
@@ -721,56 +723,61 @@ footer {
 
 /* 4 EN LINEA*/
 
-.juego{
-    display:flex;
+.juego {
+    display: flex;
     height: 80%;
     width: 92%;
     margin: 4%;
     background-color: var(--secundario);
 }
-.juego>div{
-    display:flex;
+
+.juego>div {
+    display: flex;
     flex-direction: column;
     padding: 2%;
 }
 
-.column1{
+.column1 {
     height: 100%;
-    width:25%;
+    width: 25%;
     padding: 4%;
 }
 
 
-.compartir{
-    display:flex;
+.compartir {
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .compartir>li>img,
 .column1>img {
     border-radius: 25px;
-    margin:30%;
+    margin: 30%;
     width: 90%;
-    height:90%;
+    height: 90%;
 }
-.column1>img{
+
+.column1>img {
     border-radius: 0px;
 }
 
-.video{
+.video {
     contain: content;
     padding-right: 10%;
     padding-left: 10%;
     height: 20%;
 }
-.video>image{
-    
+
+.video>image {
+
     height: 100%;
     width: 100%;
     margin: 0%;
     padding: 0%;
 }
-.btn-PlayVideo{
+
+.btn-PlayVideo {
     position: absolute;
     height: 5%;
     width: 5%;
@@ -778,33 +785,34 @@ footer {
 }
 
 
-.column2{
+.column2 {
     height: 100%;
     width: 50%;
     padding: 4%;
 }
 
-.column2>div{
-    display:flex;
-   
+.column2>div {
+    display: flex;
+
 }
 
-.descargas{
+.descargas {
     flex-direction: row;
-justify-content: space-between;
+    justify-content: space-between;
 }
-.descargas>img{
+
+.descargas>img {
     width: 30%;
     padding: 10%;
 }
 
-.sonido{
-flex-direction: row-reverse;
-padding: 3%;
+.sonido {
+    flex-direction: row-reverse;
+    padding: 3%;
 }
 
-.juego{
-    
+.juego {
+
     height: 100%;
     width: 100%;
 }
