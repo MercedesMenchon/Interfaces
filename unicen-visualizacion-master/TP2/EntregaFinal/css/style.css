@@ -61,9 +61,7 @@ h3 {
     letter-spacing: 0.6px;
     text-decoration-line: underline;
 }
-p{
-    color:var(--blanco);
-}
+
 .textoChico {
     font-size: 60%;
     font-weight: 400%;
