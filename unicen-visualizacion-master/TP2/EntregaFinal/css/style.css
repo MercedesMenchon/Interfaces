@@ -61,7 +61,9 @@ h3 {
     letter-spacing: 0.6px;
     text-decoration-line: underline;
 }
-
+p{
+    color:var(--blanco);
+}
 .textoChico {
     font-size: 60%;
     font-weight: 400%;
@@ -739,7 +741,7 @@ margin-left: 15%;
 
 .column1 {
     height: 100%;
-    width: 25%;
+    width: 20%;
     padding: 4%;
 }
 
@@ -753,9 +755,9 @@ margin-left: 15%;
 .compartir>li>img,
 .column1>img {
     border-radius: 25px;
-    margin: 30%;
-    width: 90%;
-    height: 90%;
+    margin: 10%;
+    width: 60%;
+    height: 60%;
 }
 
 .column1>img {
@@ -787,32 +789,35 @@ margin-left: 15%;
 
 .column2 {
     height: 100%;
-    width: 50%;
-    padding: 4%;
-}
-
-.column2>div {
-    display: flex;
-
-}
-
-.descargas {
+    width: 60%;
+    padding: 2%;
+    display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 
+.descargas{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
 .descargas>img {
-    width: 30%;
-    padding: 10%;
+    width: 15%;
+    padding: 2%;
 }
 
 .sonido {
+    display: flex;
     flex-direction: row-reverse;
     padding: 3%;
 }
 
-.juego {
-
-    height: 100%;
+.tablero {
+    display:flex;
+    justify-content: center;
     width: 100%;
+}
+.reglas {
+    display:flex;
+flex-direction: column;
 }
