@@ -73,8 +73,8 @@ h3 {
 .precio,
 .precioConDescuento,
 .textoGratis {
-    font-size: 110%;
-    font-weight: 400%;
+    font-size: 90%;
+    font-weight: 100%;
     letter-spacing: 5%;
 }
 
@@ -606,8 +606,8 @@ footer {
 
 /* IMAGEN DE LA CARD */
 .card {
-    width: 220px;
-    height: 280px;
+    width: 15%;
+    height: 10%;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -624,28 +624,27 @@ footer {
 
 .card img {
     position: absolute;
-    margin: 14px;
-    margin-top: 13px;
-    width: 192px;
-    height: 148px;
+    padding: 4%;
+    width: 92%;
+    height: 50%;
     flex-shrink: 0;
     border-radius: 9px;
 
 }
 
 .card h2 {
-    margin-top: 172px;
-    margin-bottom: 5px;
-    padding-left: 14px;
-    padding-right: 14px;
+    margin-top: 110%;
+    margin-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
     color: var(--primarioS2);
 }
 
 .card .precio {
     display: flex;
     margin: 0px;
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 4%;
+    padding-right: 4%;
     justify-content: flex-end;
 }
 
@@ -656,68 +655,52 @@ footer {
     overflow: hidden;
     text-align: justify;
     margin: 0;
-    margin-bottom: 14px;
-    padding-left: 14px;
-    padding-right: 14px;
+    margin-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
     white-space: unset;
     text-overflow: ellipsis;
 
 }
 
-
-
-
-
-.card .play {
+.card .play,
+.card .carritoCompraShow {
     display: flex;
     position: absolute;
-    width: 70px;
-    height: 69.32px;
+    width: 30%;
+    height: 30%;
     flex-shrink: 0;
     border-radius: 8px;
-    margin: 75px;
-    margin-top: 110px;
-    background: var(--gratis);
+       margin:30%;
+    margin-top: 55%;
+   
 }
 
+.card .play{
+    background: var(--gratis);
+}
 
 .hoverCard {
     display: none;
 
 }
 
-.card .carritoCompraShow {
-    display: flex;
-    position: absolute;
-    width: 70px;
-    height: 69.32px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    margin: 75px;
-    margin-top: 110px;
-
-}
-
 .card .likeShow,
 .card .likeShowFijo {
     display: flex;
-    margin-left: 166px;
-    margin-right: 0px;
-    margin-top: 0px;
+ align-items: flex-end;
     position: absolute;
-    width: 54px;
-    height: 54px;
-    flex-shrink: 0;
+    margin-left: 74%;
+    width: 20%;
+    height: 20%;
     border-radius: 8px;
-
 }
-
+/*
 .card:hover .grey {
     filter: grayscale(50%);
-
 }
 
-
+*/
 .carrousel {
     padding: 2%;
     width: 96%;
@@ -730,7 +713,6 @@ footer {
 
 
 }
-
 
 .vertical {
    padding: 2%;
