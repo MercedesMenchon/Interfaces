@@ -1,80 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos Online</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<section clar>
-    <div class="form">
-        <h2>¡Iniciá sesión para divertirte sin límites!</h2>
-        <div >
-        <div class="botones">
-            <button class="btn-login" id="btn-loginIniciarSesion" >INICIAR SESIÓN</button>
-            <button class="btn-login" id="btn-loginRegistrarme">REGISTRARME</button>
-        </div>
-    </div>
-        <div class="formIniciarSesion " >
-            <form  action="" >
-                <div>
-                   <label>Correo electrónico: </label> <input type="text" name="correoElectronico"  required>
+    <section clar> <!--que es eso????-->
+        <div class="form">
+            <h2>¡Iniciá sesión para divertirte sin límites!</h2>
+            <div>
+                <div class="botones">
+                    <button class="btn-login" id="btn-loginIniciarSesion">INICIAR SESIÓN</button>
+                    <button class="btn-login" id="btn-loginRegistrarme">REGISTRARME</button>
                 </div>
-                <div>
-                    <label>Contraseña: </label> <input  type="password" name="Contrasenia"  required>
-                </div>
-                <div>
-                 <a class="btn-terciario">¿Olvidaste tu contraseña?</a>
-                </div>
-                <div>
-                 <a class="btn-primario"href="index.html"><p class="textoBotones">Iniciar Sesión</p></a>
-                </div>
-                <div>
-                 <h2>O</h2>
-                </div>
-                <div>
-                 <a class="btn-secundario btn-facebook" href="index.html"> <img src="Images/iconos/facebook.png" alt="Icono de Facebook"><p class="textoBotones"><p>continuar con Facebook</p></a>
-                </div>
-                <div>
-                 <a class="btn-secundario btn-google" href="index.html"> <img src="Images/iconos/Icono de Gmail.png" alt="Icono de Google"><p class="textoBotones"></p>continuar con Google</p></a>
             </div>
-                <p class="textoChico"href="index.html" > Al continuar, aceptas las condiciones del servicio de juegos Online y reconoces que leíste nuestra política de privacidad.</p>       
-        </form>
-    </div>
+            <div class="formIniciarSesion ">
+                <form action="">
+
+                    <div>
+                        <label>Correo electrónico: </label> <input type="text" name="correoElectronico" required>
+                    </div>
+                    <div>
+                        <label>Contraseña: </label> <input type="password" name="Contrasenia" required>
+                    </div>
+                    <div>
+                        <a class="btn-terciario">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+
+                    <div>
+                        <a class="btn-primario" href="index.html">
+                            <p class="textoBotones">Iniciar Sesión</p>
+                        </a>
+                    </div>
+                    <div>
+                        <h2>O</h2>
+                    </div>
+                    <div>
+                        <a class="btn-secundario btn-facebook" href="index.html"> <img src="Images/iconos/facebook.png"
+                                alt="Icono de Facebook">
+                            <p class="textoBotones">
+                                <p>continuar con Facebook</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="btn-secundario btn-google" href="index.html"> <img
+                                src="Images/iconos/Icono de Gmail.png" alt="Icono de Google">
+                            <p class="textoBotones"></p>continuar con Google</p>
+                        </a>
+                    </div>
+                    <p class="textoChico" href="index.html"> Al continuar, aceptas las condiciones del servicio de
+                        juegos Online y reconoces que leíste nuestra política de privacidad.</p>
+                </form>
+            </div>
 
 
 
-<div class="formRegistrarme" >
-    <form >
-        <div>
-            <label>Nombre y apellido: </label> <input type="text" name="nombreApellido"  required>
-         </div>
-         <div>
-             <label>Nickname: </label> <input  type="text" name="nickname"  required>
-         </div>
-         <div>
-            <label>Edad: </label> <input  type="number" name="edad"  required>
+            <div class="formRegistrarme">
+                <form>
+                    <div>
+                        <label>Nombre y apellido: </label> <input type="text" name="nombreApellido" required>
+                    </div>
+                    <div>
+                        <label>Nickname: </label> <input type="text" name="nickname" required>
+                    </div>
+                    <div>
+                        <label>Edad: </label> <input type="number" name="edad" required>
+                    </div>
+                    <div>
+                        <label>Correo electrónico: </label> <input type="text" name="correoElectronico" required>
+                    </div>
+                    <div>
+                        <label>Contraseña: </label> <input type="password" name="Contrasenia" required>
+                    </div>
+                    <p class="textoChico"> Crea una contraseña segura con una combinación de letras, números y símbolos
+                    </p>
+                    <div>
+                        <label>Repetir contraseña: </label> <input type="password" name="Contrasenia" required>
+                    </div>
+
+                    <h2>FALTA CAPTCHA</h2>
+                    <a class="btn-primario" href="index.html">REGISTRARME</a>
+                </form>
+            </div>
+
         </div>
-        <div>
-        <label>Correo electrónico: </label> <input type="text" name="correoElectronico"  required>
-    </div>
-     <div>
-         <label>Contraseña: </label> <input  type="password" name="Contrasenia"  required>
-     </div>
-     <p class="textoChico" > Crea una contraseña segura con una combinación de letras, números y símbolos</p>      
-          <div>
-        <label>Repetir contraseña: </label> <input  type="password" name="Contrasenia"  required>
-    </div>
-    <h2>FALTA CAPTCHA</h2>
-    <a class="btn-primario"href="index.html">REGISTRARME</a>
-</form>
-</div>
 
-</div>
-   
-</div>
-</div>
+        <!--aca va spinner de espera de carga-->
+        <div class="espera">
+            <div class="spinner">
+                <img src="Images/iconos/acerca de nosotros.png" alt="logo">
+            </div>
+            <div>
+                <p class="textoBotones">cargando...</p>
+            </div>
+        </div>
+
+
+    </section>
     <script type="text/javascript" src="js/login.js"></script>
 </body>
+
 </html>
