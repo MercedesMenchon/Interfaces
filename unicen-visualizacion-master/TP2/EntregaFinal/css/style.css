@@ -713,23 +713,31 @@ footer {
 }
 
 
-.carrousel>div {
+.carrousel {
     padding: 2%;
-    /* width: 200%;*/
     width: 96%;
-    /*agregado*/
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: flex-start;
     overflow-x: scroll;
-    /*agregado*/
     scroll-snap-type: x mandatory;
-    /*agregado*/
+    
 
 }
 
-.carrousel>div::-webkit-scrollbar {
+
+.carrouselVertical{
+    padding: 2%;
+    width: 96%;
+   display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    scroll-snap-type: x mandatory;
+}
+div.carrousel::-webkit-scrollbar, div.carrouselVertical::-webkit-scrollbar {
     display: none;
 }
 
@@ -753,6 +761,7 @@ footer {
 
 .column1 {
     width: 20%;
+   
 }
 
 
