@@ -8,14 +8,22 @@ for(let i=0;i<off.length;i++){
 
 let musica = document.querySelectorAll(".musica");
 for(let i=0; i<musica.length;i++){
-  musica[i].addEventListener("click",interruptor);
+  musica[i].addEventListener("click",interruptorMusica);
 }
-let sonido = document.querySelectorAll(".musica");
-for(let i=0; i<sonido.length;i++){
-  sonido[i].addEventListener("click",interruptor);
+let volumen = document.querySelectorAll(".volumen");
+for(let i=0; i<volumen.length;i++){
+  volumen[i].addEventListener("click",interruptorVolumen);
 }
-
-
+function interruptorMusica(){
+  for(let i=0; i<musica.length;i++){
+    musica[i].classList.toggle("hidden");
+  }
+}
+function interruptorVolumen(){
+  for(let i=0; i<volumen.length;i++){
+    volumen[i].classList.toggle("hidden");
+  }
+}
 /* VOTOS DE LIKE */
 
 
