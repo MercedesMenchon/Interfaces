@@ -747,7 +747,7 @@ footer {
 
 
 div.carrousel::-webkit-scrollbar,
-div.vertical::-webkit-scrollbar {
+div.vertical::-webkit-scrollbar, .listaComentarios::-webkit-scrollbar {
     display: none;
 }
 
@@ -931,13 +931,22 @@ img.btn-PlayVideo {
 
 }
 
+.listaComentarios.vertical{
+height: 30%;
+width: 70%;
+
+}
+
+
 .listaComentarios>div {
-    width: 60%;
+    width: 90%;
     margin: 3%;
     background-color: var(--blanco);
     color: var(--negro);
     border-radius: 10px;
     box-shadow: 0 0 20px var(--blanco);
+    padding: 4%;
+    text-align: justify;
 }
 
 .listaComentarios>div>h3 {
@@ -945,10 +954,16 @@ img.btn-PlayVideo {
     padding: 2%;
     text-transform: capitalize;
     margin-bottom: 0%;
+    color: var(--acento);
+    text-decoration:none;
 }
 .listaComentarios>div>p{
+<<<<<<< Updated upstream
     padding: 2%;
     width: 60%;
+=======
+   
+>>>>>>> Stashed changes
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
@@ -960,7 +975,7 @@ img.btn-PlayVideo {
     display: flex;
     flex-direction: column;
     width: 60%;
-    height: 40%;
+   /* height: 40%;*/
 }
 
 .interaccion {
