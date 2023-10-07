@@ -947,6 +947,7 @@ img.btn-PlayVideo {
     margin-bottom: 0%;
 }
 .listaComentarios>div>p{
+    padding: 2%;
     width: 60%;
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
@@ -972,7 +973,7 @@ img.btn-PlayVideo {
     
 }
 .ranking>div{
-    width: 100%;
+    width: 60%;
     background-color: var(--blanco);
     margin: 3%;
     padding: 5%;

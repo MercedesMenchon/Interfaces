@@ -1,5 +1,11 @@
 "use strict";
 
+/*SONIDO*/
+
+
+
+
+/* VOTOS DE LIKE */
 
 
 let cantVotosInicial=8250;
@@ -12,6 +18,7 @@ function addVoto(){
 }
 
 
+/* COMENTARIOS*/
 
 let comentariosViejos=[{
   "usuario":"Coquito.LOL",
