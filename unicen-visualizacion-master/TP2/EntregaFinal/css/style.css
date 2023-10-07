@@ -102,7 +102,7 @@ h3 {
 }
 
 .btn-primario {
-    
+
     height: auto;
     background-color: var(--acento);
     color: var(--blanco);
@@ -122,15 +122,15 @@ h3 {
 }
 
 .btn-secundario {
-background-color: var(--blanco);
+    background-color: var(--blanco);
     display: flex;
     height: auto;
     text-transform: capitalize;
     flex-shrink: 0;
     fill: var(--blanco);
-   border: 30%;
-   border-color: var(--acento);
-   border-style: solid;
+    border: 30%;
+    border-color: var(--acento);
+    border-style: solid;
     stroke: var(--acento);
     fill: var(--blanco, #F9FEFD);
 }
@@ -173,7 +173,7 @@ background-color: var(--blanco);
 
 .btn-facebook>img,
 .btn-google>img {
-    margin-right:2%;
+    margin-right: 2%;
     margin-top: 0.5%;
     margin-bottom: 0.5%;
     width: 7%;
@@ -647,7 +647,7 @@ footer {
 .card .textoChico {
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
-     -webkit-line-clamp: 4;
+    -webkit-line-clamp: 4;
     overflow: hidden;
     text-align: justify;
     margin: 0;
@@ -722,22 +722,27 @@ footer {
     justify-content: flex-start;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    
+
 
 }
 
 
-.carrouselVertical{
-    padding: 2%;
-    width: 96%;
-   display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: flex-start;
+.vertical {
+   padding: 2%;
+   width: 96%;
+    height:75%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items:flex-start;
     overflow-y: scroll;
-    scroll-snap-type: x mandatory;
+    overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+ 
 }
-div.carrousel::-webkit-scrollbar, div.carrouselVertical::-webkit-scrollbar {
+
+
+div.carrousel::-webkit-scrollbar,
+div.vertical::-webkit-scrollbar {
     display: none;
 }
 
@@ -745,12 +750,13 @@ div.carrousel::-webkit-scrollbar, div.carrouselVertical::-webkit-scrollbar {
 
 .juego {
     display: flex;
-    /*height: 80%;*/
+    height: 50%;
     width: 92%;
     margin: 4%;
     background-color: var(--secundario);
     font-size: 80%;
     text-align: center;
+
 }
 
 .juego>div {
@@ -761,11 +767,11 @@ div.carrousel::-webkit-scrollbar, div.carrouselVertical::-webkit-scrollbar {
 
 .column1 {
     width: 20%;
-   
+    
 }
 
 
-.column1>h2{
+.column1>h2 {
     margin-top: 15%;
 }
 
@@ -773,17 +779,17 @@ div.carrousel::-webkit-scrollbar, div.carrouselVertical::-webkit-scrollbar {
 .compartir>ul {
     display: flex;
     flex-direction: column;
-    
+
 
 }
 
 .compartir>ul>li>img {
     border-radius: 16px;
-    margin:  8% 10%;
+    margin: 8% 10%;
     width: 25%;
-    box-shadow: var(--negro) 5px 4px ;
+    box-shadow: var(--negro) 5px 4px;
     border: var(--negro) 2px solid;
-    
+
 }
 
 
@@ -824,7 +830,8 @@ img.btn-PlayVideo {
     justify-content: center;
 }
 
-.descargas, .controles {
+.descargas,
+.controles {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -833,22 +840,23 @@ img.btn-PlayVideo {
 .descargas>img {
     width: 35%;
     margin: 1%;
-    box-shadow: var(--primarioS2) 2px 2px ;
+    box-shadow: var(--primarioS2) 2px 2px;
     border-radius: 2px;
     border: var(--negro) 2px 2px solid;
-    
+
 }
 
-.controles img{
+.controles img {
     width: 50%;
 }
+
 .sonido {
     display: flex;
     flex-direction: row-reverse;
-    
+
 }
 
-.sonido>img{
+.sonido>img {
     width: 6%;
     margin: 1%;
 }
@@ -856,7 +864,7 @@ img.btn-PlayVideo {
 
 .tablero {
     display: flex;
-    
+
     width: 100%;
 }
 
@@ -869,85 +877,93 @@ img.btn-PlayVideo {
     padding: 2%;
     display: flex;
     flex-direction: column;
-width: 100%;
+    width: 100%;
 }
 
-.reglas>.body{
+.reglas>.body {
     color: var(--blanco);
     text-align: justify;
     padding: 1%;
 }
 
-.reglas>h2{
+.reglas>h2 {
     text-transform: uppercase;
     color: var(--blanco);
     margin-bottom: 2%;
 }
+
 .comentarios {
     display: flex;
     flex-direction: column;
-        align-items: center;
+    align-items: center;
     width: 100%;
     margin: 3%;
 }
 
-.comentarios>div{
+.comentarios>div {
     margin: 1%;
     display: flex;
-   
+
 }
 
-.comentarios .btn-secundario{
-width: 15%;
+.comentarios .btn-secundario {
+    width: 15%;
 }
 
-.opinion{
+.opinion {
     margin: 2%;
     width: 60%;
     height: 300%;
     display: flex;
-     align-items: center;
+    align-items: center;
 }
-.opinion>textarea{
+
+.opinion>textarea {
     margin: 5%;
     width: 60%;
     height: 800%;
 
 }
-.listaComentarios>div{
+
+.listaComentarios>div {
     width: 60%;
     margin: 3%;
     background-color: var(--blanco);
     color: var(--negro);
 }
 
-.listaComentarios>div>h3{
+.listaComentarios>div>h3 {
     width: 40%;
     text-transform: capitalize;
     margin-bottom: 0%;
 }
-.listaComentarios>div>p{
+
+.listaComentarios>div>p {
     width: 60%;
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
-     -webkit-line-clamp: 4;
+    -webkit-line-clamp: 4;
     overflow: hidden;
     text-align: justify;
 }
-.comentariosViejos{
+
+.comentariosViejos {
     display: flex;
     flex-direction: column;
     width: 60%;
     height: 40%;
 }
-.interaccion{
+
+.interaccion {
     display: flex;
     flex-direction: row;
 }
-.ranking{
+
+.ranking {
     width: 30%;
 }
-.ranking>div{
+
+.ranking>div {
     width: 100%;
     background-color: var(--blanco);
     margin: 3%;
