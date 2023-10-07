@@ -16,6 +16,7 @@
     --negro: #20423C;
     --acento: #D51EF3;
     --gratis: rgba(35, 209, 52, 0.79);
+
 }
 
 * {
@@ -188,7 +189,7 @@ h3 {
 .btn-google {
     background: #DB4A39;
     border-color: #DB4A39;
-    
+
 }
 
 .btn-facebook {
@@ -721,8 +722,8 @@ height:75%;
     align-items:flex-start;
     overflow-y: scroll;
     overflow-x: hidden;
-  scroll-snap-type: y mandatory;
- 
+    scroll-snap-type: y mandatory;
+
 }
 
 .vertical .card{
@@ -733,7 +734,8 @@ height:75%;
 
 
 div.carrousel::-webkit-scrollbar,
-div.vertical::-webkit-scrollbar, .listaComentarios::-webkit-scrollbar {
+div.vertical::-webkit-scrollbar,
+.listaComentarios::-webkit-scrollbar {
     display: none;
 }
 
@@ -758,7 +760,7 @@ div.vertical::-webkit-scrollbar, .listaComentarios::-webkit-scrollbar {
 
 .column1 {
     width: 20%;
-    
+
 }
 
 
@@ -848,7 +850,7 @@ img.btn-PlayVideo {
 }
 
 .sonido>img {
-    
+
     width: 6%;
     margin: 1%;
 }
@@ -902,7 +904,7 @@ img.btn-PlayVideo {
     width: 15%;
 }
 
-.opinion{
+.opinion {
     margin: 2%;
     width: 60%;
     height: 300%;
@@ -918,9 +920,9 @@ img.btn-PlayVideo {
 
 }
 
-.listaComentarios.vertical{
-height: 30%;
-width: 70%;
+.listaComentarios.vertical {
+    height: 30%;
+    width: 70%;
 
 }
 
@@ -942,9 +944,10 @@ width: 70%;
     text-transform: capitalize;
     margin-bottom: 0%;
     color: var(--acento);
-    text-decoration:none;
+    text-decoration: none;
 }
-.listaComentarios>div>p{
+
+.listaComentarios>div>p {
 
     padding: 2%;
     width: 60%;
@@ -959,7 +962,7 @@ width: 70%;
     display: flex;
     flex-direction: column;
     width: 60%;
-   /* height: 40%;*/
+    /* height: 40%;*/
 }
 
 .interaccion {
@@ -969,9 +972,10 @@ width: 70%;
 
 .ranking {
     width: 30%;
-    
+
 }
-.ranking>div{
+
+.ranking>div {
     width: 60%;
     background-color: var(--blanco);
     margin: 3%;
@@ -987,26 +991,55 @@ width: 70%;
 
 .spinner {
     padding: 1%;
-    border: 4px solid var(--primarioL2,0, 0, 0, 0.1);
+    border: 4px solid var(--primarioL2, 0, 0, 0, 0.1);
     width: 36px;
     height: 36px;
     border-radius: 50%;
     border-left-color: var(--acento);
     animation: spin 1s linear infinite;
     margin-bottom: 1%;
-  }
+}
 
-  @keyframes spin{
-    0%{
-        transform:rotate(0deg);
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
-  }
+}
+
+.progress-bar {
+    position: relative;
+    width: 25%;
+    height: 15px;
+    background-color: var(--primarioL2, 0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin: 2%;
+    overflow: hidden;
+   
+}
 
 
-  .espera{
-color:var(--blanco);
-font-weight: bold;
-  }
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--acento);
+    transform: translateX(-100%);
+    animation: fill-bar 2s 1s ease-in-out forwards;
+    
+}
+
+@keyframes fill-bar {
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.espera {
+    color: var(--blanco);
+    font-weight: bold;
+}
