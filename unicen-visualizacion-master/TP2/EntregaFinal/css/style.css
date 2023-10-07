@@ -958,12 +958,7 @@ width: 70%;
     text-decoration:none;
 }
 .listaComentarios>div>p{
-<<<<<<< Updated upstream
-    padding: 2%;
-    width: 60%;
-=======
    
->>>>>>> Stashed changes
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
