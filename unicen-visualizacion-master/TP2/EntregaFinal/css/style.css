@@ -39,10 +39,12 @@ body {
 }
 
 h1 {
+    padding-left: 4%;
     color: var(--blanco);
     font-size: 200%;
     font-weight: 800%;
     letter-spacing: 5%;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -185,10 +187,13 @@ h3 {
 
 .btn-google {
     background: #DB4A39;
+    border-color: #DB4A39;
+    
 }
 
 .btn-facebook {
     background: #3B5998;
+    border-color: #3B5998;
 }
 
 .container {
@@ -922,6 +927,7 @@ img.btn-PlayVideo {
     margin: 5%;
     width: 60%;
     height: 800%;
+    resize: none;
 
 }
 
@@ -930,15 +936,17 @@ img.btn-PlayVideo {
     margin: 3%;
     background-color: var(--blanco);
     color: var(--negro);
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--blanco);
 }
 
 .listaComentarios>div>h3 {
     width: 40%;
+    padding: 2%;
     text-transform: capitalize;
     margin-bottom: 0%;
 }
-
-.listaComentarios>div>p {
+.listaComentarios>div>p{
     width: 60%;
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
@@ -961,12 +969,17 @@ img.btn-PlayVideo {
 
 .ranking {
     width: 30%;
+    
 }
-
-.ranking>div {
+.ranking>div{
     width: 100%;
     background-color: var(--blanco);
     margin: 3%;
+    padding: 5%;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--blanco);
+
 }

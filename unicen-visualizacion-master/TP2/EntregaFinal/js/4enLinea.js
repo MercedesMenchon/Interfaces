@@ -14,29 +14,41 @@ function addVoto(){
 
 
 let comentariosViejos=[{
-  "usuario":"Mauro",
-  "comentario": "que buen juego!"
+  "usuario":"Coquito.LOL",
+  "comentario": "cansado de ganar... Quiero un rival de verdad!"
 },
 {
-  "usuario":"Mauro",
-  "comentario": "que buen juego!"
+  "usuario":"Jazmin003",
+  "comentario": "Me encanto el juego! Pude jugar con mi hija y me ganooo! La próxima gano yo!el sapo que se coma a la moscaaa!!!"
 },
 {
-  "usuario":"Mauro",
-  "comentario": "que buen juego! gsdfvcbnhmj,.l,hgfadfsgdnfegvrswbrbfefnDFTEND"
+  "usuario":"RayoTormentoso",
+  "comentario": "Odioo este juegooo!!! Siempre pierdooo :("
 },
 {
-  "usuario":"Mauro",
-  "comentario": "que buen juego!"
+  "usuario":"PioPajarito",
+  "comentario": "No paro de ganar! Me encanta ser el sapo que se come a la mosca! ¿Alguien con ganas de jugar y perdeer?"
 },
 {
-  "usuario":"Mauro",
-  "comentario": "que buen juego!WGEBfhdgnfbyjyjykuiiluytrgefsadfghjkl.,mnbvcxz"
+  "usuario":"elToro",
+  "comentario": "Que gran juego! Me encanta jugarlo con mis nietos y compartir tiempo!"
+},
+{
+  "usuario":"MonicaMama",
+  "comentario": "Que divertiiido! Cuando era chica yo tenia el San Remo de este juego!°, que bueno que ahora puedo jugar con esta version porque perdí todas las fichas!"
+},
+{
+  "usuario":"JimenaTeGana",
+  "comentario": "Le hice honor a mi nombre, KIERO ESTAR EN EL POOODIOOO! "
+},
+{
+  "usuario":"SoyYo",
+  "comentario": "Perdí varias veces, pero ya entendí como ganaaar!! Que facíl se me hace ahoraaa, QUIERO EL 5 EN"
 },
 ];
 function showComentarios(){
   let lista = "";
-  for(let i=0; i<comentariosViejos.length;i++) {
+  for(let i=comentariosViejos.length-1; i>=0;i--) {
 lista += "<div> <h3>" + comentariosViejos[i].usuario + "</h3> <p>" + comentariosViejos[i].comentario + "</p> </div>"
   }
   
@@ -51,8 +63,9 @@ showComentarios();
 document.querySelector("#btn-comentar").addEventListener("click",addComentario);
 
 function addComentario(){
-  if(!document.querySelector("#comentario").empty){
+ 
   let comentario = document.querySelector("#comentario").value;
+  if(comentario.length > 2 && comentario.length<201){
   let nuevoComentario={
     "usuario":"Laura",
     "comentario":comentario
