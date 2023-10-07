@@ -23,7 +23,7 @@ let comentariosViejos=[{
 },
 {
   "usuario":"Mauro",
-  "comentario": "que buen juego!"
+  "comentario": "que buen juego! gsdfvcbnhmj,.l,hgfadfsgdnfegvrswbrbfefnDFTEND"
 },
 {
   "usuario":"Mauro",
@@ -31,13 +31,13 @@ let comentariosViejos=[{
 },
 {
   "usuario":"Mauro",
-  "comentario": "que buen juego!"
+  "comentario": "que buen juego!WGEBfhdgnfbyjyjykuiiluytrgefsadfghjkl.,mnbvcxz"
 },
 ];
 function showComentarios(){
   let lista = "";
   for(let i=0; i<comentariosViejos.length;i++) {
-lista += "<h3>" + comentariosViejos[i].usuario + "</h3> <p>" + comentariosViejos[i].comentario + "</p>"
+lista += "<div> <h3>" + comentariosViejos[i].usuario + "</h3> <p>" + comentariosViejos[i].comentario + "</p> </div>"
   }
   
 document.querySelector(".listaComentarios").innerHTML = lista;
