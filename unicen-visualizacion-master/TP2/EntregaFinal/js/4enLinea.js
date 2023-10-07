@@ -1,8 +1,19 @@
 "use strict";
 
 /*SONIDO*/
+let off =document.querySelectorAll(".off");
+for(let i=0;i<off.length;i++){
+  off[i].classList.add("hidden");
+}
 
-
+let musica = document.querySelectorAll(".musica");
+for(let i=0; i<musica.length;i++){
+  musica[i].addEventListener("click",interruptor);
+}
+let sonido = document.querySelectorAll(".musica");
+for(let i=0; i<sonido.length;i++){
+  sonido[i].addEventListener("click",interruptor);
+}
 
 
 /* VOTOS DE LIKE */
