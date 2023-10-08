@@ -100,18 +100,19 @@
             <div class="formIniciarSesion ">
                 <form action="">
                     <div class="column">
-                        <label >Correo electrónico: * </label> <input type="text" name="correoElectronico" required>
+                        <label >Correo electrónico: * </label> <input type="text" id="correoElectronico1" required>
                     </div>
+                    <p class="avisoDeCorreo"></p>
                     <div class="column">
-                        <label >Contraseña: * </label> <input type="password" name="Contrasenia" required>
+                        <label >Contraseña: * </label> <input type="password" id="contrasenia" required>
                     </div>
+                    <p class="avisoDeContrasenia"></p>
                     <div>
                         <a class="btn-terciario">¿Olvidaste tu contraseña?</a>
                     </div>
 
-
                     <div>
-                        <a class="btn-primario loading">
+                        <a class="btn-primario" id="IniciarSesion">
                             <p class="textoBotones">Iniciar Sesión</p>
                         </a>
                     </div>
@@ -141,32 +142,46 @@
             <div class="formRegistrarme">
                 <form>
                     <div>
-                        <label class="column">Nombre y apellido: *</label> <input type="text" name="nombreApellido" required>
+                        <label class="column">Nombre y apellido: *</label> 
+                        <input type="text" id="nombreApellido" name="nombreApellido" required>
                     </div>
+                    <p class="avisoNombre"></p>
                     <div>
-                        <label class="column">Nickname: </label> <input type="text" name="nickname" required>
+                        <label class="column">Nickname: </label> 
+                        <input type="text"id="nickName" name="nickname" required>
+                           </div>
+                           <p class="avisoNickName"></p>
+                    <div>
+                        <label class="column">Edad: *</label> 
+                        <input class= "inputEdad" id="inputEdad" type="number" name="edad" required>
                     </div>
+                    <p class="avisoEdad"></p>
                     <div>
-                        <label class="column">Edad: *</label> <input class= "inputEdad" type="number" name="edad" required>
-                    </div>
+                        <label class="column">Correo electrónico: *</label>
+                         <input type="text" id="correoElectronico" name="correoElectronico" required>
+                        </div>
+                        <p class="avisoCorreoElectronico"></p>
                     <div>
-                        <label class="column">Correo electrónico: *</label> <input type="text" name="correoElectronico" required>
-                    </div>
-                    <div>
-                        <label class="column">Contraseña: *</label> <input type="password" name="Contrasenia" required>
+                        <label class="column">Contraseña: *</label>
+                         <input type="password" id="password" name="Contrasenia" required>
                     </div>
                     <p class="textoChico"> Crea una contraseña segura con una combinación de letras, números y símbolos
                     </p>
                     <div>
-                        <label class="column">Repetir contraseña: *</label> <input type="password" name="Contrasenia" required>
+                        <label class="column">Repetir contraseña: *</label>
+                         <input type="password" id="password2"name="Contrasenia" required>
                     </div>
+                    <a class="btn-terciario" id="verificarContraseña">validar contraseña</a>
+                    <div class="avisodecontraseña"></div>
 
                     <div class="recaptcha">
-                        <input type="radio" id="captcha">
+                        <input type="checkbox" id="captcha" required>
                         <label><p>NO SOY UN ROBOT</p></label>
                         <img src="Images/iconos/RecaptchaLogo.svg.png" alt="Recaptcha">
                     </div>
-                    <a class="btn-primario loading">Registrarme</a>
+                    <div class="avisodeCaptcha"></div>
+                    
+                    <a class="btn-primario" id="registrarme">registrarme</a>
                 </form>
             </div>
             <!--aca va spinner de espera de carga-->
