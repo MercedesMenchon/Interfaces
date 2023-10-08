@@ -108,7 +108,7 @@ h3 {
     color: var(--blanco);
     padding: 2% 5%;
     margin: 2%;
-
+    text-transform: uppercase;
 
 }
 
@@ -719,12 +719,12 @@ footer {
     height: 25%;
     flex-shrink: 0;
     border-radius: 8px;
-       margin:30%;
+    margin: 30%;
     margin-top: 55%;
-   
+
 }
 
-.card .play{
+.card .play {
     background: var(--gratis);
 }
 
@@ -736,7 +736,7 @@ footer {
 .card .likeShow,
 .card .likeShowFijo {
     display: flex;
- align-items: flex-end;
+    align-items: flex-end;
     position: absolute;
     margin-left: 74%;
     width: 20%;
@@ -763,22 +763,33 @@ footer {
 }
 
 .vertical {
+<<<<<<< Updated upstream
    padding: 2%;
    width: 80%;
    position:relative;
    height:80%;
+=======
+    padding: 2%;
+    width: 90%;
+    position: relative;
+    height: 75%;
+>>>>>>> Stashed changes
     display: flex;
     flex-flow: column;
-    align-items:flex-start;
+    align-items: flex-start;
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
 
 }
 
-.vertical .card{
+.vertical .card {
     width: 92%;
+<<<<<<< Updated upstream
     height:32%;
+=======
+    height: 38%;
+>>>>>>> Stashed changes
     margin: 2%;
 }
 
@@ -1068,24 +1079,25 @@ img.btn-PlayVideo {
     font-weight: bold;
 }
 
-.espera.show{
-display:contents;
+.espera.show {
+    display: contents;
 }
+
 /*otra forma */
 
-.progress{
-    background-color: var(--primarioL2, 0 ,0 0, 0.1);
+.progress {
+    background-color: var(--primarioL2, 0, 0 0, 0.1);
     height: 30px;
     border-radius: 10px;
     width: 25%;
     margin: 2%;
 }
 
-.progress-bar{
- width: 0%;
-    background-color:var(--acento);
+.progress-bar {
+    width: 0%;
+    background-color: var(--acento);
     height: 100%;
-   border-radius: 10px;
+    border-radius: 10px;
 }
 
 

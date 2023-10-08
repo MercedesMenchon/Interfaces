@@ -42,3 +42,5 @@ function inicioLoading() {
     function irAInicio() {
         location.href = 'index.html';
     }
+
+ 
