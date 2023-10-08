@@ -21,8 +21,10 @@ function MostrarFormRegistrarme() {
     document.querySelector("#btn-loginRegistrarme").classList.add("click");
 }
 
-document.querySelector(".loading").addEventListener("click", inicioLoading);
-
+let loading = document.querySelectorAll(".loading");
+for(let i=0; i< loading.length;i++){
+ loading[i].addEventListener("click", inicioLoading);
+}
 function inicioLoading() {
     document.querySelector(".espera").classList.toggle("show");
     var barra = document.querySelector(".progress-bar");
