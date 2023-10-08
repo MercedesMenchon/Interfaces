@@ -763,17 +763,10 @@ footer {
 }
 
 .vertical {
-<<<<<<< Updated upstream
    padding: 2%;
    width: 80%;
    position:relative;
    height:80%;
-=======
-    padding: 2%;
-    width: 90%;
-    position: relative;
-    height: 75%;
->>>>>>> Stashed changes
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -785,11 +778,7 @@ footer {
 
 .vertical .card {
     width: 92%;
-<<<<<<< Updated upstream
     height:32%;
-=======
-    height: 38%;
->>>>>>> Stashed changes
     margin: 2%;
 }
 
