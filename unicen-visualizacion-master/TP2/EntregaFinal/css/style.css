@@ -203,7 +203,8 @@ h3 {
         "header header"
         "main main "
         "foot foot";
-    grid-template-columns: 1fr 20fr;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 0.3fr 0.1fr 0.4fr 20fr 1.5fr;
 
 }
 
@@ -385,18 +386,14 @@ li.menu:hover {
 }
 
 /*input de busqueda de navegacion*/
-.imgPlaceholder{
-    height:80%;
-    width: 30%;
-    padding: 4%;
-    padding-top: 8%;
-    
-}
+
 .imgPlaceholder>img{
-    padding: 5%;
-    width: 12%;
-    height: 23%;
-    transform: translateY(-100%);
+    position: absolute;
+    padding: 0%;
+    width: 3%;
+    height: 2%;
+    margin-left: -17%;
+    margin-top: 1%;
 }
 .input {
     display: flex;
@@ -404,30 +401,35 @@ li.menu:hover {
     background-color: var(--blanco);
     opacity: 0.8;
     height: 10%;
-    width: 70%;
+    width: 96%;
     padding: 4%;
     padding-left: 20%;
     border-radius: 8px;
     color: var(--primarioL1);
-    margin: 4%;
+    margin: 2%;
+    font-size: 15%;
 
 }
 
 .logo{
-    width: 30%;
-    height: 60%;
+    width: 25%;
+    height: 45%;
     padding: 0%;
     margin: 0%;
 }
-
+.imgPlaceholder{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
 /*boton  hamburguesa*/
 .btn_menu {
     background-color: var(--primario);
 }
 
 .btn_menu .menuHamburguesa {
-    width: 60%;
-    height: 50%;
+    width: 45%;
+    height: 10%;
 
 }
 
@@ -494,8 +496,8 @@ button {
     grid-area: breadCrums;
     color: var(--primarioL2);
     background: var(--secundario);
-    height: 30px;
-    padding-left: 30px;
+    height: 100%;
+    padding-left: 12%;
 
 
 }
@@ -763,17 +765,10 @@ footer {
 }
 
 .vertical {
-<<<<<<< Updated upstream
    padding: 2%;
    width: 80%;
    position:relative;
    height:80%;
-=======
-    padding: 2%;
-    width: 90%;
-    position: relative;
-    height: 75%;
->>>>>>> Stashed changes
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -785,11 +780,7 @@ footer {
 
 .vertical .card {
     width: 92%;
-<<<<<<< Updated upstream
     height:32%;
-=======
-    height: 38%;
->>>>>>> Stashed changes
     margin: 2%;
 }
 
