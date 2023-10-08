@@ -42,7 +42,7 @@ body {
 h1 {
     padding-left: 4%;
     color: var(--blanco);
-    font-size: 80%;
+    font-size: 14px;
     letter-spacing: 5%;
     text-transform: uppercase;
 }
@@ -51,20 +51,20 @@ h2 {
     color: var(--blanco);
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 100%;
+    font-size: 12px;
     letter-spacing: 5%;
 }
 
 /* titulo terciario */
 h3 {
-    font-size: 80%;
+    font-size: 11px;
     font-weight: 400%;
     letter-spacing: 0.6px;
     text-decoration-line: underline;
 }
 
 .textoChico {
-    font-size: 60%;
+    font-size: 8px;
     font-weight: 400%;
     letter-spacing: 5%;
 }
@@ -72,7 +72,7 @@ h3 {
 .precio,
 .precioConDescuento,
 .textoGratis {
-    font-size: 90%;
+    font-size: 12px;
     font-weight: 100%;
     letter-spacing: 5%;
 }
@@ -88,7 +88,7 @@ h3 {
 .textoBotones {
     text-transform: uppercase;
     font-weight: 100%;
-    font-size: 80%;
+    font-size: 70%;
 }
 
 /*BOTONES*/
@@ -131,7 +131,7 @@ h3 {
     border-color: var(--acento);
     border-style: solid;
     stroke: var(--acento);
-    fill: var(--blanco, #F9FEFD);
+    fill: var(--blanco);
 }
 
 .btn-secundario.click {
@@ -203,7 +203,7 @@ h3 {
         "main main "
         "foot foot";
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 0.3fr 0.1fr 0.5fr 20fr 1.5fr;
+    grid-template-rows: 0.3fr 0.1fr 0.6fr 20fr 1.5fr;
 
 }
 
@@ -212,7 +212,7 @@ nav {
     grid-area: nav;
     background-color: var(--primario);
     width: 100%;
-    height:100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -234,8 +234,7 @@ nav {
 
 
 
-.login
- {
+.login {
     width: 25%;
     display: flex;
     align-items: center;
@@ -243,6 +242,7 @@ nav {
     color: var(--blanco);
     background-color: var(--primario);
 }
+
 .login>button {
     width: 20%;
     background-color: var(--primario);
@@ -250,14 +250,15 @@ nav {
 
 .login h2 {
     font-size: 80%;
-    padding-top:9%;
+    padding-top: 9%;
     padding-bottom: 6%;
 }
 
-.login>button>img{
+.login>button>img {
     padding: 3%;
     width: 94%;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -320,7 +321,7 @@ form>div>input {
 
 .desplegable {
     background: var(--primarioL1);
-    top:6%;
+    top: 6%;
     position: absolute;
     display: grid;
     grid-auto-rows: max-content;
@@ -349,6 +350,9 @@ ul.navegacion.show {
     padding: 4%;
     align-items: center;
     display: flex;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+   
 }
 
 .menu:hover {
@@ -357,14 +361,15 @@ ul.navegacion.show {
 }
 
 .menu>img {
-    padding-right: 4%;
-    height: 80%;
-    width: 10%;
+    width: 12%;
+    border-radius: 6px;
+    margin-right: 4%;
 }
 
 .navegacion li:hover>ul {
     display: flex;
     border-radius: 8px;
+    width: 70%;
 }
 
 ul.idioma {
@@ -375,6 +380,7 @@ ul.idioma {
 
 .navegacion li>ul {
     display: none;
+ 
 }
 
 li.menu:hover {
@@ -383,7 +389,7 @@ li.menu:hover {
 
 /*input de busqueda de navegacion*/
 
-.imgPlaceholder>img{
+.imgPlaceholder>img {
     position: absolute;
     padding: 0%;
     width: 2%;
@@ -393,6 +399,7 @@ li.menu:hover {
     padding-left: 10%;
     padding-right: 12%;
 }
+
 .input {
     display: flex;
     align-items: center;
@@ -409,25 +416,27 @@ li.menu:hover {
 
 }
 
-.logo{
-    width: 25%;
+.logo {
+    width: 20%;
     height: 45%;
     padding: 0%;
     margin: 0%;
 }
-.imgPlaceholder{
+
+.imgPlaceholder {
     width: 25%;
     display: flex;
     justify-content: center;
 }
+
 /*boton  hamburguesa*/
 .btn_menu {
     background-color: var(--primario);
 }
 
 .btn_menu .menuHamburguesa {
-    width: 45%;
-    height: 10%;
+    width: 40%;
+    height: 8%;
 
 }
 
@@ -439,22 +448,27 @@ li.menu:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    contain: content;
-    height:100%;
+    height: 100%;
     position: relative;
     overflow: hidden;
 
+padding-bottom:2% ;
+contain: content;
 }
 
 .header h1,
-.header h2,
-button {
+.header h2 {
     position: relative;
     z-index: 2;
+    padding-top: 1%;
     padding-bottom: 1%;
+    /*margin: auto;*/
 }
 
-
+.btn_ingresa{
+    z-index: 2;
+    position: relative;
+}
 .header img {
     position: absolute;
     opacity: 0.3;
@@ -468,23 +482,28 @@ button {
 
 /* boton explora*/
 .btn_ingresa {
-    width: 20%;
-    height: auto;
+   width:fit-content;
+    height: 30%;
     background: var(--acento);
     border-radius: 8px;
     color: var(--blanco);
     text-align: center;
-    font-size: 100%;
+    font-size: 16px;
     text-transform: capitalize;
+  padding-top: 1px;
+  padding-bottom:1px ;
+  padding-left: 1%;
+  padding-right:1% ;
+    contain: content;
+    
 
 
 
 }
 
 .btn_ingresa:hover {
-    width: 10%;
-    height: auto;
-    padding: 2px;
+  
+    font-size: 20px;
 }
 
 
@@ -503,7 +522,9 @@ button {
 
 .main {
     grid-area: main;
-    padding: 2%;
+    padding-top: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
     background: var(--primarioL1);
 
 }
@@ -546,7 +567,7 @@ footer {
     text-overflow: ellipsis;
 }
 
-.descripcionFooter p{
+.descripcionFooter p {
     font-size: 65%;
     text-align: justify;
 }
@@ -568,13 +589,16 @@ footer {
     width: 30%;
 
 }
-.footer div .likeRedes li img{
+
+.footer div .likeRedes li img {
     width: 60%;
-    height:60%;
+    height: 60%;
 }
-.footer div .likeRedes li p{
+
+.footer div .likeRedes li p {
     font-size: 40%;
 }
+
 .centro {
     display: flex;
     justify-content: space-around;
@@ -595,7 +619,7 @@ footer {
 .footer ul {
     display: flex;
     justify-content: space-around;
-  width: 100%;
+    width: 100%;
 
 }
 
@@ -617,14 +641,15 @@ footer {
     text-align: center;
     margin-left: 4%;
     width: 100%;
-  }
+}
 
-.logoFooter>img{
+.logoFooter>img {
     margin: 0%;
     width: 70%;
     height: 80%;
 }
-.footer ul li{
+
+.footer ul li {
     display: flex;
     flex-direction: column;
 }
@@ -652,7 +677,8 @@ footer {
 .footer ul li button img:hover {
     border: 5px solid var(--acento);
 }
-.footer ul li h3{
+
+.footer ul li h3 {
     font-size: 20%;
 }
 
@@ -754,15 +780,16 @@ footer {
     filter: grayscale(50%);
 }
 
-.prueba{
-    contain:content;
+.prueba {
+    contain: content;
     width: 95%;
     position: relative;
 
 }
+
 .carrousel {
     padding: 2%;
-    width:160%;
+    width: 160%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -774,10 +801,10 @@ footer {
 }
 
 .vertical {
-   padding: 2%;
-   width: 80%;
-   position:relative;
-   height:80%;
+    padding: 2%;
+    width: 80%;
+    position: relative;
+    height: 80%;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -789,7 +816,7 @@ footer {
 
 .vertical .card {
     width: 92%;
-    height:32%;
+    height: 32%;
     margin: 2%;
 }
 
@@ -1207,18 +1234,18 @@ img.btn-PlayVideo {
 }
 
 /* DESKTOP*/
-@media only screen and (min-width:600px){
-  .desplegable{
-    top:11%;
-  }
-  .logo{
-    width: 15%;
-  }
+@media only screen and (min-width:600px) {
+    .desplegable {
+        top: 11%;
+    }
 
-  .footer ul li {
-    display: flex;
-    flex-direction: row;
+    .logo {
+        width: 15%;
+    }
+
+    .footer ul li {
+        display: flex;
+        flex-direction: row;
+    }
+
 }
-
-}
-
