@@ -235,12 +235,17 @@ nav {
 
 
 
-.login,
-.login>button  {
-    width: 33%;
+.login
+ {
+    width: 25%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     color: var(--blanco);
+    background-color: var(--primario);
+}
+.login>button {
+    width: 33%;
     background-color: var(--primario);
 }
 
@@ -251,8 +256,8 @@ nav {
 }
 
 .login>button>img{
-    padding: 8%;
-    height: 100%;
+    width: 95%;
+    padding: 3%;
 }
 form {
     display: flex;
@@ -394,6 +399,8 @@ li.menu:hover {
     height: 2%;
     margin-left: -17%;
     margin-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .input {
     display: flex;
