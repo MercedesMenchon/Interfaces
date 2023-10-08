@@ -43,7 +43,7 @@ h1 {
     padding-left: 4%;
     color: var(--blanco);
     font-size: 80%;
-    font-weight: 80%;
+
     letter-spacing: 5%;
     text-transform: uppercase;
 }
@@ -204,7 +204,7 @@ h3 {
         "main main "
         "foot foot";
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 0.3fr 0.1fr 0.4fr 20fr 1.5fr;
+    grid-template-rows: 0.3fr 0.1fr 0.5fr 20fr 1.5fr;
 
 }
 
@@ -245,19 +245,19 @@ nav {
     background-color: var(--primario);
 }
 .login>button {
-    width: 33%;
+    width: 20%;
     background-color: var(--primario);
 }
 
 .login h2 {
-    font-size: 50%;
+    font-size: 80%;
     padding-top:9%;
     padding-bottom: 6%;
 }
 
 .login>button>img{
-    width: 95%;
     padding: 3%;
+    width: 100%;
 }
 form {
     display: flex;
@@ -320,7 +320,7 @@ form>div>input {
 .desplegable {
 
     background: var(--primarioL1);
-    top:15%;
+    top:9%;
     position: absolute;
     display: grid;
     grid-auto-rows: max-content;
@@ -377,15 +377,6 @@ ul.idioma {
     display: none;
 }
 
-img.idioma {
-    margin-right:16%;
-    padding: 0;
-    width: 16%;
-    height: 16%;
-    border-radius: 30px 30px;
-}
-
-
 li.menu:hover {
     background: var(--primarioL2);
 }
@@ -396,11 +387,11 @@ li.menu:hover {
     position: absolute;
     padding: 0%;
     width: 3%;
-    height: 2%;
+    height: 3%;
     margin-left: -17%;
     margin-top: 1%;
     padding-left: 10%;
-    padding-right: 10%;
+    padding-right: 12%;
 }
 .input {
     display: flex;
@@ -414,7 +405,7 @@ li.menu:hover {
     border-radius: 8px;
     color: var(--primarioL1);
     margin: 2%;
-    font-size: 15%;
+    font-size: 55%;
 
 }
 
@@ -449,7 +440,7 @@ li.menu:hover {
     flex-direction: column;
     align-items: center;
     contain: content;
-    height:80%;
+    height:100%;
     position: relative;
     overflow: hidden;
 
@@ -468,6 +459,7 @@ button {
     position: absolute;
     opacity: 0.3;
     width: 100%;
+    height: 100%;
 }
 
 .header .publicidad {
@@ -476,8 +468,7 @@ button {
 
 /* boton explora*/
 .btn_ingresa {
-    margin: 10px 0px;
-    width: 8%;
+    width: 20%;
     height: auto;
     background: var(--acento);
     border-radius: 8px;
@@ -517,11 +508,6 @@ button {
 
 }
 
-.desplegable {
-    grid-area: menu;
-    background: var(--primarioL1);
-
-}
 
 .navegacion.log>.menu.destacado {
     border-bottom: 2px solid var(--secundario);
@@ -757,10 +743,15 @@ footer {
     filter: grayscale(50%);
 }
 
+.prueba{
+    contain:content;
+    width: 95%;
+    position: relative;
 
+}
 .carrousel {
     padding: 2%;
-    width: 96%;
+    width:160%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -1136,6 +1127,8 @@ img.btn-PlayVideo {
 
 /* DESKTOP*/
 @media only screen and (min-width:600px){
-  
+  .desplegable{
+    top:10%;
+  }
 }
 
