@@ -111,6 +111,77 @@ h3 {
 
 }
 
+.animacionBTN{
+    position:relative;
+    background-color: var(--acento);
+    color: var(--blanco);
+    padding: 10px 5px;
+    
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    outline: none;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.animacionBTN:hover{
+    color:var(--primarioL2);
+}
+.animacionBTN span{
+    position: absolute;
+    background:var(--blanco);
+    transition: .5s;
+
+}
+
+.animacionBTN span:nth-child(1){
+    width: 100%;
+    height: 2px;
+    top:0;
+    left: -100%;
+}
+.animacionBTN span:nth-child(2){
+    width: 100%;
+    height:  2px;
+    bottom:0;
+    right: -100%;
+}
+.animacionBTN span:nth-child(3){
+    width:  2px;
+    height: 100%;
+    bottom:-100%;
+    left:0;
+}
+.animacionBTN span:nth-child(4){
+    width:  2px;
+    height: 100%;
+    top:-100%;
+    right: 0;
+}
+
+
+.animacionBTN:hover span:nth-child(1){
+   left:0;
+}
+.animacionBTN:hover span:nth-child(2){
+    right: 0;
+}
+.animacionBTN:hover span:nth-child(3){
+   bottom: 0;
+}
+.animacionBTN:hover span:nth-child(4){
+   top:0;
+}
+
+
+
+
+
+
+
+
 .btn-primario.click {
     background-color: var(--primarioL1);
 
@@ -506,13 +577,13 @@ contain: content;
    color:var(--secundario);
    border-radius: 8px;
 }
-.btn_ingresa::before{
+.btn_ingresa:hover::before{
     
     content: "";
     position: absolute;
     top:0;
     left:0;
-    z-index: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     background:linear-gradient(45deg,
@@ -520,7 +591,7 @@ contain: content;
         var(--blanco),  var(--acento), var(--secundario)
         
     );
-    background-size: 500%;
+    background-size: 800%;
     border-radius: 8px;
     filter:blur(40px);
     animation: glowing 20s linear infinite;
@@ -1190,8 +1261,9 @@ img.btn-PlayVideo {
 }
 .formRegistrarme>form>p,
 .formIniciarSesion>form>p{
-
-    padding-top: 1%;
+    margin: 0%;
+    font-size:7px;
+    padding-bottom: 2%;
     text-align: justify;
 
 }
@@ -1337,7 +1409,7 @@ font-size: 20px;
     transition: .5s;
     padding-left: 4%;
 }
-.btn_menu:active { 
+.btn_menu:hover { 
     transform: scale(.7);
 }
 

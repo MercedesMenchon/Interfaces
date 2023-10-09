@@ -2,12 +2,20 @@
 
 document.querySelector(".formRegistrarme").classList.add("hidden");
 document.querySelector("#btn-loginIniciarSesion").classList.add("click");
-document.querySelector('#registrarme').addEventListener("click", verificacionFormularioRegistrarme);
-document.querySelector("#IniciarSesion").addEventListener("click",verificacionFormularioIniciarSesion)
-
 /*LOGIN*/
 document.querySelector('#btn-loginIniciarSesion').addEventListener("click", MostrarFormIniciarSesion);
 document.querySelector('#btn-loginRegistrarme').addEventListener("click", MostrarFormRegistrarme);
+
+document.querySelector('#registrarme').addEventListener("click", verificacionFormularioRegistrarme);
+document.querySelector('#IniciarSesion').addEventListener("click",verificacionFormularioIniciarSesion);
+document.querySelector("#verificarContraseña").addEventListener("click",verificarContraseña);
+
+let ingresarAutomatico = document.querySelectorAll(".loading");
+for (let i=0; i<ingresarAutomatico.length;i++){
+    ingresarAutomatico[i].addEventListener("click",inicioLoading);
+}
+
+
 
 function MostrarFormIniciarSesion() {
 
@@ -44,11 +52,7 @@ function inicioLoading() {
         location.href = 'index.html';
     }
 
-let ingresarAutomatico = document.querySelectorAll(".loading");
-for (let i=0; i<ingresarAutomatico.length;i++){
-    ingresarAutomatico[i].addEventListener("click",inicioLoading);
-}
-document.querySelector("#verificarContraseña").addEventListener("click",verificarContraseña);
+
     
 function verificarContraseña(){
         let password = document.querySelector("#password").value;
@@ -58,15 +62,15 @@ function verificarContraseña(){
 document.querySelector(".avisodecontraseña").innerHTML=respuesta;
         if(password!='' && password2!=''){  
                 if(password==password2){
-            respuesta= "<p>Las contraseñas fueron ingresadas correctamente</p>";
+            respuesta= "Las contraseñas fueron ingresadas correctamente";
                validacion=true; 
         }
-                else{respuesta=" <p>Las contraseñas no coinciden</p>";
+                else{respuesta=" Las contraseñas no coinciden";
                 validacion=false; 
             }
         }
                 else{
-            respuesta="<p>Se deben completar los campos</p>"
+            respuesta="Se deben completar los campos"
                 validacion=false;
         }
         document.querySelector(".avisodecontraseña").innerHTML=respuesta;
@@ -76,7 +80,6 @@ return validacion;
 function verificacionFormularioRegistrarme(){
     
     document.querySelector(".avisoNombre").innerHTML="";
-    document.querySelector(".avisoNickName").innerHTML="";
     document.querySelector(".avisoEdad").innerHTML="";
     document.querySelector(".avisoCorreoElectronico").innerHTML="";
     document.querySelector(".avisodeCaptcha").innerHTML="";
@@ -88,9 +91,7 @@ function verificacionFormularioRegistrarme(){
 if(nombreApellido==''){
     document.querySelector(".avisoNombre").innerHTML="Se debe completar el campo";
 }
-if(nickName==''){
-    document.querySelector(".avisoNickName").innerHTML="Se debe completar el campo";
-}
+
 if(edad==''){
     document.querySelector(".avisoEdad").innerHTML="Se debe completar el campo";
 }
@@ -98,13 +99,12 @@ if(correoElectronico ==''){
     document.querySelector(".avisoCorreoElectronico").innerHTML="Se debe completar el campo";
 }
 if(verificarContraseña()==false){
-    document.querySelector(".avisodecontraseña").innerHTML="<p>Se deben validar las contraseñas</p>"
+    document.querySelector(".avisodecontraseña").innerHTML="<p>Se debe validar las contraseñas</p>"
 }
 if(captcha==false){
     document.querySelector(".avisodeCaptcha").innerHTML="<p>Se deben validar el captcha</p>"
 }
 if(nombreApellido!='' &&   nickName!='' &&  edad!='' && correoElectronico!='' &&  verificarContraseña()){
-    console.log("Entre");
     inicioLoading();
 }
 }
@@ -118,11 +118,14 @@ function verificacionFormularioIniciarSesion(){
     avisoDeContrasenia.innerHTML="";
 if(correo == ''){
     avisoDeCorreo.innerHTML="Se debe completar el campo";
+    console.log("entre1");
 }
 if(contrasenia == ''){
     avisoDeContrasenia.innerHTML="Se debe completar el campo";
+    console.log("entre2");
 }
-if(correo !='' && contrasenia!= ''){
+if(correo!='' && contrasenia!=''){
+    console.log("entre");
     inicioLoading();
 }
 
