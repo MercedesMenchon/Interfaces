@@ -443,14 +443,17 @@ position: relative;
 /*boton  hamburguesa*/
 .btn_menu {
     background-color: var(--primario);
+    transition: .5s;
 }
 
 .btn_menu .menuHamburguesa {
     width: 40%;
     height: 8%;
-
+    transition: .5s;
 }
-
+.btn_menu:active{
+    transform:scale(0.5);
+}
 /*header*/
 
 .header {
