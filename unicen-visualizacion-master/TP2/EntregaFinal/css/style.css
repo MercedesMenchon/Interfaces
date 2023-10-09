@@ -837,7 +837,7 @@ footer {
     padding: 2%;
     width: 80%;
     position: relative;
-    height: 80%;
+    height: 53%;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -849,7 +849,7 @@ footer {
 
 .vertical .card {
     width: 92%;
-    height: 32%;
+    height: 35%;
     margin: 2%;
 }
 
@@ -886,10 +886,12 @@ div.vertical::-webkit-scrollbar,
 
 
 .column1>h2 {
-    margin-top: 15%;
+    margin-top: 20%;
 }
 
-
+.column1.der>h2{
+    margin-top: 0%;
+}
 .compartir>ul {
     display: flex;
     flex-direction: column;
@@ -951,6 +953,9 @@ img.btn-PlayVideo {
     flex-direction: row;
 }
 
+.descargas{
+    margin-bottom:2%;
+}
 .descargas>img {
     width: 35%;
     margin: 1%;
@@ -993,12 +998,14 @@ img.btn-PlayVideo {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 3%;
 }
 
 .reglas>.body {
     color: var(--blanco);
     text-align: justify;
     padding: 1%;
+    margin-bottom: 2%;
 }
 
 .reglas>h2 {
