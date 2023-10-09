@@ -648,6 +648,7 @@ footer {
     padding-left: 4%;
     padding-right: 4%;
     contain: content;
+    bottom: 0;
 }
 
 .footer>div {
@@ -660,17 +661,19 @@ footer {
     -webkit-line-clamp: 4;
     overflow: hidden;
     text-align: justify;
-    margin: 0;
-    margin: 2%;
+    margin-top: 2%;
     padding-left: 4%;
     padding-right: 4%;
     white-space: unset;
     text-overflow: ellipsis;
+   
 }
+
 
 .descripcionFooter p {
     font-size: 65%;
     text-align: justify;
+
 }
 
 
@@ -678,8 +681,7 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    margin-top: 1%;
-    height: 30%;
+    height: 20%;
 }
 
 .footer div .likeRedes li {
@@ -706,8 +708,9 @@ footer {
     flex-direction: row;
     margin-right: 1%;
     width: 100%;
-    height: 22%;
+    height: 24%;
     padding: 2%;
+    padding-bottom: 4%;
 }
 
 
@@ -730,15 +733,9 @@ footer {
 .footer ul li {
     display: flex;
     align-items: center;
-
-
 }
 
-.footer ul {
-    display: flex;
-    align-items: center;
 
-}
 
 .footer .logoFooter {
     display: block;
@@ -747,10 +744,10 @@ footer {
     width: 100%;
 }
 
-.logoFooter>img {
+.logoFooter>a>img {
     margin: 0%;
-    width: 70%;
-    height: 75%;
+    width: 90%;
+  height: 70%;
 }
 
 .footer ul li {
@@ -773,8 +770,8 @@ footer {
     border-radius: 8px;
     padding: 1%;
     box-shadow: 0px 4px 4px 0px var(--negro);
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
 }
 
 
@@ -867,8 +864,15 @@ footer {
 
 .hoverCard {
     display: none;
-
 }
+
+#btn-addLike {
+    height: 12%;
+    }
+
+  #btn-dropCarrito, #btn-addCarrito {
+        height: 20%;
+        }
 
 .card .likeShow,
 .card .likeShowFijo {
@@ -904,7 +908,7 @@ footer {
     padding: 2%;
     width: 80%;
     position: relative;
-    height: 80%;
+    height: 53%;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -916,7 +920,7 @@ footer {
 
 .vertical .card {
     width: 92%;
-    height: 32%;
+    height: 35%;
     margin: 2%;
 }
 
@@ -953,10 +957,12 @@ div.vertical::-webkit-scrollbar,
 
 
 .column1>h2 {
-    margin-top: 15%;
+    margin-top: 20%;
 }
 
-
+.column1.der>h2{
+    margin-top: 0%;
+}
 .compartir>ul {
     display: flex;
     flex-direction: column;
@@ -1018,6 +1024,9 @@ img.btn-PlayVideo {
     flex-direction: row;
 }
 
+.descargas{
+    margin-bottom:2%;
+}
 .descargas>img {
     width: 35%;
     margin: 1%;
@@ -1060,12 +1069,14 @@ img.btn-PlayVideo {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 3%;
 }
 
 .reglas>.body {
     color: var(--blanco);
     text-align: justify;
     padding: 1%;
+    margin-bottom: 2%;
 }
 
 .reglas>h2 {
@@ -1445,14 +1456,18 @@ footer {
     height: 400px;
     }
 
+    .descripcionFooter{
+        height: 20%;
+    }  
 .descripcionFooter p {
-    font-size: 80%;
+    font-size: 90%;
     line-height: 130%;
 }
 
 .centro{
     padding-top: 0%;
     padding-bottom: 2%;
+    height: 35%;
 }
 
 .footer div .likeRedes li p {
@@ -1466,9 +1481,9 @@ footer {
     width: 100%;
 }
 
-.logoFooter>img {
+.logoFooter>a>img {
     height: 100%;
-    width: 50%;
+    width: 70%;
 }
 
 
@@ -1477,8 +1492,8 @@ footer {
 
 }
 .footer ul li button img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 
