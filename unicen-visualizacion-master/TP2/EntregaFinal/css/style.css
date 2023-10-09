@@ -895,18 +895,10 @@ footer {
     height: 12%;
 }
 
-<<<<<<< Updated upstream
   #btn-dropCarrito, #btn-addCarrito, #btn-play {
         height: 20%;
         
         }
-=======
-#btn-dropCarrito,
-#btn-addCarrito,
-#btn-play {
-    height: 20%;
-}
->>>>>>> Stashed changes
 
 .card .likeShow,
 .card .likeShowFijo {
@@ -1309,13 +1301,10 @@ img.btn-PlayVideo {
     padding-left: 6%;
 
 }
-<<<<<<< Updated upstream
 .divAnimacion{
     justify-content: center;
 }
 
-=======
->>>>>>> Stashed changes
 
 .formRegistrarme>form>p,
 .formIniciarSesion>form>p {
@@ -1633,6 +1622,5 @@ img.btn-PlayVideo {
         transform: rotateY(360deg);
       
     }
-
 
 }
