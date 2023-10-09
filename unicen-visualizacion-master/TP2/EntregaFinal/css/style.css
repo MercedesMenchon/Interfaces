@@ -488,30 +488,46 @@ contain: content;
 }
 
 /* boton explora*/
-.btn_ingresa {
-   width:fit-content;
-    background: var(--acento);
-    border-radius: 8px;
-    color: var(--blanco);
-    text-align: center;
-    font-size: 16px;
-    text-transform: capitalize;
-  padding-top: 1px;
-  padding-bottom:1px ;
-  padding-left: 1%;
-  padding-right:1% ;
-    contain: content;
-    z-index: 2;
+.btn_ingresa{
+    background-color: var(--acento);
     position: relative;
-    }
-
-  
-
-.btn_ingresa:hover {
-    font-size: 20px;
+    border:none;
+    padding: 1%;
+    z-index:4;
+   color:var(--secundario);
+   border-radius: 8px;
+}
+.btn_ingresa::before{
+    
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(45deg,
+        var(--blanco),  var(--acento), var(--secundario),
+        var(--blanco),  var(--acento), var(--secundario)
+        
+    );
+    background-size: 500%;
+    border-radius: 8px;
+    filter:blur(40px);
+    animation: glowing 20s linear infinite;
 }
 
-
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
 
 
 .breadCrums {
@@ -1303,15 +1319,10 @@ font-size: 20px;
     height: 180px;
 }
 
-.btn_ingresa {
-         font-size: 20px;
-        margin-top: 2%;
-     }
+
    
  
- .btn_ingresa:hover {
-     font-size: 30px;
- }
+
  
 /*breadcrums*/
  .breadCrums {
