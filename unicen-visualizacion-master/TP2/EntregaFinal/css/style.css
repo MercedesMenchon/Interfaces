@@ -844,6 +844,8 @@ footer {
 
 }
 
+
+
 .card .play,
 .card .carritoCompraShow {
     padding: 0%;
@@ -856,6 +858,15 @@ footer {
     margin: 30%;
     margin-top: 55%;
    
+
+}
+
+.play:active,
+#btn-dropCarrito:active,
+#btn-addCarrito:active
+ {
+    transition: .2s;
+    transform:scale(2,2);
 
 }
 
@@ -937,7 +948,7 @@ div.vertical::-webkit-scrollbar,
 
 .juego {
     display: flex;
-    height: 50%;
+    height: 15%;
     width: 92%;
     margin: 4%;
     background-color: var(--secundario);
@@ -1271,6 +1282,11 @@ img.btn-PlayVideo {
     padding-left: 6%;
 
 }
+.divAnimacion{
+    justify-content: center;
+}
+
+
 .formRegistrarme>form>p,
 .formIniciarSesion>form>p{
     margin: 0%;
@@ -1346,6 +1362,47 @@ img.btn-PlayVideo {
     font-weight: bold;
 }
 
+*/
+
+.tablero{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tablero .btn-PlayVideo2{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+}
+
+.tablero .circle{
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    border: 5px solid var(--acento);
+    border-radius: 100%;
+    animation: borderMovement .8s .3s forwards;
+    opacity: 0;
+}
+
+@keyframes borderMovement{
+    0%{
+        opacity:0;
+        width: 15%;
+        height: 15%;
+    }
+    60%{
+        opacity: .8;
+    }
+    100%{
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*
 /* DESKTOP*/
 @media only screen and (min-width:600px) {
 

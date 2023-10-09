@@ -101,3 +101,21 @@ function addComentario(){
   showComentarios();
 }
 }
+
+
+// play juego
+let tablero = document.querySelector(".tablero");
+
+let btnPlay= tablero.querySelector("#btn-PlayVideo2");
+let circle = tablero.querySelector(".circle");
+circle.style.animationName = "none";
+tablero.addEventListener("click", () => {
+ circle.style.animationName = "none";
+
+ setTimeout(()=> {
+  circle.style.animationName = "borderMovement";
+ },0 )
+
+}
+
+)
