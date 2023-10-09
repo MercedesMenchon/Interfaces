@@ -855,6 +855,7 @@ footer {
     border-radius: 8px;
     margin: 30%;
     margin-top: 55%;
+   
 
 }
 
@@ -872,6 +873,7 @@ footer {
 
   #btn-dropCarrito, #btn-addCarrito, #btn-play {
         height: 20%;
+        
         }
 
 .card .likeShow,
