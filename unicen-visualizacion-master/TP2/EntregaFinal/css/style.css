@@ -799,7 +799,7 @@ footer {
     height: 12%;
     }
 
-  #btn-dropCarrito, #btn-addCarrito {
+  #btn-dropCarrito, #btn-addCarrito, #btn-play {
         height: 20%;
         }
 
@@ -870,7 +870,6 @@ div.vertical::-webkit-scrollbar,
     background-color: var(--secundario);
     font-size: 80%;
     text-align: center;
-
 }
 
 .juego>div {
