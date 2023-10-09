@@ -320,6 +320,7 @@ form>div>input {
 /* MENU DE NAVEGACIÓN */
 
 .desplegable {
+    width: 30%;
     background: var(--primarioL1);
     top: 6%;
     position: absolute;
@@ -335,7 +336,7 @@ ul.navegacion {
     padding: 4%;
     color: var(--blanco);
     text-transform: uppercase;
-    width: max-content;
+    width: 100%;
     background: var(--primario);
 
 }
@@ -374,7 +375,7 @@ ul.navegacion.show {
 
 ul.idioma {
     position: absolute;
-    margin-left: 81%;
+    margin-left: 85%;
     border: 3px solid var(--acento);
 }
 
@@ -1269,9 +1270,49 @@ img.btn-PlayVideo {
 
 /* DESKTOP*/
 @media only screen and (min-width:600px) {
-    .desplegable {
-        top: 11%;
+
+    h1{
+        font-size: 28px;
     }
+    h2,.precio,
+    .precioConDescuento,
+    .textoGratis{
+        font-size: 22px;
+    }
+
+    h3{
+        font-size: 16px;
+    }
+
+    
+.textoChico {
+    font-size: 14px;  
+}
+
+
+nav {
+    height: 102px;
+}
+
+.desplegable {
+       top: 14%;
+       width: 20%;
+ }
+
+
+ 
+/*input de busqueda de navegacion*/
+
+.imgPlaceholder>img {
+    width: 34px;
+    height: 34px;
+    left:20px;
+  
+}
+
+.input {
+font-size: 20px;
+}
 
     .logo {
         width: 15%;
