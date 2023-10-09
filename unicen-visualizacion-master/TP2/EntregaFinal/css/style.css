@@ -111,68 +111,75 @@ h3 {
 
 }
 
-.animacionBTN{
-    position:relative;
+.animacionBTN {
+    position: relative;
     background-color: var(--acento);
     color: var(--blanco);
     padding: 10px 5px;
-    
+
     text-transform: uppercase;
     align-items: center;
     justify-content: center;
-    border:none;
+    border: none;
     outline: none;
     transition: .5s;
     overflow: hidden;
 }
 
-.animacionBTN:hover{
-    color:var(--primarioL2);
+.animacionBTN:hover {
+    color: var(--primarioL2);
 }
-.animacionBTN span{
+
+.animacionBTN span {
     position: absolute;
-    background:var(--blanco);
+    background: var(--blanco);
     transition: .5s;
 
 }
 
-.animacionBTN span:nth-child(1){
+.animacionBTN span:nth-child(1) {
     width: 100%;
     height: 2px;
-    top:0;
+    top: 0;
     left: -100%;
 }
-.animacionBTN span:nth-child(2){
+
+.animacionBTN span:nth-child(2) {
     width: 100%;
-    height:  2px;
-    bottom:0;
+    height: 2px;
+    bottom: 0;
     right: -100%;
 }
-.animacionBTN span:nth-child(3){
-    width:  2px;
+
+.animacionBTN span:nth-child(3) {
+    width: 2px;
     height: 100%;
-    bottom:-100%;
-    left:0;
+    bottom: -100%;
+    left: 0;
 }
-.animacionBTN span:nth-child(4){
-    width:  2px;
+
+.animacionBTN span:nth-child(4) {
+    width: 2px;
     height: 100%;
-    top:-100%;
+    top: -100%;
     right: 0;
 }
 
 
-.animacionBTN:hover span:nth-child(1){
-   left:0;
+.animacionBTN:hover span:nth-child(1) {
+    left: 0;
 }
-.animacionBTN:hover span:nth-child(2){
+
+.animacionBTN:hover span:nth-child(2) {
     right: 0;
 }
-.animacionBTN:hover span:nth-child(3){
-   bottom: 0;
+
+.animacionBTN:hover span:nth-child(3) {
+    bottom: 0;
 }
-.animacionBTN:hover span:nth-child(4){
-   top:0;
+
+.animacionBTN:hover span:nth-child(4) {
+    top: 0;
 }
 
 
@@ -274,7 +281,7 @@ h3 {
         "main main "
         "foot foot";
     grid-template-columns: 1fr 3fr;
-   /* grid-template-rows: 0.3fr 0.1fr 0.61fr 4fr 1.5fr;*/
+    /* grid-template-rows: 0.3fr 0.1fr 0.61fr 4fr 1.5fr;*/
 
 }
 
@@ -321,9 +328,11 @@ nav {
     width: 30%;
     background-color: var(--primario);
 }
-.btn_log{
+
+.btn_log {
     margin-right: 4%;
 }
+
 .login h2 {
     padding-top: 9%;
     padding-bottom: 6%;
@@ -428,7 +437,7 @@ ul.navegacion.show {
     display: flex;
     text-transform: capitalize;
     letter-spacing: 1px;
-   
+
 }
 
 .menu:hover {
@@ -456,7 +465,7 @@ ul.idioma {
 
 .navegacion li>ul {
     display: none;
- 
+
 }
 
 .navegacion.log>.menu.destacado {
@@ -472,19 +481,21 @@ li.menu:hover {
     width: 40%;
     display: flex;
     justify-content: center;
-    margin-left:2px;
-    margin-right:4px;
-    position:relative;
+    margin-left: 2px;
+    margin-right: 4px;
+    position: relative;
 }
-:-webkit-any(.input,.imgPlaceholder>img ){
+
+:-webkit-any(.input, .imgPlaceholder>img) {
     z-index: 100;
 }
+
 .imgPlaceholder>img {
     position: absolute;
     width: 14px;
     height: 14px;
-    left:12px;
-   top:30%;
+    left: 12px;
+    top: 30%;
 }
 
 
@@ -501,7 +512,7 @@ li.menu:hover {
     color: var(--primarioL1);
     margin: 2%;
     font-size: 70%;
-position: relative;
+    position: relative;
 }
 
 .logo {
@@ -534,8 +545,8 @@ position: relative;
     height: 80px;
     position: relative;
     overflow: hidden;
-padding-bottom:2% ;
-contain: content;
+    padding-bottom: 2%;
+    contain: content;
 }
 
 
@@ -543,19 +554,20 @@ contain: content;
 .header h2 {
     position: relative;
     z-index: 2;
-    
+
 }
 
-.header h1{
+.header h1 {
     padding-top: 3%;
-   
+
 }
 
 
 .header h2 {
     padding-bottom: 2%;
-      
+
 }
+
 .header img {
     position: absolute;
     opacity: 0.3;
@@ -568,32 +580,31 @@ contain: content;
 }
 
 /* boton explora*/
-.btn_ingresa{
+.btn_ingresa {
     background-color: var(--acento);
     position: relative;
-    border:none;
+    border: none;
     padding: 1%;
-    z-index:4;
-   color:var(--secundario);
-   border-radius: 8px;
+    z-index: 4;
+    color: var(--secundario);
+    border-radius: 8px;
 }
-.btn_ingresa:hover::before{
-    
+
+.btn_ingresa:hover::before {
+
     content: "";
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     z-index: 1;
     width: 100%;
     height: 100%;
-    background:linear-gradient(45deg,
-        var(--blanco),  var(--acento), var(--secundario),
-        var(--blanco),  var(--acento), var(--secundario)
-        
-    );
+    background: linear-gradient(45deg,
+            var(--blanco), var(--acento), var(--secundario),
+            var(--blanco), var(--acento), var(--secundario));
     background-size: 800%;
     border-radius: 8px;
-    filter:blur(40px);
+    filter: blur(40px);
     animation: glowing 20s linear infinite;
 }
 
@@ -601,9 +612,11 @@ contain: content;
     0% {
         background-position: 0 0;
     }
-    50%{
+
+    50% {
         background-position: 400% 0;
     }
+
     100% {
         background-position: 0 0;
     }
@@ -628,7 +641,7 @@ contain: content;
     padding-left: 2%;
     padding-right: 2%;
     background: var(--primarioL1);
-height: auto;
+    height: auto;
 }
 
 
@@ -666,7 +679,7 @@ footer {
     padding-right: 4%;
     white-space: unset;
     text-overflow: ellipsis;
-   
+
 }
 
 
@@ -724,7 +737,7 @@ footer {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    align-items:end;
+    align-items: end;
 
 }
 
@@ -739,7 +752,7 @@ footer {
 
 .footer .logoFooter {
     display: block;
-    text-align:right;
+    text-align: right;
     margin-right: 8%;
     width: 100%;
 }
@@ -747,7 +760,7 @@ footer {
 .logoFooter>a>img {
     margin: 0%;
     width: 90%;
-  height: 70%;
+    height: 70%;
 }
 
 .footer ul li {
@@ -790,7 +803,7 @@ footer {
 
 /*tarjetas*/
 .card {
-    width: 30%; 
+    width: 30%;
     height: 8%;
     flex-shrink: 0;
     display: flex;
@@ -880,12 +893,20 @@ footer {
 
 #btn-addLike {
     height: 12%;
-    }
+}
 
+<<<<<<< Updated upstream
   #btn-dropCarrito, #btn-addCarrito, #btn-play {
         height: 20%;
         
         }
+=======
+#btn-dropCarrito,
+#btn-addCarrito,
+#btn-play {
+    height: 20%;
+}
+>>>>>>> Stashed changes
 
 .card .likeShow,
 .card .likeShowFijo {
@@ -904,7 +925,7 @@ footer {
 
 .carrousel {
     padding-left: 2%;
-    padding-top:2% ;
+    padding-top: 2%;
     padding-bottom: 2%;
     width: 100%;
     display: flex;
@@ -972,9 +993,10 @@ div.vertical::-webkit-scrollbar,
     margin-top: 20%;
 }
 
-.column1.der>h2{
+.column1.der>h2 {
     margin-top: 0%;
 }
+
 .compartir>ul {
     display: flex;
     flex-direction: column;
@@ -1036,9 +1058,10 @@ img.btn-PlayVideo {
     flex-direction: row;
 }
 
-.descargas{
-    margin-bottom:2%;
+.descargas {
+    margin-bottom: 2%;
 }
+
 .descargas>img {
     width: 35%;
     margin: 1%;
@@ -1252,7 +1275,7 @@ img.btn-PlayVideo {
 
 
 .formIniciarSesion>form>div,
-.formRegistrarme>form>div{
+.formRegistrarme>form>div {
     width: 100%;
 }
 
@@ -1263,49 +1286,57 @@ img.btn-PlayVideo {
     margin-left: 21%;
     width: 16%;
 }
-.formRegistrarme>form>div>.inputEdad{
+
+.formRegistrarme>form>div>.inputEdad {
     width: 8%;
 }
-.formIniciarSesion>form{
+
+.formIniciarSesion>form {
     display: flex;
     justify-content: center;
 }
-.formIniciarSesion>form>div{
+
+.formIniciarSesion>form>div {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .formRegistrarme>form>div>.column,
-.formIniciarSesion>form>.column{
+.formIniciarSesion>form>.column {
     display: flex;
     justify-content: flex-start;
     padding-left: 6%;
 
 }
+<<<<<<< Updated upstream
 .divAnimacion{
     justify-content: center;
 }
 
+=======
+>>>>>>> Stashed changes
 
 .formRegistrarme>form>p,
-.formIniciarSesion>form>p{
+.formIniciarSesion>form>p {
     margin: 0%;
-    font-size:7px;
+    font-size: 7px;
     padding-bottom: 2%;
     text-align: justify;
 
 }
 
-.formularios{
+.formularios {
     display: flex;
     justify-content: center;
 }
-.formularios h2{
+
+.formularios h2 {
     color: var(--secundario);
     margin: 2%;
 }
 
-.formRegistrarme>form>.recaptcha{
+.formRegistrarme>form>.recaptcha {
     width: 50%;
     height: 1%;
     display: flex;
@@ -1315,15 +1346,17 @@ img.btn-PlayVideo {
     border: 4%;
     border-color: var(--acento);
     border-style: solid;
-    color:var(--primario)
+    color: var(--primario)
 }
+
 .formRegistrarme>form>.recaptcha>input {
     position: relative;
     margin-left: 0%;
     width: 10%;
 }
-.recaptcha>img{
-     width: 10%;
+
+.recaptcha>img {
+    width: 10%;
     height: 10%;
 }
 
@@ -1406,160 +1439,200 @@ img.btn-PlayVideo {
 /* DESKTOP*/
 @media only screen and (min-width:600px) {
 
-    h1{
+    h1 {
         font-size: 28px;
     }
-    h2,.precio,
+
+    h2,
+    .precio,
     .precioConDescuento,
-    .textoGratis{
+    .textoGratis {
         font-size: 22px;
     }
 
-    h3{
+    h3 {
         font-size: 16px;
     }
 
-    
-.textoChico {
-    font-size: 14px;  
-}
 
-
-nav {
-    height: 102px;
-    padding-left: 4%;
-    padding-right: 4%;
-    width: 92%;
-}
-
-.desplegable {
-       top: 14%;
-       width: 20%;
- }
-
-
- 
-/*input de busqueda de navegacion*/
-
-.imgPlaceholder>img {
-    width: 34px;
-    height: 34px;
-    left:20px;
-  
-}
-
-.input {
-font-size: 20px;
-}
-
-.logo {
-    width: 32%;
-    height: 62%;
-    padding-left: 2%;
-}
-
-.login>button>img{
-  
-    width: 60%;
-
-}
-.login{
-    margin-right: 0%;
-}
-
-.login h2{
-    padding-left: 10%;
-}
-/*boton  hamburguesa*/
-
-.btn_menu .menuHamburguesa {
-    width: 80%;
-    height: 40%;
-    transition: .5s;
-    padding-left: 4%;
-}
-.btn_menu:hover { 
-    transform: scale(.7);
-}
-
-/*header*/
-.header{
-    height: 180px;
-}
-
-
-   
- 
-
- 
-/*breadcrums*/
- .breadCrums {
-    padding-left: 12%;
-    height: 18px;
-
-}
-
-
-.card {
-    width: 16%;
-   margin-left:6px;
-
-}
-
-
-
-/*footer*/
-
-footer {
-    height: 400px;
+    .textoChico {
+        font-size: 14px;
     }
 
-    .descripcionFooter{
+
+    nav {
+        height: 102px;
+        padding-left: 4%;
+        padding-right: 4%;
+        width: 92%;
+    }
+
+    .desplegable {
+        top: 14%;
+        width: 20%;
+    }
+
+
+
+    /*input de busqueda de navegacion*/
+
+    .imgPlaceholder>img {
+        width: 34px;
+        height: 34px;
+        left: 20px;
+
+    }
+
+    .input {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 32%;
+        height: 62%;
+        padding-left: 2%;
+    }
+
+    .login>button>img {
+
+        width: 60%;
+
+    }
+
+    .login {
+        margin-right: 0%;
+    }
+
+    .login h2 {
+        padding-left: 10%;
+    }
+
+    /*boton  hamburguesa*/
+
+    .btn_menu .menuHamburguesa {
+        width: 80%;
+        height: 40%;
+        transition: .5s;
+        padding-left: 4%;
+    }
+
+    .btn_menu:hover {
+        transform: scale(.7);
+    }
+
+    /*header*/
+    .header {
+        height: 180px;
+    }
+
+
+
+
+
+
+    /*breadcrums*/
+    .breadCrums {
+        padding-left: 12%;
+        height: 18px;
+
+    }
+
+
+    .card {
+        width: 16%;
+        margin-left: 6px;
+
+    }
+
+
+
+    /*footer*/
+
+    footer {
+        height: 400px;
+    }
+
+    .descripcionFooter {
         height: 20%;
-    }  
-.descripcionFooter p {
-    font-size: 90%;
-    line-height: 130%;
-}
+    }
 
-.centro{
-    padding-top: 0%;
-    padding-bottom: 2%;
-    height: 35%;
-}
+    .descripcionFooter p {
+        font-size: 90%;
+        line-height: 130%;
+    }
 
-.footer div .likeRedes li p {
-    font-size: 90%;
-}
+    .centro {
+        padding-top: 0%;
+        padding-bottom: 2%;
+        height: 35%;
+    }
 
-.footer div .likeRedes li img {
-    width: 40%;
-}
-.footer .logoFooter {
-    width: 100%;
-}
+    .footer div .likeRedes li p {
+        font-size: 90%;
+    }
 
-.logoFooter>a>img {
-    height: 100%;
-    width: 70%;
-}
+    .footer div .likeRedes li img {
+        width: 40%;
+    }
 
+    .footer .logoFooter {
+        width: 100%;
+    }
 
-.footer ul{
-   justify-content: space-evenly;
-
-}
-.footer ul li button img {
-    width: 45px;
-    height: 45px;
-}
+    .logoFooter>a>img {
+        height: 100%;
+        width: 70%;
+    }
 
 
-.footer ul li h3 {
-    font-size: 12px;
+    .footer ul {
+        justify-content: space-evenly;
+
+    }
+
+    .footer ul li button img {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .footer ul li h3 {
+        font-size: 12px;
+
+    }
+
+
+
+    /*animacines en 3d*/
+     
+    #animacion>.card {
+        display: flex;
+        float: left;
+         perspective: 20;
+        transform-style: preserve-3d;
+      transition-property:perspective;
+        transition-duration: 3s;
+          }
+
+    #animacion>.card:hover {
+        perspective: 50;
+        }
     
-}
 
+    #animacion .card>.grey {
+        transform: rotateY(0deg);
+        box-shadow: 0 3px 10px #888;
+        box-shadow: 0 3px 10px #888;
+       transition-property: transform;
+        transition-duration: 3s;
+        
+    }
+
+
+    #animacion>.card:hover >.grey {
+        transform: rotateY(360deg);
+      
+    }
 
 
 }
