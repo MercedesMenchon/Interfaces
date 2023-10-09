@@ -467,15 +467,24 @@ padding-bottom:2% ;
 contain: content;
 }
 
+
 .header h1,
 .header h2 {
     position: relative;
     z-index: 2;
-    padding-top: 2%;
-    padding-bottom: 1%;
+    
+}
+
+.header h1{
+    padding-top: 3%;
    
 }
 
+
+.header h2 {
+    padding-bottom: 2%;
+      
+}
 .header img {
     position: absolute;
     opacity: 0.3;
@@ -663,7 +672,7 @@ footer {
 .footer .logoFooter {
     display: block;
     text-align:right;
-    margin-right: 4%;
+    margin-right: 8%;
     width: 100%;
 }
 
@@ -713,7 +722,7 @@ footer {
 
 /*tarjetas*/
 .card {
-    width: 35%; 
+    width: 30%; 
     height: 8%;
     flex-shrink: 0;
     display: flex;
@@ -724,6 +733,7 @@ footer {
     box-shadow: 0px 4px 4px 0px var(--negro);
     scroll-snap-align: center;
     contain: content;
+    margin: 4px;
 }
 
 
@@ -1276,6 +1286,9 @@ img.btn-PlayVideo {
 
 nav {
     height: 102px;
+    padding-left: 4%;
+    padding-right: 4%;
+    width: 92%;
 }
 
 .desplegable {
@@ -1299,19 +1312,30 @@ font-size: 20px;
 }
 
 .logo {
-    width: 40%;
+    width: 32%;
     height: 62%;
-    
+    padding-left: 2%;
 }
 
+.login>button>img{
+  
+    width: 60%;
 
+}
+.login{
+    margin-right: 0%;
+}
 
+.login h2{
+    padding-left: 10%;
+}
 /*boton  hamburguesa*/
 
 .btn_menu .menuHamburguesa {
     width: 80%;
     height: 40%;
     transition: .5s;
+    padding-left: 4%;
 }
 .btn_menu:active { 
     transform: scale(.7);
@@ -1336,7 +1360,7 @@ font-size: 20px;
 
 
 .card {
-    width: 22%;
+    width: 16%;
    margin-left:6px;
 
 }
@@ -1354,22 +1378,32 @@ footer {
     line-height: 130%;
 }
 
-
+.centro{
+    padding-top: 0%;
+    padding-bottom: 2%;
+}
 
 .footer div .likeRedes li p {
     font-size: 90%;
 }
 
-
+.footer div .likeRedes li img {
+    width: 40%;
+}
 .footer .logoFooter {
     width: 100%;
 }
 
 .logoFooter>img {
     height: 100%;
+    width: 50%;
 }
 
 
+.footer ul{
+   justify-content: space-evenly;
+
+}
 .footer ul li button img {
     width: 50px;
     height: 50px;
