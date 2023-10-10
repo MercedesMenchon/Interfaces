@@ -20,7 +20,6 @@ function iniciarPagina() {
 
 
 
-
 /*CARDS AGREGAR FAVORITO*/
 
 let cards = document.querySelectorAll(".card");
