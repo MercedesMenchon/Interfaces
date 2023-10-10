@@ -282,12 +282,11 @@ h3 {
         "foot foot";
     grid-template-columns: 1fr 3fr;
     /* grid-template-rows: 0.3fr 0.1fr 0.61fr 4fr 1.5fr;*/
+contain: content;
 
 }
 
-.cont{
-    height: 500px;
-}
+
 nav {
     grid-area: nav;
     background-color: var(--primario);
@@ -996,7 +995,7 @@ height:100%;
 }
 
 .column1.der {
-    margin-top: 6%;
+    margin-top: 0%;
 }
 .column1.der>h2{
     margin-top:0;
@@ -1133,8 +1132,10 @@ img.btn-PlayVideo {
     margin: 3%;
     margin-left: 4%;
     margin-right: 4%;
+   
 
 }
+
 
 .comentarios>div {
     margin: 1%;
@@ -1149,7 +1150,7 @@ img.btn-PlayVideo {
 .opinion {
     margin: 2%;
     width: 60%;
-   height: 300%;
+  /*height: 300%;*/
     display: flex;
     align-items: center;
 }
@@ -1157,13 +1158,14 @@ img.btn-PlayVideo {
 .opinion>textarea {
     margin: 5%;
     width: 60%;
-    height: 800%;
+  /*  height: 800%;*/
     resize: none;
-
+border-radius: 8px;
+border: var(--secundario) 2px solid;
 }
 
 .listaComentarios.vertical {
-    height: 30%;
+    height: 35%;
     width: 70%;
 
 }
@@ -1204,12 +1206,13 @@ img.btn-PlayVideo {
     display: flex;
     flex-direction: column;
     width: 60%;
-    /* height: 40%;*/
+   
 }
 
 .interaccion {
     display: flex;
     flex-direction: row;
+
 }
 
 .ranking {
