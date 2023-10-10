@@ -1031,7 +1031,11 @@ height:100%;
 
 }
 
-
+.compartir>ul>li>img:hover {
+    box-shadow: var(--primarioL2) 5px 4px;
+    border: var(--acento) 2px solid;
+    
+}
 
 
 .video {
@@ -1567,12 +1571,18 @@ opacity: 0;
     }
 
     .desplegable {
-        top: 14%;
+        top: 5%;
         width: 20%;
     }
 
+    .logueo{
+        margin-top: 42%;
+       width: 27%;
+       z-index:40;
+       margin-right:1%;
+    }
 
-
+   
     /*input de busqueda de navegacion*/
 
     .imgPlaceholder>img {
