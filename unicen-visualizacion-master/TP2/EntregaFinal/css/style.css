@@ -1571,10 +1571,13 @@ opacity: 0;
     }
 
     .desplegable {
-        top: 5%;
+        top: 4%;
         width: 20%;
     }
-
+.logis
+{top:15%;
+    z-index: 22;
+}
     .logueo{
         margin-top: 42%;
        width: 27%;
