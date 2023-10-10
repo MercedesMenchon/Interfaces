@@ -1201,10 +1201,10 @@ border: var(--secundario) 2px solid;
 .listaComentarios>div>p {
 
     padding: 2%;
-    width: 60%;
+    width: 96%;
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
     overflow: hidden;
     text-align: justify;
 }
