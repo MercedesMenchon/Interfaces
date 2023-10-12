@@ -63,6 +63,7 @@ h3 {
     text-decoration-line: underline;
 }
 
+
 .textoChico {
     font-size: 8px;
     font-weight: 400%;
@@ -272,18 +273,15 @@ h3 {
 }
 
 .container {
-
+padding: 0%;
     display: grid;
     grid-template-areas:
         "nav nav"
         "breadCrums breadCrums"
-        "header header"
         "main main "
         "foot foot";
-    grid-template-columns: 1fr 3fr;
-    /* grid-template-rows: 0.3fr 0.1fr 0.6fr 4fr 1.5fr;*/
+    grid-template-rows: 5fr 1fr 162fr 25fr;
 contain: content;
-
 }
 
 
@@ -291,17 +289,52 @@ nav {
     grid-area: nav;
     background-color: var(--primario);
     width: 100%;
-    height: 52px;
+    /*height: 52px;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
 
+.breadCrums {
+    grid-area: breadCrums;
+    color: var(--primarioL2);
+    background: var(--secundario);
+    padding-left: 12%;
+    /*height: 10px;*/
+}
+
+.main {
+    grid-area: main;
+    background: var(--primarioL1);
+    /*height: auto;*/
+}
+
+.header {
+    grid-area: header;
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+    position: relative;
+    overflow: hidden;
+    contain: content;
+}
+
+
 
 /*LOGIN*/
 
-
+.login {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    background-color: var(--primario);
+    margin-right: 4%;
+}
 .btn-login.click {
     background-color: var(--primarioL1);
 }
@@ -316,15 +349,6 @@ nav {
 
 
 
-.login {
-    width: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blanco);
-    background-color: var(--primario);
-    margin-right: 4%;
-}
 
 .login>button {
     width: 30%;
@@ -545,18 +569,7 @@ li.menu:hover {
 
 /*header*/
 
-.header {
-    grid-area: header;
-    color: var(--blanco);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 80px;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 2%;
-    contain: content;
-}
+
 
 
 .header h1,
@@ -632,33 +645,16 @@ li.menu:hover {
 }
 
 
-.breadCrums {
-    grid-area: breadCrums;
-    color: var(--primarioL2);
-    background: var(--secundario);
-    padding-left: 12%;
-    height: 10px;
 
-
-}
 
 /*main*/
 
-.main {
-    grid-area: main;
-    padding-top: 4%;
-    padding-left: 2%;
-    padding-right: 2%;
-    background: var(--primarioL1);
-    height: auto;
-}
 
 
 /*footer*/
 
 footer {
     grid-area: foot;
-    height: 240px;
     background: var(--primario);
     display: block;
     color: var(--blanco);
@@ -670,43 +666,35 @@ footer {
     padding-left: 4%;
     padding-right: 4%;
     contain: content;
-    bottom: 0;
 }
 
-.footer>div {
-    width: 40%;
-}
+
 
 .descripcionFooter {
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+    max-height: 4em;
     overflow: hidden;
     text-align: justify;
+    white-space: normal;
+    text-overflow: ellipsis;
     margin-top: 2%;
     padding-left: 4%;
     padding-right: 4%;
-    white-space: unset;
-    text-overflow: ellipsis;
+    margin-bottom: 2%;
 
 }
-
-
-.descripcionFooter p {
-    font-size: 65%;
-    text-align: justify;
-
+.descripcionFooter>p {
+    font-size: 0.5em;
 }
-
-
-.footer {
+.informacion {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    height: 20%;
 }
 
-.footer div .likeRedes li {
+.informacion div .likeRedes li {
     display: block;
     padding: 4%;
     text-align: center;
@@ -715,9 +703,13 @@ footer {
 
 }
 
-.footer div .likeRedes li img {
+.informacion div .likeRedes li img {
     width: 60%;
     height: 60%;
+}
+.logoFooter>a>img {
+    margin: 0%;
+    width: 80%;
 }
 
 .footer div .likeRedes li p {
@@ -726,87 +718,77 @@ footer {
 
 .centro {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-around;
     flex-direction: row;
     margin-right: 1%;
     width: 100%;
-    height: 24%;
-    padding: 2%;
-    padding-bottom: 4%;
+    height: 33%;
+    padding-right: 4%;
+    padding-left: 4%;
 }
 
-
-.footer>div {
+.informacion>div,
+.centro>div {
+    width: 40%;
     display: flex;
+    flex-direction: column;
     margin-left: 4%;
 
 }
 
-.footer ul {
+.informacion{
+    height: 33%;
+}
+.informacion ul,
+.centro ul {
     display: flex;
     justify-content: space-around;
+align-items: center;
     width: 100%;
-    align-items: end;
-
 }
 
-
-
-.footer ul li {
+.informacion ul li,
+.centro div ul li{
     display: flex;
     align-items: center;
-}
-
-
-
-.footer .logoFooter {
-    display: block;
-    text-align: right;
-    margin-right: 8%;
-    width: 100%;
-}
-
-.logoFooter>a>img {
-    margin: 0%;
-    width: 90%;
-    height: 70%;
-}
-
-.footer ul li {
-    display: flex;
     flex-direction: column;
+    height: 80%;
 }
-
-.footer ul li button {
+.informacion ul li{
+    height: 100%;
+}
+.informacion ul li button {
     padding-right: 1%;
     padding-left: 4%;
     background-color: var(--primario);
-
+    height: 50%;
+}
+.centro div ul li img{
+    width: 30%;
 
 }
-
-.footer ul li button img {
+.informacion ul li button img {
     border-color: var(--negro);
     background-color: var(--primario);
-    border: 5px solid var(--negro);
+    border: 2px solid var(--negro);
     border-radius: 8px;
     padding: 1%;
     box-shadow: 0px 4px 4px 0px var(--negro);
-    width: 28px;
-    height: 28px;
+    height: 70%;
 }
 
 
-.footer ul li button img:hover {
-    border: 5px solid var(--acento);
+.informacion ul li button img:hover {
+    border: 2px solid var(--acento);
 }
-
-.footer ul li h3 {
-    font-size: 7px;
+.centro div ul li p,
+.informacion ul li h3 {
+    font-size: 10%;
     margin-top: 3%;
 }
 
-.footer ul li h3:hover {
+.informacion ul li h3:hover {
     color: var(--primarioL2);
 }
 
@@ -1541,7 +1523,7 @@ opacity: 0;
 /*
 /* DESKTOP*/
 @media only screen and (min-width:600px) {
-
+/*
     h1 {
         font-size: 28px;
     }
@@ -1561,23 +1543,18 @@ opacity: 0;
     .textoChico {
         font-size: 14px;
     }
+  */
 
-
-    nav {
-        height: 102px;
-        padding-left: 4%;
-        padding-right: 4%;
-        width: 92%;
-    }
 
     .desplegable {
         top: 4%;
         width: 20%;
+  
     }
-.logis
-{top:15%;
-    z-index: 22;
-}
+        .logis
+        {top:15%;
+            z-index: 22;
+ }
     .logueo{
         margin-top: 42%;
        width: 27%;
@@ -1650,10 +1627,10 @@ opacity: 0;
         flex-direction: row;
         align-items: center;
     }
-.breadCrums a ,
-.breadCrums p{
-    padding-left: 1%;
-}
+        .breadCrums a ,
+        .breadCrums p{
+            padding-left: 1%;
+        }
 
 
 
@@ -1667,36 +1644,17 @@ opacity: 0;
 
     /*footer*/
 
-    footer {
-        height: 400px;
-    }
 
-    .descripcionFooter {
-        height: 20%;
-    }
 
-    .descripcionFooter p {
-        font-size: 90%;
-        line-height: 130%;
-    }
-
-    .centro {
-        padding-top: 0%;
-        padding-bottom: 2%;
-        height: 35%;
-    }
-
-    .footer div .likeRedes li p {
-        font-size: 90%;
-    }
-
-    .footer div .likeRedes li img {
-        width: 40%;
-    }
-
-    .footer .logoFooter {
-        width: 100%;
-    }
+    .centro .logoFooter {
+            display: block;
+            text-align: right;
+            margin-right: 8%;
+            width: 70%;
+            height: 100%;
+        }
+        
+    
 
     .logoFooter>a>img {
         height: 100%;
@@ -1704,18 +1662,19 @@ opacity: 0;
     }
 
 
-    .footer ul {
+  .centro>div>ul {
         justify-content: space-evenly;
+        height: 80%;
 
     }
 
-    .footer ul li button img {
+   .centro ul li button img {
         width: 45px;
         height: 45px;
     }
 
 
-    .footer ul li h3 {
+    .centro ul li h3 {
         font-size: 12px;
 
     }
@@ -1748,15 +1707,4 @@ opacity: 0;
         transform: rotateY(360deg);
       
     }
-
-
-
-
-
-
-  
-  
-  
-  
-
 }
