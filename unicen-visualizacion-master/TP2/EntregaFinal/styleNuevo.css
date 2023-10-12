@@ -720,6 +720,7 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
+    align-items: center;
     flex-direction: row;
     margin-right: 1%;
     width: 100%;
@@ -745,7 +746,7 @@ footer {
     display: flex;
     justify-content: space-around;
 align-items: center;
-    width: 100%;
+    width: 90%;
 }
 
 .informacion ul li,
@@ -755,8 +756,11 @@ align-items: center;
     flex-direction: column;
     height: 80%;
 }
-.informacion ul li{
+.informacion ul li {
     height: 100%;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
 }
 .informacion ul li button {
     padding-right: 1%;
@@ -765,7 +769,7 @@ align-items: center;
     height: 50%;
 }
 .centro div ul li img{
-    width: 30%;
+    height: 50%;
 
 }
 .informacion ul li button img {
@@ -786,7 +790,11 @@ align-items: center;
 .informacion ul li h3 {
     font-size: 10%;
     margin-top: 3%;
+    display: flex;
+    align-items: center;
+  justify-content: center;
 }
+
 
 .informacion ul li h3:hover {
     color: var(--primarioL2);
@@ -1645,6 +1653,16 @@ opacity: 0;
     /*footer*/
 
 
+    .informacion ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .centro div ul li p, .informacion ul li h3 {
+        font-size: 100%;
+        margin-top: 1px;
+        
+    }
 
     .centro .logoFooter {
             display: block;
@@ -1653,25 +1671,21 @@ opacity: 0;
             width: 70%;
             height: 100%;
         }
-        
-    
 
-    .logoFooter>a>img {
-        height: 100%;
-        width: 70%;
-    }
+        .descripcionFooter>p {
+            font-size: 0.8em;
+        }
 
-
+.centro>div{
+    height: 100%;
+}
   .centro>div>ul {
         justify-content: space-evenly;
-        height: 80%;
+        height: 100%;
 
     }
 
-   .centro ul li button img {
-        width: 45px;
-        height: 45px;
-    }
+
 
 
     .centro ul li h3 {
