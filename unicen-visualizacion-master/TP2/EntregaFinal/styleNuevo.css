@@ -307,7 +307,7 @@ nav {
 
 
 .desplegable {
-    width: 40%;
+    width: 35%;
     background: var(--primarioL1);
     top: 108%;
     position: absolute;
@@ -444,11 +444,10 @@ li.menu:hover {
     height: 8%;
 
 }
-
 /*header*/
 
 
-
+/*
 
 .header h1,
 .header h2 {
@@ -526,7 +525,7 @@ li.menu:hover {
     grid-area: main;
     background: var(--primarioL1);
 }
-
+/*
 .header {
     grid-area: header;
     color: var(--blanco);
