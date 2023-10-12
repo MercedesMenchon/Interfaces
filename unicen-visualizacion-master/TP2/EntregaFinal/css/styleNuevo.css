@@ -315,8 +315,8 @@ nav {
     grid-auto-rows: max-content;
     z-index: 1000;
     margin: 0 1%;
+   
 }
-
 
 ul.navegacion {
     display: none;
@@ -350,7 +350,7 @@ ul.navegacion.show {
 
 .menu>img {
     width: 14%;
-    border-radius: 6px;
+    border-radius: 10px;
     margin-right: 4%;
 }
 
@@ -371,6 +371,13 @@ ul.idioma {
 
 }
 
+.login>.desplegable{
+    width: 25%;
+  right: 0%;
+}
+
+
+
 .navegacion.log>.menu.destacado {
     border-bottom: 2px solid var(--secundario);
 }
@@ -384,8 +391,8 @@ li.menu:hover {
     width: 40%;
     display: flex;
     justify-content: center;
-    margin-left: 2px;
-    margin-right: 4px;
+    margin-left: 1%;
+    margin-right: 2%;
     position: relative;
 }
 
@@ -395,9 +402,9 @@ li.menu:hover {
 
 .imgPlaceholder>img {
     position: absolute;
-    width: 14px;
-    height: 14px;
-    left: 12px;
+    width: 1em;
+    height: 1em;
+    left: 0.5em;
     top: 30%;
 }
 
@@ -413,8 +420,8 @@ li.menu:hover {
     padding-left: 20%;
     border-radius: 8px;
     color: var(--primarioL1);
-    margin: 2%;
-    font-size: 70%;
+  margin: 2%;
+   font-size: 0.6em;
     position: relative;
 }
 
@@ -441,6 +448,9 @@ li.menu:hover {
     height: 8%;
 
 }
+
+
+
 /*header*/
 
 
@@ -547,6 +557,7 @@ li.menu:hover {
     color: var(--blanco);
     background-color: var(--primario);
     margin-right: 4%;
+    flex-wrap: nowrap;
 }
 .btn-login.click {
     background-color: var(--primarioL1);
@@ -1517,80 +1528,27 @@ opacity: 0;
     }
 }
 
-/*
+
 /* DESKTOP*/
 @media only screen and (min-width:600px) {
-/*
-    h1 {
-        font-size: 28px;
-    }
-
-    h2,
-    .precio,
-    .precioConDescuento,
-    .textoGratis {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 16px;
-    }
-
-
-    .textoChico {
-        font-size: 14px;
-    }
-  */
-
-
-    .desplegable {
-        top: 4%;
-        width: 20%;
-  
-    }
-        .logis
-        {top:15%;
-            z-index: 22;
- }
-    .logueo{
-        margin-top: 42%;
-       width: 27%;
-       z-index:40;
-       margin-right:1%;
-    }
 
    
     /*input de busqueda de navegacion*/
 
+
+.input {
+    font-size: 1em;
+}
     .imgPlaceholder>img {
-        width: 34px;
-        height: 34px;
-        left: 20px;
-
-    }
-
-    .input {
-        font-size: 20px;
-    }
-
-    .logo {
-        width: 32%;
-        height: 62%;
-        padding-left: 2%;
-    }
+        width: 2em;
+        height: auto;
+       left: 10%;
+       top:35%;
+         }
 
     .login>button>img {
-
         width: 60%;
 
-    }
-
-    .login {
-        margin-right: 0%;
-    }
-
-    .login h2 {
-        padding-left: 10%;
     }
 
     /*boton  hamburguesa*/
@@ -1606,18 +1564,36 @@ opacity: 0;
         transform: scale(.7);
     }
 
-    /*header*/
-    .header {
-        height: 180px;
-    }
 
+    .desplegable {
+        width: 15%;
+  
+    }
+ 
+    
+    .desplegable>ul>li>h2 {
+  font-size: 1em;
+    
+    }
+ 
+    .desplegable>ul>li>ul>li>h2 {
+        font-size: 1em;
+          
+          }
+    
+    .login>.desplegable{
+        width: 15%;
+      right: 5%;
+    }
+    
+    
 
 
 
 
 
     /*breadcrums*/
-    .breadCrums {
+    /*.breadCrums {
         padding-left: 12%;
         height: 18px;
         display: flex;
@@ -1637,7 +1613,7 @@ opacity: 0;
 
     }
 
-
+/*
 
     /*footer*/
 
