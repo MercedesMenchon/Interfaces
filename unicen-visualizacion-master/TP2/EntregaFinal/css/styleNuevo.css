@@ -265,7 +265,7 @@ h3 {
 }
 
 .container {
-<<<<<<< Updated upstream
+
     display: grid;
     grid-template-areas:
         "nav"
@@ -274,18 +274,6 @@ h3 {
         "foot";
         grid-template-columns: 1fr;
     grid-template-rows: 5fr 1fr 162fr 25fr;
-contain: content;
-=======
-   padding: 0%;
-    display: grid;
-    grid-template-areas:
-        "nav nav"
-        "breadCrums breadCrums"
-        "main main"
-        "foot foot";
-    grid-template-rows: 5fr 1fr 110fr 25fr;
-    contain: content;
->>>>>>> Stashed changes
 }
 
 
@@ -296,12 +284,8 @@ contain: content;
     color: var(--primarioL2);
     background: var(--secundario);
     padding-left: 12%;
-<<<<<<< Updated upstream
     font-size: 80%;
     
-=======
-
->>>>>>> Stashed changes
 }
 
 
@@ -497,11 +481,7 @@ font-size:60%;
 .header img {
   position: absolute;
     opacity: 0.3;
-<<<<<<< Updated upstream
 width: 100%;
-=======
-    /*   width: 100%;*/
->>>>>>> Stashed changes
     height: 100%;
 }
 
@@ -982,11 +962,7 @@ footer {
     padding: 2%;
     width: 80%;
     position: relative;
-<<<<<<< Updated upstream
   height: 80%;
-=======
-    height: 105%;
->>>>>>> Stashed changes
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -1048,15 +1024,12 @@ div.vertical::-webkit-scrollbar,
 
 }
 
-<<<<<<< Updated upstream
 .compartir{
     height: 53%;
 }
 .partidas{
     height: 40%;
 }
-=======
->>>>>>> Stashed changes
 .compartir>ul {
     display: flex;
     flex-direction: column;
@@ -1189,17 +1162,10 @@ img.btn-PlayVideo {
     flex-direction: column;
     align-items: center;
     width: 100%;
-<<<<<<< Updated upstream
 
     margin-top: 4%;
     margin-bottom: 4%;
    
-=======
-    margin: 3%;
-    margin-left: 4%;
-    margin-right: 4%;
-
->>>>>>> Stashed changes
 
 }
 
@@ -1272,12 +1238,8 @@ img.btn-PlayVideo {
     display: flex;
     flex-direction: column;
     width: 60%;
-<<<<<<< Updated upstream
     height: 50%;
    
-=======
-
->>>>>>> Stashed changes
 }
 
 .interaccion {
@@ -1417,110 +1379,8 @@ img.btn-PlayVideo {
     height: 10%;
 }
 
-<<<<<<< Updated upstream
-/*
-.progress-bar {
-    position: relative;
-    width: 25%;
-    height: 15px;
-    background-color: var(--primarioL2, 0, 0, 0, 0.1);
-    border-radius: 4px;
-    margin: 2%;
-    overflow: hidden;
-   
-}
-
-
-.progress-bar::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--acento);
-    transform: translateX(-100%);
-    animation: fill-bar 5s 1s ease-in-out forwards;
-    
-}
-
-@keyframes fill-bar {
-    to {
-        transform: translateX(0%);
-    }
-}
-
-.espera {
-    color: var(--blanco);
-    font-weight: bold;
-}
-
-
-.article{
-    position: relative;
-    width: 220px;
-    transition: all .3s easy;
-}
-
-
-.article img:first-child{
-    box-shadow: 0 60px 60px
-    -60px rgba(0,30,255,0.5);
-    object-fit: cover;
-    width: 100%;
-
-}
-
-.article img:last-child {
-position: absolute;
-width: 200px;
-bottom: 0;
-left: 0;
-right: 0;
-margin: auto;
-transform: translateY(25%);
-transition: .3s easy;
-opacity: 0;
-}
-
-
-.article:hover  {
-    transform: perspective(250px),
-    rotateX(10deg),
-    translateX(-5%),
-    translateZ(0);
-}
-
-.article::before {
-    content:'';
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(
-        to bottom,
-         transparent 20%,
-         rgba(0,0,0,0.5)50%,
-         rgba(0,0,0)95% );
-    opacity: 0;
-    transition: all .3s ease;
-}
-.article:hover::before{
-    opacity: 1;
-}
-.article img:last-child{
-    opacity: 1;
-    transform: translateY(10%);
-}
-
-
-*/
-
-
 .tablero{
     position:relative;
-=======
-.tablero {
-    position: relative;
->>>>>>> Stashed changes
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1571,20 +1431,12 @@ opacity: 0;
      }
     /*input de busqueda de navegacion*/
 
-<<<<<<< Updated upstream
 h1{
     font-size: 2em;
 }
 .input {
     font-size: 1em;
 }
-=======
-
-    .input {
-        font-size: 1em;
-    }
-
->>>>>>> Stashed changes
     .imgPlaceholder>img {
         width: 2em;
         height: auto;
