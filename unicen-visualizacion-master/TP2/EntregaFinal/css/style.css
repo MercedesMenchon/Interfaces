@@ -279,12 +279,14 @@ h3 {
 
 .breadCrums {
     display: flex;
+    align-items: center;
     flex-direction: row;
     grid-area: breadCrums;
     color: var(--primarioL2);
     background: var(--secundario);
     padding-left: 12%;
-    font-size: 80%;
+    font-size: 70%;
+    padding: .25% 0%;
     
 }
 
@@ -932,6 +934,13 @@ footer {
 
 .card:hover .grey {
     filter: grayscale(50%);
+}
+
+.enLinea>img{
+    margin: 0%;
+    width: 100%;
+    padding: 0%;
+    height: 100%;
 }
 
 .muestraJuegos {
