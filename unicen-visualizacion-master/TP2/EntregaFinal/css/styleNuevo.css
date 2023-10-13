@@ -981,8 +981,9 @@ height:100%;
 }
 
 
-.column1>h2 {
+.column1 h2 {
     margin-top: 20%;
+    font-size: 2em;
 }
 
 .column1.der {
@@ -1460,23 +1461,6 @@ opacity: 0;
 */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .tablero{
     position:relative;
     display: flex;
@@ -1580,7 +1564,7 @@ opacity: 0;
 
 
     /*breadcrums*/
-    /*.breadCrums {
+    .breadCrums {
         padding-left: 12%;
         height: 18px;
         display: flex;
