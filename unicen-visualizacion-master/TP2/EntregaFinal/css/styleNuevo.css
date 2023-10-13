@@ -74,7 +74,6 @@ h3 {
 .precioConDescuento,
 .textoGratis {
     font-size: 0.75em;
-    font-weight: 100%;
     letter-spacing: 5%;
 }
 
@@ -267,13 +266,13 @@ h3 {
 }
 
 .container {
-padding: 0%;
     display: grid;
     grid-template-areas:
-        "nav nav"
-        "breadCrums breadCrums"
-        "main main "
-        "foot foot";
+        "nav"
+        "breadCrums"
+        "main"
+        "foot";
+        grid-template-columns: 1fr;
     grid-template-rows: 5fr 1fr 162fr 25fr;
 contain: content;
 }
@@ -422,7 +421,6 @@ li.menu:hover {
 .logo {
     width: 20%;
     height: 45%;
-    margin-right: 2%;
 }
 .logo>img {
     width: 100%;
@@ -478,7 +476,7 @@ li.menu:hover {
 .header img {
     position: absolute;
     opacity: 0.3;
- /*   width: 100%;*/
+width: 100%;
     height: 100%;
 }
 
@@ -530,11 +528,16 @@ li.menu:hover {
 }
 
 .main {
+
     grid-area: main;
     background: var(--primarioL1);
 }
 
-
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*LOGIN*/
 
 .login {
@@ -818,6 +821,7 @@ align-items: center;
 }
 
 .card h2 {
+    font-size: 1em;
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
@@ -829,6 +833,7 @@ align-items: center;
 }
 
 .card .precio {
+    font-size: 0.75em;
     display: flex;
     margin: 0px;
     padding-left: 4%;
@@ -837,6 +842,7 @@ align-items: center;
 }
 
 .card .textoChico {
+    font-size: 0.5em;
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
@@ -928,14 +934,14 @@ align-items: center;
 }
 .contenedor-vertical{
     contain: content;
-    height: 900px;
+    height: 82%;
 }
 
 .vertical {
     padding: 2%;
     width: 80%;
     position: relative;
-  height: 105%;
+  height: 80%;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -962,12 +968,13 @@ div.vertical::-webkit-scrollbar,
 
 .juego {
     display: flex;
-    height: 1110px;
     width: 92%;
+    height: 30%;
     margin: 4%;
     background-color: var(--secundario);
     font-size: 80%;
     text-align: center;
+    contain:content;
 }
 
 .juego>div {
@@ -993,6 +1000,13 @@ height:100%;
 .column1.der>h2{
     margin-top:0;
     
+}
+
+.compartir{
+    height: 53%;
+}
+.partidas{
+    height: 40%;
 }
 .compartir>ul {
     display: flex;
@@ -1126,9 +1140,9 @@ img.btn-PlayVideo {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 3%;
-    margin-left: 4%;
-    margin-right: 4%;
+
+    margin-top: 4%;
+    margin-bottom: 4%;
    
 
 }
@@ -1160,7 +1174,7 @@ border: var(--secundario) 2px solid;
 }
 
 .listaComentarios.vertical {
-    height: 35%;
+    height: 55%;
     width: 70%;
 
 }
@@ -1178,6 +1192,7 @@ border: var(--secundario) 2px solid;
 }
 
 .listaComentarios>div>h3 {
+    font-size: 1em;
     width: 40%;
     padding: 2%;
     text-transform: capitalize;
@@ -1201,6 +1216,7 @@ border: var(--secundario) 2px solid;
     display: flex;
     flex-direction: column;
     width: 60%;
+    height: 50%;
    
 }
 
@@ -1482,7 +1498,9 @@ opacity: 0;
    
     /*input de busqueda de navegacion*/
 
-
+h1{
+    font-size: 2em;
+}
 .input {
     font-size: 1em;
 }
@@ -1542,7 +1560,6 @@ opacity: 0;
     /*breadcrums*/
     .breadCrums {
         padding-left: 12%;
-        height: 18px;
         display: flex;
         flex-direction: row;
         align-items: center;
