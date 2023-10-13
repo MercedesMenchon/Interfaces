@@ -279,10 +279,13 @@ contain: content;
 
 
 .breadCrums {
+    display: flex;
+    flex-direction: row;
     grid-area: breadCrums;
     color: var(--primarioL2);
     background: var(--secundario);
     padding-left: 12%;
+    font-size: 80%;
     
 }
 
