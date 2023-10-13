@@ -27,7 +27,6 @@
     border: none;
     outline: none;
 
-
 }
 
 body {
@@ -266,6 +265,7 @@ h3 {
 }
 
 .container {
+<<<<<<< Updated upstream
     display: grid;
     grid-template-areas:
         "nav"
@@ -275,6 +275,17 @@ h3 {
         grid-template-columns: 1fr;
     grid-template-rows: 5fr 1fr 162fr 25fr;
 contain: content;
+=======
+   padding: 0%;
+    display: grid;
+    grid-template-areas:
+        "nav nav"
+        "breadCrums breadCrums"
+        "main main"
+        "foot foot";
+    grid-template-rows: 5fr 1fr 110fr 25fr;
+    contain: content;
+>>>>>>> Stashed changes
 }
 
 
@@ -285,8 +296,12 @@ contain: content;
     color: var(--primarioL2);
     background: var(--secundario);
     padding-left: 12%;
+<<<<<<< Updated upstream
     font-size: 80%;
     
+=======
+
+>>>>>>> Stashed changes
 }
 
 
@@ -294,7 +309,7 @@ contain: content;
 nav {
     grid-area: nav;
     background-color: var(--primario);
-    width: 100%;
+   width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -311,7 +326,7 @@ nav {
     grid-auto-rows: max-content;
     z-index: 1000;
     margin: 0 1%;
-   
+
 }
 
 ul.navegacion {
@@ -367,9 +382,9 @@ ul.idioma {
 
 }
 
-.login>.desplegable{
+.login>.desplegable {
     width: 25%;
-  right: 0%;
+    right: 0%;
 }
 
 
@@ -416,8 +431,8 @@ li.menu:hover {
     padding-left: 20%;
     border-radius: 8px;
     color: var(--primarioL1);
-  margin: 2%;
-   font-size: 0.6em;
+    margin: 2%;
+    font-size: 0.6em;
     position: relative;
 }
 
@@ -425,10 +440,11 @@ li.menu:hover {
     width: 20%;
     height: 45%;
 }
+
 .logo>img {
     width: 100%;
     height: 100%;
-  
+
 }
 
 
@@ -448,38 +464,44 @@ li.menu:hover {
 
 /*header*/
 
-.header{
-     display: flex;
+.header {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    overflow: hidden;
+ /* position: relative;*/
+   overflow: hidden;
     contain: content;
     width: 100%;
-
+    margin-bottom: 2%;
 }
+
+
 .header h1,
 .header h2 {
-    position: relative;
+  position: relative;
     z-index: 2;
 
 }
 
 .header h1 {
     padding-top: 3%;
-
+font-size: 70%;
 }
 
 
 .header h2 {
     padding-bottom: 2%;
-
+font-size:60%;
 }
 
 .header img {
-    position: absolute;
+  position: absolute;
     opacity: 0.3;
+<<<<<<< Updated upstream
 width: 100%;
+=======
+    /*   width: 100%;*/
+>>>>>>> Stashed changes
     height: 100%;
 }
 
@@ -496,6 +518,7 @@ width: 100%;
     z-index: 4;
     color: var(--secundario);
     border-radius: 8px;
+    margin-bottom: 2%;
 }
 
 .btn_ingresa:hover::before {
@@ -553,6 +576,7 @@ width: 100%;
     margin-right: 4%;
     flex-wrap: nowrap;
 }
+
 .btn-login.click {
     background-color: var(--primarioL1);
 }
@@ -660,8 +684,8 @@ footer {
     color: var(--blanco);
     justify-content: space-between;
     align-items: center;
-    padding-left: 4%;
-    padding-right: 4%;
+    /*padding-left: 4%;
+    padding-right: 4%;*/
     contain: content;
 }
 
@@ -682,9 +706,11 @@ footer {
     margin-bottom: 2%;
 
 }
+
 .descripcionFooter>p {
     font-size: 0.5em;
 }
+
 .informacion {
     display: flex;
     flex-wrap: nowrap;
@@ -704,6 +730,7 @@ footer {
     width: 60%;
     height: 60%;
 }
+
 .logoFooter>a>img {
     margin: 0%;
     width: 80%;
@@ -720,7 +747,7 @@ footer {
     align-items: center;
     flex-direction: row;
     margin-right: 1%;
-    width: 100%;
+    /*width: 100%;*/
     height: 33%;
     padding-right: 4%;
     padding-left: 4%;
@@ -735,40 +762,45 @@ footer {
 
 }
 
-.informacion{
+.informacion {
     height: 33%;
 }
+
 .informacion ul,
 .centro ul {
     display: flex;
     justify-content: space-around;
-align-items: center;
+    align-items: center;
     width: 90%;
 }
 
 .informacion ul li,
-.centro div ul li{
+.centro div ul li {
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 80%;
 }
+
 .informacion ul li {
     height: 100%;
     padding: 1%;
     justify-content: center;
     align-items: center;
 }
+
 .informacion ul li button {
     padding-right: 1%;
     padding-left: 4%;
     background-color: var(--primario);
     height: 50%;
 }
-.centro div ul li img{
-    height: 50%;
+
+.centro div ul li img {
+    height: 30%;
 
 }
+
 .informacion ul li button img {
     border-color: var(--negro);
     background-color: var(--primario);
@@ -783,13 +815,14 @@ align-items: center;
 .informacion ul li button img:hover {
     border: 2px solid var(--acento);
 }
+
 .centro div ul li p,
 .informacion ul li h3 {
     font-size: 10%;
     margin-top: 3%;
     display: flex;
     align-items: center;
-  justify-content: center;
+    justify-content: center;
 }
 
 
@@ -799,7 +832,7 @@ align-items: center;
 
 /*tarjetas*/
 .card {
-    width: 30%;
+    width: 25%;
     height: 8%;
     flex-shrink: 0;
     display: flex;
@@ -810,7 +843,7 @@ align-items: center;
     box-shadow: 0px 4px 4px 0px var(--negro);
     scroll-snap-align: center;
     contain: content;
-    margin: 4px;
+   margin: 1%;
 }
 
 
@@ -873,16 +906,15 @@ align-items: center;
     border-radius: 8px;
     margin: 30%;
     margin-top: 55%;
-   
+
 
 }
 
 .play:active,
 #btn-dropCarrito:active,
-#btn-addCarrito:active
- {
+#btn-addCarrito:active {
     transition: .2s;
-    transform:scale(2,2);
+    transform: scale(2, 2);
 
 }
 
@@ -898,10 +930,12 @@ align-items: center;
     height: 12%;
 }
 
-  #btn-dropCarrito, #btn-addCarrito, #btn-play {
-        height: 20%;
-        
-        }
+#btn-dropCarrito,
+#btn-addCarrito,
+#btn-play {
+    height: 20%;
+
+}
 
 
 
@@ -919,15 +953,18 @@ align-items: center;
 .card:hover .grey {
     filter: grayscale(50%);
 }
-.muestraJuegos{
-    margin-left:4%;
-    
+
+.muestraJuegos {
+    margin-left: 4%;
+
 }
+
+
 .carrousel {
     padding-left: 2%;
     padding-top: 2%;
     padding-bottom: 2%;
-    width: 100%;
+    width: 98%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -935,7 +972,8 @@ align-items: center;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 }
-.contenedor-vertical{
+
+.contenedor-vertical {
     contain: content;
     height: 82%;
 }
@@ -944,7 +982,11 @@ align-items: center;
     padding: 2%;
     width: 80%;
     position: relative;
+<<<<<<< Updated upstream
   height: 80%;
+=======
+    height: 105%;
+>>>>>>> Stashed changes
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -987,8 +1029,8 @@ div.vertical::-webkit-scrollbar,
 }
 
 .column1 {
-width: 20%;
-height:100%;
+    width: 20%;
+    height: 100%;
 }
 
 
@@ -1000,17 +1042,21 @@ height:100%;
 .column1.der {
     margin-top: 0%;
 }
-.column1.der>h2{
-    margin-top:0;
-    
+
+.column1.der>h2 {
+    margin-top: 0;
+
 }
 
+<<<<<<< Updated upstream
 .compartir{
     height: 53%;
 }
 .partidas{
     height: 40%;
 }
+=======
+>>>>>>> Stashed changes
 .compartir>ul {
     display: flex;
     flex-direction: column;
@@ -1030,7 +1076,7 @@ height:100%;
 .compartir>ul>li>img:hover {
     box-shadow: var(--primarioL2) 5px 4px;
     border: var(--acento) 2px solid;
-    
+
 }
 
 
@@ -1143,10 +1189,17 @@ img.btn-PlayVideo {
     flex-direction: column;
     align-items: center;
     width: 100%;
+<<<<<<< Updated upstream
 
     margin-top: 4%;
     margin-bottom: 4%;
    
+=======
+    margin: 3%;
+    margin-left: 4%;
+    margin-right: 4%;
+
+>>>>>>> Stashed changes
 
 }
 
@@ -1172,8 +1225,8 @@ img.btn-PlayVideo {
     margin: 5%;
     width: 60%;
     resize: none;
-border-radius: 8px;
-border: var(--secundario) 2px solid;
+    border-radius: 8px;
+    border: var(--secundario) 2px solid;
 }
 
 .listaComentarios.vertical {
@@ -1219,8 +1272,12 @@ border: var(--secundario) 2px solid;
     display: flex;
     flex-direction: column;
     width: 60%;
+<<<<<<< Updated upstream
     height: 50%;
    
+=======
+
+>>>>>>> Stashed changes
 }
 
 .interaccion {
@@ -1311,7 +1368,8 @@ border: var(--secundario) 2px solid;
     padding-left: 6%;
 
 }
-.divAnimacion{
+
+.divAnimacion {
     justify-content: center;
 }
 
@@ -1359,6 +1417,7 @@ border: var(--secundario) 2px solid;
     height: 10%;
 }
 
+<<<<<<< Updated upstream
 /*
 .progress-bar {
     position: relative;
@@ -1458,17 +1517,22 @@ opacity: 0;
 
 .tablero{
     position:relative;
+=======
+.tablero {
+    position: relative;
+>>>>>>> Stashed changes
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.tablero .btn-PlayVideo2{
+
+.tablero .btn-PlayVideo2 {
     position: absolute;
     width: 20%;
     height: 20%;
 }
 
-.tablero .circle{
+.tablero .circle {
     position: absolute;
     width: 30%;
     height: 30%;
@@ -1478,16 +1542,18 @@ opacity: 0;
     opacity: 0;
 }
 
-@keyframes borderMovement{
-    0%{
-        opacity:0;
+@keyframes borderMovement {
+    0% {
+        opacity: 0;
         width: 15%;
         height: 15%;
     }
-    60%{
+
+    60% {
         opacity: .8;
     }
-    100%{
+
+    100% {
         opacity: 0;
         width: 100%;
         height: 100%;
@@ -1498,21 +1564,33 @@ opacity: 0;
 /* DESKTOP*/
 @media only screen and (min-width:600px) {
 
-   
+    .container {
+      
+         grid-template-rows: 5fr 1fr 162fr 25fr;
+  
+     }
     /*input de busqueda de navegacion*/
 
+<<<<<<< Updated upstream
 h1{
     font-size: 2em;
 }
 .input {
     font-size: 1em;
 }
+=======
+
+    .input {
+        font-size: 1em;
+    }
+
+>>>>>>> Stashed changes
     .imgPlaceholder>img {
         width: 2em;
         height: auto;
-       left: 10%;
-       top:35%;
-         }
+        left: 10%;
+        top: 35%;
+    }
 
     .login>button>img {
         width: 60%;
@@ -1535,26 +1613,26 @@ h1{
 
     .desplegable {
         width: 15%;
-  
+
     }
- 
-    
+
+
     .desplegable>ul>li>h2 {
-  font-size: 1em;
-    
+        font-size: 1em;
+
     }
- 
+
     .desplegable>ul>li>ul>li>h2 {
         font-size: 1em;
-          
-          }
-    
-    .login>.desplegable{
-        width: 15%;
-      right: 5%;
+
     }
-    
-    
+
+    .login>.desplegable {
+        width: 15%;
+        right: 5%;
+    }
+
+
 
 
 
@@ -1567,10 +1645,11 @@ h1{
         flex-direction: row;
         align-items: center;
     }
-        .breadCrums a ,
-        .breadCrums p{
-            padding-left: 1%;
-        }
+
+    .breadCrums a,
+    .breadCrums p {
+        padding-left: 1%;
+    }
 
 
 
@@ -1580,38 +1659,46 @@ h1{
 
     }
 
-
+.header h2{
+    font-size: 1.5em;
+}
+.header>h1{
+    font-size: 2em;
+}
 
     /*footer*/
 
 
-    .informacion ul li{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .informacion ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .centro div ul li p, .informacion ul li h3 {
+
+    .centro div ul li p,
+    .informacion ul li h3 {
         font-size: 100%;
         margin-top: 1px;
-        
+
     }
 
     .centro .logoFooter {
-            display: block;
-            text-align: right;
-            margin-right: 8%;
-            width: 70%;
-            height: 100%;
-        }
+        display: block;
+        text-align: right;
+        margin-right: 8%;
+        width: 70%;
+        height: 100%;
+    }
 
-        .descripcionFooter>p {
-            font-size: 0.8em;
-        }
+    .descripcionFooter>p {
+        font-size: 0.8em;
+    }
 
-.centro>div{
-    height: 100%;
-}
-  .centro>div>ul {
+    .centro>div {
+        height: 100%;
+    }
+
+    .centro>div>ul {
         justify-content: space-evenly;
         height: 100%;
 
@@ -1629,28 +1716,28 @@ h1{
 
     /*animacines en 3d*/
 
-   #animacion {
+    #animacion {
         display: flex;
         float: left;
         perspective: 10;
         transform-style: preserve-3d;
         transition-duration: 1s;
-          }
+    }
 
     #animacion>.card:hover {
         perspective: 10;
-        }
-    
+    }
+
     #animacion .card {
         transform: rotateY(0deg);
         box-shadow: 0 3px 10px #888;
         box-shadow: 0 3px 10px #888;
         transition-duration: .4s;
-        
+
     }
 
-    #animacion>.card:hover  {
+    #animacion>.card:hover {
         transform: rotateY(360deg);
-      
+
     }
 }
