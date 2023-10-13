@@ -265,7 +265,6 @@ h3 {
 }
 
 .container {
-
     display: grid;
     grid-template-areas:
         "nav"
@@ -273,7 +272,8 @@ h3 {
         "main"
         "foot";
         grid-template-columns: 1fr;
-    grid-template-rows: 5fr 1fr 162fr 25fr;
+    grid-template-rows: 5fr 1fr 110fr 25fr;
+
 }
 
 
@@ -1379,8 +1379,8 @@ img.btn-PlayVideo {
     height: 10%;
 }
 
-.tablero{
-    position:relative;
+.tablero {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1431,12 +1431,11 @@ img.btn-PlayVideo {
      }
     /*input de busqueda de navegacion*/
 
-h1{
-    font-size: 2em;
-}
-.input {
-    font-size: 1em;
-}
+
+    .input {
+        font-size: 1em;
+    }
+
     .imgPlaceholder>img {
         width: 2em;
         height: auto;
