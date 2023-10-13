@@ -454,6 +454,7 @@ li.menu:hover {
     position: relative;
     overflow: hidden;
     contain: content;
+    width: 100%;
 
 }
 .header h1,
@@ -477,7 +478,7 @@ li.menu:hover {
 .header img {
     position: absolute;
     opacity: 0.3;
-    width: 100%;
+ /*   width: 100%;*/
     height: 100%;
 }
 
@@ -1146,7 +1147,6 @@ img.btn-PlayVideo {
 .opinion {
     margin: 2%;
     width: 60%;
-  /*height: 300%;*/
     display: flex;
     align-items: center;
 }
@@ -1154,7 +1154,6 @@ img.btn-PlayVideo {
 .opinion>textarea {
     margin: 5%;
     width: 60%;
-  /*  height: 800%;*/
     resize: none;
 border-radius: 8px;
 border: var(--secundario) 2px solid;
@@ -1228,29 +1227,6 @@ border: var(--secundario) 2px solid;
     box-shadow: 0 0 20px var(--blanco);
 
 }
-
-/*
-.spinner {
-    padding: 1%;
-    border: 4px solid var(--primarioL2, 0, 0, 0, 0.1);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border-left-color: var(--acento);
-    animation: spin 1s linear infinite;
-    margin-bottom: 1%;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-*/
 
 
 .espera {
@@ -1584,7 +1560,7 @@ opacity: 0;
 
     }
 
-/*
+
 
     /*footer*/
 
