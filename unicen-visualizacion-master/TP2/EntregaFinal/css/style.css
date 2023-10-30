@@ -265,7 +265,6 @@ h3 {
 }
 
 .container {
-
     display: grid;
     grid-template-areas:
         "nav"
@@ -273,18 +272,21 @@ h3 {
         "main"
         "foot";
         grid-template-columns: 1fr;
-    grid-template-rows: 5fr 1fr 162fr 25fr;
+    grid-template-rows: 5fr 1fr 110fr 25fr;
+
 }
 
 
 .breadCrums {
     display: flex;
+    align-items: center;
     flex-direction: row;
     grid-area: breadCrums;
     color: var(--primarioL2);
     background: var(--secundario);
     padding-left: 12%;
-    font-size: 80%;
+    font-size: 70%;
+    padding: .25% 0%;
     
 }
 
@@ -939,6 +941,13 @@ footer {
     filter: grayscale(50%);
 }
 
+.enLinea>img{
+    margin: 0%;
+    width: 100%;
+    padding: 0%;
+    height: 100%;
+}
+
 .muestraJuegos {
     margin-left: 4%;
 
@@ -1384,8 +1393,8 @@ img.btn-PlayVideo {
     height: 10%;
 }
 
-.tablero{
-    position:relative;
+.tablero {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1436,12 +1445,11 @@ img.btn-PlayVideo {
      }
     /*input de busqueda de navegacion*/
 
-h1{
-    font-size: 2em;
-}
-.input {
-    font-size: 1em;
-}
+
+    .input {
+        font-size: 1em;
+    }
+
     .imgPlaceholder>img {
         width: 2em;
         height: auto;
@@ -1523,6 +1531,11 @@ h1{
     font-size: 2em;
 }
 
+
+
+h1{
+    font-size: 2em;
+}
     /*footer*/
 
 
