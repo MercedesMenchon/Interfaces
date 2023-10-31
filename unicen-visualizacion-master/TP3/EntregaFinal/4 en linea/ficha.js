@@ -1,8 +1,7 @@
 "Use strict";
 
 class Ficha {
-    constructor(jugador, radio) {
-      this.jugador = jugador;
+    constructor(radio) {
       this.radio = radio;
       //COORDENADAS EN CANVAS
       this.x = 0; 
@@ -12,10 +11,10 @@ class Ficha {
   getRadio(){
     return this.radio;
   }
-    dibujarFicha(ctx) {
+    dibujarFicha(ctx,x,y,anchoCelda) {
+      ctx.fillStyle = "rgb(0,0,0)";
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2);
-      ctx.fillStyle = this.jugador.color;
+      ctx.arc(x, y, this.getRadio(), anchoCelda*this.getRadio(),0,2*Math.PI);
       ctx.fill();
       ctx.closePath();
     }

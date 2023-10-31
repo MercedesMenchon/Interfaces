@@ -14,6 +14,19 @@ class Tablero {
       this.armarTablero();
     }
 
+    getAnchoCelda() {
+      return this.canvas.width / this.columnas;
+    }
+  
+    getAltoCelda() {
+      return this.canvas.height / this.filas;
+    }
+
+    getRadioFicha(){
+      return 0.30;
+    }
+
+
     armarMatriz() {
         for (let fila = 0; fila < this.filas; fila++) {
           this.matriz[fila] = [];
@@ -29,44 +42,42 @@ dibujarTablero(){
 }
 
 
-    
-
-
 
     armarTablero() {
-        //Para obtener el ancho y el alto, dividimos el tamaño del canvas por las filas
-        //y columnas que tiene el tablero
-      const anchoCelda = this.canvas.width / this.columnas;
-      const altoCelda = this.canvas.height / this.filas;
+        
+      
       //PARA BORRAR TODO LO QUE YA ESTA, DEBEMOS UTILIZAR:
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
    this.ctx.lineWidth = 3;
       // Dibuja las celdas del tablero
       for (let fila = 0; fila < this.filas; fila++) {
         for (let columna = 0; columna < this.columnas; columna++) {
-            const x = columna * anchoCelda;
-          const y = fila * altoCelda;
+            const x = columna * this.getAnchoCelda();
+          const y = fila * this.getAltoCelda();
             
             this.ctx.fillStyle = "rgb(0,85,164)";
-            this.ctx.fillRect(x, y, anchoCelda, altoCelda);
+            this.ctx.fillRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
             this.ctx.strokeStyle = "rgb(255,0,255)";
-            this.ctx.strokeRect(x, y, anchoCelda, altoCelda);
+            this.ctx.strokeRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
           // Dibujamos las fichas según el estado de la matriz
       if(this.matriz[fila][columna]===0){
-        this.ctx.fillStyle = "rgb(255,255,255)";
-        this.ctx.beginPath();
-        this.ctx.arc(x+anchoCelda/2,y+altoCelda/2,anchoCelda*0.3,0,2*Math.PI);
-        this.ctx.fill();
+       const ficha = new Ficha(this.getRadioFicha());
+        ficha.dibujarFicha(this.ctx,x+this.getAnchoCelda()/2,y+this.getAltoCelda()/2,this.getAnchoCelda())
       }
           else {
             const ficha = this.matriz[fila][columna];
-            ficha.dibujarFicha(this.ctx, x + anchoCelda / 2, y + altoCelda / 2);
-            this.ctx.strokeRect(x, y, celdaWidth, celdaHeight); 
+            ficha.dibujarFicha(this.ctx, x +this.getAnchoCelda() / 2, y + this.getAltoCelda() / 2);
+            this.ctx.strokeRect(x, y, this.getAnchoCelda(), this.getAltoCelda()); 
             this.ctx.fillStyle = "rgb(255,0,255)";
         }
         }
       }
     }
+
+
+
+
+
 }
 
 
