@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+
+            <button class="btn_menu">
+                <img class="menuHamburguesa" src="Images/iconos/menu.png" alt="">
+            </button>
+            <div class="desplegable">
+                <ul class="navegacion hamburguesa">
+                    <li class="menu">
+                        <img class="idioma" src="Images/iconos/mdi_language.png" alt="idioma">
+                        <h2>Idioma</h2>
+                        <ul class="navegacion idioma">
+                            <li class="menu"><img class="idioma" src="Images/iconos/idiomaEspañol.png" alt="español">
+                                <h2>Español</h2>
+                            </li>
+                            <li class="menu"><img class="idioma" src="Images/iconos/idiomaIngles.png" alt="ingles">
+                                <h2>Inglés</h2>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu"><img src="Images/iconos/sugeridos.png" alt="sugerido">
+                        <h2>Sugeridos</h2>
+                    </li>
+                    <li class="menu"><img src="Images/iconos/random.png" alt="random">
+                        <h2>Random</h2>
+                    </li>
+                    <li class="menu"><img src="Images/iconos/carreras.png" alt="carrera">
+                        <h2>Carrera</h2>
+                    </li>
+                    <li class="menu"><img src="Images/iconos/multijugador.png" alt="multijugador">
+                        <h2>Multijugador</h2>
+                    </li>
+                    <li class="menu"><img src="Images/iconos/infantiles.png" alt="infantil">
+                        <h2>Infantiles</h2>
+                    </li>
+                    <li class="menu"><img src="Images/iconos/clasico.png" alt="clasico">
+                        <h2>Clásicos</h2>
+                    </li>
+                    <li class="menu"><img src="Images/iconos/comentar.png" alt="Lápiz">
+                        <h2>Dibujar</h2>
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+          <a href="index.html"class="logo" >  <img src="Images/iconos/logo-sin fondo 1.png" alt="Logo Juegos Online"></a>
+            <div class="imgPlaceholder">
+
+                <input class="input" type="text" placeholder="¿A qué jugamos?" />
+                <img src="Images/iconos/lupa.png" alt="lupa">
+            </div>
+            <div class="login">
+            
+                <h2>Hola Laura!</h2>
+                <button class="btn_log">
+                    <img src="Images/iconos/logueado.png" alt="logueado">
+                </button>
+                <div class="desplegable">
+                    <ul class="navegacion log">
+                        <li class="menu destacado">
+                            <h2>Mis favoritos</h2>
+                        </li>
+                        <li class="menu">
+                            <h2>Mis datos</h2>
+                        </li>
+                        <li class="menu">
+                            <h2>Compartir</h2>
+                        </li>
+                        <li class="menu">
+                            <h2>Configurar</h2>
+                        </li>
+                    </ul>
+                </div>
+                <button>
+                    <img src="Images/iconos/Carrito compra barra.png" alt="carrito compra barra">
+                </button>
+            </div>
+
+        </nav>
+
+
+
+        <div class="breadCrums">
+            <a class="btn-terciario "href="index.html">Juegos</a><p>></p><a class="btn-terciario">Clásicos</a><p>></p><a class="btn-terciario" href="4enlinea.html"> 4 en linea</a>
+        </div>
+    
+
+        <section class="main">
+            <div class="titulo">
+            <h1>4 en linea ¡en la laguna!</h1>
+        </div>
+            <section class="juego">
+                <div class="column1">
+                    <div class="compartir">
+                        <h2> Comparti con tus amigos!</h2>
+                        <ul>
+                            <li> <img src="Images/Iconos App/Facebook.png" alt="Facebook"></li>
+
+                            <li> <img src="Images/Iconos App/google.png" alt="Google"></li>
+
+                            <li> <img src="Images/Iconos App/Snaptchat.png" alt="Snapchat"></li>
+
+                            <li> <img src="Images/Iconos App/Instagram.png" alt="Instagram"></li>
+
+                            <li> <img src="Images/Iconos App/whatsapp.png" alt="WhatsApp"></li>
+                        </ul>
+                    </div>
+<div class="partidas">
+                    <h2>Mirá otras partidas</h2>
+                    <div class="video">
+                        <img class="demo" src="Images/4 en linea/PartidaJuego1.png" alt="Video de Partida">
+                        <img class="btn-PlayVideo" src="Images/4 en linea/Boton Play Juego Hover.png" alt="Play">
+                    </div>
+                    <div class="video">
+                        <img class="demo" src="Images/4 en linea/PartidaJuego2.png" alt="Video de Partida">
+                        <img class="btn-PlayVideo" src="Images/4 en linea/Boton Play Juego Hover.png" alt="Play">
+                    </div>
+
+                </div>
+            </div>
+                <div class="column2">
+
+               
+                    <canvas id="tablero" width="550" height="350"></canvas>
+                   
+                </div>
+
+            </section>
+
+            <section class="muestraJuegos">
+                <h1>Otros jugadores eligieron</h1>
+
+                <div class="carrousel">
+
+                    <div class="payCard card">
+                        <div class="grey">
+                            <img src="Images/juegos/clasico/bingo.jpg" alt="Juego Bingo">
+                            <h2>Bingo</h2>
+                            <p class="precio">$2000</p>
+                    
+                            <p class="textoChico"> Ya no hace falta salir de casa para jugar al Bingo. MiniTorneos.com saca nuevo juego multijugador. Elige tus cartones y canta 'Bingo' antes que otros usuarios. ¡Consigue miles de premios!</p>
+                        </div>
+                        <img class="hoverCard" id="btn-addLike" src="Images/iconos/estrella like.png" alt="Like">
+                        <img class="hoverCard" id="btn-addCarrito" src="Images/iconos/Carrito compra.png"
+                            alt="Botón para comprar">
+                        <img class="hoverCard" id="btn-dropCarrito" src="Images/iconos/Carrito comprado.png"
+                            alt="Botón para eliminar compra">
+                    
+                    </div>
+
+                    <div class="freeCard card">
+                        <div class="grey">
+                            <img src="Images/juegos/infantil/pizzeria hd.jpg" alt="Juego de pizzeria">
+                            <h2>Papa's pizzeria</h2>
+
+                            <div class="precio">
+                                <p class="precioConDescuento">$5200</p>
+                                <p class="textoGratis">FREE!</p>
+                            </div>
+
+                            <p class="textoChico">El cocinero de la pizzería en la que trabajas se ha marchado, ahora tendrás que hacer tu su trabajo. Agrega los ingredientes, hornea, sirve las pizzas para ganar propinas y gana nuevos clientes. Procura hacerlo lo mejor posible. </p>
+                        </div>
+                        <img class="hoverCard" id="btn-addLike" src="Images/iconos/estrella like.png" alt="Like">
+                        <img class="hoverCard" id="btn-play" src="Images/iconos/play juegos.png" alt="Botón para jugar">
+                    </div>
+
+
+
+
+
+
+                    <div class="freeCard card">
+                        <div class="grey">
+                            <img src="Images/juegos/futbol/penality shoo.jpg" alt="Juego Penalty shoot-out">
+                            <h2>Penalty shoot-out</h2>
+
+                            <div class="precio">
+                                <p class="precioConDescuento">$1500</p>
+                                <p class="textoGratis">FREE!</p>
+                            </div>
+
+                            <p class="textoChico">Disfruta de un simpático juego de fútbol junto a nuestros amigos los Pitufos y consigue marcar tantos goles como puedes o bien pararlos con la ayuda de tus asombrosos reflejos. ¡Escoge la dificultad de tu juego y diviértete!</p>
+                        </div>
+                        <img class="hoverCard" id="btn-addLike" src="Images/iconos/estrella like.png" alt="Like">
+                        <img class="hoverCard" id="btn-play" src="Images/iconos/play juegos.png"
+                            alt="Botón para jugar">
+                    </div>
+                    <div class="freeCard card">
+                        <div class="grey">
+                            <img src="Images/juegos/infantil/BraveSquad.jpg" alt="juego brave Squad">
+                            <h2>Brave Squad</h2>
+
+                            <div class="precio">
+                                <p class="precioConDescuento">$3000</p>
+                                <p class="textoGratis">FREE!</p>
+                            </div>
+
+                            <p class="textoChico">Brave Squad es un juego sin fin altamente adictivo. La premisa del juego es realmente sencilla: tendrás que luchar contra monstruos cada vez más fuertes. El oro que ganes por matar dichos monstruos puedes invertirlo en mejorar a tus héroes, desbloquear nuevos miembros del grupo o contratar trabajadores que te hagan ganar dinero incluso cuando no estás jugando. Pero estarás jugando. Mucho. Vas por una mejora más, un logro más. Y luego uno más y de repente amanece un nuevo día y no estás muy seguro de cómo sucedió. </p>
+                        </div>
+                        <img class="hoverCard" id="btn-addLike" src="Images/iconos/estrella like.png" alt="Like">
+                        <img class="hoverCard" id="btn-play" src="Images/iconos/play juegos.png" alt="Botón para jugar">
+                    </div>
+                    <div class="freeCard card">
+                        <div class="grey">
+                            <img src="Images/juegos/infantil/pinturillo 2.jpg" alt="Juego Pinturillo">
+                            <h2>Pinturillo</h2>
+                             <div class="precio">
+                                <p class="precioConDescuento">$1700</p>
+                                <p class="textoGratis">FREE!</p>
+                            </div>
+                    
+                            <p class="textoChico">En este salón de clases se encuentran muchos objetos escondidos, para poder encontrarlos debes conectar los puntos. ¡No olvides seguir la secuencia correcta!</p>
+                        </div>
+                        <img class="hoverCard" id="btn-addLike" src="Images/iconos/estrella like.png" alt="Like">
+                        <img class="hoverCard" id="btn-play" src="Images/iconos/play juegos.png"
+                            alt="Botón para jugar">
+                    </div>
+                    
+<div class="freeCard card">
+    <div class="grey">
+        <img src="Images/juegos/clasico/superMario.jpg" alt="Juego Super Mario">
+        <h2>Super Mario Bros 2</h2>
+
+        <div class="precio">
+            <p class="precioConDescuento">$2500</p>
+            <p class="textoGratis">FREE!</p>
+        </div>
+
+        <p class="textoChico">Juega a Super Mario Bros 2. Disfruta de esta nueva versión del clásico Super Mario Bros y elige a tu personaje favorito para saltar y esquivar obstáculos.</p>
+    </div>
+    <img class="hoverCard" id="btn-addLike" src="Images/iconos/estrella like.png" alt="Like">
+    <img class="hoverCard" id="btn-play" src="Images/iconos/play juegos.png"
+        alt="Botón para jugar">
+</div>
+
+
+<div class="payCard card">
+    <div class="grey">
+        <img src="Images/juegos/futbol/football leg.png" alt="Juego footbal legends">
+        <h2>Football Legends </h2>
+        <p class="precio">$3500</p>
+
+        <p class="textoChico"> ¡Disfruta de un emocionante partido del fútbol con las leyendas del año 2019! Elige el equipo que más te guste y participa en un gran torneo donde se enfrentarán los mejores del mundo. ¡Podrás controlar a tu jugador favorito!</p>
+    </div>
+    <img class="hoverCard" id="btn-addLike" src="Images/iconos/estrella like.png" alt="Like">
+    <img class="hoverCard" id="btn-addCarrito" src="Images/iconos/Carrito compra.png"
+        alt="Botón para comprar">
+    <img class="hoverCard" id="btn-dropCarrito" src="Images/iconos/Carrito comprado.png"
+        alt="Botón para eliminar compra">
+
+</div>
+<div class="payCard card">
+    <div class="grey">
+        <img src="Images/juegos/futbol/wommen footbol.jpg" alt="Juego woomen penalty ">
+        <h2>Women football penalty </h2>
+        <p class="precio">$7600</p>
+
+        <p class="textoChico">¿Eres un verdadero fan de la copa del mundo de fútbol? ¡Demuéstralo participando en un emocionante encuentro femenino con grandes deportistas en el juego Women Football Penalty Champions mientras recorres el campo de un lado a otro y golpeando la pelota con todas tus fuerzas para marcar gol en la portería contraria! </p>
+    </div>
+    <img class="hoverCard" id="btn-addLike" src="Images/iconos/estrella like.png" alt="Like">
+    <img class="hoverCard" id="btn-addCarrito" src="Images/iconos/Carrito compra.png"
+        alt="Botón para comprar">
+    <img class="hoverCard" id="btn-dropCarrito" src="Images/iconos/Carrito comprado.png"
+        alt="Botón para eliminar compra">
+
+</div>
+                </div>
+
+            </section>
+
+            <section class="comentarios">
+                <h1>dejanos tus comentarios</h1>
+                <h2>¿Qué piensas sobre este juego?</h2>
+
+                <form class="opinion">
+                    <textarea id="comentario" cols="40" rows="7" minlength="25" maxlength="200" required></textarea>
+                </form>
+                <a id="btn-comentar" class="btn-secundario">Enviar</a>
+                <div>
+
+                    <img id="btn-comentario" src="Images/iconos/estrella like.png" alt="estrella">
+                    <h2 class="cant-votos"></h2>
+                </div>
+
+            </section>
+            <section class="interaccion">
+                <div class=" comentariosViejos">
+                    <div>
+                        <h1>Últimos comentarios</h1>
+                        <section class="listaComentarios vertical">
+
+                        </section>
+                    </div>
+                </div>
+                <section class="ranking">
+                    <h1>Ranking</h1>
+                    <div>
+                        <img src="Images/4 en linea/copa de oro.png" alt="copa de oro">
+                        <h3>Tincho_gamer</h3>
+                    </div>
+                    <div>
+                        <img src="Images/4 en linea/copa de plata.png" alt="copa de plata">
+                        <h3>Juana de arco</h3>
+                    </div>
+                    <div>
+                        <img src="Images/4 en linea/copa de bronce.png" alt="copa de plata">
+                        <h3>Carmelito</h3>
+                    </div>
+                </section>
+            </section>
+        </section>
+
+        <footer>
+            <div class="descripcionFooter">
+                <p>
+                    Descubrí juegos de aventura, carreras, los clásicos de siempre, fútbol y muchos más...
+                    Tenes muchas opciones de juegos gratis, pero también podes optar por adquirir esos juegos que tanto
+                    buscas a precios increibles!!!.
+                    Juegos Online utiliza cookies para proporcionar un mejor y más personalizado servicio a los usuarios.Es posible que almacenemos alguna información en tu equipo, portátil, tableta o terminal
+                    móvil cuando navegues por nuestras webs, webs móviles o aplicaciones móviles.
+                    Al jugar en Juegos online estás aceptando nuestras politicas de privacidad y de uso.
+                </p>
+            </div>
+
+            <div class=" centro">
+                <div>
+                    <ul class="likeRedes">
+                        <li>
+                            <img src="Images/iconos/facebook.png" alt="faceboock">
+                            <p class="body">32201</p>
+                            <p class="body">fans</p>
+                        </li>
+                        <li>
+                            <img src="Images/iconos/tweeter.png" alt="tweeter">
+                            <p class="body">15000</p>
+                            <p class="body">fans</p>
+                        </li>
+                        <li>
+                            <img src="Images/iconos/instagram.png" alt="instagram">
+                            <p class="body">52030</p>
+                            <p class="body">fans</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logoFooter">
+                    <a href="index.html"><img src="Images/logo-sin fondo.png" alt="logo"></a>
+                    <p class="textoChico">©JuegosOnline.Game</p>
+                </div>
+            </div>
+         
+            <div class="desktop informacion">
+                <ul>
+                    <li>
+                        <button><img src="Images/iconos/desarrolladores.svg" alt="desarrolladores"></button>
+                        <h3>Desarrolladores</h3>
+                    </li>
+                    <li>
+                        <button><img src="Images/iconos/ayuda.svg" alt="Ayuda"></button>
+                        <h3>Ayuda</h3>
+                    </li>
+                    <li>
+                        <button><img src="Images/iconos/acercadenosotros.svg" alt="acerca de nosotros"></button>
+                        <h3>Acerca de nosotros</h3>
+                    </li>
+                    <li>
+                        <button><img src="Images/iconos/privacidad.svg" alt="privacidad"></button>
+                        <h3>Privacidad</h3>
+                    </li>
+                    <li>
+                        <button><img src="Images/iconos/politicasdeuso.svg" alt="politicas de uso"></button>
+                        <h3>Politicas de uso</h3>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </footer>
+    </div> <script type="text/javascript" src="js/casillero.js"></script>
+    <script type="text/javascript" src="js/ficha.js"></script>
+    <script type="text/javascript" src="js/juego.js"></script>
+    <script type="text/javascript" src="js/jugador.js"></script>
+    <script type="text/javascript" src="js/tablero.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/4enLinea.js"></script>
+</body>
+
+</html>

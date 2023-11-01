@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+
+        <button class="btn_menu">
+            <img class="menuHamburguesa" src="Images/iconos/menu.png" alt="">
+        </button>
+        <div class="desplegable">
+            <ul class="navegacion hamburguesa">
+                <li class="menu">
+                    <img class="idioma" src="Images/iconos/mdi_language.png" alt="idioma">
+                    <h2>Idioma</h2>
+                    <ul class="navegacion idioma">
+                        <li class="menu"><img class="idioma" src="Images/iconos/idiomaEspañol.png" alt="español">
+                            <h2>Español</h2>
+                        </li>
+                        <li class="menu"><img class="idioma" src="Images/iconos/idiomaIngles.png" alt="ingles">
+                            <h2>Inglés</h2>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu"><img src="Images/iconos/sugeridos.png" alt="sugerido">
+                    <h2>Sugeridos</h2>
+                </li>
+                <li class="menu"><img src="Images/iconos/random.png" alt="random">
+                    <h2>Random</h2>
+                </li>
+                <li class="menu"><img src="Images/iconos/carreras.png" alt="carrera">
+                    <h2>Carrera</h2>
+                </li>
+                <li class="menu"><img src="Images/iconos/multijugador.png" alt="multijugador">
+                    <h2>Multijugador</h2>
+                </li>
+                <li class="menu"><img src="Images/iconos/infantiles.png" alt="infantil">
+                    <h2>Infantiles</h2>
+                </li>
+                <li class="menu"><img src="Images/iconos/clasico.png" alt="clasico">
+                    <h2>Clásicos</h2>
+                </li>
+                <li class="menu"><img src="Images/iconos/comentar.png" alt="Lápiz">
+                    <h2>Dibujar</h2>
+                </li>
+            </ul>
+
+        </div>
+
+
+
+        <a href="index.html" class="logo"> <img src="Images/iconos/logo-sin fondo 1.png"
+                alt="Logo Juegos Online"></a>
+        <div class="imgPlaceholder">
+
+            <input class="input" type="text" placeholder="¿A qué jugamos?" />
+            <img src="Images/iconos/lupa.png" alt="lupa">
+        </div>
+        <div class="login">
+
+            <h2>Hola Laura!</h2>
+            <button class="btn_log">
+                <img src="Images/iconos/logueado.png" alt="logueado">
+            </button>
+            <div class="desplegable">
+                <ul class="navegacion log">
+                    <li class="menu destacado">
+                        <h2>Mis Favoritos</h2>
+                    </li>
+                    <li class="menu">
+                        <h2>Mis datos</h2>
+                    </li>
+                    <li class="menu">
+                        <h2>Compartir</h2>
+                    </li>
+                    <li class="menu">
+                        <h2>Configurar</h2>
+                    </li>
+                </ul>
+            </div>
+            <button>
+                <img src="Images/iconos/Carrito compra barra.png" alt="carrito compra barra">
+            </button>
+        </div>
+
+
+
+
+
+    </nav>
+
+
+    <div class="breadCrums">
+        <a class="btn-terciario " href="index.html">juegos</a> <p> > </p> <a class="btn-terciario " href="login.html">login</a>
+    </div>
+ 
+    <section class="formularios"> 
+        <div class="form">
+            <h2>¡Iniciá sesión para divertirte sin límites!</h2>
+            <div>
+                <div class="botones">
+                    <button class="btn-login" id="btn-loginIniciarSesion">INICIAR SESIÓN</button>
+                    <button class="btn-login" id="btn-loginRegistrarme">REGISTRARME</button>
+                </div>
+            </div>
+            <div class="formIniciarSesion ">
+                <form action="">
+                    <div class="column">
+                        <label >Correo electrónico: * </label> <input type="text" id="correoElectronico1" required>
+                    </div>
+                    <p class="avisoDeCorreo"></p>
+                    <div class="column">
+                        <label >Contraseña: * </label> <input type="password" id="contrasenia" required>
+                    </div>
+                    <p class="avisoDeContrasenia"></p>
+                    <div>
+                        <a class="btn-terciario">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <div>
+                   
+                        <a class="animacionBTN" id="IniciarSesion">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            INICIAR SESION
+                        </a>
+                    </div>
+
+
+
+
+                    <div>
+                        <h2>O</h2>
+                    </div>
+                    <div>
+                        <a class="btn-secundario btn-facebook loading">
+                            <img src="Images/iconos/facebook.png" alt="Icono de Facebook">
+                            <p class="textoBotones">continuar con Facebook</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="btn-secundario btn-google loading">
+                            <img src="Images/iconos/Icono de Gmail.png" alt="Icono de Google">
+                            <p class="textoBotones">continuar con Google</p>
+                        </a>
+                    </div>
+                    <p class="textoChico"> Al continuar, aceptas las condiciones del servicio de
+                        juegos Online y reconoces que leíste nuestra política de privacidad.</p>
+                
+                    </form>
+            </div>
+
+
+
+            <div class="formRegistrarme">
+                <form>
+                    <div>
+                        <label class="column">Nombre y apellido: *</label> 
+                        <input type="text" id="nombreApellido" name="nombreApellido" required>
+                    </div>
+                    <p class="avisoNombre"></p>
+                    <div>
+                        <label class="column">Nickname: </label> 
+                        <input type="text"id="nickName" name="nickname" required>
+                           </div>
+                    <div>
+                        <label class="column">Edad: *</label> 
+                        <input class= "inputEdad" id="inputEdad" type="number" name="edad" required>
+                    </div>
+                    <p class="avisoEdad"></p>
+                    <div>
+                        <label class="column">Correo electrónico: *</label>
+                         <input type="text" id="correoElectronico" name="correoElectronico" required>
+                        </div>
+                        <p class="avisoCorreoElectronico"></p>
+                    <div>
+                        <label class="column">Contraseña: *</label>
+                         <input type="password" id="password" name="Contrasenia" required>
+                    </div>
+                    <p class="textoChico"> Crea una contraseña segura con una combinación de letras, números y símbolos
+                    </p>
+                    <div>
+                        <label class="column">Repetir contraseña: *</label>
+                         <input type="password" id="password2"name="Contrasenia" required>
+                    </div>
+                    <p class="avisodecontraseña"></p>
+                    <a class="btn-terciario" id="verificarContraseña">validar contraseña</a>
+                   
+
+                    <div class="recaptcha">
+                        <input type="checkbox" id="captcha" required>
+                        <label><p>NO SOY UN ROBOT</p></label>
+                        <img src="Images/iconos/RecaptchaLogo.svg.png" alt="Recaptcha">
+                    </div>
+                    <div class="avisodeCaptcha"></div>
+                    
+                    <div class="divAnimacion">
+                   
+                        <a class="animacionBTN" id="registrarme">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            registrarme
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="espera">
+                <div class="progress">
+                    <div class="progress-bar">
+                        <div class="text-porcentaje"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+    <footer>
+        <div class="descripcionFooter">
+            <p>
+                Descubrí juegos de aventura, carreras, los clásicos de siempre, fútbol y muchos más...
+                Tenes muchas opciones de juegos gratis, pero también podes optar por adquirir esos juegos que tanto
+                buscas a precios increibles!!!.
+                Juegos Online utiliza cookies para proporcionar un mejor y más personalizado servicio a los
+                usuarios.Es posible que almacenemos alguna información en tu equipo, portátil, tableta o terminal
+                móvil cuando navegues por nuestras webs, webs móviles o aplicaciones móviles.
+                Al jugar en Juegos online estás aceptando nuestras politicas de privacidad y de uso.
+            </p>
+        </div>
+
+        <div class=" centro">
+            <div>
+                <ul class="likeRedes">
+                    <li>
+                        <img src="Images/iconos/facebook.png" alt="faceboock">
+                        <p class="body">32201</p>
+                        <p class="body">fans</p>
+                    </li>
+                    <li>
+                        <img src="Images/iconos/tweeter.png" alt="tweeter">
+                        <p class="body">15000</p>
+                        <p class="body">fans</p>
+                    </li>
+                    <li>
+                        <img src="Images/iconos/instagram.png" alt="instagram">
+                        <p class="body">52030</p>
+                        <p class="body">fans</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="logoFooter">
+                <a href="index.html"><img src="Images/logo-sin fondo.png" alt="logo"></a>
+                <p class="textoChico">©JuegosOnline.Game</p>
+            </div>
+        </div>
+
+        <div class="desktop informacion">
+            <ul>
+                <li>
+                    <button><img src="Images/iconos/desarrolladores.svg" alt="desarrolladores"></button>
+                    <h3>Desarrolladores</h3>
+                </li>
+                <li>
+                    <button><img src="Images/iconos/ayuda.svg" alt="Ayuda"></button>
+                    <h3>Ayuda</h3>
+                </li>
+                <li>
+                    <button><img src="Images/iconos/acercadenosotros.svg" alt="acerca de nosotros"></button>
+                    <h3>Acerca de nosotros</h3>
+                </li>
+                <li>
+                    <button><img src="Images/iconos/privacidad.svg" alt="privacidad"></button>
+                    <h3>Privacidad</h3>
+                </li>
+                <li>
+                    <button><img src="Images/iconos/politicasdeuso.svg" alt="politicas de uso"></button>
+                    <h3>Politicas de uso</h3>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </footer>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
