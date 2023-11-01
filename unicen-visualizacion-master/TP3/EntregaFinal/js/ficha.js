@@ -1,6 +1,5 @@
 "Use strict";
-const canvas = document.getElementById('tablero');
-const ctx = canvas.getContext('2d');
+
 class Ficha {
   constructor( radio, xCanvas, yCanvas) {
       this.radio = radio;
@@ -20,9 +19,8 @@ class Ficha {
       ctx.closePath();
   }
 }
-module.exports =Ficha;
 
 
-const ficha = new Ficha(20,45, 45);
-ficha.dibujarFicha(ctx);
+
+
 

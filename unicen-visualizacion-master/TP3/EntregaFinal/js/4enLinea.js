@@ -104,7 +104,7 @@ function addComentario(){
 
 
 // play juego
-let tablero = document.querySelector(".tablero");
+
 
 /*let btnPlay= tablero.querySelector("#btn-PlayVideo2");
 let circle = tablero.querySelector(".circle");
