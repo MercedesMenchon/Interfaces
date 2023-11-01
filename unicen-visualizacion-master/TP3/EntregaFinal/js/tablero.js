@@ -13,32 +13,33 @@ class Tablero {
     }
 
     getAnchoCelda() {
-      return 320/ this.columnas;
+      return this.canvas.width / this.columnas;
     }
   
     getAltoCelda() {
-      return 250/ this.filas;
+      return this.canvas.height / this.filas;
     }
 
     getRadioFicha(){
-      return this.getAltoCelda()/2*0.8;
-        }
-
-
-    armarMatriz() {
-        for (let fila = 0; fila < this.filas; fila++) {
-          this.matriz[fila] = [];
-          for (let columna = 0; columna < this.columnas; columna++) {
-            this.matriz[fila][columna] = 0; 
-        }
-      }
-
+      return 0.30;
     }
-dibujarTablero(){
+
+
+  armarMatriz() {
+    for (let fila = 0; fila < this.filas; fila++) {
+      this.matriz[fila] = [];
+      for (let columna = 0; columna < this.columnas; columna++) {
+        this.matriz[fila][columna] = 0;
+      }
+    }
+
+  }
+
+
+  dibujarTablero() {
     this.armarTablero();
     this.dibujarFichas();
-}
-
+  }
 
 
     armarTablero() {
@@ -50,8 +51,8 @@ dibujarTablero(){
       // Dibuja las celdas del tablero
       for (let fila = 0; fila < this.filas; fila++) {
         for (let columna = 0; columna < this.columnas; columna++) {
-            const x = 115 +columna * this.getAnchoCelda();
-          const y = 75 +fila * this.getAltoCelda();
+            const x = columna * this.getAnchoCelda();
+          const y = fila * this.getAltoCelda();
             
             this.ctx.fillStyle = "rgb(0,85,164)";
             this.ctx.fillRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
@@ -59,25 +60,18 @@ dibujarTablero(){
             this.ctx.strokeRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
           // Dibujamos las fichas según el estado de la matriz
       if(this.matriz[fila][columna]===0){
-     const casillero = new Casillero(x,y,this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
-    casillero.dibujar(this.ctx);  
- 
-    }
+       const ficha = new Ficha(this.getRadioFicha());
+        ficha.dibujarFicha(this.ctx,x+this.getAnchoCelda()/2,y+this.getAltoCelda()/2,this.getAnchoCelda())
+      }
           else {
-
             const ficha = this.matriz[fila][columna];
             ficha.dibujarFicha(this.ctx, x +this.getAnchoCelda() / 2, y + this.getAltoCelda() / 2);
             this.ctx.strokeRect(x, y, this.getAnchoCelda(), this.getAltoCelda()); 
             this.ctx.fillStyle = "rgb(255,0,255)";
         }
-        }
       }
     }
-
-
-
-
-
+  }
 }
 
 
