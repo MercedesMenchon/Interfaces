@@ -35,11 +35,11 @@ this.filas=filas;
   }
 
   getAnchoCelda() {
-    return 320/ this.columnas;
+    return this.canvas.width*.7/ this.columnas;
   }
 
   getAltoCelda() {
-    return 250/ this.filas;
+    return this.canvas.height*.7/ this.filas;
   }
 
   getRadioFicha(){
@@ -72,8 +72,8 @@ dibujarTablero(){
     // Dibuja las celdas del tablero
     for (let fila = 0; fila < this.filas; fila++) {
       for (let columna = 0; columna < this.columnas; columna++) {
-          const x = 115 +columna * this.getAnchoCelda();
-        const y = 75 +fila * this.getAltoCelda();
+          const x = 45+columna * this.getAnchoCelda();
+        const y = 35+fila * this.getAltoCelda();
           
           this.ctx.fillStyle = "rgb(0,85,164)";
           this.ctx.fillRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
