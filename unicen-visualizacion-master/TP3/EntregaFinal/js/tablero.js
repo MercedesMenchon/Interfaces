@@ -1,6 +1,6 @@
 "Use strict";
 //CREAMOS LA CLASE TABLERO
-class Tablero {
+export default class Tablero {
  
     constructor(filas, columnas,canvas,ctx) {
   this.columnas=columnas;
@@ -79,6 +79,7 @@ dibujarTablero(){
 
 
 }
+
 
 
 //LOS CONSTRUCTORES DE NUESTROS TABLEROS
