@@ -23,7 +23,11 @@ fichaJugador2.dibujar();
 
 
 
+//creo juego
+const juego = new Juego(tablero8x8, canvas, ctx);
 
+
+juego.addFichas();
 
 
 
