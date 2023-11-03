@@ -10,8 +10,12 @@ class Tablero {
     this.canvas = canvas;
     this.ctx = ctx;
     this.armarTablero();
+    this.cantFichas=this.filas*this.columnas;
   }
 
+  getCantFichas(){
+    return this.cantFichas;
+  }
   getAnchoCelda() {
     return this.canvas.width * .7 / this.columnas;
   }

@@ -40,23 +40,21 @@ class Ficha {
     }
 
     dibujar() {
-        this.ctx.fillStyle = this.fill;
-
+       this.ctx.fillStyle = this.fill;
         if (this.resaltado === true) {
             ctx.strokeStille() = this.resaltadoEstilo;
             ctx.lineWidht = 4;
-            ctx.beginPath();
             this.ctx.stroke();
         }
+        ctx.beginPath();
         ctx.arc(this.xCanvas, this.yCanvas, this.getRadio(), 0, 2 * Math.PI);
         ctx.fill();
         ctx.closePath();
     }
 
 
-
 setResaltado(resaltado) {
-    this.re4saltado = resaltado;
+    this.resaltado = resaltado;
 }
 
 //indicamos si el mousse esta dentro de la figura
