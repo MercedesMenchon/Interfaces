@@ -10,12 +10,11 @@ class Tablero {
     this.canvas = canvas;
     this.ctx = ctx;
     this.armarTablero();
-    this.cantFichas=this.filas*this.columnas;
+this.cantFichas=this.filas*this.columnas;
   }
-
-  getCantFichas(){
-    return this.cantFichas;
-  }
+getCantFichas(){
+  return this.cantFichas;
+}
   getAnchoCelda() {
     return this.canvas.width * .7 / this.columnas;
   }
@@ -69,7 +68,7 @@ class Tablero {
 
         // Dibujamos las fichas según el estado de la matriz
         if (this.matriz[fila][columna] === 0) {
-          const casillero = new Casillero(x, y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
+          const casillero = new Casillero(x,y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
           casillero.dibujar(this.ctx);
 
         }
@@ -85,6 +84,12 @@ class Tablero {
   }
 
 }
+
+//NUEVAS FUNCIONES
+
+
+
+
 
 
 
