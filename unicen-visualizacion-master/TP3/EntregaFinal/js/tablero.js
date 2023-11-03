@@ -1,7 +1,8 @@
 "Use strict";
 //CREAMOS LA CLASE TABLERO
 class Tablero {
-
+  
+ 
   constructor(filas, columnas, canvas, ctx) {
     this.columnas = columnas;
     this.filas = filas;
@@ -12,6 +13,21 @@ class Tablero {
     this.armarTablero();
 this.cantFichas=this.filas*this.columnas;
   }
+
+  getFilas(){
+    return this.filas;
+  }
+
+  getColumnas(){
+    return this.columnas;
+  }
+
+  getEspacioBlancoX (){
+    return (this.canvas.width - this.getColumnas() * this.getAnchoCelda()) / 2;
+  }
+
+  getEspacioBlancoY()
+  { return (this.canvas.height - this.getFilas() * this.getAltoCelda()) * 4 / 5;}
 getCantFichas(){
   return this.cantFichas;
 }
@@ -52,14 +68,13 @@ getCantFichas(){
     //this.ctx.lineWidth = 3;
 
     // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
-    const espacioBlancoX = (this.canvas.width - this.columnas * this.getAnchoCelda()) / 2;
-    const espacioBlancoY = (this.canvas.height - this.filas * this.getAltoCelda()) * 4 / 5;
+
 
     // Dibuja las celdas del tablero
     for (let fila = 0; fila < this.filas; fila++) {
       for (let columna = 0; columna < this.columnas; columna++) {
-        const x = espacioBlancoX + columna * this.getAnchoCelda();
-        const y = espacioBlancoY + fila * this.getAltoCelda();
+        const x = this.getEspacioBlancoX()+ columna * this.getAnchoCelda();
+        const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
 
         this.ctx.fillStyle = "rgb(0,85,164)";
         this.ctx.fillRect(x, y, this.getAnchoCelda(), this.getAltoCelda());

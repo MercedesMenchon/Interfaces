@@ -16,21 +16,30 @@ class Juego {
   }
 
 
-
   addFichas() {
+    let posy=0;
     if (this.fichas.length < this.tablero.getCantFichas()) {
       //setTimeOut(addFicha, 333);
-      for (let i = 0; i < this.tablero.getCantFichas(); i++) {
-        let posx = Math.round(Math.random() * canvas.width);
-        let posy = Math.round(Math.random() * canvas.height);
-        let fichita = new Ficha(this.tablero.getRadioFicha(), posx, posy, 'red', ctx);
-        this.fichas.push(fichita);
+      for (let i = 0; i < this.tablero.getCantFichas()/4; i++) {
+      /*  let posx = Math.round(Math.random() * canvas.width);
+        let posy = Math.round(Math.random() * canvas.height);*/
+        let posxJ1 = this.tablero.getEspacioBlancoX()/4;
+        let posxJ2 = this.tablero.getEspacioBlancoX()*5/4+this.canvas.width * .7;
+        posy +=this.tablero.getRadioFicha()*2.1;
+        const fichaJugador1 = new Ficha(this.tablero.getRadioFicha(),posxJ1,posy,"orange",ctx,"Images\\4 en linea\\mosca.png");
+        const fichaJugador3= new Ficha(this.tablero.getRadioFicha(),posxJ1*3,posy,"orange",ctx,"Images\\4 en linea\\mosca.png");
+       
+        const fichaJugador2 = new Ficha(this.tablero.getRadioFicha(),posxJ2,posy,"green",ctx,"Images\\4 en linea\\sapo.png");
+        this.fichas.push(fichaJugador1); 
+        this.fichas.push(fichaJugador2);
+        this.fichas.push(fichaJugador3);
+        
       }
     }
     this.dibujarFichas();
   }
 
-  
+
   dibujarFichas() {
     /*ClearCanvas();*/
     for (let i = 0; i < this.fichas.length; i++) {
