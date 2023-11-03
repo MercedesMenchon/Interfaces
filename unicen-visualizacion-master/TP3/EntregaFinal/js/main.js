@@ -16,9 +16,9 @@ const juego8x8 = new Tablero(7, 8, canvas, ctx);
 const imagenFicha1= new Image();
 Image.src= "Images\\4 en linea\\mosca.png";
 
-const fichaJugador1 = new fichaJugador(40,45,45,ctx,"orange","Images\\4 en linea\\mosca.png");
+const fichaJugador1 = new Ficha(40,45,45,"orange",ctx,"Images\\4 en linea\\mosca.png");
 fichaJugador1.dibujar();
-const fichaJugador2 = new fichaJugador(40,150,150,ctx,"green","Images\\4 en linea\\sapo.png");
+const fichaJugador2 = new Ficha(40,150,150,"green",ctx,"Images\\4 en linea\\sapo.png");
 fichaJugador2.dibujar();
 
 
