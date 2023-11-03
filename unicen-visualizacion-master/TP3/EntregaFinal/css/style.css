@@ -1581,10 +1581,12 @@ h1{
     }
  
 
-    canvas{
+    canvas#tablero{
 display:flex;
 align-items: center;
 justify-content: center;
 background-color:var(--blanco);
+width: 1000px;
+height: 600px;
     }
 }
