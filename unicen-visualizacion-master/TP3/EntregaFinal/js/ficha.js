@@ -8,8 +8,8 @@ class Ficha {
         this.fill = fill;
         this.resaltado = false;
         this.ctx = contexto;
-      //this.resaltadoEstilo = 'red';//hacer otra cosa
         this.imagen=imagen;
+        this.arrastrandose=false;
         
     }
 
@@ -76,7 +76,7 @@ class Ficha {
         
         if (this.resaltado) {
             // Dibuja un borde resaltado alrededor de la ficha
-            this.ctx.strokeStyle = "red"; // Cambia el color del borde a tu elección
+            this.ctx.strokeStyle = "red";
             this.ctx.lineWidth = 4; // Ancho del borde resaltado
             this.ctx.stroke();
           }
@@ -93,8 +93,14 @@ isPointedInside(xCanvas, yCanvas) {
     let NuevoY = this.getPosicionY() - yCanvas;
     return Math.sqrt(NuevoX * NuevoX + NuevoY * NuevoY) < this.getRadio();
 }
-
-
+//detecto si la ficha se esta arrastrando
+setArrastrandose(arrastrandose) {
+    this.arrastrandose = arrastrandose;
+  }
+  
+  isArrastrandose() {
+    return this.arrastrandose;
+  }
 }
 
 

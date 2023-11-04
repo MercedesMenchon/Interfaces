@@ -17,7 +17,8 @@ const juego8x8 = new Tablero(7, 8, canvas, ctx);
 const imagenFicha1 = new Image();
 imagenFicha1.src = "Images\\4 en linea\\mosca.png";
 
-
+const imagenFicha2 = new Image();
+imagenFicha2.src = "Images\\4 en linea\\sapo.png";
 
 
 //creo juego

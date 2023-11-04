@@ -1,8 +1,8 @@
 "Use strict";
 //CREAMOS LA CLASE TABLERO
 class Tablero {
-  
- 
+
+
   constructor(filas, columnas, canvas, ctx) {
     this.columnas = columnas;
     this.filas = filas;
@@ -11,26 +11,25 @@ class Tablero {
     this.canvas = canvas;
     this.ctx = ctx;
     this.armarTablero();
-this.cantFichas=this.filas*this.columnas;
+    this.cantFichas = this.filas * this.columnas;
   }
 
-  getFilas(){
+  getFilas() {
     return this.filas;
   }
 
-  getColumnas(){
+  getColumnas() {
     return this.columnas;
   }
 
-  getEspacioBlancoX (){
+  getEspacioBlancoX() {
     return (this.canvas.width - this.getColumnas() * this.getAnchoCelda()) / 2;
   }
 
-  getEspacioBlancoY()
-  { return (this.canvas.height - this.getFilas() * this.getAltoCelda()) * 4 / 5;}
-getCantFichas(){
-  return this.cantFichas;
-}
+  getEspacioBlancoY() { return (this.canvas.height - this.getFilas() * this.getAltoCelda()) * 4 / 5; }
+  getCantFichas() {
+    return this.cantFichas;
+  }
   getAnchoCelda() {
     return this.canvas.width * .7 / this.columnas;
   }
@@ -67,13 +66,12 @@ getCantFichas(){
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     //this.ctx.lineWidth = 3;
 
-    // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
-
 
     // Dibuja las celdas del tablero
     for (let fila = 0; fila < this.filas; fila++) {
       for (let columna = 0; columna < this.columnas; columna++) {
-        const x = this.getEspacioBlancoX()+ columna * this.getAnchoCelda();
+        // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
+        const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
         const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
 
         this.ctx.fillStyle = "rgb(0,85,164)";
@@ -83,7 +81,7 @@ getCantFichas(){
 
         // Dibujamos las fichas según el estado de la matriz
         if (this.matriz[fila][columna] === 0) {
-          const casillero = new Casillero(x,y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
+          const casillero = new Casillero(x, y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
           casillero.dibujar(this.ctx);
 
         }
