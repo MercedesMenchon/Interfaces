@@ -8,8 +8,9 @@ class Ficha {
         this.fill = fill;
         this.resaltado = false;
         this.ctx = contexto;
-      //  this.resaltadoEstilo = 'red';//hacer otra cosa
+      //this.resaltadoEstilo = 'red';//hacer otra cosa
         this.imagen=imagen;
+        
     }
 
     setFill(fill) {
@@ -42,7 +43,6 @@ class Ficha {
 
 
     dibujar() {
-        console.log('entro');
         this.ctx.fillStyle = this.getFill();
         this.ctx.strokeStyle = 'black'; 
         this.ctx.lineWidth = 2; 
@@ -73,7 +73,13 @@ class Ficha {
                 this.ctx.restore(); 
             };
         }
-    
+        
+        if (this.resaltado) {
+            // Dibuja un borde resaltado alrededor de la ficha
+            this.ctx.strokeStyle = "red"; // Cambia el color del borde a tu elección
+            this.ctx.lineWidth = 4; // Ancho del borde resaltado
+            this.ctx.stroke();
+          }
    }
 
 
@@ -82,19 +88,12 @@ setResaltado(resaltado) {
 }
 
 //indicamos si el mousse esta dentro de la figura
-isPointInside(xCanvas, yCanvas) {
+isPointedInside(xCanvas, yCanvas) {
     let NuevoX = this.getPosicionX() - xCanvas;
     let NuevoY = this.getPosicionY() - yCanvas;
     return Math.sqrt(NuevoX * NuevoX + NuevoY * NuevoY) < this.getRadio();
 }
-/*
-    dibujarFicha(ctx) {
-        ctx.fillStyle = "rgb(0, 0, 0)";
-        ctx.beginPath();
-        ctx.arc(this.xCanvas, this.yCanvas, this.getRadio(), 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.closePath();
-    }*/
+
 
 }
 

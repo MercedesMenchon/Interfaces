@@ -13,19 +13,17 @@ const CANT_FICHAS = 15;
 const juego8x8 = new Tablero(7, 8, canvas, ctx);
 
 
-const imagenFicha1= new Image();
-Image.src= "Images\\4 en linea\\mosca.png";
 
+const imagenFicha1 = new Image();
+imagenFicha1.src = "Images\\4 en linea\\mosca.png";
 
 
 
 
 //creo juego
 const juego = new Juego(tablero8x8, canvas, ctx);
-
-
-juego.addFichas();
-
+juego.agregarEventoClic(); // Agrega el manejador de eventos al canvas
+juego.addFichas(); // Llama a la función para agregar fichas
 
 
 
