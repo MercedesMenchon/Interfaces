@@ -124,6 +124,7 @@ class Juego {
 
   //Determinamos en cuál ficha se hizo clic en el lienzo del juego, si se encuentra, se devuelve.
   findClickedFigure(x, y) {
+    console.log('entro a la ficha');
     for (let i = 0; i < this.fichas.length; i++) {
       const element = this.fichas[i];
       if (element.isPointedInside(x, y)) {
