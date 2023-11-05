@@ -1,7 +1,7 @@
 "Use strict";
 
 class Ficha {
-    constructor(radio, xCanvas, yCanvas, fill, contexto, imagen) {
+    constructor(radio, xCanvas, yCanvas, fill, contexto, imagen,jugador) {
         this.radio = radio;
         this.xCanvas = xCanvas;
         this.yCanvas = yCanvas;
@@ -10,9 +10,12 @@ class Ficha {
         this.ctx = contexto;
         this.imagen=imagen;
         this.arrastrandose=false;
+        this.jugador=jugador;
         
     }
-
+getJugador(){
+    return this.jugador;
+}
     setFill(fill) {
         this.fill = fill;
     }
@@ -89,6 +92,7 @@ setResaltado(resaltado) {
 //NO SE MUEVEN LAS VERDES PQ ESTA MAL CONFIGURADO EL DETECTAR SI ESTA O NO EN SU RADIO
 //indicamos si el mousse esta dentro de la figura
 //lA FUNCION ESTA ANDA SOLO APRA ALS NARANAJS
+
 /* isPointedInside(xCanvas, yCanvas) {
     let NuevoX = this.getPosicionX() - xCanvas;
     let NuevoY = this.getPosicionY() - yCanvas;
@@ -96,12 +100,32 @@ setResaltado(resaltado) {
 }*/
 
 isPointedInside(xCanvas, yCanvas) {
-    const dx = xCanvas - this.getPosicionX();
+if(this.getJugador()=="jugador1"){
+  const dx = xCanvas- this.getPosicionX();
   const dy = yCanvas - this.getPosicionY();
+  //pitagoras
 const distancia = Math.sqrt(dx * dx + dy * dy);
+console.log("distancia1:");
+console.log(distancia);
 
 // Compara la distancia con el radio de la ficha
 return distancia < this.getRadio();
+}
+if(this.getJugador()=="jugador2"){
+    //- this.tablero.getEspacioBlancoX() * 5 / 4 + 800 * .7 
+    const dx = xCanvas  - this.getPosicionX();
+    const dy = yCanvas - this.getPosicionY();
+    console.log("dx:");
+    console.log(dx);
+    //pitagoras
+  const distancia = Math.sqrt(dx * dx + dy * dy);
+  console.log("distancia2:");
+  console.log(distancia);
+  
+  // Compara la distancia con el radio de la ficha
+  return distancia < this.getRadio();
+}
+return 0
 }
 
 //detecto si la ficha se esta arrastrando

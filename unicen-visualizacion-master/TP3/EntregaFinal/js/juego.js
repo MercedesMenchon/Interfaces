@@ -11,6 +11,7 @@ class Juego {
     this.canvas = canvas;
     this.fichaResaltada = null; // Almacena la ficha resaltada actual
     this.mousedown = false;
+    this.jugadores= ["jugador1","jugador2"];
 
 
     // this.jugador1 = new Jugador('Jugador 1', 'red');
@@ -21,9 +22,10 @@ class Juego {
 
   addFichas() {
     let posy = 0;
-    if (this.fichas.length < this.tablero.getCantFichas()) {
+       if (this.fichas.length < this.tablero.getCantFichas()) {
       //setTimeOut(addFicha, 333);
-      for (let i = 0; i < this.tablero.getCantFichas() / 4; i++) {
+      //EL FOR QUEE STA ACA, DECIA /4 PERO SI SON 2 JUGADORES ES 2, NO?
+      for (let i = 0; i < this.tablero.getCantFichas() /2; i++) {
         //determinamos a partir de que pixel del canvas dibujamos las fichas a cada lado del tablero
         let posxJ1 = this.tablero.getEspacioBlancoX() / 4;
         let posxJ2 = this.tablero.getEspacioBlancoX() * 5 / 4 + this.canvas.width * .7;
@@ -38,11 +40,11 @@ class Juego {
         const posxPlayer1 = posxJ1 + randomHorizontalOffset;
         const posxPlayer2 = posxJ2 + randomHorizontalOffset;
 
-        const fichaJugador2 = new Ficha(this.tablero.getRadioFicha(), posxPlayer1, posy, "orange", ctx, "Images\\4 en linea\\mosca.png");
-       const fichaJugador1 = new Ficha(this.tablero.getRadioFicha(), posxPlayer2, posy, "green", ctx, "Images\\4 en linea\\sapo.png");
+        const fichaJugador1 = new Ficha(this.tablero.getRadioFicha(), posxPlayer1, posy, "orange", ctx, "Images\\4 en linea\\mosca.png", "jugador1");
+       const fichaJugador2 = new Ficha(this.tablero.getRadioFicha(), posxPlayer2, posy, "green", ctx, "Images\\4 en linea\\sapo.png", "jugador2");
 
-        this.fichas.push(fichaJugador2);
         this.fichas.push(fichaJugador1);
+        this.fichas.push(fichaJugador2);
 
 
       }
@@ -51,7 +53,7 @@ class Juego {
   }
 
   dibujarTablero() {
-    this.tablero.armarTablero();
+   this.tablero.armarTablero() ;
     this.dibujarFichas();
   }
 
@@ -129,11 +131,11 @@ agregarEventoClic() {
     console.log(`x: ${x}, y: ${y}`);//controlo donde estan mis coordenadas
     // Encuentra la ficha clickeada
     for (let i = this.fichas.length - 1; i >= 0; i--) {
-      const ficha = this.fichas[i];
-      console.log(ficha.isPointedInside(x, y));
-      if (ficha.isPointedInside(x, y)) {
-        fichaArrastrada = ficha;
-        break; // Detén la búsqueda después de seleccionar la ficha superior
+      const ficha = this.fichas[i];-
+      console.log(i);
+     if (ficha.isPointedInside(x, y)) {
+       fichaArrastrada = ficha;
+       break; // Detén la búsqueda después de seleccionar la ficha superior
       }
     }
 
@@ -196,15 +198,17 @@ agregarEventoClic() {
 
  // setTimeOut(() => { addFichas(); }, 333);
 
-/*
+
 fichaSoltadaEnelJuego(x,y){
   //tiene que:
-  //ver donde solte la ficha
+  //ver donde solte la ficha en X Y
   //ver que coordenadas de canvas tiene para ver que coordenadas de matriz le doy
 //verificar que la columna no este llena
+console.log("aca:");
 
- const columna = Math.floor((x - this.tablero.getEspacioBlancoX()) / this.tablero.getAnchoCelda());
-
+if(this.tablero.getRadioFicha()<y && y<this.tablero.getEspacioBlancoY()){
+ const columna =  this.getColumnaDeCaidaFicha(x,y);
+ console.log(columna);
  // Verifica si la columna no está llena
  if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna] !== 0) {
    return false;
@@ -219,10 +223,13 @@ fichaSoltadaEnelJuego(x,y){
  // Verifica si la fila y columna están dentro de los límites del tablero
  return fila >= 0 && fila < this.tablero.getFilas() && columna >= 0 && columna <this.tablero.getColumnas();
 }
+return false;
+}
 
-*/
-
-esPosicionValida(fila, columna) {
+getColumnaDeCaidaFicha(x,y){
+  return  Math.floor((x - this.tablero.getEspacioBlancoX()) / this.tablero.getAnchoCelda());
+}
+/*esPosicionValida(fila, columna) {
     // Verificar si la posición está dentro de los límites del tablero
   if (fila < 0 || fila >= this.tablero.getFilas() || columna < 0 || columna >= this.tablero.getColumnas()) {
     return false;
@@ -235,8 +242,15 @@ esPosicionValida(fila, columna) {
   }
 
   return false;
-}
+}*/
 
+dejarCaer(x,y){
+  let fichas = document.querySelectorAll(Ficha);
+  for(let i=0; i<fichas.length;i++){
+fichas[i].addEventListener('mouseup',fichaSoltadaEnelJuego( this.getPosicionX(), this.getPosicionY()));
+  }
+  
+}
 
 
 }

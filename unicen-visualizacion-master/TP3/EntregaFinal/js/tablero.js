@@ -7,11 +7,10 @@ class Tablero {
     this.columnas = columnas;
     this.filas = filas;
     this.matriz = [];
-    this.armarMatriz();
+   this.armarMatriz();
     this.canvas = canvas;
     this.ctx = ctx;
-    this.armarTablero();
-    this.cantFichas = this.filas * this.columnas;
+    this.cantFichas= this.getCantFichas();
   }
 
   getFilas() {
@@ -26,10 +25,11 @@ class Tablero {
     return (this.canvas.width - this.getColumnas() * this.getAnchoCelda()) / 2;
   }
 
-  getEspacioBlancoY() { return (this.canvas.height - this.getFilas() * this.getAltoCelda()) * 4 / 5; }
-  getCantFichas() {
-    return this.cantFichas;
+  getEspacioBlancoY() { 
+    return (this.canvas.height - this.getFilas() * this.getAltoCelda()) * 4 / 5; 
   }
+  
+
   getAnchoCelda() {
     return this.canvas.width * .7 / this.columnas;
   }
@@ -48,34 +48,30 @@ getColumnas(){
     return this.getAltoCelda() / 2 * 0.8;
   }
 
-
+  getCantFichas(){
+  return this.getFilas() * this.getColumnas();
+}
   armarMatriz() {
-    for (let fila = 0; fila < this.filas; fila++) {
+    for (let fila = 0; fila < this. getFilas(); fila++) {
       this.matriz[fila] = [];
-      for (let columna = 0; columna < this.columnas; columna++) {
+      for (let columna = 0; columna < this.getColumnas(); columna++) {
         this.matriz[fila][columna] = 0;
       }
     }
 
   }
-  dibujarTablero() {
-    this.armarTablero();
-    this.dibujarFichas();
-  }
+
 
 
 
   armarTablero() {
-
-
     //PARA BORRAR TODO LO QUE YA ESTA, DEBEMOS UTILIZAR:
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     //this.ctx.lineWidth = 3;
 
-
     // Dibuja las celdas del tablero
-    for (let fila = 0; fila < this.filas; fila++) {
-      for (let columna = 0; columna < this.columnas; columna++) {
+    for (let fila = 0; fila < this.getFilas(); fila++) {
+      for (let columna = 0; columna < this.getColumnas(); columna++) {
         // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
         const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
         const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
