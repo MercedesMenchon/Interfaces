@@ -37,7 +37,13 @@ class Tablero {
   getAltoCelda() {
     return this.canvas.height * .7 / this.filas;
   }
+getFilas(){
+  return this.filas;
+}
 
+getColumnas(){
+  return this.columnas;
+}
   getRadioFicha() {
     return this.getAltoCelda() / 2 * 0.8;
   }

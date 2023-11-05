@@ -86,13 +86,24 @@ class Ficha {
 setResaltado(resaltado) {
     this.resaltado = resaltado;
 }
-
+//NO SE MUEVEN LAS VERDES PQ ESTA MAL CONFIGURADO EL DETECTAR SI ESTA O NO EN SU RADIO
 //indicamos si el mousse esta dentro de la figura
-isPointedInside(xCanvas, yCanvas) {
+//lA FUNCION ESTA ANDA SOLO APRA ALS NARANAJS
+/* isPointedInside(xCanvas, yCanvas) {
     let NuevoX = this.getPosicionX() - xCanvas;
     let NuevoY = this.getPosicionY() - yCanvas;
     return Math.sqrt(NuevoX * NuevoX + NuevoY * NuevoY) < this.getRadio();
+}*/
+
+isPointedInside(xCanvas, yCanvas) {
+    const dx = xCanvas - this.getPosicionX();
+  const dy = yCanvas - this.getPosicionY();
+const distancia = Math.sqrt(dx * dx + dy * dy);
+
+// Compara la distancia con el radio de la ficha
+return distancia < this.getRadio();
 }
+
 //detecto si la ficha se esta arrastrando
 setArrastrandose(arrastrandose) {
     this.arrastrandose = arrastrandose;
@@ -101,6 +112,10 @@ setArrastrandose(arrastrandose) {
   isArrastrandose() {
     return this.arrastrandose;
   }
+
+
+
+  
 }
 
 

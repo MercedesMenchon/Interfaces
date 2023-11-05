@@ -25,9 +25,9 @@ imagenFicha2.src = "Images\\4 en linea\\sapo.png";
 const juego = new Juego(tablero8x8, canvas, ctx);
 juego.agregarEventoClic(); // Agrega el manejador de eventos al canvas
 juego.addFichas(); // Llama a la función para agregar fichas
-
-
-
-
-
+//PARA PROBAR QUE ANDE LA FUNCION QUE DETECTA SI LA FICAH ESTA UBICADA EN UN LUGAR CORRECTO DEL JUEGO
+//const fichaa = new Ficha(100, 150, 150, "green", ctx, "Images\\4 en linea\\mosca.png");
+//fichaa.dibujar();
+//console.log(juego.fichaSoltadaEnelJuego(500,800))
+console.log(juego.esPosicionValida(10,5));
 

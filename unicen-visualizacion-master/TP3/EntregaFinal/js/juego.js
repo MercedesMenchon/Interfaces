@@ -38,11 +38,11 @@ class Juego {
         const posxPlayer1 = posxJ1 + randomHorizontalOffset;
         const posxPlayer2 = posxJ2 + randomHorizontalOffset;
 
-        const fichaJugador1 = new Ficha(this.tablero.getRadioFicha(), posxPlayer1, posy, "orange", ctx, "Images\\4 en linea\\mosca.png");
-        const fichaJugador2 = new Ficha(this.tablero.getRadioFicha(), posxPlayer2, posy, "green", ctx, "Images\\4 en linea\\sapo.png");
+        const fichaJugador2 = new Ficha(this.tablero.getRadioFicha(), posxPlayer1, posy, "orange", ctx, "Images\\4 en linea\\mosca.png");
+       const fichaJugador1 = new Ficha(this.tablero.getRadioFicha(), posxPlayer2, posy, "green", ctx, "Images\\4 en linea\\sapo.png");
 
-        this.fichas.push(fichaJugador1);
         this.fichas.push(fichaJugador2);
+        this.fichas.push(fichaJugador1);
 
 
       }
@@ -64,7 +64,7 @@ class Juego {
 
 
   //creo funcion para click en fichas, moverlas y resaltarlas con click
-  agregarEventoClic() {
+ /* agregarEventoClic() {
     let fichaArrastrada = null;
 
     this.canvas.addEventListener('mousedown', (event) => {
@@ -119,6 +119,61 @@ class Juego {
     });
   }
 
+*/
+agregarEventoClic() {
+  let fichaArrastrada = null;
+  this.canvas.addEventListener('mousedown', (event) => {
+    const rect = this.canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    console.log(`x: ${x}, y: ${y}`);//controlo donde estan mis coordenadas
+    // Encuentra la ficha clickeada
+    for (let i = this.fichas.length - 1; i >= 0; i--) {
+      const ficha = this.fichas[i];
+      console.log(ficha.isPointedInside(x, y));
+      if (ficha.isPointedInside(x, y)) {
+        fichaArrastrada = ficha;
+        break; // Detén la búsqueda después de seleccionar la ficha superior
+      }
+    }
+
+    if (fichaArrastrada) {
+      fichaArrastrada.setResaltado(true);
+      fichaArrastrada.setArrastrandose(true);
+    }
+  });
+
+  this.canvas.addEventListener('mousemove', (event) => {
+    if (fichaArrastrada) {
+      const rect = this.canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      
+      fichaArrastrada.setPosicion(x, y);
+      this.clearCanvas(); // Borrar el lienzo
+
+      this.dibujarTablero(); // Dibuja el tablero en su posición original
+
+      // Dibuja todas las fichas excepto la arrastrada
+      for (let i = 0; i < this.fichas.length; i++) {
+        if (this.fichas[i] !== fichaArrastrada) {
+          this.fichas[i].dibujar();
+        }
+      }
+    }
+  });
+
+  this.canvas.addEventListener('mouseup', () => {
+    if (fichaArrastrada) {
+      fichaArrastrada.setResaltado(false);
+      fichaArrastrada.setArrastrandose(false);
+      fichaArrastrada = null;
+      this.clearCanvas(); // Borrar el lienzo
+      this.dibujarTablero(); // Dibuja el tablero en su posición original
+      this.dibujarFichas(); // Redibujar todas las fichas
+    }
+  });
+}
 
 
 
@@ -141,8 +196,58 @@ class Juego {
 
  // setTimeOut(() => { addFichas(); }, 333);
 
+/*
+fichaSoltadaEnelJuego(x,y){
+  //tiene que:
+  //ver donde solte la ficha
+  //ver que coordenadas de canvas tiene para ver que coordenadas de matriz le doy
+//verificar que la columna no este llena
+
+ const columna = Math.floor((x - this.tablero.getEspacioBlancoX()) / this.tablero.getAnchoCelda());
+
+ // Verifica si la columna no está llena
+ if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna] !== 0) {
+   return false;
+ }
+
+ // Calcula la fila en la que se debe colocar la ficha
+ let fila = this.tablero.getFilas() - 1;
+ while (fila >= 0 && this.tablero.matriz[fila][columna] !== 0) {
+   fila--;
+ }
+
+ // Verifica si la fila y columna están dentro de los límites del tablero
+ return fila >= 0 && fila < this.tablero.getFilas() && columna >= 0 && columna <this.tablero.getColumnas();
+}
+
+*/
+
+esPosicionValida(fila, columna) {
+    // Verificar si la posición está dentro de los límites del tablero
+  if (fila < 0 || fila >= this.tablero.getFilas() || columna < 0 || columna >= this.tablero.getColumnas()) {
+    return false;
+   
+  }
+
+  // Verificar si la celda en esa posición está vacía
+  if (this.tablero.matriz[fila][columna] === 0) {
+      return true;
+  }
+
+  return false;
+}
+
+
 
 }
+
+
+
+
+
+
+
+
 
 
 
