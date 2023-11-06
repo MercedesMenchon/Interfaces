@@ -125,5 +125,3 @@ setArrastrandose(arrastrandose) {
 
   
 }
-
-
