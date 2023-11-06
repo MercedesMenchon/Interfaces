@@ -11,7 +11,7 @@ class Juego {
     this.canvas = canvas;
     this.fichaResaltada = null; // Almacena la ficha resaltada actual
     this.mousedown = false;
-    this.jugadores= ["jugador1","jugador2"];
+this.jugadores= ["jugador1","jugador2"];
 
 
     // this.jugador1 = new Jugador('Jugador 1', 'red');
@@ -22,7 +22,7 @@ class Juego {
 
   addFichas() {
     let posy = 0;
-       if (this.fichas.length < this.tablero.getCantFichas()) {
+    if (this.fichas.length < this.tablero.getCantFichas()) {
       //setTimeOut(addFicha, 333);
       //EL FOR QUEE STA ACA, DECIA /4 PERO SI SON 2 JUGADORES ES 2, NO?
       for (let i = 0; i < this.tablero.getCantFichas() /2; i++) {
@@ -41,7 +41,7 @@ class Juego {
         const posxPlayer2 = posxJ2 + randomHorizontalOffset;
 
         const fichaJugador1 = new Ficha(this.tablero.getRadioFicha(), posxPlayer1, posy, "orange", ctx, "Images\\4 en linea\\mosca.png", "jugador1");
-       const fichaJugador2 = new Ficha(this.tablero.getRadioFicha(), posxPlayer2, posy, "green", ctx, "Images\\4 en linea\\sapo.png", "jugador2");
+        const fichaJugador2 = new Ficha(this.tablero.getRadioFicha(), posxPlayer2, posy, "green", ctx, "Images\\4 en linea\\sapo.png", "jugador2");
 
         this.fichas.push(fichaJugador1);
         this.fichas.push(fichaJugador2);
@@ -53,7 +53,7 @@ class Juego {
   }
 
   dibujarTablero() {
-   this.tablero.armarTablero() ;
+    this.tablero.armarTablero() ;
     this.dibujarFichas();
   }
 
@@ -66,7 +66,7 @@ class Juego {
 
 
   //creo funcion para click en fichas, moverlas y resaltarlas con click
- /* agregarEventoClic() {
+  /* agregarEventoClic() {
     let fichaArrastrada = null;
 
     this.canvas.addEventListener('mousedown', (event) => {
