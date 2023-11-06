@@ -165,16 +165,43 @@ agregarEventoClic() {
     }
   });
 
-  this.canvas.addEventListener('mouseup', () => {
-    if (fichaArrastrada) {
-      fichaArrastrada.setResaltado(false);
-      fichaArrastrada.setArrastrandose(false);
-      fichaArrastrada = null;
-      this.clearCanvas(); // Borrar el lienzo
-      this.dibujarTablero(); // Dibuja el tablero en su posición original
-      this.dibujarFichas(); // Redibujar todas las fichas
-    }
-  });
+  this.canvas.addEventListener('mouseup', (event) => {
+
+      if (fichaArrastrada) {
+        const rect = this.canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+  
+        fichaArrastrada.setResaltado(false);
+        fichaArrastrada.setArrastrandose(false);
+  let newX =fichaArrastrada.getPosicionX();
+  let newY=fichaArrastrada.getPosicionY();
+  console.log("Esto:");
+  console.log(newX);
+  console.log(newY);
+        // Utiliza las funciones para verificar la posición y columna
+        if (this.fichaSoltadaEnelJuego(newX, newY)) {
+          const columna = this.getColumnaDeCaidaFicha(newX,newY);
+          // Realiza las acciones necesarias para el juego, como dejar caer la ficha en la columna
+          // y actualizar la matriz del tablero
+  
+          // Luego, puedes realizar comprobaciones para determinar si el jugador ganó o si el juego terminó
+          // También puedes alternar el turno entre jugadores si es necesario
+        }
+  
+        fichaArrastrada = null;
+        this.clearCanvas(); // Borrar el lienzo
+        this.dibujarTablero(); // Dibuja el tablero en su posición original
+        this.dibujarFichas(); // Redibujar todas las fichas
+      }
+    });
+  
+  
+  
+  
+  
+  
+  
 }
 
 

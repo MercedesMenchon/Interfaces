@@ -100,33 +100,17 @@ setResaltado(resaltado) {
 }*/
 
 isPointedInside(xCanvas, yCanvas) {
-if(this.getJugador()=="jugador1"){
+
   const dx = xCanvas- this.getPosicionX();
   const dy = yCanvas - this.getPosicionY();
   //pitagoras
 const distancia = Math.sqrt(dx * dx + dy * dy);
-console.log("distancia1:");
-console.log(distancia);
+
 
 // Compara la distancia con el radio de la ficha
 return distancia < this.getRadio();
 }
-if(this.getJugador()=="jugador2"){
-    //- this.tablero.getEspacioBlancoX() * 5 / 4 + 800 * .7 
-    const dx = xCanvas  - this.getPosicionX();
-    const dy = yCanvas - this.getPosicionY();
-    console.log("dx:");
-    console.log(dx);
-    //pitagoras
-  const distancia = Math.sqrt(dx * dx + dy * dy);
-  console.log("distancia2:");
-  console.log(distancia);
-  
-  // Compara la distancia con el radio de la ficha
-  return distancia < this.getRadio();
-}
-return 0
-}
+
 
 //detecto si la ficha se esta arrastrando
 setArrastrandose(arrastrandose) {
