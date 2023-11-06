@@ -176,18 +176,11 @@ agregarEventoClic() {
         fichaArrastrada.setArrastrandose(false);
   let newX =fichaArrastrada.getPosicionX();
   let newY=fichaArrastrada.getPosicionY();
-  console.log("Esto:");
-  console.log(newX);
-  console.log(newY);
+
         // Utiliza las funciones para verificar la posición y columna
         if (this.fichaSoltadaEnelJuego(newX, newY)) {
           const columna = this.getColumnaDeCaidaFicha(newX,newY);
-          // Realiza las acciones necesarias para el juego, como dejar caer la ficha en la columna
-          // y actualizar la matriz del tablero
-  
-          // Luego, puedes realizar comprobaciones para determinar si el jugador ganó o si el juego terminó
-          // También puedes alternar el turno entre jugadores si es necesario
-        }
+             }
   
         fichaArrastrada = null;
         this.clearCanvas(); // Borrar el lienzo
@@ -280,11 +273,28 @@ fichas[i].addEventListener('mouseup',fichaSoltadaEnelJuego( this.getPosicionX(),
 }
 
 
+  colocarFicha(columna,ficha) {
+    // Determina la fila libre en la columna
+    const fila = this.tablero.getCasilleroLibre(columna);
+
+    if (fila !== -1) {
+      // Coloca la ficha en el tablero y en la lista de fichas del juego
+     
+      ficha.setPosicion()
+          // Dibuja el tablero actualizado con las fichas
+      this.dibujarTablero();
+      
+      // Realiza cualquier verificación de ganador o cambio de turno que necesites aquí
+      // ...
+
+      return true; // La ficha se colocó con éxito
+    } else {
+      // La columna está llena
+      return false;
+    }
+  }
+
 }
-
-
-
-
 
 
 

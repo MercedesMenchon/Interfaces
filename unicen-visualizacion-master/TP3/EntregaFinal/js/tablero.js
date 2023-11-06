@@ -52,15 +52,18 @@ getColumnas(){
   return this.getFilas() * this.getColumnas();
 }
   armarMatriz() {
-    for (let fila = 0; fila < this. getFilas(); fila++) {
-      this.matriz[fila] = [];
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    for (let fila = 0; fila < this.getFilas(); fila++) {
       for (let columna = 0; columna < this.getColumnas(); columna++) {
-        this.matriz[fila][columna] = 0;
+        // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
+        const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
+        const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
+        casillero = new Casillero(x,y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
+        this.matriz[fila][columna].push(casillero);
+  
       }
-    }
-
   }
-
+  }
 
 
 
@@ -70,11 +73,10 @@ getColumnas(){
     //this.ctx.lineWidth = 3;
 
     // Dibuja las celdas del tablero
-    for (let fila = 0; fila < this.getFilas(); fila++) {
-      for (let columna = 0; columna < this.getColumnas(); columna++) {
-        // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
-        const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
-        const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
+    
+        //CREO UN CASILLERO 
+//DIBUJO
+//AGREGO A MI MATRIZ 
 
         this.ctx.fillStyle = "rgb(0,85,164)";
         this.ctx.fillRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
@@ -83,9 +85,9 @@ getColumnas(){
 
         // Dibujamos las fichas según el estado de la matriz
         if (this.matriz[fila][columna] === 0) {
-          const casillero = new Casillero(x, y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
+          const casillero = new Casillero(x,y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
           casillero.dibujar(this.ctx);
-
+         // this.matriz[fila][columna].add(casillero);
         }
         else {
 
@@ -95,13 +97,21 @@ getColumnas(){
           this.ctx.fillStyle = "rgb(255,0,255)";
         }
       }
-    }
-  }
+ 
 
+
+
+getFilaLibre(columna){
+  for(let i=this.getFilas()-1;i>=0 ;i--){
+  if(this.matriz[columna][i]==0)
+  return i;
+  }
+return -1;
 }
 
-//NUEVAS FUNCIONES
 
+
+}
 
 
 
