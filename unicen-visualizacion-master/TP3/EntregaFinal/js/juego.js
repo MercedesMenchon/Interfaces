@@ -178,16 +178,25 @@ agregarEventoClic() {
         if (this.fichaSoltadaEnelJuego(x,y)) {
           let columna = this.getColumnaDeCaidaFicha(x,y);
           let fila= this.getFilaLibre(columna);
+          
+          this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
+          console.log("ver si esta ocupada:");
+          console.log(fila);
+          console.log("HAY FICHA?:");
+          console.log(this.tablero.matriz[0][0].getFicha());
           let newX=this.tablero.matriz[fila][columna].getCentroX();
           let newY=this.tablero.matriz[fila][columna].getCentroY();
-          this.tablero.matriz[fila][columna].setOcupado(true);
-          console.log(this.tablero.matriz);
-          console.log("cambio:");
-          console.log(this.tablero.matriz[fila][columna].getOcupado());
-          console.log(newX);
-          console.log(newY);
+         
           fichaArrastrada.setX(newX);
           fichaArrastrada.setY(newY);
+
+         
+          console.log("cambio:");
+          console.log(this.tablero.matriz[fila][columna].getFicha());
+          console.log(newX);
+          console.log(newY);
+          console.log(this.tablero.matriz);
+
           fichaArrastrada.dibujar();
             console.log("columna:");
   console.log(columna);
@@ -234,7 +243,7 @@ fichaSoltadaEnelJuego(x,y){
 if(this.tablero.getRadioFicha()<y && y<this.tablero.getEspacioBlancoY()){
  const columna =  this.getColumnaDeCaidaFicha(x,y);
  // Verifica si la columna no está llena
- if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna].getOcupado()) {
+ if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna].getFicha()!=null) {
   return false;
    }
 
@@ -253,10 +262,11 @@ getFilaLibre(columna){
    // Calcula la fila en la que se debe colocar la ficha
  let fila = this.tablero.getFilas() - 1;
  console.log("prueba:");
- console.log(this.tablero.matriz[fila][columna].getOcupado());
- while (fila >= 0 && this.tablero.matriz[fila][columna].getOcupado()) {
+ console.log(this.tablero.matriz[fila][columna].getFicha());
+ while (fila >= 0 && this.tablero.matriz[fila][columna].getFicha()!==null ) {
+  console.log();
   console.log("entrooo");
-  console.log(this.tablero.matriz[fila][columna].getOcupado());
+ // console.log(this.tablero.matriz[fila][columna].getOcupado());
    fila--;
  }
  console.log("fila:");

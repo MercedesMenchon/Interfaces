@@ -7,14 +7,31 @@
         this.ancho = ancho; 
         this.alto = alto; 
         this.radioAgujero = radioAgujero; // Radio del agujero circular en el centro
-        this.ocupado = false;
-        this.duenio = null;
+        this.ficha=null;
       }
-      getOcupado(){
+     /* getOcupado(){
         return this.ocupado;
       }
-      setOcupado(algo){
-        this.ocupado=algo;
+      setOcupado(boolean){
+        this.ocupado=boolean;
+      }*/
+
+      setFicha(Ficha){
+      // if (ficha.getPosicionX()==this.getCentroX() && ficha.getPosicionY()==this.getCentroY()) {
+      this.ficha=Ficha;
+       
+       }
+
+getFicha(){
+  return this.ficha;
+}
+
+      
+      setX(x){
+        this.x=x;
+      }
+      setY(y){
+        this.y=y;
       }
     getCentroX(){
       return  this.x + this.ancho / 2;

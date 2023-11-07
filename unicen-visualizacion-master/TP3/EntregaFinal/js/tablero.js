@@ -102,7 +102,7 @@ getColumnas(){
     
   }
 
-
+/*
 
 getFilaLibre(columna){
   for(let i=this.getFilas()-1;i>=0 ;i--){
@@ -111,7 +111,7 @@ getFilaLibre(columna){
   }
 return -1;
 }
-
+*/
 
 
 }
