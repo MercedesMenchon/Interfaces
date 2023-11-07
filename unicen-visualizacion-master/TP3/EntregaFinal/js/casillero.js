@@ -22,9 +22,9 @@
        
        }
 
-getFicha(){
-  return this.ficha;
-}
+        getFicha(){
+          return this.ficha;
+        }
 
       
       setX(x){
