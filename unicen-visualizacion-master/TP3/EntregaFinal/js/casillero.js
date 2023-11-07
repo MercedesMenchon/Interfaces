@@ -10,6 +10,12 @@
         this.ocupado = false;
         this.duenio = null;
       }
+      getOcupado(){
+        return this.ocupado;
+      }
+      setOcupado(algo){
+        this.ocupado=algo;
+      }
     getCentroX(){
       return  this.x + this.ancho / 2;
     }

@@ -171,13 +171,27 @@ agregarEventoClic() {
   
         fichaArrastrada.setResaltado(false);
         fichaArrastrada.setArrastrandose(false);
-  let newX =fichaArrastrada.getPosicionX();
-  let newY=fichaArrastrada.getPosicionY();
-
+  
+  console.log("esta bien soltada?");
+  console.log(this.fichaSoltadaEnelJuego(x,y));
         // Utiliza las funciones para verificar la posición y columna
-        if (this.fichaSoltadaEnelJuego(newX, newY)) {
-          const columna = this.getColumnaDeCaidaFicha(newX,newY);
-             }
+        if (this.fichaSoltadaEnelJuego(x,y)) {
+          let columna = this.getColumnaDeCaidaFicha(x,y);
+          let fila= this.getFilaLibre(columna);
+          let newX=this.tablero.matriz[fila][columna].getCentroX();
+          let newY=this.tablero.matriz[fila][columna].getCentroY();
+          this.tablero.matriz[fila][columna].setOcupado(true);
+          console.log(this.tablero.matriz);
+          console.log("cambio:");
+          console.log(this.tablero.matriz[fila][columna].getOcupado());
+          console.log(newX);
+          console.log(newY);
+          fichaArrastrada.setX(newX);
+          fichaArrastrada.setY(newY);
+          fichaArrastrada.dibujar();
+            console.log("columna:");
+  console.log(columna);
+        }
   
         fichaArrastrada = null;
         this.clearCanvas(); // Borrar el lienzo
@@ -217,30 +231,37 @@ agregarEventoClic() {
 
 
 fichaSoltadaEnelJuego(x,y){
-  //tiene que:
-  //ver donde solte la ficha en X Y
-  //ver que coordenadas de canvas tiene para ver que coordenadas de matriz le doy
-//verificar que la columna no este llena
-console.log("aca:");
-
 if(this.tablero.getRadioFicha()<y && y<this.tablero.getEspacioBlancoY()){
  const columna =  this.getColumnaDeCaidaFicha(x,y);
- console.log(columna);
  // Verifica si la columna no está llena
- if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna] !== 0) {
-   return false;
- }
+ if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna].getOcupado()) {
+  return false;
+   }
 
  // Calcula la fila en la que se debe colocar la ficha
- let fila = this.tablero.getFilas() - 1;
- while (fila >= 0 && this.tablero.matriz[fila][columna] !== 0) {
-   fila--;
- }
+let fila =this.getFilaLibre(columna);
 
  // Verifica si la fila y columna están dentro de los límites del tablero
  return fila >= 0 && fila < this.tablero.getFilas() && columna >= 0 && columna <this.tablero.getColumnas();
 }
+
 return false;
+}
+
+
+getFilaLibre(columna){
+   // Calcula la fila en la que se debe colocar la ficha
+ let fila = this.tablero.getFilas() - 1;
+ console.log("prueba:");
+ console.log(this.tablero.matriz[fila][columna].getOcupado());
+ while (fila >= 0 && this.tablero.matriz[fila][columna].getOcupado()) {
+  console.log("entrooo");
+  console.log(this.tablero.matriz[fila][columna].getOcupado());
+   fila--;
+ }
+ console.log("fila:");
+ console.log(fila);
+ return fila;
 }
 
 getColumnaDeCaidaFicha(x,y){

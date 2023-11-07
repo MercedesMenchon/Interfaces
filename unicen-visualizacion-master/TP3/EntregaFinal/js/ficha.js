@@ -24,8 +24,12 @@ getJugador(){
         this.xCanvas = x;
         this.yCanvas = y;
     }
-
-
+setX(x){
+    this.xCanvas=x;
+}
+setY(y){
+    this.yCanvas=y;
+}
     getPosicion() {
         return { x: this.getPosicion, y: this.getPosicion };
     }
