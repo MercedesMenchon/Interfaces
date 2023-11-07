@@ -1,4 +1,5 @@
 "use strict";
+"use strict";
 
 //CREAMOS LA CLASE TABLERO
 class Tablero {

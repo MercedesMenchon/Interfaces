@@ -1,4 +1,4 @@
-"Use strict";
+"use strict";
 
 class Ficha {
     constructor(radio, xCanvas, yCanvas, fill, contexto, imagen,jugador) {

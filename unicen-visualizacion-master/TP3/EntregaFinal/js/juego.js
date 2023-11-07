@@ -1,4 +1,4 @@
-"Use strict";
+"use strict";
 
 class Juego {
   constructor(tablero, canvas, ctx) {
@@ -9,7 +9,7 @@ class Juego {
     this.fichaResaltada = null; // Almacena la ficha resaltada actual
     this.mousedown = false;
     this.jugadores = ["jugador1", "jugador2"];
-
+    this.addFichas();
 
     // this.jugador1 = new Jugador('Jugador 1', 'red');
     //this.jugador2 = new Jugador('Jugador 2', 'yellow');
@@ -128,10 +128,11 @@ class Juego {
       console.log(`x: ${x}, y: ${y}`);//controlo donde estan mis coordenadas
       // Encuentra la ficha clickeada
       for (let i = this.fichas.length - 1; i >= 0; i--) {
-        const ficha = this.fichas[i]; -
+        const ficha = this.fichas[i]; 
           console.log(i);
         if (ficha.isPointedInside(x, y)) {
           fichaArrastrada = ficha;
+          
           break; // Detén la búsqueda después de seleccionar la ficha superior
         }
       }
@@ -180,8 +181,13 @@ class Juego {
           let fila = this.getFilaLibre(columna);
           let newX = this.tablero.matriz[fila][columna].getCentroX();
           let newY = this.tablero.matriz[fila][columna].getCentroY();
-          console.log(fila);
-          console.log(columna);
+          
+          this.tablero.matriz[fila][columna].setFicha();
+          console.log(this.tablero.matriz);
+          console.log("cambio:");
+          console.log(this.tablero.matriz[fila][columna].setFicha(fichaArrastrada));
+          console.log(newX);
+          console.log(newY);
           fichaArrastrada.setX(newX);
           fichaArrastrada.setY(newY);
           this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
