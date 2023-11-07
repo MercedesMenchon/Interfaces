@@ -1,4 +1,4 @@
-"Use strict";
+"use strict";
 
     class Casillero {
       constructor(x, y, ancho, alto, radioAgujero) {
@@ -9,14 +9,14 @@
         this.radioAgujero = radioAgujero; // Radio del agujero circular en el centro
         this.ficha=null;
       }
-     /* getOcupado(){
+     getOcupado(){
         return this.ocupado;
       }
       setOcupado(boolean){
         this.ocupado=boolean;
-      }*/
+      }
 
-      setFicha(Ficha){
+ setFicha(Ficha){
       // if (ficha.getPosicionX()==this.getCentroX() && ficha.getPosicionY()==this.getCentroY()) {
       this.ficha=Ficha;
        

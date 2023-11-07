@@ -1,4 +1,4 @@
-"Use strict";
+"use strict";
 
 class Jugador {
     constructor(nombre, color) {
