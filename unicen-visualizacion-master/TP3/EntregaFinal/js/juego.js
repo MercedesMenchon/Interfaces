@@ -185,16 +185,8 @@ class Juego {
           fichaArrastrada.setX(newX);
           fichaArrastrada.setY(newY);
           this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
-          console.log(this.tablero.matriz);
-          console.log("cambio:");
-         console.log( this.tablero.matriz[fila][columna].getFicha());
-          console.log(newX);
-          console.log(newY);
-          
-
-
-          fichaArrastrada.dibujar();
-     
+        fichaArrastrada.dibujar();
+     this.hayGanador(fila,columna);
         }
 
         fichaArrastrada = null;
@@ -332,7 +324,87 @@ class Juego {
     }
   }
 */
+
+hayGanador(fila, columna) {
+  // Comprueba la línea horizontal}
+  let jugador = this.tablero.matriz[fila][columna].getFicha().getJugador();
+
+  let contador = 0;
+  for (let i = Math.max(0, columna - 3); i <= Math.min(this.tablero.getColumnas() - 1, columna + 3); i++) {
+    console.log("la i:");
+    console.log(i);
+    if ( this.tablero.matriz[fila][i].getFicha()!= null && this.tablero.matriz[fila][i].getFicha().getJugador() === jugador) {
+      contador++;
+      if (contador === 4) {
+        console.log("gane");
+        return true;
+      }
+    } else {
+      contador = 0;
+    }
+  }
+
+  // Comprueba la línea vertical
+  contador = 0;
+  for (let i = Math.max(0, fila - 3); i <= Math.min(this.tablero.getFilas() - 1, fila + 3); i++) {
+    if (this.tablero.matriz[fila][columna].getFicha().getJugador() === jugador) {
+      contador++;
+      if (contador === 4) {
+        return true;
+      }
+    } else {
+      contador = 0;
+    }
+  }
+/*
+  // Comprueba la línea diagonal descendente (desde la esquina superior izquierda hasta la esquina inferior derecha)
+  contador = 0;
+  for (let i = -3; i <= 3; i++) {
+    const filaDiagonal = fila + i;
+    const columnaDiagonal = columna + i;
+    if (
+      filaDiagonal >= 0 && filaDiagonal < this.tablero.getFilas() &&
+      columnaDiagonal >= 0 && columnaDiagonal < this.tablero.getColumnas()
+    ) {
+      if (this.tablero.obtenerEstadoCelda(filaDiagonal, columnaDiagonal) === jugador) {
+        contador++;
+        if (contador === 4) {
+          return true;
+        }
+      } else {
+        contador = 0;
+      }
+    }
+  }
+
+  // Comprueba la línea diagonal ascendente (desde la esquina inferior izquierda hasta la esquina superior derecha)
+  contador = 0;
+  for (let i = -3; i <= 3; i++) {
+    const filaDiagonal = fila - i;
+    const columnaDiagonal = columna + i;
+    if (
+      filaDiagonal >= 0 && filaDiagonal < this.tablero.getFilas() &&
+      columnaDiagonal >= 0 && columnaDiagonal < this.tablero.getColumnas()
+    ) {
+      if (this.tablero.obtenerEstadoCelda(filaDiagonal, columnaDiagonal) === jugador) {
+        contador++;
+        if (contador === 4) {
+          return true;
+        }
+      } else {
+        contador = 0;
+      }
+    }
+  }
+*/
+  return false;
 }
+}
+  
+
+
+
+
 
 
 

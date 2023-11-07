@@ -93,7 +93,6 @@ let y= this.matriz[fila][columna].getY();
     }
 
   }
-
   /*
   
   getFilaLibre(columna){
