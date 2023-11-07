@@ -180,10 +180,10 @@ class Juego {
           let fila = this.getFilaLibre(columna);
           let newX = this.tablero.matriz[fila][columna].getCentroX();
           let newY = this.tablero.matriz[fila][columna].getCentroY();
-          this.tablero.matriz[fila][columna].setOcupado(true);
+          this.tablero.matriz[fila][columna].setFicha();
           console.log(this.tablero.matriz);
           console.log("cambio:");
-          console.log(this.tablero.matriz[fila][columna].getOcupado());
+          console.log(this.tablero.matriz[fila][columna].setFicha(fichaArrastrada));
           console.log(newX);
           console.log(newY);
           fichaArrastrada.setX(newX);
@@ -242,7 +242,7 @@ class Juego {
     if (this.tablero.getRadioFicha() < y && y < this.tablero.getEspacioBlancoY()) {
       const columna = this.getColumnaDeCaidaFicha(x, y);
       // Verifica si la columna no está llena
-      if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna].getOcupado()) {
+      if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna].getFicha()!=null) {
         return false;
       }
 
@@ -261,10 +261,10 @@ class Juego {
      // Calcula la fila en la que se debe colocar la ficha
    let fila = this.tablero.getFilas() - 1;
    console.log("Luciana prueba:");
-   console.log(this.tablero.matriz[fila][columna].getOcupado());
-   while (fila >= 0 && this.tablero.matriz[fila][columna].getOcupado()) {
+   console.log(this.tablero.matriz[fila][columna].getFicha());
+   while (fila >= 0 && this.tablero.matriz[fila][columna].getFicha()) {
     console.log("entrooo");
-    console.log(this.tablero.matriz[fila][columna].getOcupado());
+    console.log(this.tablero.matriz[fila][columna].getFicha());
      fila--;
    }
    console.log("fila:");
