@@ -180,31 +180,27 @@ class Juego {
           let fila = this.getFilaLibre(columna);
           let newX = this.tablero.matriz[fila][columna].getCentroX();
           let newY = this.tablero.matriz[fila][columna].getCentroY();
-          this.tablero.matriz[fila][columna].setFicha();
-          console.log(this.tablero.matriz);
-          console.log("cambio:");
-          console.log(this.tablero.matriz[fila][columna].setFicha(fichaArrastrada));
-          console.log(newX);
-          console.log(newY);
+          console.log(fila);
+          console.log(columna);
           fichaArrastrada.setX(newX);
           fichaArrastrada.setY(newY);
-
-         
+          this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
+          console.log(this.tablero.matriz);
           console.log("cambio:");
-          console.log(this.tablero.matriz[fila][columna].getFicha());
+         console.log( this.tablero.matriz[fila][columna].getFicha());
           console.log(newX);
           console.log(newY);
-          console.log(this.tablero.matriz);
+          
+
 
           fichaArrastrada.dibujar();
-          console.log("columna:");
-          console.log(columna);
+     
         }
 
         fichaArrastrada = null;
         this.clearCanvas(); // Borrar el lienzo
         this.dibujarTablero(); // Dibuja el tablero en su posición original
-        this.dibujarFichas(); // Redibujar todas las fichas
+        //this.dibujarFichas(); // Redibujar todas las fichas
       }
     });
 

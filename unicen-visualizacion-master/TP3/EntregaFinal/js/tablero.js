@@ -1,16 +1,19 @@
-"Use strict";
+"use strict";
+
 //CREAMOS LA CLASE TABLERO
 class Tablero {
   constructor(filas, columnas, canvas, ctx) {
     this.columnas = columnas;
     this.filas = filas;
     this.matriz = [];
-    this.armarMatriz();
     this.canvas = canvas;
     this.ctx = ctx;
     this.cantFichas = this.getCantFichas();
+    this.armarMatriz();
   }
-
+  getAnchoCanvas() {
+    return this.canvas.width;
+  }
 
   getFilas() {
     return this.filas;
@@ -51,17 +54,7 @@ class Tablero {
     return this.getFilas() * this.getColumnas();
   }
 
-  armarMatriz(x, y) {
-     for (let fila = 0; fila < this.getFilas(); fila++) {
-       this.matriz[fila] = [];
-       for (let columna = 0; columna < this.getColumnas(); columna++) {
-         this.matriz[fila][columna] = 0;
-       }
-       
-     }
- 
-   }
- 
+
 
   armarTablero() {
 
@@ -73,12 +66,10 @@ class Tablero {
     for (let fila = 0; fila < this.getFilas(); fila++) {
       for (let columna = 0; columna < this.getColumnas(); columna++) {
         // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
-        const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
-        const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
-        const casillero = new Casillero(x, y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
-        this.matriz[fila][columna] = casillero;
-        casillero.dibujar(this.ctx);
 
+       this.matriz[fila][columna].dibujar(this.ctx);
+let x= this.matriz[fila][columna].getX();
+let y= this.matriz[fila][columna].getY();
         //this.ctx.fillStyle = "rgb(0,85,164)";
         //  this.ctx.fillRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
         //estos son los bordes rosas: 
@@ -103,17 +94,32 @@ class Tablero {
 
   }
 
-/*
-
-getFilaLibre(columna){
-  for(let i=this.getFilas()-1;i>=0 ;i--){
-  if(this.matriz[columna][i]==0)
-  return i;
+  /*
+  
+  getFilaLibre(columna){
+    for(let i=this.getFilas()-1;i>=0 ;i--){
+    if(this.matriz[columna][i]==0)
+    return i;
+    }
+  return -1;
   }
-return -1;
-}
-*/
+  */
 
+  armarMatriz() {
+
+   
+    for (let fila = 0; fila < this.getFilas(); fila++) {
+      this.matriz[fila] = [];
+      for (let columna = 0; columna < this.getColumnas(); columna++) {
+        const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
+        const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
+        const casillero = new Casillero(x, y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
+        this.matriz[fila][columna] = casillero;
+      }
+
+    }
+
+  }
 
 }
 

@@ -22,6 +22,9 @@
        
        }
 
+getAncho(){
+  return this.ancho;
+}
         getFicha(){
           return this.ficha;
         }
@@ -32,6 +35,12 @@
       }
       setY(y){
         this.y=y;
+      }
+      getX(){
+        return this.x;
+      }
+      getY(){
+        return this.y;
       }
     getCentroX(){
       return  this.x + this.ancho / 2;
