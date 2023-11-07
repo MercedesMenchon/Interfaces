@@ -7,7 +7,7 @@ class Tablero {
     this.columnas = columnas;
     this.filas = filas;
     this.matriz = [];
-   this.armarMatriz();
+this.armarMatriz();
     this.canvas = canvas;
     this.ctx = ctx;
     this.cantFichas= this.getCantFichas();
@@ -51,43 +51,45 @@ getColumnas(){
   getCantFichas(){
   return this.getFilas() * this.getColumnas();
 }
-  armarMatriz() {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    for (let fila = 0; fila < this.getFilas(); fila++) {
+  armarMatriz(x,y) {
+    for (let fila = 0; fila < this. getFilas(); fila++) {
+      this.matriz[fila] = [];
       for (let columna = 0; columna < this.getColumnas(); columna++) {
-        // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
-        const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
-        const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
-        casillero = new Casillero(x,y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
-        this.matriz[fila][columna].push(casillero);
+         this.matriz[fila][columna]=null;
   
       }
-  }
-  }
+    }
 
-
+  }
 
   armarTablero() {
+    
     //PARA BORRAR TODO LO QUE YA ESTA, DEBEMOS UTILIZAR:
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     //this.ctx.lineWidth = 3;
 
     // Dibuja las celdas del tablero
-    
-        //CREO UN CASILLERO 
+    for (let fila = 0; fila < this.getFilas(); fila++) {
+      for (let columna = 0; columna < this.getColumnas(); columna++) {
+        // Calcula el espacio en blanco a la izquierda y arriba para centrar el tablero
+        const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
+        const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
+        const casillero = new Casillero(x,y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
+       this.matriz[fila][columna]=casillero;
+       casillero.dibujar(this.ctx);
+//CREO UN CASILLERO 
 //DIBUJO
 //AGREGO A MI MATRIZ 
-
+/* ES EL DIBUJO DE TABLERO (PARA MI NO VA)
         this.ctx.fillStyle = "rgb(0,85,164)";
         this.ctx.fillRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
         this.ctx.strokeStyle = "rgb(255,0,255)";
         this.ctx.strokeRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
-
+*/
         // Dibujamos las fichas según el estado de la matriz
-        if (this.matriz[fila][columna] === 0) {
-          const casillero = new Casillero(x,y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
-          casillero.dibujar(this.ctx);
-         // this.matriz[fila][columna].add(casillero);
+ /*       if (this.matriz[fila][columna] === 0) {
+          
+
         }
         else {
 
@@ -95,9 +97,13 @@ getColumnas(){
           ficha.dibujarFicha(this.ctx, x + this.getAnchoCelda() / 2, y + this.getAltoCelda() / 2);
           this.ctx.strokeRect(x, y, this.getAnchoCelda(), this.getAltoCelda());
           this.ctx.fillStyle = "rgb(255,0,255)";
-        }
+  
+        }*/
+        
       }
- 
+    }
+    console.log(this.matriz);
+  }
 
 
 
