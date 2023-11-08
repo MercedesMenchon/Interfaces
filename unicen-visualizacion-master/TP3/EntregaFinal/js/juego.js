@@ -156,9 +156,7 @@ class Juego {
     });
 
   }
-  setJugadorActual(jugador) {
-    this.jugadorActual = jugador;
-  }
+  
 
 
   getJugadorActual(){
@@ -168,16 +166,15 @@ class Juego {
   getTurno() {
    
    if (this.getJugadorActual() == this.jugadores[0]) {
-    console.log(this.getJugadorActual());
-    console.log(this.getJugadorActual());
-    const opcion =this.jugadores[1];
-      setJugadorActual(opcion);
-      console.log("opcion 1");
+   
+ 
+   this.jugadorActual =this.jugadores[1];
+  
 
     }
     else 
       if (this.jugadorActual == this.jugadores[1]) {
-        setJugadorActual(this.jugadores[0]);
+        this.jugadorActual =this.jugadores[0];
       }
     
    // return this.jugadorActual;*/
