@@ -72,7 +72,7 @@ class Juego {
       for (let i = this.fichas.length - 1; i >= 0; i--) {
         const ficha = this.fichas[i];
         console.log(i);
-        if (ficha.isPointedInside(x, y)) {
+        if (!ficha.colocada && ficha.isPointedInside(x, y)) {
           fichaArrastrada = ficha;
 
           break; // Detén la búsqueda después de seleccionar la ficha superior
@@ -130,6 +130,7 @@ class Juego {
           let newY = this.tablero.matriz[fila][columna].getCentroY();
 
           this.tablero.matriz[fila][columna].setFicha();
+          fichaArrastrada.colocada = true; // Marca la ficha como colocada
           console.log(this.tablero.matriz);
           console.log("cambio:");
           console.log(this.tablero.matriz[fila][columna].setFicha(fichaArrastrada));

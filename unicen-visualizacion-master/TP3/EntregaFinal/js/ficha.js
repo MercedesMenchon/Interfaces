@@ -11,6 +11,7 @@ class Ficha {
         this.imagen=imagen;
         this.arrastrandose=false;
         this.jugador=jugador;
+        this.colocada = false; // Propiedad para verificar si la ficha se ha colocado
         
     }
 getJugador(){
