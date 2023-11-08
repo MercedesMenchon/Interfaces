@@ -13,6 +13,7 @@ class Juego {
     this.juegoTerminado = false; //indica si el juego terminó
     // rastreo del jugador actual
     this.jugadorActual = this.jugadores[0];
+
   }
 
 
@@ -69,12 +70,15 @@ class Juego {
       const y = event.clientY - rect.top;
       console.log(`x: ${x}, y: ${y}`);//controlo donde estan mis coordenadas
       // Encuentra la ficha clickeada
+
       for (let i = this.fichas.length - 1; i >= 0; i--) {
         const ficha = this.fichas[i];
         console.log(i);
-        if (!ficha.colocada && ficha.isPointedInside(x, y)) {
+       
+        if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador()==this.jugadorActual) {
+          console.log("soy el jugador activo");
+          console.log(this.jugadorActual);
           fichaArrastrada = ficha;
-
           break; // Detén la búsqueda después de seleccionar la ficha superior
         }
       }
@@ -119,9 +123,7 @@ class Juego {
 
         fichaArrastrada.setResaltado(false);
         fichaArrastrada.setArrastrandose(false);
-        let newX = fichaArrastrada.getPosicionX();  //NO LO USAMOS
-        let newY = fichaArrastrada.getPosicionY();
-
+  
         // Utiliza las funciones para verificar la posición y columna
         if (this.fichaSoltadaEnelJuego(x, y)) {
           let columna = this.getColumnaDeCaidaFicha(x, y);
@@ -141,23 +143,45 @@ class Juego {
           this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
           fichaArrastrada.dibujar();
           this.hayGanador(fila, columna);
-            // Cambiar al siguiente jugador
-          this.jugadorActual = (this.jugadorActual === this.jugadores[0]) ? this.jugadores[1] : this.jugadores[0];
           
+         
         }
-      
+
         fichaArrastrada = null;
         this.clearCanvas(); // Borrar el lienzo
         this.dibujarTablero(); // Dibuja el tablero en su posición original
-      
-        
-        //this.dibujarFichas(); // Redibujar todas las fichas
+        this.getTurno();
+
       }
     });
 
   }
+  setJugadorActual(jugador) {
+    this.jugadorActual = jugador;
+  }
 
 
+  getJugadorActual(){
+    return this.jugadorActual;
+  }
+
+  getTurno() {
+   
+   if (this.getJugadorActual() == this.jugadores[0]) {
+    console.log(this.getJugadorActual());
+    console.log(this.getJugadorActual());
+    const opcion =this.jugadores[1];
+      setJugadorActual(opcion);
+      console.log("opcion 1");
+
+    }
+    else 
+      if (this.jugadorActual == this.jugadores[1]) {
+        setJugadorActual(this.jugadores[0]);
+      }
+    
+   // return this.jugadorActual;*/
+  }
 
   //Determinamos en cuál ficha se hizo clic en el lienzo del juego, si se encuentra, se devuelve.
   findClickedFigure(x, y) {
@@ -231,6 +255,7 @@ class Juego {
 
 
   hayGanador(fila, columna) {
+    console.log("entro a hay ganador");
     // Comprueba la línea horizontal}
     let jugador = this.tablero.matriz[fila][columna].getFicha().getJugador();
 
