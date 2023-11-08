@@ -34,9 +34,9 @@ juego.agregarEventoClic(); // Agrega el manejador de eventos al canvas
 
 
 //PARA PROBAR QUE ANDE LA FUNCION QUE DETECTA SI LA FICAH ESTA UBICADA EN UN LUGAR CORRECTO DEL JUEGO
-const fichaa = new Ficha(50,200, 537, "green", ctx, "Images\\4 en linea\\mosca.png");
-fichaa.dibujar();
-console.log("esta?:")
-console.log(juego.fichaSoltadaEnelJuego(700,45))
+//const fichaa = new Ficha(50,200, 537, "green", ctx, "Images\\4 en linea\\mosca.png");
+//fichaa.dibujar();
+//console.log("esta?:")
+//console.log(juego.fichaSoltadaEnelJuego(700,45))
 //console.log(juego.esPosicionValida(500,60));
 
