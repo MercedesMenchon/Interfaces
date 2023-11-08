@@ -10,10 +10,9 @@ class Juego {
     this.mousedown = false;
     this.jugadores = ["jugador1", "jugador2"];
     this.addFichas();
-
-    // this.jugador1 = new Jugador('Jugador 1', 'red');
-    //this.jugador2 = new Jugador('Jugador 2', 'yellow');
-    //this.fichaActual = null; // Ficha que se está moviendo actualmente
+    this.juegoTerminado = false; //indica si el juego terminó
+    // rastreo del jugador actual
+    this.jugadorActual = this.jugadores[0];
   }
 
 
@@ -62,63 +61,6 @@ class Juego {
   }
 
 
-  //creo funcion para click en fichas, moverlas y resaltarlas con click
-  /* agregarEventoClic() {
-     let fichaArrastrada = null;
- 
-     this.canvas.addEventListener('mousedown', (event) => {
-       const rect = this.canvas.getBoundingClientRect();
-       const x = event.clientX - rect.left;
-       const y = event.clientY - rect.top;
-       console.log(`x: ${x}, y: ${y}`);//controlo donde estan mis coordenadas
-       // Encuentra la ficha clickeada
-       for (let i = this.fichas.length - 1; i >= 0; i--) {
-         const ficha = this.fichas[i];
-         if (ficha.isPointedInside(x, y)) {
-           fichaArrastrada = ficha;
-           break; // Detén la búsqueda después de seleccionar la ficha superior
-         }
-       }
- 
-       if (fichaArrastrada) {
-         fichaArrastrada.setResaltado(true);
-         fichaArrastrada.setArrastrandose(true);
-       }
-     });
- 
-     this.canvas.addEventListener('mousemove', (event) => {
-       if (fichaArrastrada) {
-         const rect = this.canvas.getBoundingClientRect();
-         const x = event.clientX - rect.left;
-         const y = event.clientY - rect.top;
-         
-         fichaArrastrada.setPosicion(x, y);
-         this.clearCanvas(); // Borrar el lienzo
- 
-         this.dibujarTablero(); // Dibuja el tablero en su posición original
- 
-         // Dibuja todas las fichas excepto la arrastrada
-         for (let i = 0; i < this.fichas.length; i++) {
-           if (this.fichas[i] !== fichaArrastrada) {
-             this.fichas[i].dibujar();
-           }
-         }
-       }
-     });
- 
-     this.canvas.addEventListener('mouseup', () => {
-       if (fichaArrastrada) {
-         fichaArrastrada.setResaltado(false);
-         fichaArrastrada.setArrastrandose(false);
-         fichaArrastrada = null;
-         this.clearCanvas(); // Borrar el lienzo
-         this.dibujarTablero(); // Dibuja el tablero en su posición original
-         this.dibujarFichas(); // Redibujar todas las fichas
-       }
-     });
-   }
- 
- */
   agregarEventoClic() {
     let fichaArrastrada = null;
     this.canvas.addEventListener('mousedown', (event) => {
@@ -128,11 +70,11 @@ class Juego {
       console.log(`x: ${x}, y: ${y}`);//controlo donde estan mis coordenadas
       // Encuentra la ficha clickeada
       for (let i = this.fichas.length - 1; i >= 0; i--) {
-        const ficha = this.fichas[i]; 
-          console.log(i);
+        const ficha = this.fichas[i];
+        console.log(i);
         if (ficha.isPointedInside(x, y)) {
           fichaArrastrada = ficha;
-          
+
           break; // Detén la búsqueda después de seleccionar la ficha superior
         }
       }
@@ -144,6 +86,9 @@ class Juego {
     });
 
     this.canvas.addEventListener('mousemove', (event) => {
+      if (this.juegoTerminado) {
+        return; // Evita procesar eventos si el juego ya ha terminado
+      }
       if (fichaArrastrada) {
         const rect = this.canvas.getBoundingClientRect();
         const x = event.clientX - rect.left;
@@ -164,7 +109,9 @@ class Juego {
     });
 
     this.canvas.addEventListener('mouseup', (event) => {
-
+      if (this.juegoTerminado) {
+        return; // Evita procesar eventos si el juego ya ha terminado
+      }
       if (fichaArrastrada) {
         const rect = this.canvas.getBoundingClientRect();
         const x = event.clientX - rect.left;
@@ -172,7 +119,7 @@ class Juego {
 
         fichaArrastrada.setResaltado(false);
         fichaArrastrada.setArrastrandose(false);
-        let newX = fichaArrastrada.getPosicionX();
+        let newX = fichaArrastrada.getPosicionX();  //NO LO USAMOS
         let newY = fichaArrastrada.getPosicionY();
 
         // Utiliza las funciones para verificar la posición y columna
@@ -181,7 +128,7 @@ class Juego {
           let fila = this.getFilaLibre(columna);
           let newX = this.tablero.matriz[fila][columna].getCentroX();
           let newY = this.tablero.matriz[fila][columna].getCentroY();
-          
+
           this.tablero.matriz[fila][columna].setFicha();
           console.log(this.tablero.matriz);
           console.log("cambio:");
@@ -191,22 +138,21 @@ class Juego {
           fichaArrastrada.setX(newX);
           fichaArrastrada.setY(newY);
           this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
-        fichaArrastrada.dibujar();
-     this.hayGanador(fila,columna);
+          fichaArrastrada.dibujar();
+          this.hayGanador(fila, columna);
+            // Cambiar al siguiente jugador
+          this.jugadorActual = (this.jugadorActual === this.jugadores[0]) ? this.jugadores[1] : this.jugadores[0];
+          
         }
-
+      
         fichaArrastrada = null;
         this.clearCanvas(); // Borrar el lienzo
         this.dibujarTablero(); // Dibuja el tablero en su posición original
+      
+        
         //this.dibujarFichas(); // Redibujar todas las fichas
       }
     });
-
-
-
-
-
-
 
   }
 
@@ -236,7 +182,7 @@ class Juego {
     if (this.tablero.getRadioFicha() < y && y < this.tablero.getEspacioBlancoY()) {
       const columna = this.getColumnaDeCaidaFicha(x, y);
       // Verifica si la columna no está llena
-      if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna].getFicha()!=null) {
+      if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna].getFicha() != null) {
         return false;
       }
 
@@ -250,163 +196,125 @@ class Juego {
     return false;
   }
 
-  
-  getFilaLibre(columna){
-     // Calcula la fila en la que se debe colocar la ficha
-   let fila = this.tablero.getFilas() - 1;
-   console.log("Luciana prueba:");
-   console.log(this.tablero.matriz[fila][columna].getFicha());
-   while (fila >= 0 && this.tablero.matriz[fila][columna].getFicha()) {
-    console.log("entrooo");
+
+  getFilaLibre(columna) {
+    // Calcula la fila en la que se debe colocar la ficha
+    let fila = this.tablero.getFilas() - 1;
+    console.log("Luciana prueba:");
     console.log(this.tablero.matriz[fila][columna].getFicha());
-     fila--;
-   }
-   console.log("fila:");
-   console.log(fila);
-   return fila;
-   
+    while (fila >= 0 && this.tablero.matriz[fila][columna].getFicha()) {
+      console.log("entrooo");
+      console.log(this.tablero.matriz[fila][columna].getFicha());
+      fila--;
+    }
+    console.log("fila:");
+    console.log(fila);
+    return fila;
+
   }
-  
+
 
 
 
   getColumnaDeCaidaFicha(x, y) {
     return Math.floor((x - this.tablero.getEspacioBlancoX()) / this.tablero.getAnchoCelda());
   }
-  /*esPosicionValida(fila, columna) {
-      // Verificar si la posición está dentro de los límites del tablero
-    if (fila < 0 || fila >= this.tablero.getFilas() || columna < 0 || columna >= this.tablero.getColumnas()) {
-      return false;
-    }
-  
-    getColumnaDeCaidaFicha(x, y) {
-      return Math.floor((x - this.tablero.getEspacioBlancoX()) / this.tablero.getAnchoCelda());
-    }
-    /*esPosicionValida(fila, columna) {
-        // Verificar si la posición está dentro de los límites del tablero
-      if (fila < 0 || fila >= this.tablero.getFilas() || columna < 0 || columna >= this.tablero.getColumnas()) {
-        return false;
-       
-      }
-    
-      // Verificar si la celda en esa posición está vacía
-      if (this.tablero.matriz[fila][columna] === 0) {
-          return true;
-      }
-    
-      return false;
-    }*/
 
   dejarCaer(x, y) {
-    let fichas = document.querySelectorAll(Ficha);
+    let fichas = document.querySelectorAll('Ficha');
     for (let i = 0; i < fichas.length; i++) {
       fichas[i].addEventListener('mouseup', fichaSoltadaEnelJuego(this.getPosicionX(), this.getPosicionY()));
     }
 
   }
 
-/*
-  colocarFicha(columna, ficha) {
-    // Determina la fila libre en la columna
-    const fila = this.tablero.getCasilleroLibre(columna);
 
+  hayGanador(fila, columna) {
+    // Comprueba la línea horizontal}
+    let jugador = this.tablero.matriz[fila][columna].getFicha().getJugador();
 
-  console.log("Fila estas acá??: " + fila); 
-    if (fila !== -1) {
-      // Coloca la ficha en el tablero y en la lista de fichas del juego
+    let contador = 0;
+    for (let i = Math.max(0, columna - 3); i <= Math.min(this.tablero.getColumnas() - 1, columna + 3); i++) {
+      console.log("la i:");
+      console.log(i);
+      if (this.tablero.matriz[fila][i].getFicha() != null && this.tablero.matriz[fila][i].getFicha().getJugador() === jugador) {
+        contador++;
 
-      //  ficha.setPosicion()
-      ficha.setPosicion(this.tablero.matriz[fila][columna].getCentroX(), this.tablero.matriz[fila][columna].getCentroY());
-      // Dibuja el tablero actualizado con las fichas
-      this.dibujarTablero();
+        if (contador === 4) {
+          console.log("gane");
+          this.juegoTerminado = true; // Marca el juego como terminado
+          return true;
+        }
+      } else {
+        contador = 0;
 
-      // Realiza cualquier verificación de ganador o cambio de turno que necesites aquí
-      // ...
-
-      return true; // La ficha se colocó con éxito
-    } else {
-      // La columna está llena
-      return false;
-    }
-  }
-*/
-
-hayGanador(fila, columna) {
-  // Comprueba la línea horizontal}
-  let jugador = this.tablero.matriz[fila][columna].getFicha().getJugador();
-
-  let contador = 0;
-  for (let i = Math.max(0, columna - 3); i <= Math.min(this.tablero.getColumnas() - 1, columna + 3); i++) {
-    console.log("la i:");
-    console.log(i);
-    if ( this.tablero.matriz[fila][i].getFicha()!= null && this.tablero.matriz[fila][i].getFicha().getJugador() === jugador) {
-      contador++;
-      if (contador === 4) {
-        console.log("gane");
-        return true;
       }
-    } else {
-      contador = 0;
     }
-  }
 
-  // Comprueba la línea vertical
-  contador = 0;
-  for (let i = Math.max(0, fila - 3); i <= Math.min(this.tablero.getFilas() - 1, fila + 3); i++) {
-    if (this.tablero.matriz[fila][columna].getFicha().getJugador() === jugador) {
-      contador++;
-      if (contador === 4) {
-        return true;
-      }
-    } else {
-      contador = 0;
-    }
-  }
-/*
-  // Comprueba la línea diagonal descendente (desde la esquina superior izquierda hasta la esquina inferior derecha)
-  contador = 0;
-  for (let i = -3; i <= 3; i++) {
-    const filaDiagonal = fila + i;
-    const columnaDiagonal = columna + i;
-    if (
-      filaDiagonal >= 0 && filaDiagonal < this.tablero.getFilas() &&
-      columnaDiagonal >= 0 && columnaDiagonal < this.tablero.getColumnas()
-    ) {
-      if (this.tablero.obtenerEstadoCelda(filaDiagonal, columnaDiagonal) === jugador) {
+    // Comprueba la línea vertical
+    contador = 0;
+    for (let i = Math.max(0, fila - 3); i <= Math.min(this.tablero.getFilas() - 1, fila + 3); i++) {
+      if (this.tablero.matriz[i][columna].getFicha() != null && this.tablero.matriz[i][columna].getFicha().getJugador() === jugador) {
         contador++;
         if (contador === 4) {
+          console.log("gane");
+          this.juegoTerminado = true; // Marca el juego como terminado
           return true;
         }
       } else {
         contador = 0;
       }
     }
-  }
 
-  // Comprueba la línea diagonal ascendente (desde la esquina inferior izquierda hasta la esquina superior derecha)
-  contador = 0;
-  for (let i = -3; i <= 3; i++) {
-    const filaDiagonal = fila - i;
-    const columnaDiagonal = columna + i;
-    if (
-      filaDiagonal >= 0 && filaDiagonal < this.tablero.getFilas() &&
-      columnaDiagonal >= 0 && columnaDiagonal < this.tablero.getColumnas()
-    ) {
-      if (this.tablero.obtenerEstadoCelda(filaDiagonal, columnaDiagonal) === jugador) {
-        contador++;
-        if (contador === 4) {
-          return true;
+    // Verificar en línea diagonal descendente
+    for (let fila = 0; fila < this.tablero.getFilas() - 3; fila++) {
+      for (let columna = 0; columna < this.tablero.getColumnas() - 3; columna++) {
+        let contador = 0;
+        for (let i = 0; i < 4; i++) {
+          if (
+            this.tablero.matriz[fila + i][columna + i].getFicha() !== null &&
+            this.tablero.matriz[fila + i][columna + i].getFicha().getJugador() === jugador
+          ) {
+            contador++;
+            if (contador === 4) {
+              console.log("gane");
+              this.juegoTerminado = true; // Marca el juego como terminado
+              return true;
+            }
+          } else {
+            contador = 0;
+          }
         }
-      } else {
-        contador = 0;
       }
     }
+
+    // Verificar en línea diagonal ascendente
+    for (let fila = 3; fila < this.tablero.getFilas(); fila++) {
+      for (let columna = 0; columna < this.tablero.getColumnas() - 3; columna++) {
+        let contador = 0;
+        for (let i = 0; i < 4; i++) {
+          if (
+            this.tablero.matriz[fila - i][columna + i].getFicha() !== null &&
+            this.tablero.matriz[fila - i][columna + i].getFicha().getJugador() === jugador
+          ) {
+            contador++;
+            if (contador === 4) {
+              console.log("gane");
+              this.juegoTerminado = true; // Marca el juego como terminado
+              return true;
+            }
+          } else {
+            contador = 0;
+          }
+        }
+      }
+    }
+
+
+    return false;
   }
-*/
-  return false;
 }
-}
-  
+
 
 
 
