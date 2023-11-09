@@ -14,6 +14,9 @@ class Ficha {
         this.colocada = false; // Propiedad para verificar si la ficha se ha colocado
         
     }
+    getCtx(){
+        return this.ctx;
+    }
 getJugador(){
     return this.jugador;
 }
@@ -48,7 +51,9 @@ setY(y){
     getRadio() {
         return this.radio;
     }
-
+getImagen(){
+    return this.imagen;
+}
 
     dibujar() {
         this.ctx.fillStyle = this.getFill();

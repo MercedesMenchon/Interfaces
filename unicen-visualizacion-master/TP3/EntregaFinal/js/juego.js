@@ -13,7 +13,7 @@ class Juego {
     this.juegoTerminado = false; //indica si el juego terminó
     // rastreo del jugador actual
     this.jugadorActual = this.jugadores[0];
-
+    this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX() , y: ficha.getPosicionY()  }));
   }
 
 
@@ -46,12 +46,14 @@ class Juego {
 
       }
     }
-    this.dibujarTablero();
+   this.dibujarTablero();
+
+
   }
 
   dibujarTablero() {
     this.tablero.armarTablero();
-    this.dibujarFichas();
+   this.dibujarFichas();
   }
 
   dibujarFichas() {
@@ -98,17 +100,14 @@ class Juego {
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
 
-        fichaArrastrada.setPosicion(x, y);
+        
         this.clearCanvas(); // Borrar el lienzo
 
-        this.dibujarTablero(); // Dibuja el tablero en su posición original
+        this.actualizarEstadoFichas(); // Actualizar el estado de las fichas al mover
+        this.dibujarCanvasActualizado(); // Dibuja el tablero en su posición original
 
         // Dibuja todas las fichas excepto la arrastrada
-        for (let i = 0; i < this.fichas.length; i++) {
-          if (this.fichas[i] !== fichaArrastrada) {
-            this.fichas[i].dibujar();
-          }
-        }
+        fichaArrastrada.setPosicion(x, y);
       }
     });
 
@@ -116,6 +115,7 @@ class Juego {
       if (this.juegoTerminado) {
         return; // Evita procesar eventos si el juego ya ha terminado
       }
+      
       if (fichaArrastrada) {
         const rect = this.canvas.getBoundingClientRect();
         const x = event.clientX - rect.left;
@@ -133,24 +133,25 @@ class Juego {
 
           this.tablero.matriz[fila][columna].setFicha();
           fichaArrastrada.colocada = true; // Marca la ficha como colocada
-          console.log(this.tablero.matriz);
-          console.log("cambio:");
-          console.log(this.tablero.matriz[fila][columna].setFicha(fichaArrastrada));
-          console.log(newX);
-          console.log(newY);
           fichaArrastrada.setX(newX);
           fichaArrastrada.setY(newY);
           this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
           fichaArrastrada.dibujar();
-          this.hayGanador(fila, columna);
-          
+        
+          if(columna!=0 ){
+            this.getTurno();
+          }
+          fichaArrastrada = null;
+        //  this.clearCanvas(); // Borrar el lienzo
+          this.actualizarEstadoFichas(); // Actualizar el estado de las fichas al mover
+        this.dibujarCanvasActualizado()
+         // this.dibujarTablero(); // Dibuja el tablero en su posición original
+          setTimeout(() => {
+            this.controlGanador(fila, columna);
+          }, 400);
+                 }
          
-        }
-
-        fichaArrastrada = null;
-        this.clearCanvas(); // Borrar el lienzo
-        this.dibujarTablero(); // Dibuja el tablero en su posición original
-        this.getTurno();
+       
 
       }
     });
@@ -162,7 +163,13 @@ class Juego {
   getJugadorActual(){
     return this.jugadorActual;
   }
-
+controlGanador(fila,columna){
+  if(this.hayGanador(fila, columna)==true){
+    const ficha = this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha())
+   ficha.dibujar();     
+   console.log("CONTROL GANADOR");
+  }
+}
   getTurno() {
    
    if (this.getJugadorActual() == this.jugadores[0]) {
@@ -198,6 +205,49 @@ class Juego {
   //metodo que se usa para que despues de tantos minutos llame a una funcion (lo vamos a necvesitar)
 
   // setTimeOut(() => { addFichas(); }, 333);
+
+//ACAAAA
+
+dibujarFichasActualizadas() {
+  for (let i = 0; i < this.fichas.length; i++) {
+    const ficha = this.fichas[i];
+    const estadoAnterior = this.estadoFichas[i];
+
+    // Verifica si la ficha ha cambiado de posición
+    if (ficha.getPosicionX() !== estadoAnterior.x || ficha.getPosicionY() !== estadoAnterior.y) {
+      ficha.dibujar();
+     console.log( "ESTA DIBUJANDO LA FICHA ACTUALIZADA");
+    }
+  }
+}
+
+// Método para dibujar el tablero y las fichas actualizadas
+dibujarCanvasActualizado() {
+  this.clearCanvas();
+  this.dibujarTablero();
+  this.dibujarFichasActualizadas();
+  
+}
+
+actualizarEstadoFichas() {
+  this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX() , y: ficha.getPosicionY()  }));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   fichaSoltadaEnelJuego(x, y) {
@@ -252,10 +302,8 @@ class Juego {
 
 
   hayGanador(fila, columna) {
-    console.log("entro a hay ganador");
-    // Comprueba la línea horizontal}
-    let jugador = this.tablero.matriz[fila][columna].getFicha().getJugador();
 
+    let jugador = this.tablero.matriz[fila][columna].getFicha().getJugador();
     let contador = 0;
     for (let i = Math.max(0, columna - 3); i <= Math.min(this.tablero.getColumnas() - 1, columna + 3); i++) {
       console.log("la i:");
@@ -264,7 +312,7 @@ class Juego {
         contador++;
 
         if (contador === 4) {
-          console.log("gane");
+         // this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha());
           this.juegoTerminado = true; // Marca el juego como terminado
           return true;
         }
@@ -279,9 +327,11 @@ class Juego {
     for (let i = Math.max(0, fila - 3); i <= Math.min(this.tablero.getFilas() - 1, fila + 3); i++) {
       if (this.tablero.matriz[i][columna].getFicha() != null && this.tablero.matriz[i][columna].getFicha().getJugador() === jugador) {
         contador++;
-        if (contador === 4) {
+        if (contador === 2) {
           console.log("gane");
-          this.juegoTerminado = true; // Marca el juego como terminado
+          this.juegoTerminado = true; 
+          //this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha());
+          // Marca el juego como terminado
           return true;
         }
       } else {
@@ -300,8 +350,8 @@ class Juego {
           ) {
             contador++;
             if (contador === 4) {
-              console.log("gane");
               this.juegoTerminado = true; // Marca el juego como terminado
+            //  this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha());
               return true;
             }
           } else {
@@ -322,7 +372,7 @@ class Juego {
           ) {
             contador++;
             if (contador === 4) {
-              console.log("gane");
+         //     this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha());
               this.juegoTerminado = true; // Marca el juego como terminado
               return true;
             }
@@ -336,6 +386,41 @@ class Juego {
 
     return false;
   }
+
+
+ mostrarGanador(fichaGanador) {
+    
+    ctx.fillStyle = 'rgba(128, 128, 128, 0.7)'; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    const x = canvas.width / 2;
+    const y = canvas.height*3 / 5;
+  
+    // Dibuja el nombre del ganador debajo de la ficha
+    ctx.fillStyle = 'rgba(255,255,255)';
+    ctx.font = '100px Arial';
+    ctx.textAlign = 'center';
+
+    ctx.fillText("¡GANASTE!", x, y/4 + fichaGanador.getRadio());
+ console.log(fichaGanador.getRadio());
+ console.log(x);
+ console.log(y);
+ console.log(fichaGanador.getFill());
+ console.log(fichaGanador.getCtx());
+ console.log(fichaGanador.getImagen());
+ console.log(fichaGanador.getJugador());
+
+    const ficha = new Ficha(fichaGanador.getRadio()*10,x,y, fichaGanador.getFill(),fichaGanador.getCtx(), fichaGanador.getImagen(),fichaGanador.getJugador());
+    return ficha;
+    
+   
+    // Puedes agregar más personalización (como un mensaje de victoria) si lo deseas.
+  
+    // Asegúrate de que la función sea llamada cuando haya un ganador en tu juego.
+    // Por ejemplo, después de verificar la victoria, puedes llamar a esta función y pasar la ficha y el nombre del ganador.
+  }
+
+
 }
 
 
