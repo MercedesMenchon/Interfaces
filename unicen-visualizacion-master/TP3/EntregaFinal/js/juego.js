@@ -1,5 +1,10 @@
 "use strict";
 
+
+
+
+
+
 class Juego {
   constructor(tablero, canvas, ctx) {
     this.fichas = [];
@@ -116,11 +121,7 @@ setEstadoFichas(){
         this.clearCanvas();
         this.dibujarTablero();
         this.dibujarFichas(fichaArrastrada); // Dibuja el tablero en su posición original
-       
-        
-        
-    
-        
+
       }
     }); 
 
