@@ -1,10 +1,5 @@
 "use strict";
 
-
-
-
-
-
 class Juego {
   constructor(tablero, canvas, ctx) {
     this.fichas = [];
