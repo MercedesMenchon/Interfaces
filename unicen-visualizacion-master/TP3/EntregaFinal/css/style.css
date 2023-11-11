@@ -1580,7 +1580,7 @@ h1{
 
     }
  
-
+/*JUEGOO*/
     canvas#tablero{
 display:flex;
 align-items: center;
@@ -1589,4 +1589,22 @@ background-color:var(--blanco);
 width: 1000px;
 height: 600px;
     }
+.botones4enlinea{
+    background-color: white;
+}
+    .btn-4enlinea{
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        height: auto;
+        background-color: lightblue;
+        color: var(--blanco);
+        padding: 2% 5%;
+        margin: 2%;
+        text-transform: uppercase;
+    
+    }
+
+
+
 }
