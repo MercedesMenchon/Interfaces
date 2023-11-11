@@ -6,27 +6,16 @@ class Juego {
     this.tablero = tablero;
     this.ctx = ctx;
     this.canvas = canvas;
-    this.fichaResaltada = null; // Almacena la ficha resaltada actual
+    this.fichaResaltada = null; 
     this.mousedown = false;
     this.jugadores = ["jugador1", "jugador2"];
     this.addFichas();
-    this.juegoTerminado = false; //indica si el juego terminó
-    // rastreo del jugador actual
+    this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
-    this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX(), y: ficha.getPosicionY() }));
+   
   }
 
-setEstadoFichas(){
-   this.estadoFichas = [];
-  for(let i=0;i< this.fichas.length;i++){
-    let estado={
-      "x": this.fichas[i].getPosicionX(),
-      "y": this.fichas[i].getPosicionY()
-    };
-    this.estadoFichas.push(estado);
-  }
-  console.log(this.estadoFichas);
-}
+
   addFichas() {
     let posy = 0;
     if (this.fichas.length < this.tablero.getCantFichas()) {
@@ -83,30 +72,28 @@ setEstadoFichas(){
       const rect = this.canvas.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
-      console.log(`x: ${x}, y: ${y}`);//controlo donde estan mis coordenadas
-      // Encuentra la ficha clickeada
-
-      for (let i = this.fichas.length - 1; i >= 0; i--) {
+       for (let i = this.fichas.length - 1; i >= 0; i--) {
         const ficha = this.fichas[i];
     
         if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador() == this.jugadorActual) {
           console.log("soy el jugador activo");
           console.log(this.jugadorActual);
           fichaArrastrada = ficha;
-          break; // Detén la búsqueda después de seleccionar la ficha superior
+          break; 
         }
       }
 
       if (fichaArrastrada) {
         fichaArrastrada.setResaltado(true);
         fichaArrastrada.setArrastrandose(true);
-        this.dibujarCanvasActualizado(); 
+        this.clearCanvas();
+        this.dibujarTablero();
       }
     });
 
     this.canvas.addEventListener('mousemove', (event) => {
       if (this.juegoTerminado) {
-        return; // Evita procesar eventos si el juego ya ha terminado
+        return; 
       }
       if (fichaArrastrada) {
         const rect = this.canvas.getBoundingClientRect();
@@ -116,8 +103,7 @@ setEstadoFichas(){
 
         this.clearCanvas(); // Borrar el lienzo
 
-        this.actualizarEstadoFichas(); // Actualizar el estado de las fichas al mover
-        this.dibujarCanvasActualizado(); // Dibuja el tablero en su posición original
+        this.dibujarTablero(); 
 
         // Dibuja todas las fichas excepto la arrastrada
         fichaArrastrada.setPosicion(x, y);
@@ -140,43 +126,53 @@ setEstadoFichas(){
         fichaArrastrada.setResaltado(false);
         fichaArrastrada.setArrastrandose(false);
 
-        // Utiliza las funciones para verificar la posición y columna
+    
         if (this.fichaSoltadaEnelJuego(x, y)) {
           let columna = this.getColumnaDeCaidaFicha(x, y);
           let fila = this.getFilaLibre(columna);
           let newX = this.tablero.matriz[fila][columna].getCentroX();
           let newY = this.tablero.matriz[fila][columna].getCentroY();
-
-          this.tablero.matriz[fila][columna].setFicha();
-          fichaArrastrada.colocada = true; // Marca la ficha como colocada
+//LE AGREGUE LA FICHA
+          this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
+          fichaArrastrada.colocada = true; 
+          this.dibujarCaida(fichaArrastrada,x,y,newX,newY,this.canvas);
           fichaArrastrada.setX(newX);
           fichaArrastrada.setY(newY);
           this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
-          fichaArrastrada.dibujar();
+         // fichaArrastrada.dibujar();
 
-          /*if (columna != 0) {
-            this.getTurno();
-          }
-*/
           this.getTurno();
           fichaArrastrada = null;
-          //  this.clearCanvas(); // Borrar el lienzo
-          this.actualizarEstadoFichas(); // Actualizar el estado de las fichas al mover
-          this.dibujarCanvasActualizado()
-          // this.dibujarTablero(); // Dibuja el tablero en su posición original
+          this.dibujarTablero();
           setTimeout(() => {
             this.controlGanador(fila, columna);
           }, 400);
         }
       }
-     
-      
-      //  this.clearCanvas(); // Borrar el lienzo
-        this.actualizarEstadoFichas(); // Actualizar el estado de las fichas al mover
-      this.dibujarCanvasActualizado()
+        this.dibujarTablero();
     });
 
   }
+
+dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
+    let frame = 0;
+    const framesTotales = 30; // Número de frames para la transición (puedes ajustar esto para cambiar la velocidad)
+    const pasoX = (x2 - x1) / framesTotales;
+    const pasoY = (y2 - y1) / framesTotales;
+ for(let i=0;i<framesTotales;i++){
+      
+    // Calcula la nueva posición en cada frame
+    if (frame < framesTotales) {
+      x1 += pasoX;
+      y1 += pasoY;
+      ficha.setX(x1);
+      ficha.setY(y1);
+  console.log(ficha.getPosicionY());
+      this.dibujarTablero();
+      ficha.dibujar();
+      frame++;
+    
+ }}}
 
 
 
@@ -217,10 +213,10 @@ getCantidadFichasColocadas(){
         this.jugadorActual = this.jugadores[0];
       }
 
-    // return this.jugadorActual;*/
+   
   }
 
-  //Determinamos en cuál ficha se hizo clic en el lienzo del juego, si se encuentra, se devuelve.
+  //Determinamos en cuál ficha se hizo clic 
   findClickedFigure(x, y) {
     console.log('entro a la ficha');
     for (let i = 0; i < this.fichas.length; i++) {
@@ -235,50 +231,6 @@ getCantidadFichasColocadas(){
   clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
-  //metodo que se usa para que despues de tantos minutos llame a una funcion (lo vamos a necvesitar)
-
-  // setTimeOut(() => { addFichas(); }, 333);
-
-  //ACAAAA
-
-  dibujarFichasActualizadas() {
-    for (let i = 0; i < this.fichas.length; i++) {
-      const ficha = this.fichas[i];
-      const estadoAnterior = this.estadoFichas[i];
-
-      // Verifica si la ficha ha cambiado de posición
-      if (ficha.getPosicionX() !== estadoAnterior.x || ficha.getPosicionY() !== estadoAnterior.y) {
-        ficha.dibujar();
-        console.log("ESTA DIBUJANDO LA FICHA ACTUALIZADA");
-      }
-    }
-  }
-
-  // Método para dibujar el tablero y las fichas actualizadas
-  dibujarCanvasActualizado() {
-    this.clearCanvas();
-    this.dibujarTablero();
-    this.dibujarFichasActualizadas();
-
-  }
-
-  actualizarEstadoFichas() {
-    this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX(), y: ficha.getPosicionY() }));
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -286,15 +238,13 @@ getCantidadFichasColocadas(){
   fichaSoltadaEnelJuego(x, y) {
     if (this.tablero.getRadioFicha() < y && y < this.tablero.getEspacioBlancoY()) {
       const columna = this.getColumnaDeCaidaFicha(x, y);
-      // Verifica si la columna no está llena
       if (columna < 0 || columna >= this.tablero.getColumnas() || this.tablero.matriz[0][columna].getFicha() != null) {
         return false;
       }
 
-      // Calcula la fila en la que se debe colocar la ficha
       let fila = this.getFilaLibre(columna);
 
-      // Verifica si la fila y columna están dentro de los límites del tablero
+ 
       return fila >= 0 && fila < this.tablero.getFilas() && columna >= 0 && columna < this.tablero.getColumnas();
     }
 
@@ -303,7 +253,7 @@ getCantidadFichasColocadas(){
 
 
   getFilaLibre(columna) {
-    // Calcula la fila en la que se debe colocar la ficha
+   
     let fila = this.tablero.getFilas() - 1;
     console.log("Luciana prueba:");
     console.log(this.tablero.matriz[fila][columna].getFicha());
@@ -363,8 +313,7 @@ getCantidadFichasColocadas(){
         if (contador === 4) {
           console.log("gane");
           this.juegoTerminado = true;
-         
-          // Marca el juego como terminado
+
           return true;
         }
       } else {
