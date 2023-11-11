@@ -1,18 +1,17 @@
 "use strict";
 
 class Ficha {
-    constructor(radio, xCanvas, yCanvas, fill, contexto, imagen,jugador) {
+    constructor(radio, xCanvas, yCanvas, fill, contexto,jugador, imagen) {
         this.radio = radio;
         this.xCanvas = xCanvas;
         this.yCanvas = yCanvas;
         this.fill = fill;
         this.resaltado = false;
         this.ctx = contexto;
-        this.imagen=imagen;
         this.arrastrandose=false;
         this.jugador=jugador;
         this.colocada = false; // Propiedad para verificar si la ficha se ha colocado
-        
+        this.imagen=imagen;
     }
     getCtx(){
         return this.ctx;
@@ -64,8 +63,10 @@ getImagen(){
         this.ctx.fill();
         this.ctx.stroke(); // Dibujar el borde
         this.ctx.closePath();
-    
+        console.log("ENTRO A LA IMAGEN");
+        console.log(this.imagen);
         if (this.imagen) {
+         
            //Asi hago que el texto sea imagen
             const img = new Image();
             img.src = this.imagen;

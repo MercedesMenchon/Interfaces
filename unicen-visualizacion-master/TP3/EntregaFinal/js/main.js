@@ -11,6 +11,8 @@ canvas.height = 600;
 let anchoCanvas = canvas.width;
 let altoCanvas = canvas.height;
 
+
+
 let tablero8x8 = new Tablero(8, 7, canvas, ctx);
 console.log("tablero canvas width");
 

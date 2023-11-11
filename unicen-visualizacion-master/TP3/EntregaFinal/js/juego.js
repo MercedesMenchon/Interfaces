@@ -47,8 +47,8 @@ setEstadoFichas(){
         const posxPlayer1 = posxJ1 + randomHorizontalOffset;
         const posxPlayer2 = posxJ2 + randomHorizontalOffset;
 
-        const fichaJugador1 = new Ficha(this.tablero.getRadioFicha(), posxPlayer1, posy, "orange", ctx, "Images\\4 en linea\\mosca.png", "jugador1");
-        const fichaJugador2 = new Ficha(this.tablero.getRadioFicha(), posxPlayer2, posy, "green", ctx, "Images\\4 en linea\\sapo.png", "jugador2");
+        const fichaJugador1 = new FichaJugador1(this.tablero.getRadioFicha(), posxPlayer1, posy, ctx);
+        const fichaJugador2 = new FichaJugador2(this.tablero.getRadioFicha(), posxPlayer2, posy, ctx);
 
         this.fichas.push(fichaJugador1);
         this.fichas.push(fichaJugador2);
@@ -88,8 +88,7 @@ setEstadoFichas(){
 
       for (let i = this.fichas.length - 1; i >= 0; i--) {
         const ficha = this.fichas[i];
-        console.log(i);
-
+    
         if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador() == this.jugadorActual) {
           console.log("soy el jugador activo");
           console.log(this.jugadorActual);
@@ -185,12 +184,25 @@ setEstadoFichas(){
     return this.jugadorActual;
   }
   controlGanador(fila, columna) {
-    if (this.hayGanador(fila, columna) == true) {
-      const ficha = this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha())
-      ficha.dibujar();
-      console.log("CONTROL GANADOR");
+    let win= this.hayGanador(fila, columna);
+    if (win == true) {
+      this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha())
+    }
+    else if(win == false && this.getCantidadFichasColocadas()==this.fichas.length)
+    this.mostrarEmpate(this.tablero.matriz[fila][columna].getFicha())
+  }
+
+
+getCantidadFichasColocadas(){
+  let contador =0;
+  for(let i=0;i<this.fichas.length;i++){
+    if(this.fichas[i].colocada==true){
+      contador++;
     }
   }
+  return contador;
+}
+
   getTurno() {
 
     if (this.getJugadorActual() == this.jugadores[0]) {
@@ -333,7 +345,7 @@ setEstadoFichas(){
         contador++;
 
         if (contador === 4) {
-          // this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha());
+        
           this.juegoTerminado = true; // Marca el juego como terminado
           return true;
         }
@@ -351,7 +363,7 @@ setEstadoFichas(){
         if (contador === 4) {
           console.log("gane");
           this.juegoTerminado = true;
-          //this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha());
+         
           // Marca el juego como terminado
           return true;
         }
@@ -372,7 +384,7 @@ setEstadoFichas(){
             contador++;
             if (contador === 4) {
               this.juegoTerminado = true; // Marca el juego como terminado
-              //  this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha());
+           
               return true;
             }
           } else {
@@ -393,7 +405,7 @@ setEstadoFichas(){
           ) {
             contador++;
             if (contador === 4) {
-              //     this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha());
+          
               this.juegoTerminado = true; // Marca el juego como terminado
               return true;
             }
@@ -423,25 +435,30 @@ setEstadoFichas(){
     ctx.textAlign = 'center';
 
     ctx.fillText("¡GANASTE!", x, y / 4 + fichaGanador.getRadio());
-    console.log(fichaGanador.getRadio());
-    console.log(x);
-    console.log(y);
-    console.log(fichaGanador.getFill());
-    console.log(fichaGanador.getCtx());
-    console.log(fichaGanador.getImagen());
-    console.log(fichaGanador.getJugador());
-
-    const ficha = new Ficha(fichaGanador.getRadio() * 10, x, y, fichaGanador.getFill(), fichaGanador.getCtx(), fichaGanador.getImagen(), fichaGanador.getJugador());
-    return ficha;
-
-
-    // Puedes agregar más personalización (como un mensaje de victoria) si lo deseas.
-
-    // Asegúrate de que la función sea llamada cuando haya un ganador en tu juego.
-    // Por ejemplo, después de verificar la victoria, puedes llamar a esta función y pasar la ficha y el nombre del ganador.
+      const ficha = new Ficha(fichaGanador.getRadio() * 10, x, y,fichaGanador.getFill(),  fichaGanador.getCtx(), fichaGanador.getJugador(),fichaGanador.getImagen());
+    ficha.dibujar();
   }
 
+  mostrarEmpate(ultimaFicha) {
 
+    ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const x = canvas.width / 2;
+    const xJ1 = canvas.width* 1/3;
+    const xJ2 = canvas.width *2/3;
+    const y = canvas.height * 3 / 5;
+
+    // Dibuja el nombre del ganador debajo de la ficha
+    ctx.fillStyle = 'rgba(255,255,255)';
+    ctx.font = '100px Arial';
+    ctx.textAlign = 'center';
+
+    ctx.fillText("¡EMPATE!", x, y / 4 + ultimaFicha.getRadio());
+      const ficha1 = new FichaJugador1(this.tablero.getRadioFicha() * 7, xJ1, y,  ultimaFicha.getCtx());
+      const ficha2 = new FichaJugador2(this.tablero.getRadioFicha() * 7, xJ2, y,  ultimaFicha.getCtx());
+  ficha1.dibujar();
+  ficha2.dibujar();
+    }
 }
 
 
