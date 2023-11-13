@@ -12,10 +12,23 @@ class Juego {
     this.addFichas();
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
-   
+    this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX(), y: ficha.getPosicionY() }));
+    this.tiempo = 10; // Inicializar el tiempo
+    this.temporizador = null; // Inicializar el temporizador
+  
   }
 
-
+  setEstadoFichas() {
+    this.estadoFichas = [];
+    for (let i = 0; i < this.fichas.length; i++) {
+      let estado = {
+        "x": this.fichas[i].getPosicionX(),
+        "y": this.fichas[i].getPosicionY()
+      };
+      this.estadoFichas.push(estado);
+    }
+    console.log(this.estadoFichas);
+  }
   addFichas() {
     let posy = 0;
     if (this.fichas.length < this.tablero.getCantFichas()) {
@@ -57,16 +70,16 @@ class Juego {
 
   dibujarFichas(fichaArrastrada = null) {
     for (let i = 0; i < this.fichas.length; i++) {
-    if(fichaArrastrada && this.fichas[i] !== fichaArrastrada){
-    continue;  
-    }  
-    this.fichas[i].dibujar();
+      if (fichaArrastrada && this.fichas[i] !== fichaArrastrada) {
+        continue;
+      }
+      this.fichas[i].dibujar();
     }
   }
 
 
   agregarEventoClic() {
-    
+
     let fichaArrastrada = null;
     this.canvas.addEventListener('mousedown', (event) => {
       const rect = this.canvas.getBoundingClientRect();
@@ -74,7 +87,7 @@ class Juego {
       const y = event.clientY - rect.top;
        for (let i = this.fichas.length - 1; i >= 0; i--) {
         const ficha = this.fichas[i];
-    
+     
         if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador() == this.jugadorActual) {
           console.log("soy el jugador activo");
           console.log(this.jugadorActual);
@@ -112,7 +125,7 @@ class Juego {
         this.dibujarFichas(fichaArrastrada); // Dibuja el tablero en su posición original
 
       }
-    }); 
+    });
 
     this.canvas.addEventListener('mouseup', (event) => {
       if (this.juegoTerminado) {
@@ -180,33 +193,29 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
     return this.jugadorActual;
   }
   controlGanador(fila, columna) {
-    let win= this.hayGanador(fila, columna);
+    let win = this.hayGanador(fila, columna);
     if (win == true) {
       this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha())
     }
-    else if(win == false && this.getCantidadFichasColocadas()==this.fichas.length)
-    this.mostrarEmpate(this.tablero.matriz[fila][columna].getFicha())
+    else if (win == false && this.getCantidadFichasColocadas() == this.fichas.length)
+      this.mostrarEmpate(this.tablero.matriz[fila][columna].getFicha())
   }
 
 
-getCantidadFichasColocadas(){
-  let contador =0;
-  for(let i=0;i<this.fichas.length;i++){
-    if(this.fichas[i].colocada==true){
-      contador++;
+  getCantidadFichasColocadas() {
+    let contador = 0;
+    for (let i = 0; i < this.fichas.length; i++) {
+      if (this.fichas[i].colocada == true) {
+        contador++;
+      }
     }
+    return contador;
   }
-  return contador;
-}
 
   getTurno() {
 
     if (this.getJugadorActual() == this.jugadores[0]) {
-
-
       this.jugadorActual = this.jugadores[1];
-
-
     }
     else
       if (this.jugadorActual == this.jugadores[1]) {
@@ -295,7 +304,7 @@ getCantidadFichasColocadas(){
         contador++;
 
         if (contador === 4) {
-        
+
           this.juegoTerminado = true; // Marca el juego como terminado
           return true;
         }
@@ -333,7 +342,7 @@ getCantidadFichasColocadas(){
             contador++;
             if (contador === 4) {
               this.juegoTerminado = true; // Marca el juego como terminado
-           
+
               return true;
             }
           } else {
@@ -354,7 +363,7 @@ getCantidadFichasColocadas(){
           ) {
             contador++;
             if (contador === 4) {
-          
+
               this.juegoTerminado = true; // Marca el juego como terminado
               return true;
             }
@@ -384,7 +393,7 @@ getCantidadFichasColocadas(){
     ctx.textAlign = 'center';
 
     ctx.fillText("¡GANASTE!", x, y / 4 + fichaGanador.getRadio());
-      const ficha = new Ficha(fichaGanador.getRadio() * 10, x, y,fichaGanador.getFill(),  fichaGanador.getCtx(), fichaGanador.getJugador(),fichaGanador.getImagen());
+    const ficha = new Ficha(fichaGanador.getRadio() * 10, x, y, fichaGanador.getFill(), fichaGanador.getCtx(), fichaGanador.getJugador(), fichaGanador.getImagen());
     ficha.dibujar();
   }
 
@@ -393,8 +402,8 @@ getCantidadFichasColocadas(){
     ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     const x = canvas.width / 2;
-    const xJ1 = canvas.width* 1/3;
-    const xJ2 = canvas.width *2/3;
+    const xJ1 = canvas.width * 1 / 3;
+    const xJ2 = canvas.width * 2 / 3;
     const y = canvas.height * 3 / 5;
 
     // Dibuja el nombre del ganador debajo de la ficha
@@ -403,11 +412,70 @@ getCantidadFichasColocadas(){
     ctx.textAlign = 'center';
 
     ctx.fillText("¡EMPATE!", x, y / 4 + ultimaFicha.getRadio());
-      const ficha1 = new FichaJugador1(this.tablero.getRadioFicha() * 7, xJ1, y,  ultimaFicha.getCtx());
-      const ficha2 = new FichaJugador2(this.tablero.getRadioFicha() * 7, xJ2, y,  ultimaFicha.getCtx());
-  ficha1.dibujar();
-  ficha2.dibujar();
+    const ficha1 = new FichaJugador1(this.tablero.getRadioFicha() * 7, xJ1, y, ultimaFicha.getCtx());
+    const ficha2 = new FichaJugador2(this.tablero.getRadioFicha() * 7, xJ2, y, ultimaFicha.getCtx());
+    ficha1.dibujar();
+    ficha2.dibujar();
+  }
+
+
+
+
+
+  // Método para iniciar el temporizador
+  iniciarTemporizador() {
+    console.log("Iniciando temporizador");
+    this.tiempo = 10; // Reinicia el tiempo al inicio del turno
+    this.actualizarTiempoEnPantalla(); // Actualiza el tiempo inicial en pantalla
+
+    this.temporizador = setInterval(() => {
+      this.reducirTiempo();
+    }, 1000); // Se ejecuta cada segundo
+  }
+
+  detenerTemporizador() {
+    console.log("Deteniendo temporizador");
+    clearInterval(this.temporizador);
+  }
+
+  // Reduce el tiempo restante del jugador
+  reducirTiempo() {
+    this.tiempo--;
+    this.actualizarTiempoEnPantalla();
+  
+    console.log(`Tiempo restante: ${this.tiempo}`);
+  
+    if (this.tiempo <= 0) {
+      this.detenerTemporizador();
+      
+     // this.getTurno();
+    
     }
+  }
+
+
+  actualizarTiempoEnPantalla() {
+    const elementoTiempo = document.getElementById('timer');
+    elementoTiempo.textContent = `Tiempo: ${this.tiempo} segundos`;
+  
+    console.log(`Actualizando tiempo en pantalla: ${this.tiempo}`);
+  
+    if (this.tiempo <= 3) {
+      elementoTiempo.style.color = "red";
+    } else {
+      elementoTiempo.style.color = "black";
+    }
+  }
+
+
+
+  cambiarTurnoLogica() {
+    console.log("Cambiando turno lógica.");
+    this.detenerTemporizador();
+  //this.getTurno();
+ 
+
+  }
 }
 
 

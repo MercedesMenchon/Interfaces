@@ -1589,9 +1589,13 @@ background-color:var(--blanco);
 width: 1000px;
 height: 600px;
     }
+
+
 .botones4enlinea{
     background-color: white;
 }
+
+
     .btn-4enlinea{
         align-items: center;
         justify-content: center;
@@ -1607,4 +1611,19 @@ height: 600px;
 
 
 
+}
+
+#timer{
+    display: flex;
+    background-color:#11D2B2;
+    border-radius: 4px;
+    border: var(--secundario) 2px solid;
+    font-size: 20px;
+    color: var(--blanco);
+    font-weight: bold;
+    width: 75%;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
 }
