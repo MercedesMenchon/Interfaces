@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
         generarTablero(7,6).agregarEventoClic();
     });
  let tablero7x8 = this.querySelector("#tablero7x8").addEventListener("click", function(e){
-        generarTablero(7,6).agregarEventoClic();
+        generarTablero(7,8).agregarEventoClic();
     });
    let tablero8x8 = this.querySelector("#tablero8x8").addEventListener("click", function(e){
-        generarTablero(7,6).agregarEventoClic();
+        generarTablero(8,8).agregarEventoClic();
     });
 });
 

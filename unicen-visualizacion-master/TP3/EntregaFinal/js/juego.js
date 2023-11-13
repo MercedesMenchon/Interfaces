@@ -296,13 +296,7 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
     return Math.floor((x - this.tablero.getEspacioBlancoX()) / this.tablero.getAnchoCelda());
   }
 
-  dejarCaer(x, y) {
-    let fichas = document.querySelectorAll('Ficha');
-    for (let i = 0; i < fichas.length; i++) {
-      fichas[i].addEventListener('mouseup', fichaSoltadaEnelJuego(this.getPosicionX(), this.getPosicionY()));
-    }
 
-  }
 
 
   hayGanador(fila, columna) {
@@ -437,11 +431,18 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
   // Método para iniciar el temporizador
   iniciarTemporizador() {
     console.log("Iniciando temporizador");
-    this.tiempo = 10; // Reinicia el tiempo al inicio del turno
+    let tiempo = 10; // Reinicia el tiempo al inicio del turno
     this.actualizarTiempoEnPantalla(); // Actualiza el tiempo inicial en pantalla
 
-    this.temporizador = setInterval(() => {
-      this.reducirTiempo();
+    let temporizador = setInterval(() => {
+      tiempo--;
+      this.actualizarTiempoEnPantalla();
+  
+      if (tiempo <= 0) {
+          this.detenerTemporizador();
+          return 0;
+         
+      };
     }, 1000); // Se ejecuta cada segundo
   }
 
@@ -449,23 +450,24 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
     console.log("Deteniendo temporizador");
     clearInterval(this.temporizador);
   }
-
+/*
   reiniciarTemporizador() {
     this.detenerTemporizador();
-    //this.iniciarTemporizador();
+  
 }
 
   // Reduce el tiempo restante del jugador
-  reducirTiempo() {
-    this.tiempo--;
+  reducirTiempo(tiempo) {
+    tiempo--;
     this.actualizarTiempoEnPantalla();
 
-    if (this.tiempo <= 0) {
+    if (tiempo <= 0) {
         this.detenerTemporizador();
-       this.dejarCaer();
+       
     }
+    return tiempo;
 }
-
+*/
 
   actualizarTiempoEnPantalla() {
     const elementoTiempo = document.getElementById('timer');
