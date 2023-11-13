@@ -23,7 +23,7 @@ iniciarTemporizador() {
       this.actualizarTiempoEnPantalla(); 
       let tiempo = this.getTiempo() -1;
         this.setTiempo(tiempo);
-              
+ 
     }, 1000); // Se ejecuta cada segundo
   }
 
