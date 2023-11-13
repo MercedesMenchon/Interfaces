@@ -101,6 +101,7 @@ class Juego {
         fichaArrastrada.setArrastrandose(true);
         this.clearCanvas();
         this.dibujarTablero();
+        this.iniciarTemporizador();
       }
     });
 
@@ -160,6 +161,8 @@ class Juego {
           setTimeout(() => {
             this.controlGanador(fila, columna);
           }, 400);
+          // Reinicia el temporizador cuando la ficha se coloca correctamente
+          this.reiniciarTemporizador();
         }
       }
         this.dibujarTablero();
@@ -438,20 +441,21 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
     clearInterval(this.temporizador);
   }
 
+  reiniciarTemporizador() {
+    this.detenerTemporizador();
+    this.iniciarTemporizador();
+}
+
   // Reduce el tiempo restante del jugador
   reducirTiempo() {
     this.tiempo--;
     this.actualizarTiempoEnPantalla();
-  
-    console.log(`Tiempo restante: ${this.tiempo}`);
-  
+
     if (this.tiempo <= 0) {
-      this.detenerTemporizador();
-      
-     // this.getTurno();
-    
+        this.detenerTemporizador();
+        //this.cambiarTurnoLogica(); // cambiar de turno al llegar a cero
     }
-  }
+}
 
 
   actualizarTiempoEnPantalla() {

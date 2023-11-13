@@ -1627,3 +1627,18 @@ height: 600px;
     justify-content: center;
     text-transform: uppercase;
 }
+
+#timer{
+    display: flex;
+    background-color:#11D2B2;
+    border-radius: 4px;
+    border: var(--secundario) 2px solid;
+    font-size: 20px;
+    color: var(--blanco);
+    font-weight: bold;
+    width: 75%;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
