@@ -10,15 +10,28 @@ let altoCanvas = canvas.height;
 
 document.addEventListener("DOMContentLoaded", function() {
     iniciarJuego();
+    let temporizador = new Temporizador(10);
     let tablero7x6 = this.querySelector("#tablero7x6").addEventListener("click", function(e){
-        generarTablero(7,6).agregarEventoClic();
+        const tablero1 = new Tablero(6,7,4, canvas, ctx);
+        const juego1 = new Juego(tablero1,canvas, ctx,temporizador);
+        juego1.agregarEventoClic();
+   
+        
+        
     });
  let tablero7x8 = this.querySelector("#tablero7x8").addEventListener("click", function(e){
-        generarTablero(7,8).agregarEventoClic();
+    const tablero2 = new Tablero(7,8,5, canvas, ctx);
+    const juego2 = new Juego(tablero2,canvas, ctx,temporizador);
+    juego2.agregarEventoClic();
+ 
     });
    let tablero8x8 = this.querySelector("#tablero8x8").addEventListener("click", function(e){
-        generarTablero(8,8).agregarEventoClic();
+    const tablero3 = new Tablero(8,8,6, canvas, ctx);
+    const juego3 = new Juego(tablero3,canvas, ctx,temporizador);
+    juego3.agregarEventoClic();
+
     });
+
 });
 
 function iniciarJuego(){
@@ -30,11 +43,7 @@ function iniciarJuego(){
     img.src = "Images\\4 en linea\\4enlineaAgua.jpg";
 }
 
-function generarTablero(x,y){
-    const tablero = new Tablero(x,y, canvas, ctx);
-    const juego = new Juego(tablero,canvas, ctx);
-    return juego;
-}
+
 
 
 

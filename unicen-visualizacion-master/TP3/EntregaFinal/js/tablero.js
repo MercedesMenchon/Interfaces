@@ -3,11 +3,12 @@
 
 //CREAMOS LA CLASE TABLERO
 class Tablero {
-  constructor(filas, columnas, canvas, ctx) {
+  constructor(filas, columnas,cantLinea, canvas, ctx) {
     this.columnas = columnas;
     this.filas = filas;
     this.matriz = [];
     this.canvas = canvas;
+    this.cantLinea =cantLinea;
     this.ctx = ctx;
     this.cantFichas = this.getCantFichas();
     this.armarMatriz();
@@ -19,7 +20,9 @@ class Tablero {
   getFilas() {
     return this.filas;
   }
-
+getCantLinea(){
+  return this.cantLinea;
+}
   getColumnas() {
     return this.columnas;
   }

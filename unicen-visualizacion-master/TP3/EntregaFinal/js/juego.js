@@ -1,7 +1,7 @@
 "use strict";
 
 class Juego {
-  constructor(tablero, canvas, ctx) {
+  constructor(tablero, canvas, ctx, temporizador) {
     this.fichas = [];
     this.tablero = tablero;
     this.ctx = ctx;
@@ -13,14 +13,19 @@ class Juego {
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
     this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX(), y: ficha.getPosicionY() }));
-this.tiempo=10;
-  
+    
+   this.juegoIniciado=false;
+   this.temporizador=temporizador;
   }
-getTiempo(){
-  return this.tiempo;
+
+setJuegoTerminado(boolean){
+  this.juegoTerminado=boolean;
 }
-setTiempo(tiempo){
-  this.tiempo=tiempo;
+getjuegoIniciado(){
+  return this.juegoIniciado;
+}
+setjuegoIniciado(boolean){
+  this.juegoIniciado=boolean;
 }
   setEstadoFichas() {
     this.estadoFichas = [];
@@ -81,12 +86,13 @@ setTiempo(tiempo){
     }
   }
 
-
+   
   agregarEventoClic() {
    let xViejo=null;
    let yViejo=null;
-    let temporizadorIniciado = false;
+   
     let fichaArrastrada = null;
+ 
     this.canvas.addEventListener('mousedown', (event) => {
       const rect = this.canvas.getBoundingClientRect();
       const x = event.clientX - rect.left;
@@ -101,11 +107,11 @@ setTiempo(tiempo){
           xViejo=fichaArrastrada.getPosicionX();
          yViejo=fichaArrastrada.getPosicionY();
          
-          if (!temporizadorIniciado) {
+          if (!this.getjuegoIniciado()) {
             document.querySelector(".timer").classList.add('timerShow');
-            this.iniciarTemporizador();
+            this.temporizador.iniciarTemporizador();
             console.log("Iniciar temporizador");
-            temporizadorIniciado = true;
+            this.setjuegoIniciado(true);
         }
         break; 
          
@@ -143,7 +149,9 @@ setTiempo(tiempo){
         this.dibujarTablero();
         this.dibujarFichas(fichaArrastrada); // Dibuja el tablero en su posición original
 
-       
+       if(fichaArrastrada.getJugador() != this.getJugadorActual()){
+        fichaArrastrada=null;
+       }
 
       }
     });
@@ -176,12 +184,10 @@ setTiempo(tiempo){
          // fichaArrastrada.dibujar();
         
           this.getTurno();
-          this.setTiempo(10);
+          this.temporizador.reiniciarTemporizador();
           fichaArrastrada = null;
    
-         temporizadorIniciado = false;
          
-         temporizadorIniciado = true;
           this.dibujarTablero();
           setTimeout(() => {
             this.controlGanador(fila, columna);
@@ -189,20 +195,23 @@ setTiempo(tiempo){
           
          
         }
+        else{
+          fichaArrastrada=null;
+        }
       }
         this.dibujarTablero();
         if(this.getTiempo()==0){
           this.tiempoFinalizado(fichaArrastrada,xViejo,yViejo);
           fichaArrastrada=null;
           this.getTurno();
-          this.setTiempo(10);
+          this.temporizador.reiniciarTemporizador();
         }
     });
     if(this.getTiempo()==0){
       this.tiempoFinalizado(fichaArrastrada,xViejo,yViejo);
       fichaArrastrada=null;
       this.getTurno();
-      this.setTiempo(10);
+      this.temporizador.reiniciarTemporizador();
     }
   }
 
@@ -329,7 +338,7 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
 
 
   hayGanador(fila, columna) {
-
+const cantLinea = this.tablero.getCantLinea();
     let jugador = this.tablero.matriz[fila][columna].getFicha().getJugador();
     let contador = 0;
     for (let i = Math.max(0, columna - 3); i <= Math.min(this.tablero.getColumnas() - 1, columna + 3); i++) {
@@ -338,7 +347,7 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
       if (this.tablero.matriz[fila][i].getFicha() != null && this.tablero.matriz[fila][i].getFicha().getJugador() === jugador) {
         contador++;
 
-        if (contador === 4) {
+        if (contador === cantLinea) {
 
           this.juegoTerminado = true; // Marca el juego como terminado
           return true;
@@ -354,7 +363,7 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
     for (let i = Math.max(0, fila - 3); i <= Math.min(this.tablero.getFilas() - 1, fila + 3); i++) {
       if (this.tablero.matriz[i][columna].getFicha() != null && this.tablero.matriz[i][columna].getFicha().getJugador() === jugador) {
         contador++;
-        if (contador === 4) {
+        if (contador === cantLinea) {
           console.log("gane");
           this.juegoTerminado = true;
 
@@ -369,13 +378,13 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
     for (let fila = 0; fila < this.tablero.getFilas() - 3; fila++) {
       for (let columna = 0; columna < this.tablero.getColumnas() - 3; columna++) {
         let contador = 0;
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < cantLinea; i++) {
           if (
             this.tablero.matriz[fila + i][columna + i].getFicha() !== null &&
             this.tablero.matriz[fila + i][columna + i].getFicha().getJugador() === jugador
           ) {
             contador++;
-            if (contador === 4) {
+            if (contador === cantLinea) {
               this.juegoTerminado = true; // Marca el juego como terminado
 
               return true;
@@ -391,13 +400,13 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
     for (let fila = 3; fila < this.tablero.getFilas(); fila++) {
       for (let columna = 0; columna < this.tablero.getColumnas() - 3; columna++) {
         let contador = 0;
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < cantLinea; i++) {
           if (
             this.tablero.matriz[fila - i][columna + i].getFicha() !== null &&
             this.tablero.matriz[fila - i][columna + i].getFicha().getJugador() === jugador
           ) {
             contador++;
-            if (contador === 4) {
+            if (contador === cantLinea) {
 
               this.juegoTerminado = true; // Marca el juego como terminado
               return true;
@@ -455,59 +464,8 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
 
 
 
-
-
   // Método para iniciar el temporizador
-  iniciarTemporizador() {
-    console.log("Iniciando temporizador");
-    this.actualizarTiempoEnPantalla(); // Actualiza el tiempo inicial en pantalla
-    let temporizador = setInterval(() => {
-        let tiempo = this.getTiempo() -1;
-        this.setTiempo(tiempo);
-        this.actualizarTiempoEnPantalla();
-       if(this.tiempo==0){
-       
-       }
-    }, 1000); // Se ejecuta cada segundo
-    return temporizador;
-  }
-/*
-  detenerTemporizador(temporizador) {
-    console.log("Deteniendo temporizador");
-    clearInterval(temporizador);
-  }
-*/
-  reiniciarTemporizador() {
-   // clearInterval(temporizador);
-    this.setTiempo(10);
-    this.actualizarTiempoEnPantalla();
-   
-}
-
- 
-
-
-  actualizarTiempoEnPantalla() {
-    const elementoTiempo = document.querySelector('.timer');
-    elementoTiempo.innerHTML =  "<p> Turno: " + this.getJugadorActual() + "</p><p> Tiempo: "+ this.tiempo +" segundos </p>";
   
-    console.log(`Actualizando tiempo en pantalla: ${this.tiempo}`);
-  
-    if (this.tiempo <= 3) {
-      elementoTiempo.classList.add("red");
-    } 
-    else {
-      elementoTiempo.classList.remove("red");
-    }
-  }
-
-tiempoFinalizado(ficha,xViejo,yViejo){
-ficha.setX(xViejo);
-ficha.setY(yViejo);
-ficha.dibujar();
-
-
-}
 
 
 }
