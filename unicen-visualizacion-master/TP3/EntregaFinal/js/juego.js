@@ -179,7 +179,7 @@ class Juego {
 
 dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
     let frame = 0;
-    const framesTotales = 30; // Número de frames para la transición (puedes ajustar esto para cambiar la velocidad)
+    const framesTotales = 30; // Número de frames para la transición (ajustar esto para cambiar la velocidad)
     const pasoX = (x2 - x1) / framesTotales;
     const pasoY = (y2 - y1) / framesTotales;
  for(let i=0;i<framesTotales;i++){
@@ -202,6 +202,8 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
   getJugadorActual() {
     return this.jugadorActual;
   }
+
+
   controlGanador(fila, columna) {
     let win = this.hayGanador(fila, columna);
     if (win == true) {
@@ -450,7 +452,7 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
 
   reiniciarTemporizador() {
     this.detenerTemporizador();
-    this.iniciarTemporizador();
+    //this.iniciarTemporizador();
 }
 
   // Reduce el tiempo restante del jugador
@@ -460,7 +462,7 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
 
     if (this.tiempo <= 0) {
         this.detenerTemporizador();
-        //this.cambiarTurnoLogica(); // cambiar de turno al llegar a cero
+       this.dejarCaer();
     }
 }
 
@@ -480,13 +482,7 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
 
 
 
-  cambiarTurnoLogica() {
-    console.log("Cambiando turno lógica.");
-    this.detenerTemporizador();
-  //this.getTurno();
- 
 
-  }
 }
 
 
