@@ -434,15 +434,8 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
     let tiempo = 10; // Reinicia el tiempo al inicio del turno
     this.actualizarTiempoEnPantalla(); // Actualiza el tiempo inicial en pantalla
 
-    let temporizador = setInterval(() => {
-      tiempo--;
-      this.actualizarTiempoEnPantalla();
-  
-      if (tiempo <= 0) {
-          this.detenerTemporizador();
-          return 0;
-         
-      };
+    this.temporizador = setInterval(() => {
+      this.reducirTiempo(tiempo);
     }, 1000); // Se ejecuta cada segundo
   }
 
@@ -450,7 +443,7 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
     console.log("Deteniendo temporizador");
     clearInterval(this.temporizador);
   }
-/*
+
   reiniciarTemporizador() {
     this.detenerTemporizador();
   
@@ -467,7 +460,7 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
     }
     return tiempo;
 }
-*/
+
 
   actualizarTiempoEnPantalla() {
     const elementoTiempo = document.getElementById('timer');
