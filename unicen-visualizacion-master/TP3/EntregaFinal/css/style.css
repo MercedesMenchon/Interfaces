@@ -1620,18 +1620,25 @@ height: 600px;
     }
 }
 
-#timer{
+.timer{
     display: flex;
-    background-color:#11D2B2;
+    background-color:'rgb(0,0,0,0)';
     border-radius: 4px;
     border: var(--secundario) 2px solid;
     font-size: 20px;
     color: var(--blanco);
     font-weight: bold;
-    width: 75%;
-    height: 25px;
+    height: 30px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     text-transform: uppercase;
+
+   
 }
 
+.timerShow{
+    background-color: #11D2B2;
+}
+.red{
+    color:red;
+}

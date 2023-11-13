@@ -13,10 +13,15 @@ class Juego {
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
     this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX(), y: ficha.getPosicionY() }));
-
+this.tiempo=10;
   
   }
-
+getTiempo(){
+  return this.tiempo;
+}
+setTiempo(tiempo){
+  this.tiempo=tiempo;
+}
   setEstadoFichas() {
     this.estadoFichas = [];
     for (let i = 0; i < this.fichas.length; i++) {
@@ -78,6 +83,8 @@ class Juego {
 
 
   agregarEventoClic() {
+   let xViejo=null;
+   let yViejo=null;
     let temporizadorIniciado = false;
     let fichaArrastrada = null;
     this.canvas.addEventListener('mousedown', (event) => {
@@ -91,12 +98,17 @@ class Juego {
           console.log("soy el jugador activo");
           console.log(this.jugadorActual);
           fichaArrastrada = ficha;
+          xViejo=fichaArrastrada.getPosicionX();
+         yViejo=fichaArrastrada.getPosicionY();
+         
           if (!temporizadorIniciado) {
+            document.querySelector(".timer").classList.add('timerShow');
             this.iniciarTemporizador();
             console.log("Iniciar temporizador");
             temporizadorIniciado = true;
         }
-          break; 
+        break; 
+         
         }
       }
 
@@ -105,8 +117,7 @@ class Juego {
         fichaArrastrada.setArrastrandose(true);
         this.clearCanvas();
         this.dibujarTablero();
-
-    
+  
       }
     });
 
@@ -114,7 +125,9 @@ class Juego {
       if (this.juegoTerminado) {
         return; 
       }
+      
       if (fichaArrastrada) {
+        
         const rect = this.canvas.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
@@ -130,9 +143,11 @@ class Juego {
         this.dibujarTablero();
         this.dibujarFichas(fichaArrastrada); // Dibuja el tablero en su posición original
 
+       
+
       }
     });
-
+    
     this.canvas.addEventListener('mouseup', (event) => {
       if (this.juegoTerminado) {
         return; // Evita procesar eventos si el juego ya ha terminado
@@ -159,11 +174,14 @@ class Juego {
           fichaArrastrada.setY(newY);
           this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
          // fichaArrastrada.dibujar();
-         
+        
           this.getTurno();
+          this.setTiempo(10);
           fichaArrastrada = null;
-          this.reiniciarTemporizador(); // Reinicia el temporizador cuando la ficha se coloca correctamente
+   
          temporizadorIniciado = false;
+         
+         temporizadorIniciado = true;
           this.dibujarTablero();
           setTimeout(() => {
             this.controlGanador(fila, columna);
@@ -173,11 +191,22 @@ class Juego {
         }
       }
         this.dibujarTablero();
+        if(this.getTiempo()==0){
+          this.tiempoFinalizado(fichaArrastrada,xViejo,yViejo);
+          fichaArrastrada=null;
+          this.getTurno();
+          this.setTiempo(10);
+        }
     });
-
+    if(this.getTiempo()==0){
+      this.tiempoFinalizado(fichaArrastrada,xViejo,yViejo);
+      fichaArrastrada=null;
+      this.getTurno();
+      this.setTiempo(10);
+    }
   }
 
-dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
+dibujarCaida(ficha, x1, y1, x2, y2) {
     let frame = 0;
     const framesTotales = 30; // Número de frames para la transición (ajustar esto para cambiar la velocidad)
     const pasoX = (x2 - x1) / framesTotales;
@@ -431,51 +460,54 @@ dibujarCaida(ficha, x1, y1, x2, y2,canvas) {
   // Método para iniciar el temporizador
   iniciarTemporizador() {
     console.log("Iniciando temporizador");
-    let tiempo = 10; // Reinicia el tiempo al inicio del turno
     this.actualizarTiempoEnPantalla(); // Actualiza el tiempo inicial en pantalla
-
-    this.temporizador = setInterval(() => {
-      this.reducirTiempo(tiempo);
-    }, 1000); // Se ejecuta cada segundo
-  }
-
-  detenerTemporizador() {
-    console.log("Deteniendo temporizador");
-    clearInterval(this.temporizador);
-  }
-
-  reiniciarTemporizador() {
-    this.detenerTemporizador();
-  
-}
-
-  // Reduce el tiempo restante del jugador
-  reducirTiempo(tiempo) {
-    tiempo--;
-    this.actualizarTiempoEnPantalla();
-
-    if (tiempo <= 0) {
-        this.detenerTemporizador();
+    let temporizador = setInterval(() => {
+        let tiempo = this.getTiempo() -1;
+        this.setTiempo(tiempo);
+        this.actualizarTiempoEnPantalla();
+       if(this.tiempo==0){
        
-    }
-    return tiempo;
+       }
+    }, 1000); // Se ejecuta cada segundo
+    return temporizador;
+  }
+/*
+  detenerTemporizador(temporizador) {
+    console.log("Deteniendo temporizador");
+    clearInterval(temporizador);
+  }
+*/
+  reiniciarTemporizador() {
+   // clearInterval(temporizador);
+    this.setTiempo(10);
+    this.actualizarTiempoEnPantalla();
+   
 }
+
+ 
 
 
   actualizarTiempoEnPantalla() {
-    const elementoTiempo = document.getElementById('timer');
-    elementoTiempo.textContent = `Tiempo: ${this.tiempo} segundos`;
+    const elementoTiempo = document.querySelector('.timer');
+    elementoTiempo.innerHTML =  "<p> Turno: " + this.getJugadorActual() + "</p><p> Tiempo: "+ this.tiempo +" segundos </p>";
   
     console.log(`Actualizando tiempo en pantalla: ${this.tiempo}`);
   
     if (this.tiempo <= 3) {
-      elementoTiempo.style.color = "red";
-    } else {
-      elementoTiempo.style.color = "black";
+      elementoTiempo.classList.add("red");
+    } 
+    else {
+      elementoTiempo.classList.remove("red");
     }
   }
 
+tiempoFinalizado(ficha,xViejo,yViejo){
+ficha.setX(xViejo);
+ficha.setY(yViejo);
+ficha.dibujar();
 
+
+}
 
 
 }
