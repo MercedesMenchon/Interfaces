@@ -13,8 +13,7 @@ class Juego {
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
     this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX(), y: ficha.getPosicionY() }));
-    this.tiempo = 10; // Inicializar el tiempo
-    this.temporizador = null; // Inicializar el temporizador
+
   
   }
 
@@ -79,7 +78,7 @@ class Juego {
 
 
   agregarEventoClic() {
-
+    let temporizadorIniciado = false;
     let fichaArrastrada = null;
     this.canvas.addEventListener('mousedown', (event) => {
       const rect = this.canvas.getBoundingClientRect();
@@ -92,6 +91,11 @@ class Juego {
           console.log("soy el jugador activo");
           console.log(this.jugadorActual);
           fichaArrastrada = ficha;
+          if (!temporizadorIniciado) {
+            this.iniciarTemporizador();
+            console.log("Iniciar temporizador");
+            temporizadorIniciado = true;
+        }
           break; 
         }
       }
@@ -101,7 +105,8 @@ class Juego {
         fichaArrastrada.setArrastrandose(true);
         this.clearCanvas();
         this.dibujarTablero();
-        this.iniciarTemporizador();
+
+    
       }
     });
 
@@ -154,15 +159,17 @@ class Juego {
           fichaArrastrada.setY(newY);
           this.tablero.matriz[fila][columna].setFicha(fichaArrastrada);
          // fichaArrastrada.dibujar();
-
+         
           this.getTurno();
           fichaArrastrada = null;
+          this.reiniciarTemporizador(); // Reinicia el temporizador cuando la ficha se coloca correctamente
+         temporizadorIniciado = false;
           this.dibujarTablero();
           setTimeout(() => {
             this.controlGanador(fila, columna);
           }, 400);
-          // Reinicia el temporizador cuando la ficha se coloca correctamente
-          this.reiniciarTemporizador();
+          
+         
         }
       }
         this.dibujarTablero();
