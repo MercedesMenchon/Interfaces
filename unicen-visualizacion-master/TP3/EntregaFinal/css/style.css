@@ -1007,7 +1007,7 @@ margin-top:4%;
 .juego {
     display: flex;
     width: 1400px;
-    height: 30%;
+    height: 1100px;
     margin: 4%;
     background-color: var(--secundario);
     font-size: 80%;
@@ -1592,9 +1592,13 @@ height: 600px;
 
 
 .botones4enlinea{
-    background-color: white;
+    background-color:var(--secundario);
 }
-
+.botones4enlinea>h1{
+    background-color:var(--secundario);
+    font-size: 18px;
+    margin-top: 1%;
+}
 
     .btn-4enlinea{
         align-items: center;
@@ -1602,20 +1606,20 @@ height: 600px;
         border-radius: 16px;
         height: auto;
         background-color: lightblue;
-        color: var(--blanco);
+        color: var(--negro);
         padding: 2% 5%;
-        margin: 2%;
+        margin: 1%;
         text-transform: uppercase;
         font-weight: bold;
         border: var(--secundario) 2px solid;
         box-shadow: var(--negro) 2px 2px;
         transition: transform 0.2s ease-in-out;
     }
-    .btn-4enlinea:hover{
+    .btn-4enlinea:hover, .btn-reglamento:hover{
         background-color:chartreuse;
     }
 
-    .btn-4enlinea:active {
+    .btn-4enlinea:active, .btn-reglamento:active {
         transform: scale(0.95);
     }
 }
@@ -1641,4 +1645,55 @@ height: 600px;
 }
 .red{
     color:red;
+}
+
+
+.reglamento-texto{
+    border-radius: 16px;
+    background-color: lightblue;    
+    padding: 1% 2%;
+    margin-top: 2%;
+    height: 200px;
+    border: var(--secundario) 2px solid;
+    overflow: auto;
+    font-size: 16px;
+      
+}
+
+
+.reglamento-texto >div>h2{
+    color:var(--secundario);
+    font-size: 16px;
+}
+
+.reglamento-texto >div>h1{
+color: var(--secundario);
+}
+.reglamento-texto >div{
+    margin-top:2%;
+    text-align: justify;
+    color: var(--negro);
+}
+
+.reglamento-texto >div>ul>li{
+    display: block;
+   
+}
+.reglamento-texto::-webkit-scrollbar {
+    width: 12px; /* Ancho del scrollbar */
+
+}
+
+.reglamento-texto::-webkit-scrollbar-thumb {
+    background-color:var(--acento); /* Color del thumb */
+    border-radius: 6px; /* Borde redondeado del thumb */
+   
+}
+
+.reglamento-texto::-webkit-scrollbar-thumb:active {
+    background-color:var(--primarioL2);
+}
+
+.reglamento-texto::-webkit-scrollbar-thumb:hover {
+    background-color:var(--primarioL2);
 }
