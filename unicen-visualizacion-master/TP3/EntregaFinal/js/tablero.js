@@ -1,5 +1,5 @@
 "use strict";
-"use strict";
+
 
 //CREAMOS LA CLASE TABLERO
 class Tablero {
@@ -61,7 +61,6 @@ getCantLinea(){
 
 
   armarTablero() {
-
     //PARA BORRAR TODO LO QUE YA ESTA, DEBEMOS UTILIZAR:
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     //this.ctx.lineWidth = 3;
@@ -109,8 +108,7 @@ let y= this.matriz[fila][columna].getY();
   */
 
   armarMatriz() {
-
-   
+  
     for (let fila = 0; fila < this.getFilas(); fila++) {
       this.matriz[fila] = [];
       for (let columna = 0; columna < this.getColumnas(); columna++) {
@@ -123,6 +121,30 @@ let y= this.matriz[fila][columna].getY();
     }
 
   }
+
+
+// Método para dibujar flechas
+dibujarFlechas() {
+  const anchoFlecha = 15; // Ancho de la flecha
+  const altoFlecha = 15; // Alto de la flecha
+ 
+
+  // Dibujar flechas sobre cada columna
+  for (let columna = 0; columna < this.getColumnas(); columna++) {
+    const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda() + this.getAnchoCelda() / 2;
+    const y = this.getEspacioBlancoY() - altoFlecha;
+
+    this.ctx.beginPath();
+    this.ctx.fillStyle = "blue";
+    this.ctx.moveTo(x, y);
+    this.ctx.lineTo(x - anchoFlecha / 2, y - altoFlecha);
+    this.ctx.lineTo(x + anchoFlecha / 2, y - altoFlecha);
+    this.ctx.closePath();
+    this.ctx.fill();
+
+  
+  }
+}
 
 }
 

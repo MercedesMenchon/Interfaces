@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let tablero7x6 = this.querySelector("#tablero7x6").addEventListener("click", function(e){
         const tablero1 = new Tablero(6,7,4, canvas, ctx);
         const juego1 = new Juego(tablero1,canvas, ctx,temporizador);
-        juego1.agregarEventoClic();
+       juego1.agregarEventoClic();
    
         
         
@@ -28,11 +28,15 @@ document.addEventListener("DOMContentLoaded", function() {
    let tablero8x8 = this.querySelector("#tablero8x8").addEventListener("click", function(e){
     const tablero3 = new Tablero(8,8,6, canvas, ctx);
     const juego3 = new Juego(tablero3,canvas, ctx,temporizador);
+  
     juego3.agregarEventoClic();
 
     });
 
 });
+
+
+
 
 function iniciarJuego(){
    

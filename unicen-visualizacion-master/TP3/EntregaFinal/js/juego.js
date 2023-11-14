@@ -74,6 +74,7 @@ setjuegoIniciado(boolean){
 
   dibujarTablero() {
     this.tablero.armarTablero();
+    this.tablero.dibujarFlechas();
     this.dibujarFichas();
   }
 
