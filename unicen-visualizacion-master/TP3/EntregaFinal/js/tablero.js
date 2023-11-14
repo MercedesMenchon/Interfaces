@@ -108,7 +108,7 @@ let y= this.matriz[fila][columna].getY();
   */
 
   armarMatriz() {
-  
+   this.matriz=[];
     for (let fila = 0; fila < this.getFilas(); fila++) {
       this.matriz[fila] = [];
       for (let columna = 0; columna < this.getColumnas(); columna++) {

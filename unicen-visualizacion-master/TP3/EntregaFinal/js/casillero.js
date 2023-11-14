@@ -22,9 +22,9 @@
        
        }
 
-getAncho(){
-  return this.ancho;
-}
+    getAncho(){
+      return this.ancho;
+    }
         getFicha(){
           return this.ficha;
         }

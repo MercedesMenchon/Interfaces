@@ -13,9 +13,9 @@ class Juego {
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
     this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX(), y: ficha.getPosicionY() }));
-    
-   this.juegoIniciado=false;
+    this.juegoIniciado=false;
    this.temporizador=temporizador;
+ 
   }
 
 setJuegoTerminado(boolean){
@@ -39,6 +39,7 @@ setjuegoIniciado(boolean){
     console.log(this.estadoFichas);
   }
   addFichas() {
+    this.fichas=[];
     let posy = 0;
     if (this.fichas.length < this.tablero.getCantFichas()) {
       //setTimeOut(addFicha, 333);
@@ -89,8 +90,7 @@ setjuegoIniciado(boolean){
 
    
   agregarEventoClic() {
-   let xViejo=null;
-   let yViejo=null;
+
    
     let fichaArrastrada = null;
  
@@ -98,22 +98,22 @@ setjuegoIniciado(boolean){
       const rect = this.canvas.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
-       for (let i = this.fichas.length - 1; i >= 0; i--) {
+
+           for (let i = this.fichas.length - 1; i >= 0; i--) {
         const ficha = this.fichas[i];
      
         if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador() == this.jugadorActual) {
-          console.log("soy el jugador activo");
-          console.log(this.jugadorActual);
-          fichaArrastrada = ficha;
-          xViejo=fichaArrastrada.getPosicionX();
-         yViejo=fichaArrastrada.getPosicionY();
          
-          if (!this.getjuegoIniciado()) {
-            document.querySelector(".timer").classList.add('timerShow');
-            this.temporizador.iniciarTemporizador();
-            console.log("Iniciar temporizador");
-            this.setjuegoIniciado(true);
-        }
+          fichaArrastrada = ficha;
+     
+         if ( this.temporizador.getEncendido()) {
+          this.temporizador.setEncendido(true);
+          document.querySelector(".timer").classList.add('timerShow');
+          this.temporizador.iniciarTemporizador();
+          console.log("Iniciar temporizador");
+          this.setjuegoIniciado(true);
+      }
+        
         break; 
          
         }
@@ -124,8 +124,7 @@ setjuegoIniciado(boolean){
         fichaArrastrada.setArrastrandose(true);
         this.clearCanvas();
         this.dibujarTablero();
-  
-      }
+        }
     });
 
     this.canvas.addEventListener('mousemove', (event) => {
@@ -153,7 +152,13 @@ setjuegoIniciado(boolean){
        if(fichaArrastrada.getJugador() != this.getJugadorActual()){
         fichaArrastrada=null;
        }
-
+      
+      }
+    
+      if(this.temporizador.getTiempo()<=0){
+        fichaArrastrada=null;
+        this.getTurno();
+        this.temporizador.reiniciarTemporizador();
       }
     });
     
@@ -201,19 +206,17 @@ setjuegoIniciado(boolean){
         }
       }
         this.dibujarTablero();
-        if(this.getTiempo()==0){
-          this.tiempoFinalizado(fichaArrastrada,xViejo,yViejo);
+        if(this.temporizador.getTiempo()==0){
           fichaArrastrada=null;
           this.getTurno();
           this.temporizador.reiniciarTemporizador();
         }
+
+        if(this.juegoTerminado){
+this.temporizador.finalizarTemporizador();
+        }
     });
-    if(this.getTiempo()==0){
-      this.tiempoFinalizado(fichaArrastrada,xViejo,yViejo);
-      fichaArrastrada=null;
-      this.getTurno();
-      this.temporizador.reiniciarTemporizador();
-    }
+   
   }
 
 dibujarCaida(ficha, x1, y1, x2, y2) {
@@ -229,7 +232,7 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
       y1 += pasoY;
       ficha.setX(x1);
       ficha.setY(y1);
-  console.log(ficha.getPosicionY());
+  //console.log(ficha.getPosicionY());
       this.dibujarTablero();
       ficha.dibujar();
       frame++;
@@ -315,15 +318,13 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
   getFilaLibre(columna) {
    
     let fila = this.tablero.getFilas() - 1;
-    console.log("Luciana prueba:");
-    console.log(this.tablero.matriz[fila][columna].getFicha());
+
     while (fila >= 0 && this.tablero.matriz[fila][columna].getFicha()) {
       console.log("entrooo");
       console.log(this.tablero.matriz[fila][columna].getFicha());
       fila--;
     }
-    console.log("fila:");
-    console.log(fila);
+ 
     return fila;
 
   }
@@ -339,12 +340,13 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
 
 
   hayGanador(fila, columna) {
+    const recorrido= (this.tablero.getCantLinea()-1);
 const cantLinea = this.tablero.getCantLinea();
     let jugador = this.tablero.matriz[fila][columna].getFicha().getJugador();
     let contador = 0;
-    for (let i = Math.max(0, columna - 3); i <= Math.min(this.tablero.getColumnas() - 1, columna + 3); i++) {
-      console.log("la i:");
-      console.log(i);
+    for (let i = Math.max(0, columna - recorrido); i <= Math.min(this.tablero.getColumnas() - 1, columna + recorrido); i++) {
+    //  console.log("la i:");
+     // console.log(i);
       if (this.tablero.matriz[fila][i].getFicha() != null && this.tablero.matriz[fila][i].getFicha().getJugador() === jugador) {
         contador++;
 
@@ -361,7 +363,7 @@ const cantLinea = this.tablero.getCantLinea();
 
     // Comprueba la línea vertical
     contador = 0;
-    for (let i = Math.max(0, fila - 3); i <= Math.min(this.tablero.getFilas() - 1, fila + 3); i++) {
+    for (let i = Math.max(0, fila - recorrido); i <= Math.min(this.tablero.getFilas() - 1, fila + recorrido); i++) {
       if (this.tablero.matriz[i][columna].getFicha() != null && this.tablero.matriz[i][columna].getFicha().getJugador() === jugador) {
         contador++;
         if (contador === cantLinea) {
@@ -376,12 +378,12 @@ const cantLinea = this.tablero.getCantLinea();
     }
 
     // Verificar en línea diagonal descendente
-    for (let fila = 0; fila < this.tablero.getFilas() - 3; fila++) {
-      for (let columna = 0; columna < this.tablero.getColumnas() - 3; columna++) {
+    for (let fila = 0; fila < this.tablero.getFilas() -recorrido; fila++) {
+      for (let columna = 0; columna < this.tablero.getColumnas() - recorrido; columna++) {
         let contador = 0;
         for (let i = 0; i < cantLinea; i++) {
           if (
-            this.tablero.matriz[fila + i][columna + i].getFicha() !== null &&
+            this.tablero.matriz[fila+i][columna+i].getFicha() !== null &&
             this.tablero.matriz[fila + i][columna + i].getFicha().getJugador() === jugador
           ) {
             contador++;
@@ -398,8 +400,8 @@ const cantLinea = this.tablero.getCantLinea();
     }
 
     // Verificar en línea diagonal ascendente
-    for (let fila = 3; fila < this.tablero.getFilas(); fila++) {
-      for (let columna = 0; columna < this.tablero.getColumnas() - 3; columna++) {
+    for (let fila = recorrido; fila < this.tablero.getFilas(); fila++) {
+      for (let columna = 0; columna < this.tablero.getColumnas() -recorrido; columna++) {
         let contador = 0;
         for (let i = 0; i < cantLinea; i++) {
           if (
@@ -427,7 +429,7 @@ const cantLinea = this.tablero.getCantLinea();
   mostrarGanador(fichaGanador) {
 
     ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
     const x = canvas.width / 2;
     const y = canvas.height * 3 / 5;
@@ -445,11 +447,11 @@ const cantLinea = this.tablero.getCantLinea();
   mostrarEmpate(ultimaFicha) {
 
     ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    const x = canvas.width / 2;
-    const xJ1 = canvas.width * 1 / 3;
-    const xJ2 = canvas.width * 2 / 3;
-    const y = canvas.height * 3 / 5;
+    ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    const x = this.canvas.width / 2;
+    const xJ1 = this.canvas.width * 1 / 3;
+    const xJ2 = this.canvas.width * 2 / 3;
+    const y = this.canvas.height * 3 / 5;
 
     // Dibuja el nombre del ganador debajo de la ficha
     ctx.fillStyle = 'rgba(255,255,255)';

@@ -68,7 +68,6 @@ class Ficha {
         console.log("ENTRO A LA IMAGEN");
         console.log(this.imagen);
         if (this.imagen) {
-
             //Asi hago que el texto sea imagen
             const img = new Image();
             img.src = this.imagen;
