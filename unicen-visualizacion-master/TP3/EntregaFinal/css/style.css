@@ -1729,7 +1729,7 @@ img.btn-PlayVideo {
 
 /*boton de seleccion de personaje*/
 .character-selection {
-    display: block;
+    display: none;
     position: absolute;
     top: 30%;
     left: 55%;
@@ -1746,7 +1746,7 @@ img.btn-PlayVideo {
     padding: 2%;
 }
 .character-selection.visible {
-    display:none;
+    display:block;
 }
 
 .btn-character {

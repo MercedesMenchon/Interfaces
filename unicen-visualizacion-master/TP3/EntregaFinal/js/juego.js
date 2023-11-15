@@ -8,12 +8,7 @@ class Juego {
     this.canvas = canvas;
     this.fichaResaltada = null; 
     this.mousedown = false;
-<<<<<<< Updated upstream
     this.jugadores = ["Mosca", "Sapo"];
-    this.addFichas();
-=======
-    this.jugadores = ["jugador1", "jugador2"];
->>>>>>> Stashed changes
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
     this.juegoIniciado=false;
@@ -21,12 +16,16 @@ class Juego {
  
   }
 
-Iniciar(){
+Iniciar(personajeJugador1){
+  console.log("eligio el personale" + personajeJugador1);
   this.addFichas();
   this.setjuegoIniciado(true);
+  this.agregarEventoClic();
 }
 
-
+apagarJuego(){
+  this.setjuegoIniciado(false);
+}
 setJuegoTerminado(boolean){
   this.juegoTerminado=boolean;
 }
