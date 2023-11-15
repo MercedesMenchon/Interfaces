@@ -16,7 +16,7 @@ class Juego {
   
   }
 
-Iniciar(personajeJugador1){
+iniciar(personajeJugador1){
   console.log("eligio el personale" + personajeJugador1);
   this.addFichas(personajeJugador1);
   this.setjuegoIniciado(true);
@@ -126,11 +126,7 @@ if(personajeJugador1== "mosca"){
          
           fichaArrastrada = ficha;
      
-         if ( this.temporizador.getEncendido()) {
-          this.temporizador.setEncendido(true);
-          document.querySelector(".timer").classList.add('timerShow');
-          this.temporizador.iniciarTemporizador();
-          console.log("Iniciar temporizador");
+        
           
       }
         
@@ -145,7 +141,7 @@ if(personajeJugador1== "mosca"){
         this.clearCanvas();
         this.dibujarTablero();
         }
-    }});
+    });
 
     this.canvas.addEventListener('mousemove', (event) => {
       if(this.getjuegoIniciado()){
@@ -176,11 +172,7 @@ if(personajeJugador1== "mosca"){
       
       }
     
-      if(this.temporizador.getTiempo()<=0){
-        fichaArrastrada=null;
-        this.getTurno();
-        this.temporizador.reiniciarTemporizador();
-      }
+
   }});
     
     this.canvas.addEventListener('mouseup', (event) => {
@@ -212,14 +204,13 @@ if(personajeJugador1== "mosca"){
          // fichaArrastrada.dibujar();
         
           this.getTurno();
-          this.temporizador.reiniciarTemporizador();
+         
           fichaArrastrada = null;
    
          
           this.dibujarTablero();
-          setTimeout(() => {
-            this.controlGanador(fila, columna);
-          }, 400);
+         this.controlGanador(fila, columna);
+          
           
          
         }
@@ -228,11 +219,7 @@ if(personajeJugador1== "mosca"){
         }
       }
         this.dibujarTablero();
-        if(this.temporizador.getTiempo()==0){
-          fichaArrastrada=null;
-          this.getTurno();
-          this.temporizador.reiniciarTemporizador();
-        }
+        
 
         if(this.juegoTerminado){
 this.temporizador.finalizarTemporizador();
@@ -486,6 +473,8 @@ const cantLinea = this.tablero.getCantLinea();
     const ficha2 = new FichaJugador2(this.tablero.getRadioFicha() * 7, xJ2, y, ultimaFicha.getCtx());
     ficha1.dibujar();
     ficha2.dibujar();
+    this.temporizador.ocultar();
+    this.temporizador.finalizarTemporizador();
   }
 
 

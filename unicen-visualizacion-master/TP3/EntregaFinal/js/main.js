@@ -7,30 +7,22 @@ canvas.height = 600;
 let anchoCanvas = canvas.width;
 let altoCanvas = canvas.height;
 let temporizador = new Temporizador(6000);
-
-let tablero1= new Tablero(6,7,4, canvas, ctx);
-let juego1 = new Juego(tablero1,canvas, ctx,temporizador);
-let tablero2 = new Tablero(7,8,5, canvas, ctx);
-let juego2= new Juego(tablero2,canvas, ctx,temporizador);
-let tablero3 = new Tablero(8,8,6, canvas, ctx);
-let juego3 = new Juego(tablero3,canvas, ctx,temporizador);
-
-
+let filas=null;
+let columnas= null;
+let cantLinea= null;
+let personajeJugador1 =null;
+let juego;
 
 document.addEventListener("DOMContentLoaded", function() {
   iniciarJuego();
-let personajeJugador1 =null;
-document.querySelector("#reiniciarJuego").addEventListener("click", iniciarJuego);
+
+
 
 
  
-
- document.getElementById("sapoButton").addEventListener("click", function () {
+  document.getElementById("sapoButton").addEventListener("click", function () {
     console.log("Has elegido al sapo");
     personajeJugador1 = "sapo";
-    // Desactivar la clase clickeado en el botón Mosca
-    document.getElementById("moscaButton").classList.remove("clickeado");
-    this.classList.toggle("clickeado");
   //  document.querySelector(".character-selection").classList.toggle("visible");
     console.log(personajeJugador1);
   });
@@ -39,47 +31,54 @@ document.querySelector("#reiniciarJuego").addEventListener("click", iniciarJuego
   document.getElementById("moscaButton").addEventListener("click", function () {
    // document.querySelector(".character-selection").classList.toggle("visible");
     personajeJugador1 = "mosca";
-       // Desactivar la clase clickeado en el botón Sapo
-       document.getElementById("sapoButton").classList.remove("clickeado");
-    this.classList.toggle("clickeado");
     console.log("Has elegido la mosca");
  console.log(personajeJugador1);
   });
  
 
-document.querySelector("#tablero7x6").addEventListener("click", function(e){
+document.querySelector("#tablero7x6").addEventListener("click", function (){
   if(personajeJugador1!= null){
-  // e.preventDefault();
-  seleccionarBotonJuego()
-  document.querySelector(".character-selection").classList.toggle("visible");
-  juego1.Iniciar(personajeJugador1);  
-  juego2.apagarJuego();
-  juego3.apagarJuego();
-  temporizador.iniciarTemporizador();
-       //selector de ficha
-  }
-      });
-document.querySelector("#tablero7x8").addEventListener("click", function(e){
+   seleccionarBotonJuego()
+  
+   filas=7;
+   columnas= 6;
+   cantLinea= 4;
+  } 
+});
+document.querySelector("#tablero7x8").addEventListener("click", function (){
   if(personajeJugador1!= null){
   seleccionarBotonJuego();
-  document.querySelector(".character-selection").classList.toggle("visible");
-  juego2.Iniciar(personajeJugador1);  
-juego1.apagarJuego();
-juego3.apagarJuego();
-temporizador.iniciarTemporizador();
+  
+  filas=7;
+  columnas=8;
+  cantLinea=5;
   }
   });
-document.querySelector("#tablero8x8").addEventListener("click", function(e){
+document.querySelector("#tablero8x8").addEventListener("click", function (){
   if(personajeJugador1!= null){
   seleccionarBotonJuego(personajeJugador1);
-  document.querySelector(".character-selection").classList.toggle("visible");
-  juego1.Iniciar();  
-  juego2.apagarJuego();
-  juego1.apagarJuego();
-  temporizador.iniciarTemporizador();
+ 
+  filas=8;
+  columnas= 8;
+  cantLinea= 6;
   }
   });
+  document.querySelector("#btn-playJuego").addEventListener("click",function (){
+    document.querySelector(".character-selection").classList.toggle("visible");
+   
+    let tablero = new Tablero (filas,columnas,cantLinea,canvas,ctx);
+    this.juego = new Juego(tablero,canvas,ctx,temporizador);
+    
+    this.juego.iniciar(personajeJugador1);
+    temporizador.iniciarTemporizador();
+    });
 
+
+    document.querySelector("#reiniciarJuego").addEventListener("click", function(){
+      console.log(this.juego);
+      iniciarJuego();
+      
+    });
 });
 
 

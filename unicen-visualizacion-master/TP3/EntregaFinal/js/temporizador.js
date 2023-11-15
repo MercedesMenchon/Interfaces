@@ -4,7 +4,6 @@ class Temporizador{
 constructor(tiempoMax){
     this.tiempoMax=tiempoMax;
     this.tiempo=tiempoMax;
-  
 }
 setTiempo(tiempoMax){
     this.tiempo=tiempoMax;
@@ -58,6 +57,6 @@ actualizarTiempoEnPantalla() {
 ocultar(){
   elementoTiempo.classList.add('timerOcultar');
   console.log("se oculto");
-  this.reiniciarTemporizador();
+  
 }
 }
