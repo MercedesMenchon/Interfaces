@@ -452,7 +452,7 @@ const cantLinea = this.tablero.getCantLinea();
     ctx.textAlign = 'center';
 
     ctx.fillText("¡GANASTE!", x, y / 4 + fichaGanador.getRadio());
-    const ficha = new Ficha(fichaGanador.getRadio() * 10, x, y, fichaGanador.getFill(), fichaGanador.getCtx(), fichaGanador.getJugador(), fichaGanador.getImagen());
+    const ficha = new Ficha(fichaGanador.getRadio() * 8, x, y, fichaGanador.getFill(), fichaGanador.getCtx(), fichaGanador.getJugador(), fichaGanador.getImagen());
     ficha.dibujar();
     this.temporizador.ocultar();
     this.temporizador.finalizarTemporizador();
