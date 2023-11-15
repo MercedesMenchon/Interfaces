@@ -6,6 +6,7 @@ canvas.width = 1000;
 canvas.height = 600;
 let anchoCanvas = canvas.width;
 let altoCanvas = canvas.height;
+
 let temporizador = new Temporizador(10);
 const tablero1= new Tablero(6,7,4, canvas, ctx);
 const juego1 = new Juego(tablero1,canvas, ctx,temporizador);
