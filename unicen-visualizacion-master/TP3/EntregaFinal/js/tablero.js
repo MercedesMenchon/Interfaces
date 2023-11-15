@@ -16,9 +16,17 @@ class Tablero {
   getAnchoCanvas() {
     return this.canvas.width;
   }
-
+setFilas(cant){
+  this.filas=cant;
+}
+setColumnas(cant){
+  this.columnas= cant;
+}
   getFilas() {
     return this.filas;
+  }
+  setcantLinea(cant){
+    this.cantLinea=cant;
   }
 getCantLinea(){
   return this.cantLinea;

@@ -8,15 +8,24 @@ class Juego {
     this.canvas = canvas;
     this.fichaResaltada = null; 
     this.mousedown = false;
+<<<<<<< Updated upstream
     this.jugadores = ["Mosca", "Sapo"];
     this.addFichas();
+=======
+    this.jugadores = ["jugador1", "jugador2"];
+>>>>>>> Stashed changes
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
-    this.estadoFichas = this.fichas.map(ficha => ({ x: ficha.getPosicionX(), y: ficha.getPosicionY() }));
     this.juegoIniciado=false;
    this.temporizador=temporizador;
  
   }
+
+Iniciar(){
+  this.addFichas();
+  this.setjuegoIniciado(true);
+}
+
 
 setJuegoTerminado(boolean){
   this.juegoTerminado=boolean;
@@ -37,6 +46,9 @@ setjuegoIniciado(boolean){
       this.estadoFichas.push(estado);
     }
     console.log(this.estadoFichas);
+  }
+  getFichas(){
+    return this.fichas;
   }
   addFichas() {
     this.fichas=[];
@@ -95,14 +107,15 @@ setjuegoIniciado(boolean){
     let fichaArrastrada = null;
  
     this.canvas.addEventListener('mousedown', (event) => {
+      if(this.getjuegoIniciado()){
       const rect = this.canvas.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
 
-           for (let i = this.fichas.length - 1; i >= 0; i--) {
-        const ficha = this.fichas[i];
-     
-        if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador() == this.jugadorActual) {
+           for (let i = this.getFichas().length - 1; i >= 0; i--) {
+        const ficha = this.getFichas()[i];
+     console.log(this.getFichas().length);
+        if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador() == this.jugadorActual ) {
          
           fichaArrastrada = ficha;
      
@@ -111,7 +124,7 @@ setjuegoIniciado(boolean){
           document.querySelector(".timer").classList.add('timerShow');
           this.temporizador.iniciarTemporizador();
           console.log("Iniciar temporizador");
-          this.setjuegoIniciado(true);
+          
       }
         
         break; 
@@ -125,9 +138,10 @@ setjuegoIniciado(boolean){
         this.clearCanvas();
         this.dibujarTablero();
         }
-    });
+    }});
 
     this.canvas.addEventListener('mousemove', (event) => {
+      if(this.getjuegoIniciado()){
       if (this.juegoTerminado) {
         return; 
       }
@@ -160,9 +174,10 @@ setjuegoIniciado(boolean){
         this.getTurno();
         this.temporizador.reiniciarTemporizador();
       }
-    });
+  }});
     
     this.canvas.addEventListener('mouseup', (event) => {
+      if(this.getjuegoIniciado()){
       if (this.juegoTerminado) {
         return; // Evita procesar eventos si el juego ya ha terminado
       }
@@ -215,8 +230,8 @@ setjuegoIniciado(boolean){
         if(this.juegoTerminado){
 this.temporizador.finalizarTemporizador();
         }
-    });
-   
+  }});
+  
   }
 
 dibujarCaida(ficha, x1, y1, x2, y2) {
@@ -429,8 +444,8 @@ const cantLinea = this.tablero.getCantLinea();
     ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
     ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-    const x = canvas.width / 2;
-    const y = canvas.height * 3 / 5;
+    const x = this.canvas.width / 2;
+    const y = this.canvas.height * 3 / 5;
 
     // Dibuja el nombre del ganador debajo de la ficha
     ctx.fillStyle = 'rgba(255,255,255)';
@@ -440,6 +455,9 @@ const cantLinea = this.tablero.getCantLinea();
     ctx.fillText("¡GANASTE!", x, y / 4 + fichaGanador.getRadio());
     const ficha = new Ficha(fichaGanador.getRadio() * 10, x, y, fichaGanador.getFill(), fichaGanador.getCtx(), fichaGanador.getJugador(), fichaGanador.getImagen());
     ficha.dibujar();
+    this.temporizador.ocultar();
+    this.temporizador.finalizarTemporizador();
+
   }
 
   mostrarEmpate(ultimaFicha) {

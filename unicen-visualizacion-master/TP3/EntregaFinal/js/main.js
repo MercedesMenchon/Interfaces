@@ -6,8 +6,18 @@ canvas.width = 1000;
 canvas.height = 600;
 let anchoCanvas = canvas.width;
 let altoCanvas = canvas.height;
+let temporizador = new Temporizador(10);
+const tablero1= new Tablero(6,7,4, canvas, ctx);
+const juego1 = new Juego(tablero1,canvas, ctx,temporizador);
+
+const tablero2 = new Tablero(7,8,5, canvas, ctx);
+ const juego2= new Juego(tablero2,canvas, ctx,temporizador);
+
+const tablero3 = new Tablero(8,8,6, canvas, ctx);
+const juego3 = new Juego(tablero3,canvas, ctx,temporizador);
 
 
+<<<<<<< Updated upstream
 document.addEventListener("DOMContentLoaded", function () {
   iniciarJuego();
   let temporizador = new Temporizador(10);
@@ -57,6 +67,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+=======
+document.addEventListener("DOMContentLoaded", function() {
+    iniciarJuego();
+    temporizador.iniciarTemporizador();
+
+  this.querySelector("#tablero7x6").addEventListener("click", function(e){
+    juego1.Iniciar();  
+    juego1.agregarEventoClic();
+       juego2.setjuegoIniciado(false);
+       juego3.setjuegoIniciado(false);
+      temporizador.reiniciarTemporizador();
+        });
+ this.querySelector("#tablero7x8").addEventListener("click", function(e){
+  juego2.Iniciar();  
+  juego2.agregarEventoClic();
+  juego1.setjuegoIniciado(false);
+  juego3.setjuegoIniciado(false);
+ temporizador.reiniciarTemporizador();
+    });
+   this.querySelector("#tablero8x8").addEventListener("click", function(e){
+    juego1.Iniciar();  
+    juego3.agregarEventoClic();
+    juego2.setjuegoIniciado(false);
+    juego1.setjuegoIniciado(false);
+   temporizador.reiniciarTemporizador();
+    });
+>>>>>>> Stashed changes
 
 });
 

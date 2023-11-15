@@ -1,3 +1,4 @@
+let elementoTiempo = document.querySelector('.timer');
 class Temporizador{
 
 constructor(tiempoMax){
@@ -53,8 +54,8 @@ renovarTemporizador(){
 
 actualizarTiempoEnPantalla() {
   
-    const elementoTiempo = document.querySelector('.timer');
-    
+   
+    elementoTiempo.classList.add('timerShow');
   
     //console.log(`Actualizando tiempo en pantalla: ${this.tiempo}`);
   
@@ -70,5 +71,9 @@ actualizarTiempoEnPantalla() {
       elementoTiempo.innerHTML =  "<p> Tu turno ha finalizado</p>";
     }
   }
+
+ocultar(){
+  elementoTiempo.classList.remove('timerShow');
+}
 
 }
