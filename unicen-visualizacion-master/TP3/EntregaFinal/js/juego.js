@@ -18,7 +18,7 @@ class Juego {
 
 Iniciar(personajeJugador1){
   console.log("eligio el personale" + personajeJugador1);
-  this.addFichas();
+  this.addFichas(personajeJugador1);
   this.setjuegoIniciado(true);
   this.agregarEventoClic();
 }
@@ -49,7 +49,7 @@ setjuegoIniciado(boolean){
   getFichas(){
     return this.fichas;
   }
-  addFichas() {
+  addFichas(personajeJugador1) {
     this.fichas=[];
     let posy = 0;
     if (this.fichas.length < this.tablero.getCantFichas()) {
@@ -69,10 +69,18 @@ setjuegoIniciado(boolean){
         const posy = this.tablero.getRadioFicha() * 10 + randomVerticalOffset * separationFactor;
         const posxPlayer1 = posxJ1 + randomHorizontalOffset;
         const posxPlayer2 = posxJ2 + randomHorizontalOffset;
-
-        const fichaJugador1 = new FichaJugador1(this.tablero.getRadioFicha(), posxPlayer1, posy, ctx);
-        const fichaJugador2 = new FichaJugador2(this.tablero.getRadioFicha(), posxPlayer2, posy, ctx);
-
+        let fichaJugador1=null;
+        let fichaJugador2= null;
+if(personajeJugador1==="sapo"){
+  console.log("hizo que el jugador 1 tenga sapo");
+         fichaJugador1 = new FichaSapo(this.tablero.getRadioFicha(), posxPlayer1, posy, ctx);
+         fichaJugador2 = new FichaMosca(this.tablero.getRadioFicha(), posxPlayer2, posy, ctx);
+}
+if(personajeJugador1== "mosca"){
+   console.log("hizo que el jugador 1 tenga mosca");
+   fichaJugador1 = new FichaMosca(this.tablero.getRadioFicha(),posxPlayer1 , posy, ctx);
+   fichaJugador2 = new FichaSapo(this.tablero.getRadioFicha(),posxPlayer2 , posy, ctx);
+}
         this.fichas.push(fichaJugador1);
         this.fichas.push(fichaJugador2);
 
