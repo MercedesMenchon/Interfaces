@@ -1728,11 +1728,20 @@ img.btn-PlayVideo {
 }
 
 /*boton de seleccion de personaje*/
+@keyframes rotateColor {
+    0% {
+        border: 2px solid #bfd211; /* Color inicial del borde */
+    }
+    100% {
+        border: 2px solid #f31eb3; /* Color final del borde */
+    }
+}
+
 .character-selection {
     display: none;
     position: absolute;
     top: 30%;
-    left: 55%;
+    left:57%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: blue;
@@ -1741,14 +1750,39 @@ img.btn-PlayVideo {
     font-size: 250%;
     font-weight: bolder;
     background-color: #11D2B2;
-    border: #083978 2px solid;
+    border: #0000 6px solid;
     border-radius: 6px;
     padding: 2%;
+    justify-content: space-around;
+    width: 60%;
+    animation: rotateColor 4s linear infinite;
 }
 .character-selection.visible {
     display:block;
 }
 
+
 .btn-character {
-    margin: 10px;
+    margin: 2%;
+    background-color: #11D2B2;
+    transition: transform 0.3s ease-in-out;
+  
+}
+
+.btn-character:hover {
+    transform: scale(1.1); 
+ 
+}
+.character-selection>div{
+    display: flex;
+}
+.btn-character>img {
+    margin-top: 5%;
+width: 60%;
+transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.btn-character:hover>img {
+    transform: scale(1.2); 
+    filter: brightness(1.5); 
 }
