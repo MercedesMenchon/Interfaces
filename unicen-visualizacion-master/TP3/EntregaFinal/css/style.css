@@ -1742,7 +1742,7 @@ img.btn-PlayVideo {
 .character-selection {
     display: none;
     position: absolute;
-    top: 30%;
+    top: 35%;
     left:57%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -1767,14 +1767,10 @@ img.btn-PlayVideo {
 .btn-character {
     margin: 2%;
     background-color: #11D2B2;
-    transition: transform 0.3s ease-in-out;
-  
+    
 }
 
-.btn-character:hover {
-    transform: scale(1.1); 
- 
-}
+
 .character-selection>div{
     display: flex;
 }
@@ -1782,9 +1778,15 @@ img.btn-PlayVideo {
     margin-top: 5%;
 width: 60%;
 transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+
 }
 
-.btn-character:hover>img {
+.btn-character>img:hover {
     transform: scale(1.2); 
     filter: brightness(1.5); 
+    
+}
+
+.btn-character.clickeado>img{
+   transform: scale(1.2); /* Mantiene el tamaño del hover cuando se hace clic */
 }

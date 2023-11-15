@@ -23,9 +23,13 @@ let personajeJugador1 =null;
 
 document.querySelector(".character-selection").classList.toggle("visible");
  
-  document.getElementById("sapoButton").addEventListener("click", function () {
+
+ document.getElementById("sapoButton").addEventListener("click", function () {
     console.log("Has elegido al sapo");
     personajeJugador1 = "sapo";
+    // Desactivar la clase clickeado en el botón Mosca
+    document.getElementById("moscaButton").classList.remove("clickeado");
+    this.classList.toggle("clickeado");
   //  document.querySelector(".character-selection").classList.toggle("visible");
     console.log(personajeJugador1);
   });
@@ -34,6 +38,9 @@ document.querySelector(".character-selection").classList.toggle("visible");
   document.getElementById("moscaButton").addEventListener("click", function () {
    // document.querySelector(".character-selection").classList.toggle("visible");
     personajeJugador1 = "mosca";
+       // Desactivar la clase clickeado en el botón Sapo
+       document.getElementById("sapoButton").classList.remove("clickeado");
+    this.classList.toggle("clickeado");
     console.log("Has elegido la mosca");
  console.log(personajeJugador1);
   });
