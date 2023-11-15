@@ -2,7 +2,7 @@
 
 class FichaJugador1 extends Ficha {
     constructor(radio, xCanvas, yCanvas, contexto) {
-        super(radio, xCanvas, yCanvas,'orange', contexto,"jugador1",null);
+        super(radio, xCanvas, yCanvas,'orange', contexto,"Mosca",null);
           // Definir images como propiedad de la instancia
         this.cargarImagen(); // Llamar al método para cargar las imágenes
     }

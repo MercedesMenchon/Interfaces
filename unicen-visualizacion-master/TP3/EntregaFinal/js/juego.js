@@ -8,7 +8,7 @@ class Juego {
     this.canvas = canvas;
     this.fichaResaltada = null; 
     this.mousedown = false;
-    this.jugadores = ["jugador1", "jugador2"];
+    this.jugadores = ["Mosca", "Sapo"];
     this.addFichas();
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
@@ -43,7 +43,7 @@ setjuegoIniciado(boolean){
     let posy = 0;
     if (this.fichas.length < this.tablero.getCantFichas()) {
       //setTimeOut(addFicha, 333);
-      //EL FOR QUEE STA ACA, DECIA /4 PERO SI SON 2 JUGADORES ES 2, NO?
+     
       for (let i = 0; i < this.tablero.getCantFichas() / 2; i++) {
         //determinamos a partir de que pixel del canvas dibujamos las fichas a cada lado del tablero
         let posxJ1 = this.tablero.getEspacioBlancoX() / 4;
@@ -238,8 +238,6 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
       frame++;
     
  }}}
-
-
 
   getJugadorActual() {
     return this.jugadorActual;
@@ -467,13 +465,16 @@ const cantLinea = this.tablero.getCantLinea();
 
 
 
-  // Método para iniciar el temporizador
+ 
   
 
 
 }
 
 
+
+
+  
 
 
 
