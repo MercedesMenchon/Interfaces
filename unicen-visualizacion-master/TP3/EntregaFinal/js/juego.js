@@ -13,7 +13,7 @@ class Juego {
     this.jugadorActual = this.jugadores[0];
     this.juegoIniciado=false;
    this.temporizador=temporizador;
- 
+  
   }
 
 Iniciar(personajeJugador1){

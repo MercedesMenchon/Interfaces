@@ -8,6 +8,7 @@
         this.alto = alto; 
         this.radioAgujero = radioAgujero; // Radio del agujero circular en el centro
         this.ficha=null;
+        this.ocupado=false;
       }
      getOcupado(){
         return this.ocupado;
@@ -64,7 +65,9 @@
         ctx.closePath();
       
       }
-
+reiniciar(){
+  this.setOcupado(false);
+}
     }
 
 

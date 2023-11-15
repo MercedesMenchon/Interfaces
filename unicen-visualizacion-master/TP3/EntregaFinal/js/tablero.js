@@ -123,6 +123,7 @@ let y= this.matriz[fila][columna].getY();
         const x = this.getEspacioBlancoX() + columna * this.getAnchoCelda();
         const y = this.getEspacioBlancoY() + fila * this.getAltoCelda();
         const casillero = new Casillero(x, y, this.getAnchoCelda(), this.getAltoCelda(), this.getRadioFicha());
+       
         this.matriz[fila][columna] = casillero;
       }
 

@@ -6,22 +6,23 @@ canvas.width = 1000;
 canvas.height = 600;
 let anchoCanvas = canvas.width;
 let altoCanvas = canvas.height;
+let temporizador = new Temporizador(6000);
 
-let temporizador = new Temporizador(10);
-const tablero1= new Tablero(6,7,4, canvas, ctx);
-const juego1 = new Juego(tablero1,canvas, ctx,temporizador);
-const tablero2 = new Tablero(7,8,5, canvas, ctx);
-const juego2= new Juego(tablero2,canvas, ctx,temporizador);
-const tablero3 = new Tablero(8,8,6, canvas, ctx);
-const juego3 = new Juego(tablero3,canvas, ctx,temporizador);
+let tablero1= new Tablero(6,7,4, canvas, ctx);
+let juego1 = new Juego(tablero1,canvas, ctx,temporizador);
+let tablero2 = new Tablero(7,8,5, canvas, ctx);
+let juego2= new Juego(tablero2,canvas, ctx,temporizador);
+let tablero3 = new Tablero(8,8,6, canvas, ctx);
+let juego3 = new Juego(tablero3,canvas, ctx,temporizador);
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
   iniciarJuego();
 let personajeJugador1 =null;
+document.querySelector("#reiniciarJuego").addEventListener("click", iniciarJuego);
 
 
-document.querySelector(".character-selection").classList.toggle("visible");
  
 
  document.getElementById("sapoButton").addEventListener("click", function () {
@@ -96,11 +97,18 @@ for(i=0;i<botonesDeJuego.length;i++){
 }
 
 function iniciarJuego() {
+  console.log("iniciarJuego");
   var img = new Image();
   img.onload = function () {
     ctx.drawImage(img, 0, 0, anchoCanvas, altoCanvas);
   };
   img.src = "Images\\4 en linea\\4enlineaAgua.jpg";
+
+  document.querySelector(".character-selection").classList.toggle("visible");
+
+
+ temporizador.finalizarTemporizador();
+temporizador.ocultar();
 }
 
 
