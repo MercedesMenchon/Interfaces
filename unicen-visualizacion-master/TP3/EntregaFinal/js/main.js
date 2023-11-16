@@ -45,41 +45,41 @@ document.addEventListener("DOMContentLoaded", function () {
  
 
 document.querySelector("#tablero7x6").addEventListener("click", function (){
-  if(personajeJugador1!= null){
-   seleccionarBotonJuego()
-  
+
+   seleccionarBotonJuego();
+   this.classList.add("select");
    filas=7;
    columnas= 6;
    cantLinea= 4;
-  } 
+  
 });
 document.querySelector("#tablero7x8").addEventListener("click", function (){
-  if(personajeJugador1!= null){
+
   seleccionarBotonJuego();
-  
+  this.classList.add("select");
   filas=7;
   columnas=8;
   cantLinea=5;
-  }
+  
   });
 document.querySelector("#tablero8x8").addEventListener("click", function (){
-  if(personajeJugador1!= null){
-  seleccionarBotonJuego(personajeJugador1);
- 
+   seleccionarBotonJuego();
+  this.classList.add("select");
   filas=8;
   columnas= 8;
   cantLinea= 6;
-  }
+  
   });
   document.querySelector("#btn-playJuego").addEventListener("click",function (){
-    document.querySelector(".character-selection").classList.toggle("visible");
+    document.querySelector(".character-selection").classList.remove("visible");
     document.querySelector("#reiniciarJuego").classList.remove("oculto");
     let tablero = new Tablero (filas,columnas,cantLinea,canvas,ctx);
     this.juego = new Juego(tablero,canvas,ctx);
     let temporizador = new Temporizador(600,this.juego);
      this.juego.iniciar(personajeJugador1);
+   
    temporizador.iniciarTemporizador();
-
+   seleccionarBotonJuego();
     document.querySelector("#reiniciarJuego").addEventListener("click", function(){
       console.log(this.juego);
       iniciarJuego();
@@ -106,7 +106,7 @@ function elegirPersonaje(){
 function seleccionarBotonJuego(){
   let botonesDeJuego= document.querySelectorAll(".btn-4enlinea");
 for(i=0;i<botonesDeJuego.length;i++){
-  botonesDeJuego[i].classList.toggle("select");
+  botonesDeJuego[i].classList.remove("select");
 }
 }
 
@@ -118,7 +118,7 @@ function iniciarJuego() {
   };
   img.src = "Images\\4 en linea\\4enlineaAgua.jpg";
 
-  document.querySelector(".character-selection").classList.toggle("visible");
+  document.querySelector(".character-selection").classList.add("visible");
 
 }
 

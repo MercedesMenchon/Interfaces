@@ -26,7 +26,8 @@ iniciarTemporizador() {
       this.actualizarTiempoEnPantalla(); 
       let tiempo = this.getTiempo() - 1;
       this.setTiempo(tiempo);
-      if(this.juego.getJuegoTerminado()==true){
+      console.log(tiempo);
+      if(this.juego.getJuegoTerminado()=="true"){
         this.ocultar();
         this.juego.OcultarJugadorEnPantalla();
         clearInterval(interval);
@@ -34,15 +35,14 @@ iniciarTemporizador() {
       if (this.getTiempo() == 0 && this.juego.getJuegoTerminado()==false) {
         this.ocultar();
         this.juego.mostrarEmpate();
-            
+        clearInterval(interval);
       }
       
   }, 1000); // Se ejecuta cada segundo
 }
 
 finalizarTemporizador(){
-  console.log("finalizar temporizador");
- this.setTiempo(0);
+  this.juego.setJuegoTerminado("true");
 }
 
 

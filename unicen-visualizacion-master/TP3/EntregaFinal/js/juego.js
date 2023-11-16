@@ -466,7 +466,7 @@ const cantLinea = this.tablero.getCantLinea();
   }
 
   mostrarEmpate() {
-
+this.setJuegoTerminado("true");
     ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
     ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     const x = this.canvas.width / 2;
