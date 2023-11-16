@@ -2,8 +2,8 @@
 
 class FichaMosca extends Ficha {
    
-    constructor(radio, xCanvas, yCanvas, contexto) {
-        super(radio, xCanvas, yCanvas,'orange', contexto,"Mosca",null);
+    constructor(radio, xCanvas, yCanvas, contexto,jugador) {
+        super(radio, xCanvas, yCanvas,'orange', contexto,jugador,null);
           // Definir images como propiedad de la instancia
         this.cargarImagen(); // Llamar al método para cargar las imágenes
     }

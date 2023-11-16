@@ -1600,6 +1600,8 @@ img.btn-PlayVideo {
 
     .botones4enlinea {
         background-color: var(--secundario);
+        display: flex;
+       justify-content: space-between ;
     }
 
     .botones4enlinea>h1 {
@@ -1608,7 +1610,8 @@ img.btn-PlayVideo {
         margin-top: 1%;
     }
 
-    .btn-4enlinea {
+    .btn-4enlinea,
+    #reiniciarJuego {
         align-items: center;
         justify-content: center;
         border-radius: 16px;
@@ -1623,7 +1626,9 @@ img.btn-PlayVideo {
         box-shadow: var(--negro) 2px 2px;
         transition: transform 0.2s ease-in-out;
     }
-
+    #reiniciarJuego.oculto{
+        display:none;
+    }
     .btn-4enlinea:hover,
     .btn-reglamento:hover {
         background-color: chartreuse;
@@ -1644,6 +1649,7 @@ img.btn-PlayVideo {
     border: var(--secundario) 2px solid;
     font-size: 20px;
     color: var(--blanco);
+    width: 50%;
     font-weight: bold;
     height: 30px;
     align-items: center;
@@ -1791,4 +1797,9 @@ transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 
 .btn-character.clickeado>img{
    transform: scale(1.2); /* Mantiene el tamaño del hover cuando se hace clic */
+}
+
+.infoJuego{
+    display:flex;
+    width: 100%;
 }

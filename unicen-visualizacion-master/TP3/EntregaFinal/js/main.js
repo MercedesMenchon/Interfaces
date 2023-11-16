@@ -6,7 +6,7 @@ canvas.width = 1000;
 canvas.height = 600;
 let anchoCanvas = canvas.width;
 let altoCanvas = canvas.height;
-let temporizador = new Temporizador(6000);
+
 let filas=null;
 let columnas= null;
 let cantLinea= null;
@@ -65,20 +65,22 @@ document.querySelector("#tablero8x8").addEventListener("click", function (){
   });
   document.querySelector("#btn-playJuego").addEventListener("click",function (){
     document.querySelector(".character-selection").classList.toggle("visible");
-   
+    document.querySelector("#reiniciarJuego").classList.remove("oculto");
     let tablero = new Tablero (filas,columnas,cantLinea,canvas,ctx);
-    this.juego = new Juego(tablero,canvas,ctx,temporizador);
-    
-    this.juego.iniciar(personajeJugador1);
-    temporizador.iniciarTemporizador();
-    });
-
+    this.juego = new Juego(tablero,canvas,ctx);
+    let temporizador = new Temporizador(600,this.juego);
+     this.juego.iniciar(personajeJugador1);
+   temporizador.iniciarTemporizador();
 
     document.querySelector("#reiniciarJuego").addEventListener("click", function(){
       console.log(this.juego);
       iniciarJuego();
-      
     });
+    
+    });
+
+
+   
 });
 
 
@@ -105,9 +107,6 @@ function iniciarJuego() {
 
   document.querySelector(".character-selection").classList.toggle("visible");
 
-
- temporizador.finalizarTemporizador();
-temporizador.ocultar();
 }
 
 

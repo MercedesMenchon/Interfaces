@@ -104,13 +104,10 @@ class Ficha {
 
 
     isPointedInside(xCanvas, yCanvas) {
-
         const dx = xCanvas - this.getPosicionX();
         const dy = yCanvas - this.getPosicionY();
         //pitagoras
         const distancia = Math.sqrt(dx * dx + dy * dy);
-
-
         // Compara la distancia con el radio de la ficha
         return distancia < this.getRadio();
     }

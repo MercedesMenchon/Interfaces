@@ -1,18 +1,18 @@
 "use strict";
 
 class Juego {
-  constructor(tablero, canvas, ctx, temporizador) {
+  constructor(tablero, canvas, ctx) {
     this.fichas = [];
     this.tablero = tablero;
     this.ctx = ctx;
     this.canvas = canvas;
     this.fichaResaltada = null; 
     this.mousedown = false;
-    this.jugadores = ["Mosca", "Sapo"];
+    this.jugadores = ["jugador1", "jugador2"];
     this.juegoTerminado = false; 
     this.jugadorActual = this.jugadores[0];
     this.juegoIniciado=false;
-   this.temporizador=temporizador;
+ 
   
   }
 
@@ -21,13 +21,25 @@ iniciar(personajeJugador1){
   this.addFichas(personajeJugador1);
   this.setjuegoIniciado(true);
   this.agregarEventoClic();
+  this.mostrarJugadorActivo();
+  
 }
-
+mostrarJugadorActivo(){
+  let jugadorActualPantalla= document.querySelector("#jugadorActualPantalla")
+  jugadorActualPantalla.innerHTML="<p> Es el turno del " + this.getJugadorActual() +"</p>";
+  jugadorActualPantalla.classList.remove('timerOcultar');
+  jugadorActualPantalla.classList.add('timerShow');
+}OcultarJugadorEnPantalla(){
+document.querySelector("#jugadorActualPantalla").classList.add('timerOcultar');
+}
 apagarJuego(){
   this.setjuegoIniciado(false);
 }
 setJuegoTerminado(boolean){
   this.juegoTerminado=boolean;
+}
+getJuegoTerminado(){
+ return this.juegoTerminado;
 }
 getjuegoIniciado(){
   return this.juegoIniciado;
@@ -73,13 +85,13 @@ setjuegoIniciado(boolean){
         let fichaJugador2= null;
 if(personajeJugador1==="sapo"){
   console.log("hizo que el jugador 1 tenga sapo");
-         fichaJugador1 = new FichaSapo(this.tablero.getRadioFicha(), posxPlayer1, posy, ctx);
-         fichaJugador2 = new FichaMosca(this.tablero.getRadioFicha(), posxPlayer2, posy, ctx);
+         fichaJugador1 = new FichaSapo(this.tablero.getRadioFicha(), posxPlayer1, posy, ctx,"jugador1");
+         fichaJugador2 = new FichaMosca(this.tablero.getRadioFicha(), posxPlayer2, posy, ctx,"jugador2");
 }
 if(personajeJugador1== "mosca"){
    console.log("hizo que el jugador 1 tenga mosca");
-   fichaJugador1 = new FichaMosca(this.tablero.getRadioFicha(),posxPlayer1 , posy, ctx);
-   fichaJugador2 = new FichaSapo(this.tablero.getRadioFicha(),posxPlayer2 , posy, ctx);
+   fichaJugador1 = new FichaMosca(this.tablero.getRadioFicha(),posxPlayer1 , posy, ctx,"jugador1");
+   fichaJugador2 = new FichaSapo(this.tablero.getRadioFicha(),posxPlayer2 , posy, ctx,"jugador2");
 }
         this.fichas.push(fichaJugador1);
         this.fichas.push(fichaJugador2);
@@ -96,6 +108,7 @@ if(personajeJugador1== "mosca"){
     this.tablero.armarTablero();
     this.tablero.dibujarFlechas();
     this.dibujarFichas();
+    this.mostrarJugadorActivo();
   }
 
   dibujarFichas(fichaArrastrada = null) {
@@ -121,19 +134,19 @@ if(personajeJugador1== "mosca"){
 
            for (let i = this.getFichas().length - 1; i >= 0; i--) {
         const ficha = this.getFichas()[i];
-     console.log(this.getFichas().length);
-        if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador() == this.jugadorActual ) {
+     console.log(ficha );
+        if (!ficha.colocada && ficha.isPointedInside(x, y) && ficha.getJugador() == this.getJugadorActual()) {
          
           fichaArrastrada = ficha;
-     
-        
+          break; 
+        }
           
       }
         
-        break; 
+       
          
         }
-      }
+      
 
       if (fichaArrastrada) {
         fichaArrastrada.setResaltado(true);
@@ -204,12 +217,14 @@ if(personajeJugador1== "mosca"){
          // fichaArrastrada.dibujar();
         
           this.getTurno();
-         
-          fichaArrastrada = null;
-   
+         fichaArrastrada = null;
          
           this.dibujarTablero();
-         this.controlGanador(fila, columna);
+          setTimeout(this.controlGanador(fila, columna), 100);
+            
+           
+       
+         
           
           
          
@@ -217,13 +232,7 @@ if(personajeJugador1== "mosca"){
         else{
           fichaArrastrada=null;
         }
-      }
-        this.dibujarTablero();
-        
-
-        if(this.juegoTerminado){
-this.temporizador.finalizarTemporizador();
-        }
+      }      
   }});
   
   }
@@ -257,6 +266,8 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
     let win = this.hayGanador(fila, columna);
     if (win == true) {
       this.mostrarGanador(this.tablero.matriz[fila][columna].getFicha())
+ 
+    this.setJuegoTerminado(true);
     }
     else if (win == false && this.getCantidadFichasColocadas() == this.fichas.length)
       this.mostrarEmpate(this.tablero.matriz[fila][columna].getFicha())
@@ -274,7 +285,6 @@ dibujarCaida(ficha, x1, y1, x2, y2) {
   }
 
   getTurno() {
-
     if (this.getJugadorActual() == this.jugadores[0]) {
       this.jugadorActual = this.jugadores[1];
     }
@@ -449,12 +459,11 @@ const cantLinea = this.tablero.getCantLinea();
     ctx.fillText("¡GANASTE!", x, y / 4 + fichaGanador.getRadio());
     const ficha = new Ficha(fichaGanador.getRadio() * 8, x, y, fichaGanador.getFill(), fichaGanador.getCtx(), fichaGanador.getJugador(), fichaGanador.getImagen());
     ficha.dibujar();
-    this.temporizador.ocultar();
-    this.temporizador.finalizarTemporizador();
+    this.setJuegoTerminado(true);
 
   }
 
-  mostrarEmpate(ultimaFicha) {
+  mostrarEmpate() {
 
     ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
     ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -468,13 +477,12 @@ const cantLinea = this.tablero.getCantLinea();
     ctx.font = '100px Arial';
     ctx.textAlign = 'center';
 
-    ctx.fillText("¡EMPATE!", x, y / 4 + ultimaFicha.getRadio());
-    const ficha1 = new FichaJugador1(this.tablero.getRadioFicha() * 7, xJ1, y, ultimaFicha.getCtx());
-    const ficha2 = new FichaJugador2(this.tablero.getRadioFicha() * 7, xJ2, y, ultimaFicha.getCtx());
+    ctx.fillText("¡EMPATE!", x, y / 4 + this.tablero.getRadioFicha());
+    const ficha1 = new FichaSapo(this.tablero.getRadioFicha() * 7, xJ1, y, this.ctx,"jugador");
+    const ficha2 = new FichaMosca(this.tablero.getRadioFicha() * 7, xJ2, y, this.ctx,"jugador");
     ficha1.dibujar();
     ficha2.dibujar();
-    this.temporizador.ocultar();
-    this.temporizador.finalizarTemporizador();
+    this.setJuegoTerminado(true);
   }
 
 

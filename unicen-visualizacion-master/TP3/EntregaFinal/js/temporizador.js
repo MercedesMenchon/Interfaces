@@ -1,9 +1,10 @@
-let elementoTiempo = document.querySelector('.timer');
+let elementoTiempo = document.querySelector('#timer');
 class Temporizador{
 
-constructor(tiempoMax){
+constructor(tiempoMax,juego){
     this.tiempoMax=tiempoMax;
     this.tiempo=tiempoMax;
+    this.juego=juego;
 }
 setTiempo(tiempoMax){
     this.tiempo=tiempoMax;
@@ -21,12 +22,21 @@ iniciarTemporizador() {
   elementoTiempo.classList.remove('timerOcultar');
   elementoTiempo.classList.add('timerShow');
    let interval = setInterval(() => {
+   
       this.actualizarTiempoEnPantalla(); 
       let tiempo = this.getTiempo() - 1;
       this.setTiempo(tiempo);
-      if (this.getTiempo() <= 0) {
+      if(this.juego.getJuegoTerminado()==true){
+        this.ocultar();
+        this.juego.OcultarJugadorEnPantalla();
         clearInterval(interval);
       }
+      if (this.getTiempo() == 0 && this.juego.getJuegoTerminado()==false) {
+        this.ocultar();
+        this.juego.mostrarEmpate();
+            
+      }
+      
   }, 1000); // Se ejecuta cada segundo
 }
 
@@ -40,7 +50,7 @@ finalizarTemporizador(){
 
 actualizarTiempoEnPantalla() {
     //console.log(`Actualizando tiempo en pantalla: ${this.tiempo}`);
-  
+    elementoTiempo.classList.add('timerMostrar');
     if (this.tiempo <= 3) {
       elementoTiempo.classList.add("red");
       elementoTiempo.innerHTML =  "<p> Tiempo: "+ this.getTiempo() +" segundos </p>";
@@ -55,8 +65,6 @@ actualizarTiempoEnPantalla() {
   }
 
 ocultar(){
-  elementoTiempo.classList.add('timerOcultar');
-  console.log("se oculto");
-  
+  elementoTiempo.classList.add('timerOcultar');  
 }
 }
