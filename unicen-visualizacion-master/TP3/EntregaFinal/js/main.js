@@ -13,7 +13,12 @@ let cantLinea= null;
 let personajeJugador1 =null;
 let juego;
 
+<<<<<<< Updated upstream
 document.addEventListener("DOMContentLoaded", function() {
+=======
+
+document.addEventListener("DOMContentLoaded", function () {
+>>>>>>> Stashed changes
   iniciarJuego();
 
 
