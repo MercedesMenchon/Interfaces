@@ -29,8 +29,10 @@ mostrarJugadorActivo(){
   jugadorActualPantalla.innerHTML="<p> Es el turno del " + this.getJugadorActual() +"</p>";
   jugadorActualPantalla.classList.remove('timerOcultar');
   jugadorActualPantalla.classList.add('timerShow');
-}OcultarJugadorEnPantalla(){
+}
+OcultarJugadorEnPantalla(){
 document.querySelector("#jugadorActualPantalla").classList.add('timerOcultar');
+console.log("entro acaaa");
 }
 apagarJuego(){
   this.setjuegoIniciado(false);

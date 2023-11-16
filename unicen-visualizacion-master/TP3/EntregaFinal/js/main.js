@@ -83,6 +83,11 @@ document.querySelector("#tablero8x8").addEventListener("click", function (){
     document.querySelector("#reiniciarJuego").addEventListener("click", function(){
       console.log(this.juego);
       iniciarJuego();
+      temporizador.finalizarTemporizador();
+      temporizador.ocultar();
+      document.querySelector("#jugadorActualPantalla").classList.add('timerOcultar');
+     //CUANDO PUEDA ACCEDER AL JUEGO VA LASIGUIENTE FUNCION:
+      //this.juego.OcultarJugadorEnPantalla();
     });
     
     });
