@@ -13,12 +13,8 @@ let cantLinea= null;
 let personajeJugador1 =null;
 let juego;
 
-<<<<<<< Updated upstream
-document.addEventListener("DOMContentLoaded", function() {
-=======
 
 document.addEventListener("DOMContentLoaded", function () {
->>>>>>> Stashed changes
   iniciarJuego();
 
 
@@ -29,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Has elegido al sapo");
     personajeJugador1 = "sapo";
   //  document.querySelector(".character-selection").classList.toggle("visible");
+  // Desactivar la clase clickeado en el botón Mosca
+  document.getElementById("moscaButton").classList.remove("clickeado");
+  this.classList.toggle("clickeado");
+
     console.log(personajeJugador1);
   });
 
@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
    // document.querySelector(".character-selection").classList.toggle("visible");
     personajeJugador1 = "mosca";
     console.log("Has elegido la mosca");
+      // Desactivar la clase clickeado en el botón Sapo
+  document.getElementById("sapoButton").classList.remove("clickeado");
+  this.classList.toggle("clickeado");
  console.log(personajeJugador1);
   });
  
