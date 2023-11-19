@@ -1,0 +1,31 @@
+.contenedor{
+    width: 1080px;
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+}
+
+nav{
+    height: 227px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav>button>.haburguesa{
+    width: 34px;
+    height: 26px;
+}
+
+
+#comprar>div{
+    color: #02187E;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%; /* 18.9px */
+    letter-spacing: 2.2px;
+}
+
+.figura.titulo{
+    width: 590px;
+    height: 301px;
+}
