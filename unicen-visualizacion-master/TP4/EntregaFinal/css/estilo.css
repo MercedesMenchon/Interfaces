@@ -1,31 +1,177 @@
-.contenedor{
+.contenedor {
     width: 1080px;
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+    
 }
 
-nav{
-    height: 227px;
+nav {
+    width: 100%;
+    height: 191px;
     display: flex;
     justify-content: space-around;
+    border: none;
+    align-items: center;
 }
 
-nav>button>.haburguesa{
-    width: 34px;
-    height: 26px;
+/*logo hamburguesa*/
+
+nav>button {
+    background-color: transparent;
+    border: none;
+}
+
+nav>button>.haburguesa {
+    width: 28px;
+    height: 22px;
+    background-color: transparent;
+}
+
+/*boton comprar de la barra navegacion*/
+#comprar>div {
+    width: 169px;
+    height: 42px;
+    border-radius: 111px;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background: #FFE901;
+    /* Drop Shadow */
+    box-shadow: 4px 5px 0px 0px #02187E;
 }
 
 
-#comprar>div{
+#comprar>div>p {
     color: #02187E;
     font-family: Lato;
-    font-size: 20px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 900;
-    line-height: 94.5%; /* 18.9px */
+    line-height: 94.5%;
+    /* 18.9px */
     letter-spacing: 2.2px;
 }
 
-.figura.titulo{
-    width: 590px;
-    height: 301px;
+nav>.spidey {
+    width: 112px;
+    height: 57px;
 }
+
+
+/*presentación*/
+.contenedorPortada{
+    height: 607.5px;
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Añadido para evitar el desbordamiento de las capas */
+}
+.portada{
+min-height: 500px;
+width: 100%;
+height: 100%;
+position: absolute;
+left: 0;
+top: 0; /* Ajustado a 0 para que las capas se superpongan correctamente */
+
+transform: translateZ(0); /* Añadido para mejorar el rendimiento en algunos navegadores */
+}
+
+
+
+.portada.fondo{
+ background-image: url("images/presentacion/fondoPresentacion.png");
+ background-attachment: fixed; /* Fondo con parallax */
+}
+
+.portada.edificioCentro,
+.portada.edificioIzq,
+.portada.edificioDer,
+.portada.personajeBlanco,
+.portada.personajeNegro,
+.portada.sogaIzq,
+.portada.personajeRojo,
+.portada.sogaDer,
+.portada.titulo {
+    transform: translateZ(0);
+    transform-origin: center center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    backface-visibility: hidden; /* Añadido para mejorar el rendimiento en algunos navegadores */
+}
+.portada.edificioCentro{
+    width: 458.578px;
+    height: 180.140px;
+   background-image: url("images/presentacion/edificio-centro.svg");
+   transform: translate(-50%, -50%) scale(0.8); /* Ajusta la escala según tus necesidades */
+}
+
+.portada.edificioIzq{
+    width: 381.375;
+    height: 607.5px;
+    transform: translate(-70%, -50%) scale(1.2);
+   background-image: url("images/presentacion/edificios-izq.svg");
+  
+}
+
+.portada.edificioDer{
+    width: 315.562px;
+    height: 613.828px;
+    transform: translate(20%, -50%) scale(0.9);
+    background-image: url("images/presentacion/edificio-der.svg");
+  
+
+}
+
+.portada.personajeBlanco{
+    width: 303.75px;
+height: 374.625px;
+   /* background-image: url("images/presentacion/spidermanBlanco.svg");*/
+   background-image: url("images/portada/spidermanBlanco.svg");
+}
+
+.portada.personajeNegro{
+    width: 331.593px;
+    height: 331.593px;
+    background-image: url("images/presentacion/spidermanNegro.svg");
+  
+}
+.portada.sogaIzq{
+    width: 216.556px;
+height: 314.247px;
+background-image: url("images/presentacion/sogaIzquierda.svg");
+ 
+}
+
+.portada.personajeRojo{
+    width: 392.343px;
+    height: 392.343px;
+    background-image: url("images/presentacion/spidermanRojo.svg");
+
+}
+
+.portada>.titulo {
+    width: 497.812;
+    height: 253.968;
+   background-image: url("images/presentacion/Spidey.svg");
+
+}
+.portada.sogaDer{
+    width: 216.556px;
+    height: 314.247px;
+   background-image: url("images/presentacion/sogaDerecha.svg" );
+
+}
+
+
+/*presentacion */
+.presentacion, .personajes, .masAmigos>.fila{
+    display: flex;
+}
+
+.personajes{
+display: flex;
+}
+
+.personajes>.ColumnaPersonajes{
+    display:block;
+}
+
+
