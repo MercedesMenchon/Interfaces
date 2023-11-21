@@ -81,19 +81,19 @@ top: 0; /* Ajustado a 0 para que las capas se superpongan correctamente */
 
 .portada.edificioCentro{
 
-   background-image: url("images/portada/edificio-centro.svg");
+   background-image: url("images/portada/edificioCentro.svg");
 
 }
 
 .portada.edificioIzq{
 
-   background-image: url("images/portada/edificios-izq.svg");
+   background-image: url("images/portada/edificiosIzq.svg");
   
 }
 
 .portada.edificioDer{
 
-    background-image: url("images/portada/edificio-der.svg");
+    background-image: url("images/portada/edificioDer.svg");
   
 
 }
