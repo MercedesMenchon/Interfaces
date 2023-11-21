@@ -1,12 +1,12 @@
 .contenedor {
-    width: 1080px;
+    width: 1280px;
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
-    
+
 }
 
 nav {
     width: 100%;
-    height: 191px;
+    height: 227px;
     display: flex;
     justify-content: space-around;
     border: none;
@@ -15,21 +15,67 @@ nav {
 
 /*logo hamburguesa*/
 
-nav>button {
+nav>button{
     background-color: transparent;
     border: none;
+display: grid;
 }
 
-nav>button>.haburguesa {
-    width: 28px;
-    height: 22px;
-    background-color: transparent;
+
+/*boton hamburguesa en transformacion a cruz*/
+@keyframes lineToCross1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
 }
+
+@keyframes lineToCross2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes lineToCross3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+.hamburguesa.abierto .icono-hamburguesa:nth-child(1) {
+    animation: lineToCross1 0.5s ease forwards;
+}
+
+.hamburguesa.abierto .icono-hamburguesa:nth-child(2) {
+    animation: lineToCross2 0.5s ease forwards;
+}
+
+.hamburguesa.abierto .icono-hamburguesa:nth-child(3) {
+    animation: lineToCross3 0.5s ease forwards;
+}
+
 
 /*boton comprar de la barra navegacion*/
 #comprar>div {
-    width: 169px;
-    height: 42px;
+    width: 200px;
+    height: 50px;
     border-radius: 111px;
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
@@ -41,7 +87,7 @@ nav>button>.haburguesa {
 #comprar>div>p {
     color: #02187E;
     font-family: Lato;
-    font-size: 17px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 900;
     line-height: 94.5%;
@@ -50,99 +96,103 @@ nav>button>.haburguesa {
 }
 
 nav>.spidey {
-    width: 112px;
-    height: 57px;
+    width: 133px;
+    height: 68px;
 }
 
 
 /*presentación*/
-.contenedorPortada{
-    height: 607.5px;
+.contenedorPortada {
+    height: 720px;
     width: 100%;
     position: relative;
 
 }
-.portada{
-min-height: 500px;
-width: 100%;
-height: 100%;
-position: absolute;
-left: 0;
-top: 0; /* Ajustado a 0 para que las capas se superpongan correctamente */
 
+.portada {
+    min-height: 500px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* Ajustado a 0 para que las capas se superpongan correctamente */
+    background-size: cover;
 }
 
 
 
-.portada.fondo{
- background-image: url("images/portada/fondoPresentacion.png");
+.portada.fondo {
+    background-image: url("../images/portada/fondoPresentacion.png");
 }
 
 
-.portada.edificioCentro{
+.portada.edificioCentro {
 
-   background-image: url("images/portada/edificioCentro.svg");
-
-}
-
-.portada.edificioIzq{
-
-   background-image: url("images/portada/edificiosIzq.svg");
-  
-}
-
-.portada.edificioDer{
-
-    background-image: url("images/portada/edificioDer.svg");
-  
+    background-image: url("../images/portada/edificioCentro.svg");
 
 }
 
-.portada.personajeBlanco{
+.portada.edificioIzq {
 
-   background-image: url("images/portada/spidermanBlanco.svg");
+    background-image: url("../images/portada/edificiosIzq.svg");
+
 }
 
-.portada.personajeNegro{
+.portada.edificioDer {
 
-    background-image: url("images/portada/spidermanNegro.svg");
-  
-}
-.portada.sogaIzq{
+    background-image: url("../images/portada/edificioDer.svg");
 
-background-image: url("images/portada/sogaIzquierda.svg");
- 
+
 }
 
-.portada.personajeRojo{
+.portada.personajeBlanco {
 
-    background-image: url("images/portada/spidermanRojo.svg");
+    background-image: url("../images/portada/spidermanBlanco.svg");
+}
+
+.portada.personajeNegro {
+
+    background-image: url("../images/portada/spidermanNegro.svg");
+
+}
+
+.portada.sogaIzq {
+
+    background-image: url("../images/portada/sogaIzquierda.svg");
+
+}
+
+.portada.personajeRojo {
+
+    background-image: url("../images/portada/spidermanRojo.svg");
 
 }
 
 .portada>.titulo {
 
-   background-image: url("images/portada/Spidey.svg");
+    background-image: url("../images/portada/Spidey.svg");
 
 }
-.portada.sogaDer{
 
-   background-image: url("images/portada/sogaDerecha.svg" );
+.portada.sogaDer {
+
+    background-image: url("../images/portada/sogaDerecha.svg");
 
 }
 
 
 /*presentacion */
-.presentacion, .personajes, .masAmigos>.fila{
+.presentacion,
+.personajes,
+.masAmigos>.fila {
     display: flex;
 }
 
-.personajes{
-display: flex;
+.personajes {
+    display: flex;
 }
 
-.personajes>.ColumnaPersonajes{
-    display:block;
+.personajes>.ColumnaPersonajes {
+    display: block;
 }
-
-
