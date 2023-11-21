@@ -60,7 +60,7 @@ nav>.spidey {
     height: 607.5px;
     width: 100%;
     position: relative;
-    overflow: hidden; /* Añadido para evitar el desbordamiento de las capas */
+
 }
 .portada{
 min-height: 500px;
@@ -70,93 +70,64 @@ position: absolute;
 left: 0;
 top: 0; /* Ajustado a 0 para que las capas se superpongan correctamente */
 
-transform: translateZ(0); /* Añadido para mejorar el rendimiento en algunos navegadores */
 }
 
 
 
 .portada.fondo{
- background-image: url("images/presentacion/fondoPresentacion.png");
- background-attachment: fixed; /* Fondo con parallax */
+ background-image: url("images/portada/fondoPresentacion.png");
 }
 
-.portada.edificioCentro,
-.portada.edificioIzq,
-.portada.edificioDer,
-.portada.personajeBlanco,
-.portada.personajeNegro,
-.portada.sogaIzq,
-.portada.personajeRojo,
-.portada.sogaDer,
-.portada.titulo {
-    transform: translateZ(0);
-    transform-origin: center center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    backface-visibility: hidden; /* Añadido para mejorar el rendimiento en algunos navegadores */
-}
+
 .portada.edificioCentro{
-    width: 458.578px;
-    height: 180.140px;
-   background-image: url("images/presentacion/edificio-centro.svg");
-   transform: translate(-50%, -50%) scale(0.8); /* Ajusta la escala según tus necesidades */
+
+   background-image: url("images/portada/edificio-centro.svg");
+
 }
 
 .portada.edificioIzq{
-    width: 381.375;
-    height: 607.5px;
-    transform: translate(-70%, -50%) scale(1.2);
-   background-image: url("images/presentacion/edificios-izq.svg");
+
+   background-image: url("images/portada/edificios-izq.svg");
   
 }
 
 .portada.edificioDer{
-    width: 315.562px;
-    height: 613.828px;
-    transform: translate(20%, -50%) scale(0.9);
-    background-image: url("images/presentacion/edificio-der.svg");
+
+    background-image: url("images/portada/edificio-der.svg");
   
 
 }
 
 .portada.personajeBlanco{
-    width: 303.75px;
-height: 374.625px;
-   /* background-image: url("images/presentacion/spidermanBlanco.svg");*/
+
    background-image: url("images/portada/spidermanBlanco.svg");
 }
 
 .portada.personajeNegro{
-    width: 331.593px;
-    height: 331.593px;
-    background-image: url("images/presentacion/spidermanNegro.svg");
+
+    background-image: url("images/portada/spidermanNegro.svg");
   
 }
 .portada.sogaIzq{
-    width: 216.556px;
-height: 314.247px;
-background-image: url("images/presentacion/sogaIzquierda.svg");
+
+background-image: url("images/portada/sogaIzquierda.svg");
  
 }
 
 .portada.personajeRojo{
-    width: 392.343px;
-    height: 392.343px;
-    background-image: url("images/presentacion/spidermanRojo.svg");
+
+    background-image: url("images/portada/spidermanRojo.svg");
 
 }
 
 .portada>.titulo {
-    width: 497.812;
-    height: 253.968;
-   background-image: url("images/presentacion/Spidey.svg");
+
+   background-image: url("images/portada/Spidey.svg");
 
 }
 .portada.sogaDer{
-    width: 216.556px;
-    height: 314.247px;
-   background-image: url("images/presentacion/sogaDerecha.svg" );
+
+   background-image: url("images/portada/sogaDerecha.svg" );
 
 }
 
