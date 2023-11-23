@@ -8,12 +8,12 @@ body {
     width: 1280px;
     height: auto;
 }
-
-.visibilidad{
+/*
+.oculto{
     display: none;
 }
 
-
+*/
 nav {
     height: 227px;
     display: flex;
@@ -134,12 +134,13 @@ margin: auto;
 }
 
 .fondo{
-    margin: 0;
-    padding: 0;
+    background-image: url("../images/portada/fondoPresentacion.svg");
+    width: 1280px;
+    height: 100%;
+ 
+    
 }
-.fondo>img{
-    background-image: url("../images/portada/fondoPresentacion.png");
-}
+
 .portada {
     position: absolute;
     margin: 0;
