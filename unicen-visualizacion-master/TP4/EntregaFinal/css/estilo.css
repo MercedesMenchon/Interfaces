@@ -1,9 +1,13 @@
 body {
  background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+justify-content: center;
+    
+}
+
+body,html{
     margin: 0;
     padding: 0;
 }
-
 .maximaPantalla{
     width: 100%;
     height: auto;
@@ -21,6 +25,7 @@ nav {
     justify-content: space-around;
     border: none;
     align-items: center;
+  
 }
 
 /*logo hamburguesa*/
@@ -124,7 +129,7 @@ nav>.spidey {
 
 .contenedor {
     width: 1080px;
-overflow: visible;
+    overflow: visible;
 }
 
 .contenedorPortada {
@@ -163,7 +168,7 @@ overflow: visible;
     width: 543.5px;
     height: 213.5px;
     top: 407px;
-    left: 392px;
+    left:38%   
 }
 
 .portada.edificioIzq {
@@ -171,7 +176,7 @@ overflow: visible;
     height: 720px;
     background-image: url("../images/portada/edificiosIzq.svg");
     top: -83px;
-    left: -47px;
+   
 }
 
 .portada.edificioDer {
@@ -209,7 +214,7 @@ overflow: visible;
     height: 627.27px;
     background-image: url("../images/portada/sogaIzquierda.svg");
     top: 148;
-    /*left: -180px;*/
+ 
 
 
 }
@@ -227,6 +232,8 @@ overflow: visible;
     top: -51px;
     left: 330px;
     background-image: url("../images/portada/Spidey.svg");
+    width: 590px;
+    height: 301px;
 
 }
 
@@ -238,7 +245,13 @@ top:161px;
 left:981px;
 }
 
-
+.portada.fondoVioleta{
+    background-image: url("../images/portada/fondoVioleta.svg");
+    width: 1280px;
+    height: 844.5px;
+top:548px;
+left:0px;
+}
 /*presentacion */
 .presentacion,
 .personajes,

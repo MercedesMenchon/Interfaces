@@ -14,6 +14,7 @@ let personajeJugador1 =null;
 let juego;
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
   iniciarJuego();
 
