@@ -5,7 +5,7 @@ body {
 }
 
 .maximaPantalla{
-    width: 1280px;
+    width: 100%;
     height: auto;
 }
 /*
@@ -16,6 +16,7 @@ body {
 */
 nav {
     height: 227px;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     border: none;
@@ -123,8 +124,7 @@ nav>.spidey {
 
 .contenedor {
     width: 1080px;
-margin: auto;
-
+overflow: visible;
 }
 
 .contenedorPortada {
@@ -135,9 +135,11 @@ margin: auto;
 
 .fondo{
     background-image: url("../images/portada/fondoPresentacion.svg");
-    width: 1280px;
+    width: 100%;
     height: 100%;
- 
+    background-image: url("../images/portada/fondoPresentacion.svg");
+    margin: 0;
+    padding: 0;
     
 }
 
@@ -207,7 +209,7 @@ margin: auto;
     height: 627.27px;
     background-image: url("../images/portada/sogaIzquierda.svg");
     top: 148;
-    left: -180px;
+    /*left: -180px;*/
 
 
 }
