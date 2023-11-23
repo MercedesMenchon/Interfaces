@@ -1,13 +1,19 @@
-body {
+body{
+    padding: 0px;
+    margin: 0px; 
+}
+.pagina {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
-    justify-content: center;
-
+    overflow-x: hidden;
+    padding: 0px;
+    margin: 0px;
 }
 
 
 .maximaPantalla {
     width: 1280px;
     height: auto;
+  
 }
 
 /*
@@ -22,8 +28,8 @@ nav {
     display: flex;
     justify-content: space-around;
     border: none;
-  
-
+    z-index: 2;
+    position: absolute;
 }
 
 /*logo hamburguesa*/
@@ -34,14 +40,14 @@ nav>button {
     display: grid;
 }
 
-.icono-hamburguesa, .hamburguesa{
-    margin:0;
+.icono-hamburguesa,
+.hamburguesa {
+    margin: 0;
 }
 
-.hamburguesa{
-
-width: 34px;
-height: 26px;
+.hamburguesa {
+    width: 34px;
+    height: 26px;
 }
 
 /*boton hamburguesa en transformacion a cruz*/
@@ -137,6 +143,9 @@ nav>.spidey {
 .contenedor {
     width: 1080px;
     overflow: visible;
+    top: -227px;
+    z-index: 0;
+
 }
 
 .contenedorPortada {
@@ -147,24 +156,25 @@ nav>.spidey {
 
 .fondo {
     background-image: url("../images/portada/fondoPresentacion.svg");
-    width: 100%;
+    width: 1280px;
     height: 100%;
     background-image: url("../images/portada/fondoPresentacion.svg");
-    margin: 0;
-    padding: 0;
+    top: 126px;
+    margin: 0px;
 
 }
 
+/*
 .portada {
     position: absolute;
     margin: 0;
     left: 0;
     top: 0;
-    /* Ajustado a 0 para que las capas se superpongan correctamente */
-    background-size: contain;
-    /* Asegura que la imagen cubra completamente el contenedor */
+    /* Ajustado a 0 para que las capas se superpongan correctamente 
+   background-size: contain;
+    /* Asegura que la imagen cubra completamente el contenedor 
     background-position: center;
-    /* Centra la imagen dentro del contenedor */
+    /* Centra la imagen dentro del contenedor 
     background-repeat: no-repeat;
 }
 
@@ -174,15 +184,17 @@ nav>.spidey {
     background-image: url("../images/portada/edificioCentro.svg");
     width: 543.5px;
     height: 213.5px;
-    top: 407px;
-    left: 38%
+    top: 664px;
+    left: 392px;
+    display: flex;
+    justify-content: center;
 }
 
 .portada.edificioIzq {
     width: 452px;
     height: 720px;
     background-image: url("../images/portada/edificiosIzq.svg");
-    top: -83px;
+    top: 144px;
     left:-47px;
     
 
@@ -192,7 +204,7 @@ nav>.spidey {
     width: 374px;
     height: 727.5px;
     background-image: url("../images/portada/edificioDer.svg");
-    top: -101px;
+    top: 126px;
     left: 906px;
 
 }
@@ -201,7 +213,7 @@ nav>.spidey {
     width: 360px;
     height: 444px;
     background-image: url("../images/portada/spidermanBlanco.svg");
-    top: 161px;
+    top: 388px;
     left: 90px;
 }
 
@@ -209,7 +221,7 @@ nav>.spidey {
     background-image: url("../images/portada/spidermanNegro.svg");
     width: 393px;
     height: 393px;
-    top: 108px;
+    top: 335px;
     left: 695px;
 }
 
@@ -217,24 +229,24 @@ nav>.spidey {
     width: 450.82px;
     height: 627.27px;
     background-image: url("../images/portada/sogaIzquierda.svg");
-    top: 148px;
-    left:-80px;
+    top: 375px;
+left: 390.35px;
     transform: rotate(65.483deg);
-
+margin: 0px;
 
 }
 
 .portada.personajeRojo {
-    width: 404px;
-    height: 403px;
+    width: 465px;
+    height: 465px;
     background-image: url("../images/portada/spidermanRojo.svg");
-    top: 176px;
+    top: 403px;
     left: 404px;
 
 }
 
 .portada.titulo {
-    top: -51px;
+    top: 91px;
     left: 330px;
     background-image: url("../images/portada/Spidey.svg");
     width: 590px;
@@ -246,21 +258,21 @@ nav>.spidey {
     background-image: url("../images/portada/sogaDerecha.svg");
     width: 256.66px;
     height: 372.44px;
-    top: 161px;
-    left: 1081px;
+    top: 388px;
+    left: 1087.83px;
     transform: rotate(114.6deg);
-
+    
 }
 
 .portada.fondoVioleta {
     background-image: url("../images/portada/fondoVioleta.svg");
     width: 1280px;
     height: 844.5px;
-    top: 548px;
+    top: 775px;
     left: 0px;
 }
 
-/*presentacion */
+/*presentacion 
 .presentacion,
 .personajes,
 .masAmigos>.fila {
