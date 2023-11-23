@@ -1,8 +1,10 @@
 body {
-    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+ background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+    margin: 0;
+    padding: 0;
 }
 
-.maximaPantantalla{
+.maximaPantalla{
     width: 1280px;
     height: auto;
 }
@@ -131,8 +133,16 @@ margin: auto;
     position: relative;
 }
 
+.fondo{
+    margin: 0;
+    padding: 0;
+}
+.fondo>img{
+    background-image: url("../images/portada/fondoPresentacion.png");
+}
 .portada {
     position: absolute;
+    margin: 0;
     left: 0;
     top: 0;
     /* Ajustado a 0 para que las capas se superpongan correctamente */
@@ -142,7 +152,6 @@ margin: auto;
     /* Centra la imagen dentro del contenedor */
     background-repeat: no-repeat;
 }
-
 
 
 
@@ -159,15 +168,15 @@ margin: auto;
     height: 720px;
     background-image: url("../images/portada/edificiosIzq.svg");
     top: -83px;
-    left: 0;
+    left: -47px;
 }
 
 .portada.edificioDer {
     width: 374px;
     height: 727.5px;
     background-image: url("../images/portada/edificioDer.svg");
-    top: -60px;
-    left: 907px;
+    top: -101px;
+    left: 906px;
 
 }
 
@@ -197,7 +206,7 @@ margin: auto;
     height: 627.27px;
     background-image: url("../images/portada/sogaIzquierda.svg");
     top: 148;
-    left: -180;
+    left: -180px;
 
 
 }
@@ -222,7 +231,8 @@ margin: auto;
     background-image: url("../images/portada/sogaDerecha.svg");
     width: 256.66px;
     height: 371.44px;
-
+top:161px;
+left:981px;
 }
 
 
