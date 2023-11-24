@@ -1,0 +1,485 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    overflow: auto;
+    /* permite el desplazamiento en el cuerpo */
+
+}
+
+.pagina {
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    height: 8968px;
+}
+
+
+.maximaPantalla {
+    width: 1280px;
+    height: auto;
+
+}
+
+/*
+.oculto{
+    display: none;
+}
+
+*/
+nav {
+    height: 227px;
+    width: 1280px;
+    display: flex;
+    justify-content: space-around;
+    border: none;
+    z-index: 100;
+    /*position: absolute;*/
+    margin-top: 20px;
+}
+
+/*logo hamburguesa*/
+
+nav>button {
+    background-color: transparent;
+    border: none;
+    display: grid;
+}
+
+.icono-hamburguesa,
+.hamburguesa {
+    margin: 0;
+}
+
+.hamburguesa {
+    width: 34px;
+    height: 26px;
+}
+
+/*boton hamburguesa en transformacion a cruz*/
+@keyframes lineToCross1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes lineToCross2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-45deg);
+
+    }
+
+    100% {
+        transform: rotate(-45deg);
+
+    }
+}
+
+@keyframes lineToCross3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+.hamburguesa.abierto .icono-hamburguesa:nth-child(1) {
+    animation: lineToCross1 0.5s ease forwards;
+
+}
+
+.hamburguesa.abierto .icono-hamburguesa:nth-child(2) {
+    animation: lineToCross2 0.5s ease forwards;
+
+}
+
+.hamburguesa.abierto .icono-hamburguesa:nth-child(3) {
+    animation: lineToCross3 0.5s ease forwards;
+}
+
+
+/*boton comprar de la barra navegacion*/
+#comprar>div {
+    width: 200px;
+    height: 50px;
+    border-radius: 111px;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background: #FFE901;
+    box-shadow: 4px 5px 0px 0px #02187E;
+}
+
+
+#comprar>div>p {
+    color: #02187E;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%;
+    letter-spacing: 2.2px;
+}
+
+nav>.spidey {
+    width: 133px;
+    height: 68px;
+}
+
+
+/*presentación*/
+
+.contenedor {
+    width: 1080px;
+    overflow: visible;
+    top: -227px;
+    z-index: 0;
+    margin: auto;
+
+}
+
+.contenedorPortada {
+    height: 720px;
+    width: 100%;
+
+}
+
+
+
+
+.portada {
+    position: absolute;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+
+
+.portada.fondo {
+    background-image: url("../images/portada/fondoPresentacion.svg");
+    width: 1280px;
+    height: 100%;
+    top: 126px;
+    background-repeat: no-repeat;
+}
+
+
+.portada.edificioCentro {
+    background-image: url("../images/portada/edificioCentro.svg");
+    width: 543.5px;
+    height: 213.5px;
+    top: 634px;
+    left: 392px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.portada.edificioIzq {
+    width: 452px;
+    height: 720px;
+    background-image: url("../images/portada/edificiosIzq.svg");
+    top: 144px;
+    left: -47px;
+}
+
+.portada.edificioDer {
+    width: 374px;
+    height: 727.5px;
+    background-image: url("../images/portada/edificioDer.svg");
+    top: 126px;
+    left: 906px;
+
+}
+
+.portada.personajeBlanco {
+    width: 360px;
+    height: 444px;
+    background-image: url("../images/portada/spidermanBlanco.svg");
+    top: 388px;
+    left: 90px;
+}
+
+.portada.personajeNegro {
+    background-image: url("../images/portada/spidermanNegro.svg");
+    width: 393px;
+    height: 393px;
+    top: 335px;
+    left: 695px;
+}
+
+.portada.sogaIzq {
+    background-image: url("../images/portada/sogaIzquierda.svg");
+    top: 397px;
+    left: -27px;
+    width: 450.817px;
+    height: 627.274px;
+    transform: rotate(65.403deg);
+
+}
+
+.portada.personajeRojo {
+    width: 465px;
+    height: 465px;
+    background-image: url("../images/portada/spidermanRojo.svg");
+    top: 403px;
+    left: 404px;
+
+}
+
+.portada.titulo {
+    top: 91px;
+    left: 330px;
+    background-image: url("../images/portada/Spidey.svg");
+    width: 590px;
+    height: 301px;
+
+}
+
+.portada.sogaDer {
+    background-image: url("../images/portada/sogaDerecha.svg");
+    width: 256.66px;
+    height: 372.44px;
+    top: 398px;
+    left: 1078px;
+    transform: rotate(114.6deg);
+
+}
+
+.portada.fondoVioleta {
+    background-image: url("../images/portada/fondoVioleta.svg");
+    width: 1280px;
+    height: 844.5px;
+    top: 775px;
+    left: 0px;
+
+}
+
+/*presentacion "Conoce a Spidey y sus Amigos"*/
+
+
+.presentacion {
+    margin-top: 119.5px;
+    display: flex;
+    position: relative;
+    height: 844.5px;
+
+}
+
+.duendeVerde {
+    background-image: url(../images/presentacion/personajeVerde.svg);
+    top:-20px;
+    left: 613px;
+    width: 553px;
+    height: 921px;
+    position: absolute;
+    /*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
+    overflow: visible;
+    /* Permite que la imagen sobresalga del contenedor */
+    z-index: 10;
+    /* Ajusta el índice z para que el duende aparezca encima de otros elementos si es necesario */
+}
+
+.tarjetaAmigos {
+    background-image: url(../images/presentacion/spideyYsusAmigos.svg);
+    left: -9.72px;
+    width: 751.649px;
+    height: 413.131px;
+    transform: rotate(-2.222deg);
+    border-radius: 26px;
+    /*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
+    position: absolute;
+   /* Permite que la imagen sobresalga del contenedor */
+    overflow: visible;
+    top:377px;
+    border: 9px solid #FFF;
+       /* Drop Shadow */
+    box-shadow: 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.textoAmigos>.titulo {
+    width: 646px;
+    margin-bottom: 0px;
+}
+
+.textoAmigos>.texto {
+    width: 586px;
+    height: 154px;
+ 
+}
+
+
+.textoAmigos>.titulo>h2,
+.textoAmigos>.texto>p {
+    color: #FFF;
+    font-family: Lato;
+    font-style: normal;
+    
+    }
+
+.textoAmigos>.titulo>h2 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 94.5%;
+    margin-bottom: 20px;
+}
+
+.textoAmigos>.texto>p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+   
+}
+
+.colIzq {
+    display: block;
+    margin-top: 24px;
+}
+
+/*bloque de los tres personajes*/
+.personajes {
+    display: flex;
+    margin:0px;
+    justify-content:space-between;
+position: relative;
+    margin-top:60px;
+
+}
+
+.personajes>.ColumnaPersonajes {
+    display: block;
+    border: 41px;
+    
+    
+}
+
+
+.personajes>.columnaPersonajes>img {
+    border-radius: 41px;
+    border: 9px solid var(--2982-ff, #2982FF);
+    box-shadow: 4px 5px 0px 0px #02187E;
+    width: 310px;
+   margin:0px;
+}
+
+.personajes>.columnaPersonajes>img:not(:first-child) {
+    margin-left: 40.56px;
+}
+
+.historiaPersonajes {
+    width: 333px;
+    
+}
+
+.historiaPersonajes>p {
+    color: #000;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ghost{
+    background-image: url(../images/ghost-Spider/ghost.svg);
+    height: 566px;
+    width: 1280px; /*SI HAY QUE BAJAR O SUBIR ES 20*/
+    left: 0px;
+    top:2497px;
+    overflow-x: visible;
+    position:absolute;
+}
+.testJuego1{
+    background-image: url(../images/ghost-Spider/testJuego1.svg);
+    width: 546.108px;
+height: 326.509px;
+transform: rotate(-13.078deg);
+top:-87px;
+position:absolute;
+margin-left: 100px;
+}
+.testJuego2{
+    background-image: url(../images/ghost-Spider/testJuego2.svg);
+    width: 543.218px;
+    height: 325.787px;
+    transform: rotate(-26.474deg);
+    flex-shrink: 0;
+    top:79px;
+    position:absolute;
+    margin-left: 100px;
+}
+.testJuego3{
+    background-image: url(../images/ghost-Spider/testJuego3.svg);
+width: 546.108px;
+height: 326.509px;
+transform: rotate(-36.016deg);
+flex-shrink: 0;
+top:293px;
+position:absolute;
+margin-left: 100px;
+}
+.vengadores{
+    background-color: #000;
+}
+.vengadores>p{
+    margin-top:729px;
+    color: #FFF;
+font-family: Lato;
+font-size: 60px;
+font-style: normal;
+font-weight: 600;
+line-height:  56.7px;
+}
+.cielo{
+    background-image: url(../images/ghost-Spider/cielo.svg);
+
+}
+.planta{
+    background-image: url(../images/ghost-Spider/vegetacion.svg);
+    width: 1077.059px;
+    height: 527.626px;
+}
+.hulk{
+    background-image: url(../images/ghost-Spider/hulk.png);
+    width: 410.106px;
+height: 437.972px;
+transform: rotate(7.515deg);
+}
+.elasticGirl{
+    background-image: url(../images/ghost-Spider/mujerElastico.png);
+    width: 451.258px;
+    height: 591.442px;
+    transform: rotate(-12.483deg);
+}
+.pantera{
+    background-image: url(../images/ghost-Spider/vengadorCat.png);
+    width: 368.308px;
+    height: 552.462px;
+    transform: rotate(13.615deg);
+}
+.pasto{
+    background-image: url(../images/ghost-Spider/hiervaFrente.svg);
+    width: 368.308px;
+    height: 552.462px;
+    transform: rotate(13.615deg);
+    flex-shrink: 0;
+}
