@@ -1,12 +1,16 @@
 body{
     padding: 0px;
     margin: 0px; 
+    overflow: auto; /* permite el desplazamiento en el cuerpo */
+
 }
 .pagina {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 0px;
     margin: 0px;
+    position: relative;
+    height: 8968px;
 }
 
 
@@ -28,8 +32,9 @@ nav {
     display: flex;
     justify-content: space-around;
     border: none;
-    z-index: 2;
-    position: absolute;
+    z-index: 100;
+    /*position: absolute;*/
+    margin-top: 20px;
 }
 
 /*logo hamburguesa*/
@@ -117,7 +122,6 @@ nav>button {
     border-radius: 111px;
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
-    /* Drop Shadow */
     box-shadow: 4px 5px 0px 0px #02187E;
 }
 
@@ -151,43 +155,38 @@ nav>.spidey {
 .contenedorPortada {
     height: 720px;
     width: 100%;
-    position: relative;
+
 }
 
-.fondo {
+
+
+
+.portada{
+    position: absolute;
+    margin-left: 0px;
+    margin-right: 0px;
+   
+}
+
+
+.portada.fondo {
     background-image: url("../images/portada/fondoPresentacion.svg");
     width: 1280px;
     height: 100%;
-    background-image: url("../images/portada/fondoPresentacion.svg");
     top: 126px;
-    margin: 0px;
-
-}
-
-/*
-.portada {
-    position: absolute;
-    margin: 0;
-    left: 0;
-    top: 0;
-    /* Ajustado a 0 para que las capas se superpongan correctamente 
-   background-size: contain;
-    /* Asegura que la imagen cubra completamente el contenedor 
-    background-position: center;
-    /* Centra la imagen dentro del contenedor 
     background-repeat: no-repeat;
 }
-
 
 
 .portada.edificioCentro {
     background-image: url("../images/portada/edificioCentro.svg");
     width: 543.5px;
     height: 213.5px;
-    top: 664px;
+    top: 634px;
     left: 392px;
     display: flex;
     justify-content: center;
+
 }
 
 .portada.edificioIzq {
@@ -196,8 +195,6 @@ nav>.spidey {
     background-image: url("../images/portada/edificiosIzq.svg");
     top: 144px;
     left:-47px;
-    
-
 }
 
 .portada.edificioDer {
@@ -226,13 +223,12 @@ nav>.spidey {
 }
 
 .portada.sogaIzq {
-    width: 450.82px;
-    height: 627.27px;
     background-image: url("../images/portada/sogaIzquierda.svg");
-    top: 375px;
-left: 390.35px;
-    transform: rotate(65.483deg);
-margin: 0px;
+    top: 397px;
+    left: -27px;
+    width: 450.817px;
+    height: 627.274px;
+    transform: rotate(65.403deg);
 
 }
 
@@ -258,8 +254,8 @@ margin: 0px;
     background-image: url("../images/portada/sogaDerecha.svg");
     width: 256.66px;
     height: 372.44px;
-    top: 388px;
-    left: 1087.83px;
+    top: 398px;
+    left: 1078px;
     transform: rotate(114.6deg);
     
 }
@@ -270,19 +266,109 @@ margin: 0px;
     height: 844.5px;
     top: 775px;
     left: 0px;
+
 }
 
-/*presentacion 
-.presentacion,
-.personajes,
-.masAmigos>.fila {
+/*presentacion "Conoce a Spidey y sus Amigos"*/
+
+
+.presentacion{
+
     display: flex;
+    position: relative;
+  height: 844.5px;
+ 
+}
+.duendeVerde{
+    background-image: url(../images/presentacion/personajeVerde.svg);
+    top: 0px;
+    left:712px;
+    width: 553px;
+height: 921px;
+position: absolute;/*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
+overflow: visible; /* Permite que la imagen sobresalga del contenedor */
+z-index: 10; /* Ajusta el índice z para que el duende aparezca encima de otros elementos si es necesario */
+}
+
+.tarjetaAmigos{
+    background-image: url(../images/presentacion/spideyYsusAmigos.svg);
+    left:90.28px;
+    
+    width: 751.649px;
+height: 413.131px;
+transform: rotate(-2.222deg);
+border-radius: 26px;
+position: absolute;/*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
+overflow: visible; /* Permite que la imagen sobresalga del contenedor */
+
+}
+
+.textoAmigos>.titulo{
+
+ width: 646px;
+ 
+}
+
+
+.textoAmigos>.texto{
+    width: 586px;
+height: 154px;
+}
+.textoAmigos>.titulo>h2,.textoAmigos>.texto>p{
+    color: #FFF;
+    font-family: Lato;
+    font-style: normal;
+} 
+.textoAmigos>.titulo>h2{
+font-size: 60px;
+font-weight: 600;
+line-height: 94.5%;
+}
+
+.textoAmigos>.texto>p{
+font-size: 20px;
+font-weight: 400;
+line-height: normal;
+}
+
+.colIzq{
+    display: block;
 }
 
 .personajes {
     display: flex;
+    width: 1080px;
+    margin: 0 auto;
+
+
 }
 
 .personajes>.ColumnaPersonajes {
     display: block;
+    border: 41px;
+    justify-content:space-between;
+}
+
+
+.personajes>.ColumnaPersonajes>img{
+    border-radius: 41px;
+    border: 9px solid var(--2982-ff, #2982FF);
+    box-shadow: 4px 5px 0px 0px #02187E;
+    width: 332.96px;
+height: 302.691px;
+margin: 0px;
+}f
+.historiaPersonajes{
+   width: 333px;
+height: 218px;
+}
+
+.historiaPersonajes>p{
+color: #000;
+
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
