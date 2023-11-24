@@ -399,14 +399,23 @@ position: relative;
     line-height: normal;
 }
 
+
+
+.vengadores{
+    background-color: #000;
+    left: 0px;
+    width: 1280px;
+    overflow-x: visible;
+    position:absolute;
+    top: 2497px;
+}
 .ghost{
     background-image: url(../images/ghost-Spider/ghost.svg);
     height: 566px;
     width: 1280px; /*SI HAY QUE BAJAR O SUBIR ES 20*/
-    left: 0px;
-    top:2497px;
-    overflow-x: visible;
-    position:absolute;
+    position: absolute;
+    top: -40px; /* Ajusta la posición vertical según sea necesario */
+
 }
 .testJuego1{
     background-image: url(../images/ghost-Spider/testJuego1.svg);
@@ -437,9 +446,7 @@ top:293px;
 position:absolute;
 margin-left: 100px;
 }
-.vengadores{
-    background-color: #000;
-}
+
 .vengadores>p{
     margin-top:729px;
     color: #FFF;
@@ -449,32 +456,60 @@ font-style: normal;
 font-weight: 600;
 line-height:  56.7px;
 }
+
+.textoVengadores{
+    width: 4px;
+    margin-left: 0px;
+    height: 171px;
+    align-items: start;
+    text-align: start;
+}
 .cielo{
     background-image: url(../images/ghost-Spider/cielo.svg);
+    width: 1080px;
+    height: 527.626px;
+ position: relative;
+margin:auto;
+top:783.37px
 
 }
 .planta{
     background-image: url(../images/ghost-Spider/vegetacion.svg);
-    width: 1077.059px;
+    width: 1080px;
     height: 527.626px;
+ position: relative;
+margin:auto;
+top:255px;
 }
 .hulk{
-    background-image: url(../images/ghost-Spider/hulk.png);
+    background-image: url(../images/ghost-Spider/hulk.svg);
     width: 410.106px;
 height: 437.972px;
 transform: rotate(7.515deg);
+position: relative;
+left:795px;
+top:-144px;
 }
+
+
+
 .elasticGirl{
-    background-image: url(../images/ghost-Spider/mujerElastico.png);
+    background-image: url(../images/ghost-Spider/elasticGirl.svg);
     width: 451.258px;
     height: 591.442px;
     transform: rotate(-12.483deg);
+    position: relative;
+left:184px;
+top:-763px;
 }
 .pantera{
-    background-image: url(../images/ghost-Spider/vengadorCat.png);
-    width: 368.308px;
-    height: 552.462px;
+    background-image: url(../images/ghost-Spider/pantera.svg);
+    width: 368.31px;
+    height: 552.46px;
     transform: rotate(13.615deg);
+    position: relative;
+    left:184px;
+    top:-763px;
 }
 .pasto{
     background-image: url(../images/ghost-Spider/hiervaFrente.svg);
@@ -482,4 +517,11 @@ transform: rotate(7.515deg);
     height: 552.462px;
     transform: rotate(13.615deg);
     flex-shrink: 0;
+}
+.fondoBlanco{
+    background-image: url(../images/MasAmigos/fondoBlanco.svg);
+    height: 566px;
+    width: 2194.5px;
+    position: absolute;
+    top: 1311px;
 }
