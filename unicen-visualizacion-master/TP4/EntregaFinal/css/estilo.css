@@ -447,7 +447,14 @@ position:absolute;
 margin-left: 100px;
 }
 
-.vengadores>p{
+.textoVengadores{
+    width: 4px;
+    margin: 0px;
+    height: 171px;
+  
+}
+
+.textoVengadores>p{
     margin-top:729px;
     color: #FFF;
 font-family: Lato;
@@ -455,14 +462,6 @@ font-size: 60px;
 font-style: normal;
 font-weight: 600;
 line-height:  56.7px;
-}
-
-.textoVengadores{
-    width: 4px;
-    margin-left: 0px;
-    height: 171px;
-    align-items: start;
-    text-align: start;
 }
 .cielo{
     background-image: url(../images/ghost-Spider/cielo.svg);
@@ -502,21 +501,23 @@ top:-144px;
 left:184px;
 top:-763px;
 }
+
 .pantera{
     background-image: url(../images/ghost-Spider/pantera.svg);
     width: 368.31px;
     height: 552.46px;
     transform: rotate(13.615deg);
     position: relative;
-    left:184px;
-    top:-763px;
+    left:610px;
+    top:-1520px;
 }
 .pasto{
     background-image: url(../images/ghost-Spider/hiervaFrente.svg);
-    width: 368.308px;
-    height: 552.462px;
-    transform: rotate(13.615deg);
-    flex-shrink: 0;
+    width: 1077.059px;
+    height: 527.626px;
+    position: relative;
+    top:-1855px;
+margin:auto;
 }
 .fondoBlanco{
     background-image: url(../images/MasAmigos/fondoBlanco.svg);
