@@ -22,7 +22,7 @@ body{
 }
 
 */
-nav {
+.nav {
     height: 227px;
     width: 1280px;
     display: flex;
@@ -45,12 +45,35 @@ nav>button {
     margin: 0;
 }
 
-.hamburguesa {
-    width: 34px;
-    height: 26px;
+.hamburguesa{
+display: flex;
+flex-direction: column;
+width: 44px;
+height: 46px;
+background: transparent;
+gap: 0.65rem;
+}
+.hamburguesa:active div:first-child{
+    transform:rotate(45deg);
+}
+.hamburguesa:active div:nth-child(2){
+   opacity:0;
+}
+.hamburguesa:active div:last-child{
+    transform:rotate(-45deg);
+  
+}
+.hamburguesa>div{
+    background-color: #FFE901;
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all .5seg;
+    transform-origin: left;
 }
 
 /*boton hamburguesa en transformacion a cruz*/
+/*
 @keyframes lineToCross1 {
     0% {
         transform: rotate(0deg);
@@ -95,20 +118,7 @@ nav>button {
     }
 }
 
-.hamburguesa.abierto .icono-hamburguesa:nth-child(1) {
-    animation: lineToCross1 0.5s ease forwards;
-
-}
-
-.hamburguesa.abierto .icono-hamburguesa:nth-child(2) {
-    animation: lineToCross2 0.5s ease forwards;
-
-}
-
-.hamburguesa.abierto .icono-hamburguesa:nth-child(3) {
-    animation: lineToCross3 0.5s ease forwards;
-}
-
+*/
 
 /*boton comprar de la barra navegacion*/
 #comprar>div {
@@ -170,26 +180,28 @@ nav>.spidey {
     margin: 0;
     left: 0;
     top: 0;
+}
     /* Ajustado a 0 para que las capas se superpongan correctamente 
    background-size: contain;
     /* Asegura que la imagen cubra completamente el contenedor 
     background-position: center;
     /* Centra la imagen dentro del contenedor 
     background-repeat: no-repeat;
-}
+}*/
 
 
 
-.portada.edificioCentro {
+.edificioCentro {
     background-image: url("../images/portada/edificioCentro.svg");
     width: 543.5px;
     height: 213.5px;
-    top: 664px;
-    left: 392px;
+right: 192px;
+    left: 192px;
+    top:335px;
     display: flex;
     justify-content: center;
 }
-
+/*
 .portada.edificioIzq {
     width: 452px;
     height: 720px;
@@ -223,6 +235,7 @@ nav>.spidey {
     height: 393px;
     top: 335px;
     left: 695px;
+    margin:0px;
 }
 
 .portada.sogaIzq {
