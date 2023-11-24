@@ -1,9 +1,11 @@
-body{
+body {
     padding: 0px;
-    margin: 0px; 
-    overflow: auto; /* permite el desplazamiento en el cuerpo */
+    margin: 0px;
+    overflow: auto;
+    /* permite el desplazamiento en el cuerpo */
 
 }
+
 .pagina {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
     overflow: hidden;
@@ -17,7 +19,7 @@ body{
 .maximaPantalla {
     width: 1280px;
     height: auto;
-  
+
 }
 
 /*
@@ -149,6 +151,7 @@ nav>.spidey {
     overflow: visible;
     top: -227px;
     z-index: 0;
+    margin: auto;
 
 }
 
@@ -161,11 +164,11 @@ nav>.spidey {
 
 
 
-.portada{
+.portada {
     position: absolute;
     margin-left: 0px;
     margin-right: 0px;
-   
+
 }
 
 
@@ -194,7 +197,7 @@ nav>.spidey {
     height: 720px;
     background-image: url("../images/portada/edificiosIzq.svg");
     top: 144px;
-    left:-47px;
+    left: -47px;
 }
 
 .portada.edificioDer {
@@ -257,7 +260,7 @@ nav>.spidey {
     top: 398px;
     left: 1078px;
     transform: rotate(114.6deg);
-    
+
 }
 
 .portada.fondoVioleta {
@@ -272,103 +275,124 @@ nav>.spidey {
 /*presentacion "Conoce a Spidey y sus Amigos"*/
 
 
-.presentacion{
-
+.presentacion {
+    margin-top: 119.5px;
     display: flex;
     position: relative;
-  height: 844.5px;
- 
+    height: 844.5px;
+
 }
-.duendeVerde{
+
+.duendeVerde {
     background-image: url(../images/presentacion/personajeVerde.svg);
-    top: 0px;
-    left:712px;
+    top:-20px;
+    left: 613px;
     width: 553px;
-height: 921px;
-position: absolute;/*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
-overflow: visible; /* Permite que la imagen sobresalga del contenedor */
-z-index: 10; /* Ajusta el índice z para que el duende aparezca encima de otros elementos si es necesario */
+    height: 921px;
+    position: absolute;
+    /*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
+    overflow: visible;
+    /* Permite que la imagen sobresalga del contenedor */
+    z-index: 10;
+    /* Ajusta el índice z para que el duende aparezca encima de otros elementos si es necesario */
 }
 
-.tarjetaAmigos{
+.tarjetaAmigos {
     background-image: url(../images/presentacion/spideyYsusAmigos.svg);
-    left:90.28px;
-    
+    left: -9.72px;
     width: 751.649px;
-height: 413.131px;
-transform: rotate(-2.222deg);
-border-radius: 26px;
-position: absolute;/*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
-overflow: visible; /* Permite que la imagen sobresalga del contenedor */
+    height: 413.131px;
+    transform: rotate(-2.222deg);
+    border-radius: 26px;
+    /*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
+    position: absolute;
+   /* Permite que la imagen sobresalga del contenedor */
+    overflow: visible;
+    top:377px;
+    border: 9px solid #FFF;
+       /* Drop Shadow */
+    box-shadow: 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
 
 }
 
-.textoAmigos>.titulo{
 
- width: 646px;
+.textoAmigos>.titulo {
+    width: 646px;
+    margin-bottom: 0px;
+}
+
+.textoAmigos>.texto {
+    width: 586px;
+    height: 154px;
  
 }
 
 
-.textoAmigos>.texto{
-    width: 586px;
-height: 154px;
-}
-.textoAmigos>.titulo>h2,.textoAmigos>.texto>p{
+.textoAmigos>.titulo>h2,
+.textoAmigos>.texto>p {
     color: #FFF;
     font-family: Lato;
     font-style: normal;
-} 
-.textoAmigos>.titulo>h2{
-font-size: 60px;
-font-weight: 600;
-line-height: 94.5%;
+    
+    }
+
+.textoAmigos>.titulo>h2 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 94.5%;
+    margin-bottom: 20px;
 }
 
-.textoAmigos>.texto>p{
-font-size: 20px;
-font-weight: 400;
-line-height: normal;
+.textoAmigos>.texto>p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+   
 }
 
-.colIzq{
+.colIzq {
     display: block;
+    margin-top: 24px;
 }
 
+/*bloque de los tres personajes*/
 .personajes {
     display: flex;
-    width: 1080px;
     margin: 0 auto;
-
+justify-content:left;
 
 }
 
 .personajes>.ColumnaPersonajes {
     display: block;
     border: 41px;
-    justify-content:space-between;
+    
+    
 }
 
 
-.personajes>.ColumnaPersonajes>img{
+.personajes>.columnaPersonajes>img {
     border-radius: 41px;
     border: 9px solid var(--2982-ff, #2982FF);
     box-shadow: 4px 5px 0px 0px #02187E;
-    width: 332.96px;
-height: 302.691px;
-margin: 0px;
-}f
-.historiaPersonajes{
-   width: 333px;
-height: 218px;
+    width: 310px;
+   margin:0px;
 }
 
-.historiaPersonajes>p{
-color: #000;
+.personajes>.columnaPersonajes>img:not(:first-child) {
+    margin-left: 40.56px;
+}
 
-font-family: Lato;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.historiaPersonajes {
+    width: 333px;
+    
+}
+
+.historiaPersonajes>p {
+    color: #000;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
