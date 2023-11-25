@@ -7,12 +7,12 @@ body {
 }
 
 .pagina {
-    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+
     overflow: hidden;
     padding: 0px;
     margin: 0px;
     position: relative;
-   /* height: 8968px;*/
+    height: 8968px;
     font-family: 'Lato', sans-serif;
 }
 
@@ -37,7 +37,9 @@ nav {
     border: none;
     z-index: 100;
     /*position: absolute;*/
-    margin-top: 20px;
+    padding-top: 20px;
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+
 }
 
 /*logo hamburguesa*/
@@ -117,26 +119,33 @@ button {
     animation: lineToCross3 0.5s ease forwards;
 }
 
-
-/*boton comprar de la barra navegacion*/
-#comprar>div {
-    width: 200px;
-    height: 50px;
+/*botones*/
+.comprar>div {
     border-radius: 111px;
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
     box-shadow: 4px 5px 0px 0px #02187E;
 }
 
+/*boton comprar de la barra navegacion*/
+#comprar>div {
+    width: 200px;
+    height: 50px;
 
-#comprar>div>p {
+
+}
+
+
+.comprar>div>p {
     color: #02187E;
     font-size: 20px;
     font-style: normal;
     font-weight: 900;
     line-height: 94.5%;
     letter-spacing: 2.2px;
+    text-transform: uppercase;
 }
+
 
 nav>.spidey {
     width: 133px;
@@ -178,6 +187,8 @@ nav>.spidey {
     height: 100%;
     top: 126px;
     background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
 }
 
 
@@ -244,7 +255,7 @@ nav>.spidey {
 
 }
 
-.portada.titulo {
+.portada.tituloMasAmigos {
     top: 91px;
     left: 330px;
     background-image: url("../images/portada/Spidey.svg");
@@ -285,8 +296,8 @@ nav>.spidey {
 
 .duendeVerde {
     background-image: url(../images/presentacion/personajeVerde.svg);
-    top: -20px;
-    left: 613px;
+    top: -183px;
+    left: 639px;
     width: 553px;
     height: 921px;
     position: absolute;
@@ -299,7 +310,7 @@ nav>.spidey {
 
 .tarjetaAmigos {
     background-image: url(../images/presentacion/spideyYsusAmigos.svg);
-    left: -9.72px;
+    left: -7.72px;
     width: 751.649px;
     height: 413.131px;
     transform: rotate(-2.222deg);
@@ -308,7 +319,7 @@ nav>.spidey {
     position: absolute;
     /* Permite que la imagen sobresalga del contenedor */
     overflow: visible;
-    top: 377px;
+    top: 215px;
     border: 9px solid #FFF;
     /* Drop Shadow */
     box-shadow: 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
@@ -333,25 +344,27 @@ nav>.spidey {
     color: #FFF;
     font-style: normal;
 
+
 }
 
 .textoAmigos>.titulo>h2 {
     font-size: 60px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 94.5%;
     margin-bottom: 20px;
+
 }
 
 .textoAmigos>.texto>p {
     font-size: 20px;
     font-weight: 400;
     line-height: normal;
-
+    letter-spacing: .1px;
 }
 
 .colIzq {
     display: block;
-    margin-top: 24px;
+    margin-top: -150px;
 }
 
 /*bloque de los tres personajes*/
@@ -360,7 +373,7 @@ nav>.spidey {
     margin: 0px;
     justify-content: space-between;
     position: relative;
-    margin-top: 60px;
+    margin-top: -43px;
 
 }
 
@@ -405,7 +418,7 @@ nav>.spidey {
     width: 1280px;
     overflow-x: visible;
     position: absolute;
-    top: 2497px;
+    top: 2618px;
 }
 
 .ghost {
@@ -423,7 +436,7 @@ nav>.spidey {
     width: 546.108px;
     height: 326.509px;
     transform: rotate(-13.078deg);
-    top: -107px;
+    top: -171px;
     position: absolute;
     margin-left: 100px;
 }
@@ -434,7 +447,7 @@ nav>.spidey {
     height: 325.787px;
     transform: rotate(-26.474deg);
     flex-shrink: 0;
-    top: 99px;
+    top: 35px;
     position: absolute;
     margin-left: 100px;
 }
@@ -445,7 +458,7 @@ nav>.spidey {
     height: 326.509px;
     transform: rotate(-36.016deg);
     flex-shrink: 0;
-    top: 313px;
+    top: 249px;
     position: absolute;
     margin-left: 100px;
 }
@@ -455,7 +468,7 @@ nav>.spidey {
 .textoVengadores {
     width: 667px;
     height: 171px;
-    top: 685px;
+    top: 621px;
     position: absolute;
     color: hsl(0, 0%, 100%);
     left: 100px;
@@ -472,7 +485,7 @@ nav>.spidey {
     height: 527.626px;
     position: relative;
     margin: auto;
-    top: 974.37px;
+    top: 900px;
     box-shadow: 26px 29px 41px 14px rgba(0, 0, 0, 0.15);
 }
 
@@ -482,7 +495,7 @@ nav>.spidey {
     height: 527.626px;
     position: relative;
     margin: auto;
-    top: 446px;
+    top: 372.63px;
 }
 
 .hulk {
@@ -492,7 +505,7 @@ nav>.spidey {
     transform: rotate(7.515deg);
     position: relative;
     left: 815px;
-    top: 37px;
+    top: -36.37px;
 }
 
 
@@ -504,7 +517,7 @@ nav>.spidey {
     transform: rotate(-12.483deg);
     position: relative;
     left: 184px;
-    top: -572px;
+    top: -645.37px;
 }
 
 .pantera {
@@ -514,7 +527,7 @@ nav>.spidey {
     transform: rotate(13.615deg);
     position: relative;
     left: 610px;
-    top: -1329px;
+    top: -1402.37px;
 }
 
 .pasto {
@@ -522,17 +535,17 @@ nav>.spidey {
     width: 1077.059px;
     height: 527.626px;
     position: relative;
-    top: -1664px;
+    top: -1737.37px;
     margin: auto;
 }
 
 .fondoBlanco {
     background-image: url(../images/MasAmigos/fondoBlanco.svg);
     /*height: 2194.5px;*/
-    height: 1000px;
+    height: 750px;
     width: 1280px;
     position: absolute;
-    top: 1350px;
+    top: 1292px;
 }
 
 
@@ -540,7 +553,7 @@ nav>.spidey {
 /*Mas amigos*/
 .tituloMasAmigos {
     width: 802px;
-    top: 1584px;
+    top: 1507px;
     position: absolute;
     left: 104px;
     color: #000;
@@ -557,23 +570,29 @@ nav>.spidey {
     display: flex;
     margin-top: 1837px;
     position: relative;
-}
-.img1Amigos{
-    width: 552px;
-height: 302.762px;
+    width: 1080px;
+    height: 500px;
+
+
+
 }
 
-.img2Amigos{
+.img1Amigos {
+    width: 552px;
+    height: 302.762px;
+}
+
+.img2Amigos {
     width: 548px;
     height: 305px;
 }
 
-.img3Amigos{
+.img3Amigos {
     width: 556px;
     height: 301.507px;
 }
 
-.img4Amigos{
+.img4Amigos {
     width: 552px;
     height: 308.253px;
 }
@@ -581,47 +600,50 @@ height: 302.762px;
 
 
 
-.masAmigos {
-    background-color: white;
-    width: 1085px;
-    height: 300px;
-    overflow: hidden;
-    margin-top: 1872px;
-}
 .ventana::-webkit-scrollbar {
     display: none;
 }
+
 .ventana {
-    width: 100%;
+    width: 1080px;
     height: 100%;
     overflow-y: auto;
+
 }
 
 .opcion {
     display: flex;
     margin-bottom: 1em;
     position: relative;
-    background: white;
-    color: black; transition: opacity 0.5s ease; /* Transición de opacidad */
-    opacity: 1; 
+
+    color: black;
+    transition: opacity 0.5s ease;
+    /* Transición de opacidad */
+    opacity: 1;
 }
+
 .opcion.oculto {
-    opacity: 0; /* Opacidad cuando está oculto */
+    opacity: 0;
+    /* Opacidad cuando está oculto */
 }
+
 .columna {
     flex: 1 1 50%;
     padding: 1em;
+    height: 307px;
 }
 
 .columnaDerecha .descripcion {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-margin-bottom: 25px;
+    margin-bottom: 25px;
 }
-.columnaIzquierda  {
+
+.columnaIzquierda {
     padding-bottom: 150px;
 }
+
 .columna img {
     display: block;
     max-width: 100%;
@@ -630,56 +652,131 @@ margin-bottom: 25px;
 
 
 /*bloque compra*/
-.comprar{
-background-color: #000;
-height: 967px;
-position: relative;
-width: 1280px;
 
 
-}
-
-.comprar>button>h2{
-    color: #FFF;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 816px;
-position:relative;
-}
-
-.comprar>button{
-    position: relative;
-}
-.comprar>button>#comprar{
-    border-radius: 111px;
-    border: 8px solid var(--2982-ff, #2982FF);
-    background: #FFE901;
-    box-shadow: 4px 5px 0px 0px #02187E;
+#comprarAhora {
+    position: absolute;
     width: 292px;
     height: 50px;
-
- 
+    top: 2240px;
+    left: 100px;
 }
 
 
-.comprar>button>#comprar>p{
+.comprar>button>#comprar>p {
     font-size: 20px;
     font-style: normal;
     font-weight: 900;
-    line-height: 94.5%; /* 18.9px */
+    line-height: 94.5%;
+    /* 18.9px */
     letter-spacing: 0.2px;
     color: #02187E;
     text-transform: uppercase;
 }
 
 
-.fondoBlanco2{
+.fondoBlanco2 {
     background-image: url(../images/granPoder/fondoBlanco2.svg);
     width: 1280px;
-height: 719.861px;
-position: absolute;
-top: 6529px;
+    height: 719.861px;
+    position: absolute;
+    top: 2255px;
+
+}
+
+
+.tituloPoder {
+    color: #FFF;
+    width: 816px;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 2017px;
+    left: 100px;
+
+}
+
+
+/*personajes poder*/
+
+.poder1 {
+    background-image: url(../images/granPoder/spideyBlanco.svg);
+    width: 268px;
+    height: 416.5px;
+    position:absolute;
+    left:190px;
+    top:2424.14px;
+}
+
+.poder2 {
+    background-image: url(../images/granPoder/spideyNegro.svg);
+    width: 313.5px;
+    height: 398.5px;
+    top:2433.14px;
+    position:absolute;
+    left:821px;
+}
+
+.poder3 {
+    background-image: url(../images/granPoder/spidyRojo.svg);
+    width: 416.5px;
+    height: 457.5px;
+    top:2432.14px;
+    position:absolute;
+    left:446px;
+}
+
+.fondoCorreo{
+    background-image: url(../images/correo/fondoCorreo.svg);
+   top:2974.861px;
+    width: 1280px;
+    height: 1296px;
+    position:absolute;
+
+}
+
+.edificios{
+    background-image: url(../images/correo/edificios.svg);
+    top:3550.861px;
+  
+    width: 1280px;
+    height: 720px;
+    position:absolute;
+
+}
+
+.tituloCorreo{
+    width: 816px;
+    color: #000;
+    top:3126.861px;
+    left:232px;
+text-align: center;
+font-size: 60px;
+font-style: normal;
+font-weight: 600;
+line-height: 94.5%; /* 56.7px */
+position:absolute;
+top:3126.86px;
+}
+
+
+.textoCorreo{
+width: 578px;
+height: 95px;
+color: #000;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 94.5%; /* 18.9px */
+position:absolute;
+top:3496.86px;
+left:302px;
+}
+
+.textoCorreo>span{
+text-decoration-line: underline;
 
 }
