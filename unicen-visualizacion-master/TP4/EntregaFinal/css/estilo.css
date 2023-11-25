@@ -285,7 +285,7 @@ nav>.spidey {
 
 .duendeVerde {
     background-image: url(../images/presentacion/personajeVerde.svg);
-    top:-20px;
+    top: -20px;
     left: 613px;
     width: 553px;
     height: 921px;
@@ -306,11 +306,11 @@ nav>.spidey {
     border-radius: 26px;
     /*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
     position: absolute;
-   /* Permite que la imagen sobresalga del contenedor */
+    /* Permite que la imagen sobresalga del contenedor */
     overflow: visible;
-    top:377px;
+    top: 377px;
     border: 9px solid #FFF;
-       /* Drop Shadow */
+    /* Drop Shadow */
     box-shadow: 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
 
 }
@@ -324,7 +324,7 @@ nav>.spidey {
 .textoAmigos>.texto {
     width: 586px;
     height: 154px;
- 
+
 }
 
 
@@ -333,8 +333,8 @@ nav>.spidey {
     color: #FFF;
     font-family: Lato;
     font-style: normal;
-    
-    }
+
+}
 
 .textoAmigos>.titulo>h2 {
     font-size: 60px;
@@ -347,7 +347,7 @@ nav>.spidey {
     font-size: 20px;
     font-weight: 400;
     line-height: normal;
-   
+
 }
 
 .colIzq {
@@ -358,18 +358,18 @@ nav>.spidey {
 /*bloque de los tres personajes*/
 .personajes {
     display: flex;
-    margin:0px;
-    justify-content:space-between;
-position: relative;
-    margin-top:60px;
+    margin: 0px;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 60px;
 
 }
 
 .personajes>.ColumnaPersonajes {
     display: block;
     border: 41px;
-    
-    
+
+
 }
 
 
@@ -378,7 +378,7 @@ position: relative;
     border: 9px solid var(--2982-ff, #2982FF);
     box-shadow: 4px 5px 0px 0px #02187E;
     width: 310px;
-   margin:0px;
+    margin: 0px;
 }
 
 .personajes>.columnaPersonajes>img:not(:first-child) {
@@ -387,7 +387,7 @@ position: relative;
 
 .historiaPersonajes {
     width: 333px;
-    
+
 }
 
 .historiaPersonajes>p {
@@ -401,128 +401,182 @@ position: relative;
 
 
 
-.vengadores{
+.vengadores {
     background-color: #000;
     left: 0px;
     width: 1280px;
     overflow-x: visible;
-    position:absolute;
+    position: absolute;
     top: 2497px;
 }
-.ghost{
+
+.ghost {
     background-image: url(../images/ghost-Spider/ghost.svg);
     height: 566px;
-    width: 1280px; /*SI HAY QUE BAJAR O SUBIR ES 20*/
+    width: 1280px;
+    /*SI HAY QUE BAJAR O SUBIR ES 20*/
     position: absolute;
-    top: -40px; /* Ajusta la posición vertical según sea necesario */
+    top: -60px;
 
 }
-.testJuego1{
+
+.testJuego1 {
     background-image: url(../images/ghost-Spider/testJuego1.svg);
     width: 546.108px;
-height: 326.509px;
-transform: rotate(-13.078deg);
-top:-87px;
-position:absolute;
-margin-left: 100px;
+    height: 326.509px;
+    transform: rotate(-13.078deg);
+    top: -107px;
+    position: absolute;
+    margin-left: 100px;
 }
-.testJuego2{
+
+.testJuego2 {
     background-image: url(../images/ghost-Spider/testJuego2.svg);
     width: 543.218px;
     height: 325.787px;
     transform: rotate(-26.474deg);
     flex-shrink: 0;
-    top:79px;
-    position:absolute;
+    top: 99px;
+    position: absolute;
     margin-left: 100px;
 }
-.testJuego3{
+
+.testJuego3 {
     background-image: url(../images/ghost-Spider/testJuego3.svg);
-width: 546.108px;
-height: 326.509px;
-transform: rotate(-36.016deg);
-flex-shrink: 0;
-top:293px;
-position:absolute;
-margin-left: 100px;
+    width: 546.108px;
+    height: 326.509px;
+    transform: rotate(-36.016deg);
+    flex-shrink: 0;
+    top: 313px;
+    position: absolute;
+    margin-left: 100px;
 }
 
-.textoVengadores{
-    width: 4px;
-    margin: 0px;
+
+
+.textoVengadores {
+    width: 667px;
     height: 171px;
-  
+    top: 685px;
+    position: absolute;
+    color: hsl(0, 0%, 100%);
+    left: 100px;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%;
+
 }
 
-.textoVengadores>p{
-    margin-top:729px;
-    color: #FFF;
-font-family: Lato;
-font-size: 60px;
-font-style: normal;
-font-weight: 600;
-line-height:  56.7px;
-}
-.cielo{
+.cielo {
     background-image: url(../images/ghost-Spider/cielo.svg);
     width: 1080px;
     height: 527.626px;
- position: relative;
-margin:auto;
-top:783.37px
-
+    position: relative;
+    margin: auto;
+    top: 974.37px
 }
-.planta{
+
+.planta {
     background-image: url(../images/ghost-Spider/vegetacion.svg);
     width: 1080px;
     height: 527.626px;
- position: relative;
-margin:auto;
-top:255px;
+    position: relative;
+    margin: auto;
+    top: 446px;
 }
-.hulk{
+
+.hulk {
     background-image: url(../images/ghost-Spider/hulk.svg);
     width: 410.106px;
-height: 437.972px;
-transform: rotate(7.515deg);
-position: relative;
-left:795px;
-top:-144px;
+    height: 437.972px;
+    transform: rotate(7.515deg);
+    position: relative;
+    left: 815px;
+    top: 37px;
 }
 
 
 
-.elasticGirl{
+.elasticGirl {
     background-image: url(../images/ghost-Spider/elasticGirl.svg);
     width: 451.258px;
     height: 591.442px;
     transform: rotate(-12.483deg);
     position: relative;
-left:184px;
-top:-763px;
+    left: 184px;
+    top: -572px;
 }
 
-.pantera{
+.pantera {
     background-image: url(../images/ghost-Spider/pantera.svg);
     width: 368.31px;
     height: 552.46px;
     transform: rotate(13.615deg);
     position: relative;
-    left:610px;
-    top:-1520px;
+    left: 610px;
+    top: -1329px;
 }
-.pasto{
+
+.pasto {
     background-image: url(../images/ghost-Spider/hiervaFrente.svg);
     width: 1077.059px;
     height: 527.626px;
     position: relative;
-    top:-1855px;
-margin:auto;
+    top: -1664px;
+    margin: auto;
 }
-.fondoBlanco{
+
+.fondoBlanco {
     background-image: url(../images/MasAmigos/fondoBlanco.svg);
-    height: 566px;
-    width: 2194.5px;
+    height: 2194.5px;
+    width: 1280px;
     position: absolute;
-    top: 1311px;
+    top: 1350px;
 }
+
+
+
+/*Mas amigos*/
+.tituloMasAmigos {
+    width: 802px;
+    height: 171px;
+    top: 1584px;
+    position: absolute;
+    left: 104px;
+    color: #000;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%;
+}
+
+
+
+.masAmigos {
+    display: flex;
+    margin-top: 1837px;
+    position: relative;
+}
+.img1Amigos{
+    width: 552px;
+height: 302.762px;
+}
+
+.img2Amigos{
+    width: 548px;
+    height: 305px;
+}
+
+.img3Amigos{
+    width: 556px;
+    height: 301.507px;
+}
+
+.img4Amigos{
+    width: 552px;
+    height: 308.253px;
+}
+
