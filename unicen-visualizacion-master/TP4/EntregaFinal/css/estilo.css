@@ -508,16 +508,12 @@ top:-763px;
     height: 552.46px;
     transform: rotate(13.615deg);
     position: relative;
-    left:610px;
-    top:-1520px;
+    left:630px;
+    top:-763px;
 }
 .pasto{
     background-image: url(../images/ghost-Spider/hiervaFrente.svg);
-    width: 1077.059px;
-    height: 527.626px;
-    position: relative;
-    top:-1855px;
-margin:auto;
+  
 }
 .fondoBlanco{
     background-image: url(../images/MasAmigos/fondoBlanco.svg);
