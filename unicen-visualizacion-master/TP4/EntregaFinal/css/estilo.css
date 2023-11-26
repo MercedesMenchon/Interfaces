@@ -537,6 +537,7 @@ nav>.spidey {
 
 
 
+
 /*Mas amigos*/
 .tituloMasAmigos {
     width: 802px;
@@ -544,6 +545,7 @@ nav>.spidey {
     position: absolute;
     left: 104px;
     color: #000;
+    font-family: Lato;
     font-size: 60px;
     font-style: normal;
     font-weight: 600;
@@ -553,11 +555,7 @@ nav>.spidey {
 
 
 
-.masAmigos {
-    display: flex;
-    margin-top: 1837px;
-    position: relative;
-}
+
 .img1Amigos{
     width: 552px;
 height: 302.762px;
@@ -579,54 +577,118 @@ height: 302.762px;
 }
 
 
-
-
-.masAmigos {
-    background-color: white;
+.masDiversion {
     width: 1085px;
     height: 300px;
     overflow: hidden;
-    margin-top: 1872px;
+    display: flex;
+    margin-top: 65px;
+    position: relative;
 }
+.masAmigos{
+    margin-top: 1872px;
+    overflow-y: hidden;
+}
+.ventana {
+    width: 1080px;
+    height: 310px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .ventana::-webkit-scrollbar {
     display: none;
 }
-.ventana {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-}
 
 .opcion {
-    display: flex;
-    margin-bottom: 1em;
     position: relative;
-    background: white;
-    color: black; transition: opacity 0.5s ease; /* Transición de opacidad */
-    opacity: 1; 
-}
-.opcion.oculto {
-    opacity: 0; /* Opacidad cuando está oculto */
-}
-.columna {
-    flex: 1 1 50%;
-    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+    color: black;
+    
 }
 
-.columnaDerecha .descripcion {
-    position: -webkit-sticky;
+.columna {
+    padding: 3px;
+}
+
+.columnaIzquierda {
+    display: flex;
+    text-align: center;
+    max-width: 540px;
+    height: 300px;
+    margin-bottom: 0.5em;
+    transition: opacity 0.1s ease, transform 0.1s ease;
     position: sticky;
     top: 0;
-margin-bottom: 25px;
+    opacity: 0.8;
 }
-.columnaIzquierda  {
-    padding-bottom: 150px;
+.columnaDerecha {
+    padding: 3px;
+    width: 100%; /* Ocupa el 100% del espacio disponible en la opción */
 }
-.columna img {
-    display: block;
+   
+.columnaDerecha .descripcion {
+    width: 100%;
+    padding: 20px;
+}
+
+.columnaIzquierda img {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    position: sticky;
+    top: 0;
     max-width: 100%;
+    height: 300px;
     margin-bottom: 0.5em;
 }
+
+.transparente {
+    opacity: 0.5;
+}
+
+
+.columnaIzquierda.transparencia img {
+    opacity: 0;
+    transition: opacity 0.2s ; 
+
+}
+/*
+
+.oculta {
+    opacity: 0;
+    transform: scale(0.5); 
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .noOculta {
+    opacity: 1;
+    transform: scale(1); 
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .masDiversion .oculta {
+    position: fixed;
+  }
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*bloque compra*/
