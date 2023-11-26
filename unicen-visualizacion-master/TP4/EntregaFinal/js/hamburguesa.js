@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (index < menuItems.length) {
                     menuItems[index].classList.add('desplegado');
                     index++;
-                    setTimeout(mostrarSiguiente, 400); // 400 ms de intervalo entre elementos
+                    setTimeout(mostrarSiguiente, 100); // 400 ms de intervalo entre elementos
                 }
             }
 
             // Inicia la función de mostrarSiguiente después de un breve tiempo
-            setTimeout(mostrarSiguiente, 400);
+            setTimeout(mostrarSiguiente, 100);
         }
     });
 });

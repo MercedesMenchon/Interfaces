@@ -13,6 +13,7 @@ body {
     margin: 0px;
     position: relative;
     height: 7562px;
+    width: 1280px;
     font-family: 'Lato', sans-serif;
 }
 
@@ -23,27 +24,82 @@ body {
 
 }
 
-/*
+
 .oculto{
     display: none;
 }
 
-*/
-nav {
+
+.divNav {
     height: 227px;
     width: 1280px;
     display: flex;
     justify-content: space-around;
     border: none;
     z-index: 100;
-    /*position: absolute;*/
-    padding-top: 20px;
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
 
 }
+/*
+nav {
+    height: 103px;
+    width: 1280px;
+    display: flex;
+    justify-content: space-around;
+    border: none;
+    z-index: 100;
+    position: fixed;
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+
+}
+*/
+
+/* Estilo para el navbar */
+nav {
+    height: 103px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border: none;
+    z-index: 100;
+    
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+    transition:  0.3s ease; /* Transición para el cambio de color de fondo */
+  }
+  
+  /* Estilo para el logo en el navbar */
+  nav .spidey {
+    width: 133px;
+    height: 68px;
+    justify-content: center;
+    transition: width 0.3s ease, height 0.3s ease; /* Transición para el cambio de tamaño */
+  }
+  
+
+  
+  .sticky {
+    position: fixed;
+    /* Agrega otros estilos necesarios para que sea pegajoso */
+}
 
 
+.portadaTitulo {
+    top: 91px;
+    left: 260px;
+    background-image: url("../images/portada/Spidey.svg");
+    width: 590px;
+    height: 301px;
+    transition:  0.5s; 
+    transform-origin:top;
 
+}
+.pequeno {
+    /* Agrega estilos para hacer que la imagen sea más pequeña */
+    width: 50px; /* ajusta según sea necesario */
+    height: 50px; /* ajusta según sea necesario */
+    transition:  0.9s; 
+    transform-origin: bottom;
+}
 /*logo hamburguesa*/
 
 button {
@@ -221,6 +277,7 @@ nav>.spidey {
 }
 
 /* animación a cada elemento del menú */
+/*
 .menu.desplegado:nth-child(1) {
     animation: aparecerMenu 0.5s 0.2s ease forwards;
 }
@@ -239,15 +296,16 @@ nav>.spidey {
 
 .menu.desplegado:nth-child(5) {
     animation:
-/*presentación*/ aparecerMenu 0.5s 1.0s ease forwards;
+ aparecerMenu 0.5s 1.0s ease forwards;
 }
-
+*/
 .contenedor {
     width: 1080px;
     overflow: visible;
     top: -227px;
     z-index: 0;
-    margin: auto;
+   
+    margin-left: 100px;
 
 }
 
@@ -342,14 +400,6 @@ nav>.spidey {
 
 }
 
-.portada.tituloMasAmigos {
-    top: 91px;
-    left: 330px;
-    background-image: url("../images/portada/Spidey.svg");
-    width: 590px;
-    height: 301px;
-
-}
 
 .portada.sogaDer {
     background-image: url("../images/portada/sogaDerecha.svg");
@@ -636,14 +686,14 @@ nav>.spidey {
 }
 
 
-
 /*Mas amigos*/
 .tituloMasAmigos {
     width: 802px;
-    top: 1507px;
+    top: 1584px;
     position: absolute;
     left: 104px;
     color: #000;
+    font-family: Lato;
     font-size: 60px;
     font-style: normal;
     font-weight: 600;
@@ -653,90 +703,105 @@ nav>.spidey {
 
 
 
-.masAmigos {
-    display: flex;
-    margin-top: 1837px;
-    position: relative;
-    width: 1080px;
-    height: 500px;
 
-
-
-}
-
-.img1Amigos {
+.img1Amigos{
     width: 552px;
-    height: 302.762px;
+height: 302.762px;
 }
 
-.img2Amigos {
+.img2Amigos{
     width: 548px;
     height: 305px;
 }
 
-.img3Amigos {
+.img3Amigos{
     width: 556px;
     height: 301.507px;
 }
 
-.img4Amigos {
+.img4Amigos{
     width: 552px;
     height: 308.253px;
 }
 
 
-
+.masDiversion {
+    width: 1085px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    margin-top: 65px;
+    position: relative;
+}
+.masAmigos{
+    margin-top: 1872px;
+    overflow-y: hidden;
+}
+.ventana {
+    width: 1080px;
+    height: 310px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
 .ventana::-webkit-scrollbar {
     display: none;
 }
 
-.ventana {
-    width: 1080px;
-    height: 400px;
-    overflow-y: auto;
-
-}
-
 .opcion {
-    display: flex;
-    margin-bottom: 1em;
     position: relative;
-
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
     color: black;
-    transition: opacity 0.5s ease;
-    /* Transición de opacidad */
-    opacity: 1;
-}
-
-.opcion.oculto {
-    opacity: 0;
-    /* Opacidad cuando está oculto */
+    
 }
 
 .columna {
-    flex: 1 1 50%;
-    padding: 1em;
-    height: 307px;
-}
-
-.columnaDerecha .descripcion {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    margin-bottom: 25px;
+    padding: 3px;
 }
 
 .columnaIzquierda {
-    padding-bottom: 150px;
+    display: flex;
+    text-align: center;
+    max-width: 540px;
+    height: 300px;
+    margin-bottom: 0.5em;
+    transition: opacity 0.1s ease, transform 0.1s ease;
+    position: sticky;
+    top: 0;
+    opacity: 0.8;
+}
+.columnaDerecha {
+    padding: 3px;
+    width: 100%; /* Ocupa el 100% del espacio disponible en la opción */
+}
+   
+.columnaDerecha .descripcion {
+    width: 100%;
+    padding: 20px;
 }
 
-.columna img {
-    display: block;
+.columnaIzquierda img {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    position: sticky;
+    top: 0;
     max-width: 100%;
+    height: 300px;
     margin-bottom: 0.5em;
 }
 
+.transparente {
+    opacity: 0.5;
+}
+
+
+.columnaIzquierda.transparencia img {
+    opacity: 0;
+    transition: opacity 0.2s ; 
+
+}
 
 /*bloque compra*/
 

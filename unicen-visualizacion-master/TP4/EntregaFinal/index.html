@@ -4,33 +4,54 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <section class="maximaPantalla pagina">
+    <section class="pagina">
 
-
-        <nav class="maximaPantalla">
+<div class="divNav">
+        <nav id="inicio">
             <button class="hamburguesa">
-                <img class="icono-hamburguesa" src="images/navegador/linea3hamb.svg" alt="hamburguesa">
-                <img class="icono-hamburguesa" src="images/navegador/linea2Hamb.svg" alt="hamburguesa">
-                <img class="icono-hamburguesa" src="images/navegador/linea1Hamb.svg" alt="hamburguesa">
+                <img class="icono-hamburguesa" id="barra1" src="images/navegador/linea3hamb.svg" alt="hamburguesa">
+                <img class="icono-hamburguesa" id="barra2" src="images/navegador/linea2Hamb.svg" alt="hamburguesa">
+                <img class="icono-hamburguesa" id="barra3" src="images/navegador/linea1Hamb.svg" alt="hamburguesa">
             </button>
-            <img class="spidey" src="images/portada/Spidey.svg" alt="Spidey and his Amazing Friends">
-            <button id="comprar">
+           <img class="spidey " src="images/portada/Spidey.svg" alt="Spidey and his Amazing Friends">
+            <button class="comprar" id="comprar">
                 <div>
                     <p>comprar</p>
                 </div>
             </button>
         </nav>
-
+    </div>
+        <div class="despliegue">
+            <ul >
+                
+                <li class="menu" data-index="1">
+                    <a href="#inicio">inicio</a>
+                </li>
+                <li class="menu" data-index="2">
+                    <a href="#spideyFriends">Spidey y sus amigos</a>
+                </li>
+                <li class="menu" data-index="3">
+                    <a href="#avengers">Junto a los vengadores</a>
+                </li>
+                <li class="menu" data-index="4">
+                    <a href="#friends">mas amigos</a>
+                </li>
+                <li class="menu" data-index="5">
+                    <a href="#contacto">contacto</a>
+                </li>
+            </ul>
+        </div>
         <section class="contenedor">
 
             <div class="contenedorPortada">
@@ -40,16 +61,16 @@
                 <div class="portada edificioDer"></div>
                 <div class="portada personajeBlanco"></div>
                 <div class="portada personajeNegro"> </div>
-                <div class="portada fondoVioleta maximaPantalla"></div>
+                <div class="portada fondoVioleta"></div>
                 <div class="portada personajeRojo"></div>
                 <div class="portada sogaDer"></div>
                 <div class="portada sogaIzq"></div>
-                <div class="portada titulo"></div>
+                <div class="portada portadaTitulo"></div>
             </div>
             <div class="presentacion">
                 <div class="colIzq">
                     <div class="textoAmigos">
-                        <div class="titulo">
+                        <div class="titulo" id="spideyFriends">
                             <h2>Conoce a Spidey y sus sorprendentes amigos</h2>
                         </div>
                         <div class="texto">
@@ -114,7 +135,7 @@
             </div>
             <div class="vengadores">
 
-                <h2 class="textoVengadores">Los vengadores acompañando tu aventura</h2>
+                <h2 class="textoVengadores"  id="avengers">Los vengadores acompañando tu aventura</h2>
 
                 <div class="ghost"></div>
                 <div class="testJuego1"></div>
@@ -127,8 +148,49 @@
                 <div class="elasticGirl"></div>
                 <div class="pantera"></div>
                 <div class="pasto"></div>
-                <h2 class="tituloMasAmigos">Mas amigos, mas diversión!</h2>
+                <div class="fondoBlanco2"></div>
+                <h2 class="tituloMasAmigos" id="friends">Mas amigos, mas diversión!</h2>
+
+
+                <h2 class="tituloPoder">”un gran poder conlleva una gran responsabilidad”</h2>
+                <button class="comprar" id="comprarAhora">
+                    <div>
+                        <p>comprar ahora</p>
+                    </div>
+                </button>
+                <div class="poder1"></div>
+                <div class="poder2"></div>
+                <div class="poder3"></div>
+                <div class="fondoCorreo"></div>
+                <div class="teen"></div>
+                <div class="edificios"></div>
+                <div class="spideyRojoCorreo"></div>
+                <div class="spideyNegroCorreo"></div>
+                <div class="spideyBlancoCorreo"></div>
+
+                <h1 class="tituloCorreo">Lo último de SPIDEY Y SUS AMIGOS en tu buzón de correo electrónico</h1>
+
+
+                <div class="correo" id="contacto">
+                    <div class="inputCorreo">
+                        <p>Ingresa aquí tu correo</p>
+                    </div>
+                    <button class="btn_correo">
+                        <p>SUSCRIBIRSE</p>
+                    </button>
+                </div>
+                <p class="textoCorreo">Al inscribirse en nuestra lista de correo, nos autoriza a ponernos en contacto
+                    con usted para
+                    enviarle
+                    ofertas y actualizaciones de marketing por correo electrónico, y también acepta nuestra
+                    <span>Política de
+                        privacidad</span> y las <span>Condiciones del servicio</span>.
+                </p>
+
+                <img class="banner" src="images/footer/banner.svg" alt="">
             </div>
+
+
 
             <div class="masAmigos">
                 <div class="masDiversion">
@@ -215,51 +277,39 @@
                   </div>
             </div>
 
-       
-                <div class="comprar">
-                    <h2>”un gran poder conlleva una gran responsabilidad”</h2>
-                    <button >
-                        <div id="comprar"><p>comprar Ahora</p></div>
-                    </button>
-                </div>
-               <!-- <div class="fondoBlanco2"></div>-->
-            </div>
-     <!--
-        <div class="correo">
-            <h1>Lo último de SPIDEY Y SUS AMIGOS en tu buzón de correo electrónico</h1>
-            <div><input type="text" name="" id=""></div>
-            <p>Al inscribirse en nuestra lista de correo, nos autoriza a ponernos en contacto con usted para enviarle
-                ofertas y actualizaciones de marketing por correo electrónico, y también acepta nuestra Política de
-                privacidad y las Condiciones del servicio.</p>
-        </div>
 
-        <footer class="maximaPantantalla">
-        <div>
-            <img src="images/footer/banner.svg" alt="">
-        </div>
-        <h4>©SEGA. All rights reserved. SEGA is registered in the U.S. Patent and Trademark Office. SEGA, the SEGA
-            logo and SONIC SUPERSTARS are either registered trademarks or trademarks of SEGA CORPORATION or its
-            affiliates. All other trademarks, logos and copyrights are property of their respective owners.©2023 The
-            LEGO Group. LEGO, the LEGO logo, the Minifigure, and the Brick and Knob configurations are trademarks
-            and/or copyrights of the LEGO Group. All other marks and trademarks are the property of their respective
-            owners. All rights reserved."PS", "PS5" and "PS4" are registered trademarks or trademarks of Sony
-            Interactive Entertainment Inc.Microsoft, the Xbox Sphere mark, the Series X logo, Xbox One, and Xbox
-            Series X are trademarks of the Microsoft group of companies.Nintendo Switch is a trademark of
-            NintendoEPIC GAMES and the EPIC STORE LOGO are trademarks or registered trademarks of EPIC GAMES
-            INC.©2023 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of
-            Valve Corporation in the U.S. and/or other countries.The ESRB rating icons are registered trademarks of
-            the Entertainment Software Association.
+            <footer>
 
-            COOKIE POLICY PRIVACY POLICY</h4>
-        <div>
-            <img src="images/footer/redes.png" alt="">
-        </div>
-    </footer>
-        -->
+                <h4>©SEGA. All rights reserved. SEGA is registered in the U.S. Patent and Trademark Office. SEGA, the
+                    SEGA
+                    logo and SONIC SUPERSTARS are either registered trademarks or trademarks of SEGA CORPORATION or its
+                    affiliates. All other trademarks, logos and copyrights are property of their respective owners.©2023
+                    The
+                    LEGO Group. LEGO, the LEGO logo, the Minifigure, and the Brick and Knob configurations are
+                    trademarks
+                    and/or copyrights of the LEGO Group. All other marks and trademarks are the property of their
+                    respective
+                    owners. All rights reserved."PS", "PS5" and "PS4" are registered trademarks or trademarks of Sony
+                    Interactive Entertainment Inc.Microsoft, the Xbox Sphere mark, the Series X logo, Xbox One, and Xbox
+                    Series X are trademarks of the Microsoft group of companies.Nintendo Switch is a trademark of
+                    NintendoEPIC GAMES and the EPIC STORE LOGO are trademarks or registered trademarks of EPIC GAMES
+                    INC.©2023 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of
+                    Valve Corporation in the U.S. and/or other countries.The ESRB rating icons are registered trademarks
+                    of
+                    the Entertainment Software Association.
+
+                    <span>COOKIE POLICY PRIVACY POLICY</span>
+                </h4>
+
+
+                <img class="redes" src="images/footer/redes.svg" alt="redes">
+            </footer>
+
         </section>
     </section>
     <script type="text/javascript" src="js/hamburguesa.js"></script>
     <script type="text/javascript" src="js/seccionScroll.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
 </body>
 
 </html>
