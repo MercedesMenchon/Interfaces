@@ -12,7 +12,7 @@ body {
     padding: 0px;
     margin: 0px;
     position: relative;
-    height: 8968px;
+    height: 7562px;
     font-family: 'Lato', sans-serif;
 }
 
@@ -419,6 +419,7 @@ nav>.spidey {
     overflow-x: visible;
     position: absolute;
     top: 2618px;
+    height: 4346px;
 }
 
 .ghost {
@@ -541,7 +542,6 @@ nav>.spidey {
 
 .fondoBlanco {
     background-image: url(../images/MasAmigos/fondoBlanco.svg);
-    /*height: 2194.5px;*/
     height: 750px;
     width: 1280px;
     position: absolute;
@@ -606,7 +606,7 @@ nav>.spidey {
 
 .ventana {
     width: 1080px;
-    height: 100%;
+    height: 400px;
     overflow-y: auto;
 
 }
@@ -706,77 +706,225 @@ nav>.spidey {
     background-image: url(../images/granPoder/spideyBlanco.svg);
     width: 268px;
     height: 416.5px;
-    position:absolute;
-    left:190px;
-    top:2424.14px;
+    position: absolute;
+    left: 190px;
+    top: 2424.14px;
 }
 
 .poder2 {
     background-image: url(../images/granPoder/spideyNegro.svg);
     width: 313.5px;
     height: 398.5px;
-    top:2433.14px;
-    position:absolute;
-    left:821px;
+    top: 2433.14px;
+    position: absolute;
+    left: 821px;
 }
 
 .poder3 {
     background-image: url(../images/granPoder/spidyRojo.svg);
     width: 416.5px;
     height: 457.5px;
-    top:2432.14px;
-    position:absolute;
-    left:446px;
+    top: 2432.14px;
+    position: absolute;
+    left: 446px;
 }
 
-.fondoCorreo{
+.fondoCorreo {
     background-image: url(../images/correo/fondoCorreo.svg);
-   top:2974.861px;
+    top: 2974.861px;
     width: 1280px;
     height: 1296px;
-    position:absolute;
+    position: absolute;
 
 }
 
-.edificios{
+
+
+
+.edificios {
     background-image: url(../images/correo/edificios.svg);
-    top:3550.861px;
-  
+    top: 3550.861px;
+
     width: 1280px;
     height: 720px;
-    position:absolute;
+    position: absolute;
 
 }
 
-.tituloCorreo{
+.tituloCorreo {
     width: 816px;
     color: #000;
-    top:3126.861px;
-    left:232px;
-text-align: center;
-font-size: 60px;
-font-style: normal;
-font-weight: 600;
-line-height: 94.5%; /* 56.7px */
-position:absolute;
-top:3126.86px;
+
+    left: 232px;
+    text-align: center;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 94.5%;
+    /* 56.7px */
+    position: absolute;
+    top: 3126.86px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
-.textoCorreo{
-width: 578px;
-height: 95px;
-color: #000;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 94.5%; /* 18.9px */
-position:absolute;
-top:3496.86px;
-left:302px;
+
+.correo {
+    display: flex;
+    position: absolute;
+    left: 250px;
+    top: 3343.86px
 }
 
-.textoCorreo>span{
+.btn_correo {
+    width: 218px;
+    height: 100px;
+    border-radius: 0px 50px 50px 0px;
+    border: 9px solid #2982FF;
+    background: #FFE901;
+    box-shadow: 4px 5px 0px 0px #02187E;
+}
+
+.btn_correo>p {
+    margin: auto;
+    color: #02187E;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%;
+    /* 18.9px */
+    letter-spacing: 0.2px;
+}
+
+.inputCorreo {
+    width: 562px;
+    height: 82px;
+    border-radius: 50px 0px 0px 50px;
+    border-top: 9px solid #2982FF;
+    border-bottom: 9px solid #2982FF;
+    border-left: 9px solid #2982FF;
+    background: #FFF;
+    box-shadow: 4px 5px 0px 0px #02187E;
+}
+
+.inputCorreo>p {
+    margin-top: 30px;
+    margin-left: 52px;
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    /* 18.9px */
+    letter-spacing: 2.2px;
+
+}
+
+
+.textoCorreo {
+    width: 578px;
+    height: 95px;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    /* 18.9px */
+    position: absolute;
+    top: 3482.86px;
+    left: 302px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.textoCorreo>span {
+    text-decoration-line: underline;
+
+}
+
+.teen {
+    background-image: url(../images/correo/teen.svg);
+    width: 231px;
+    height: 145px;
+    position: absolute;
+    top: 3594.86px;
+    left: 302px;
+}
+
+
+.spideyRojoCorreo {
+    background-image: url(../images/correo/spideyRojo.svg);
+    width: 94px;
+    height: 88px;
+    mix-blend-mode: darken;
+    position: absolute;
+    top: 3943px;
+    left: 1000px;
+}
+
+
+.spideyNegroCorreo {
+    background-image: url(../images/correo/spideyNegro.svg);
+    width: 97px;
+    height: 89px;
+    mix-blend-mode: darken;
+    position: absolute;
+    top: 4114px;
+    left: 219px;
+}
+
+
+
+.spideyBlancoCorreo {
+    background-image: url(../images/correo/spideyBlanco.svg);
+    width: 58px;
+    height: 64px;
+    mix-blend-mode: darken;
+    position: absolute;
+    top: 4047px;
+    left: 532px;
+}
+
+footer {
+    position: absolute;
+    top: 6964px;
+    left: 0px;
+    background: #5E5E5D;
+    width: 1280px;
+    height: 598px;
+}
+
+.banner {
+    width: 1080px;
+    height: 75px;
+    position: absolute;
+    top: 4271px;
+    left:100px;
+}
+
+footer>h4 {
+    color: #FFF;
+    width: 820px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    /* 18.9px */
+    letter-spacing: 2.2px;
+    margin-left:100px;
+    margin-top:38px;
+    margin-bottom: 34px;
+}
+
+footer>h4>span{
 text-decoration-line: underline;
+display: inline-block;
+margin-top: 1em;
+}
 
+.redes{
+    width: 212px;
+height: 41px;
+margin-left:100px;
 }
