@@ -18,20 +18,39 @@
     <section class="pagina">
 
 
-        <nav>
+        <nav id="inicio">
             <button class="hamburguesa">
-                <img class="icono-hamburguesa" src="images/navegador/linea3hamb.svg" alt="hamburguesa">
-                <img class="icono-hamburguesa" src="images/navegador/linea2Hamb.svg" alt="hamburguesa">
-                <img class="icono-hamburguesa" src="images/navegador/linea1Hamb.svg" alt="hamburguesa">
+                <img class="icono-hamburguesa" id="barra1" src="images/navegador/linea3hamb.svg" alt="hamburguesa">
+                <img class="icono-hamburguesa" id="barra2" src="images/navegador/linea2Hamb.svg" alt="hamburguesa">
+                <img class="icono-hamburguesa" id="barra3" src="images/navegador/linea1Hamb.svg" alt="hamburguesa">
             </button>
-            <img class="spidey" src="images/portada/Spidey.svg" alt="Spidey and his Amazing Friends">
+            <!--<img class="spidey" src="images/portada/Spidey.svg" alt="Spidey and his Amazing Friends">-->
             <button class="comprar" id="comprar">
                 <div>
                     <p>comprar</p>
                 </div>
             </button>
         </nav>
-
+        <div class="despliegue">
+            <ul >
+                
+                <li class="menu" data-index="1">
+                    <a href="#inicio">inicio</a>
+                </li>
+                <li class="menu" data-index="2">
+                    <a href="#spideyFriends">Spidey y sus amigos</a>
+                </li>
+                <li class="menu" data-index="3">
+                    <a href="#avengers">Junto a los vengadores</a>
+                </li>
+                <li class="menu" data-index="4">
+                    <a href="#friends">mas amigos</a>
+                </li>
+                <li class="menu" data-index="5">
+                    <a href="#contacto">contacto</a>
+                </li>
+            </ul>
+        </div>
         <section class="contenedor">
 
             <div class="contenedorPortada">
@@ -50,7 +69,7 @@
             <div class="presentacion">
                 <div class="colIzq">
                     <div class="textoAmigos">
-                        <div class="titulo">
+                        <div class="titulo" id="spideyFriends">
                             <h2>Conoce a Spidey y sus sorprendentes amigos</h2>
                         </div>
                         <div class="texto">
@@ -115,7 +134,7 @@
             </div>
             <div class="vengadores">
 
-                <h2 class="textoVengadores">Los vengadores acompañando tu aventura</h2>
+                <h2 class="textoVengadores"  id="avengers">Los vengadores acompañando tu aventura</h2>
 
                 <div class="ghost"></div>
                 <div class="testJuego1"></div>
@@ -129,7 +148,7 @@
                 <div class="pantera"></div>
                 <div class="pasto"></div>
                 <div class="fondoBlanco2"></div>
-                <h2 class="tituloMasAmigos">Mas amigos, mas diversión!</h2>
+                <h2 class="tituloMasAmigos" id="friends">Mas amigos, mas diversión!</h2>
 
 
                 <h2 class="tituloPoder">”un gran poder conlleva una gran responsabilidad”</h2>
@@ -151,7 +170,7 @@
                 <h1 class="tituloCorreo">Lo último de SPIDEY Y SUS AMIGOS en tu buzón de correo electrónico</h1>
 
 
-                <div class="correo">
+                <div class="correo" id="contacto">
                     <div class="inputCorreo">
                         <p>Ingresa aquí tu correo</p>
                     </div>
