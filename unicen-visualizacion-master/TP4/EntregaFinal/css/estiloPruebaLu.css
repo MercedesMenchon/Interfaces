@@ -33,13 +33,12 @@ nav {
     height: 227px;
     width: 1280px;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-between;
     border: none;
     z-index: 100;
     /*position: absolute;*/
-    padding-top: 20px;
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
-
+padding-top: 20px;
 }
 
 
@@ -55,6 +54,7 @@ button {
 .icono-hamburguesa,
 .hamburguesa {
     margin: 0;
+    margin-left: 100px;
 }
 
 .hamburguesa {
@@ -127,6 +127,9 @@ button {
 }
 
 /*botones*/
+.comprar{
+    margin-right: 100px;
+}
 .comprar>div {
     border-radius: 111px;
     border: 8px solid var(--2982-ff, #2982FF);
