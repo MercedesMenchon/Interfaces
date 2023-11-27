@@ -1088,8 +1088,7 @@ margin-left:100px;
 
 
 .contenedorLoading{
-    width: 1280px;
-    height: 700px;
+    width: 100%;
     position: relative;
 }
 
@@ -1154,7 +1153,7 @@ background-size: cover;
 .porcentaje {
         position: absolute;
         top: 610px;
-        left: 50%;
+        left: 650px;
         transform: translateX(-50%);
         font-size: 20px;
         font-weight: bold;
