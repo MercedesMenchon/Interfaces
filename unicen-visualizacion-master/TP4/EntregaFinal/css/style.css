@@ -21,7 +21,6 @@ body {
 .maximaPantalla {
     width: 1280px;
     height: auto;
-
 }
 
 
@@ -81,7 +80,6 @@ nav {
   
   .sticky {
     position: fixed;
-    /* Agrega otros estilos necesarios para que sea pegajoso */
 }
 
 
@@ -1085,4 +1083,81 @@ margin-top: 1em;
     width: 212px;
 height: 41px;
 margin-left:100px;
+}
+
+
+
+.contenedorLoading{
+    width: 1280px;
+    height: 700px;
+    position: relative;
+}
+
+.fondoLoading{
+    background-image: url(../images/loading/fondo-telarana-halloween-cocnept_23-2148628523.jpg);
+    top: 0;
+    left: 0;
+  background-repeat: no-repeat;
+background-size: cover;
+    height: 700px;
+    position: absolute;
+    width: 1280px;
+    height: 700px;
+ 
+}
+
+
+@keyframes giroArania {
+    0% {
+        transform: rotate(90deg);
+    }
+  
+    100% {
+        transform: rotate(450deg);
+    
+    }
+}
+.arania {
+    background-image: url(../images/loading/araña.svg);
+    position: absolute;
+    top: 496px;
+    left: 250px;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotate(90deg);
+    transition: left 8s ease-in-out;
+    animation: giroArania 1s ease-in-out;
+}
+
+.barraLoading {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background-color: yellow;
+    transition: width 8s ease-in-out;
+}
+
+
+.barra {
+    width: 700px;
+    height: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 550px;
+    left: 300px;
+
+}
+
+.porcentaje {
+        position: absolute;
+        top: 610px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFF;
+    
 }
