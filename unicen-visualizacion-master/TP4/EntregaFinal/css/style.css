@@ -57,12 +57,11 @@ nav {
 /* Estilo para el navbar */
 nav {
     height: 103px;
-    width: 100%;
+    width: 1280px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     border: none;
     z-index: 100;
-    
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
     transition:  0.3s ease; /* Transición para el cambio de color de fondo */
   }
