@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (index < menuItems.length) {
                     menuItems[index].classList.add('desplegado');
                     index++;
-                    setTimeout(mostrarSiguiente, 100); // 400 ms de intervalo entre elementos
+                    console.log("menu apareciendo");
+                    setTimeout(mostrarSiguiente, 400); // 400 ms de intervalo entre elementos
                 }
             }
 
