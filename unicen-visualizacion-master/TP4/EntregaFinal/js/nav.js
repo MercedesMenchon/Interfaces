@@ -14,7 +14,7 @@ var spideyNav= document.querySelector(".spidey");
         if (scrollPos > 90) {
             nav.classList.add("sticky");
             portadaTitulo.classList.add("pequeno");
-            console.log("entro");
+           
             spideyNav.classList.remove("oculto");
         } else {
             nav.classList.remove("sticky");
