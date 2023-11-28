@@ -13,7 +13,5 @@ document.addEventListener("DOMContentLoaded", function () {
         // Aplica la nueva posición al duende
         document.querySelector('.duendeVerde').style.left = nuevaPosicion + "px";
     });
-
-
     
 });
