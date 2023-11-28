@@ -1302,3 +1302,33 @@ background-size: cover;
         color: #FFF;
     
 }
+.spritesheets {
+    width: 94px;
+    height: 88px;
+    mix-blend-mode: darken;
+    position: absolute;
+    top: 3943px;
+    left: 1000px;
+    background-repeat: no-repeat;
+    animation: showImages 1.7s infinite linear; 
+}
+
+
+
+@keyframes showImages {
+    0%{
+        background-image: url(../images/spritesheets/movimiento1.png);
+    } 
+    25%{
+        background-image: url(../images/spritesheets/movimiento2.png);
+    } 
+    50%{
+    background-image: url(../images/spritesheets/movimiento3.png);
+    }
+    75%{
+        background-image: url(../images/spritesheets/movimiento4.png);
+     }
+     100%{
+        background-image: url(../images/spritesheets/movimiento1.png);
+     }
+}
