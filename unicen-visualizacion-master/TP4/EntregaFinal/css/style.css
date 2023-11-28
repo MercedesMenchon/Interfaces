@@ -184,36 +184,82 @@ button {
 }
 
 /*botones*/
+/*
 .comprar{
     margin-right: 100px;
 }
+
+
 .comprar>div {
     border-radius: 111px;
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
     box-shadow: 4px 5px 0px 0px #02187E;
 }
+*/
 
-/*boton comprar de la barra navegacion*/
-#comprar>div {
-    width: 200px;
-    height: 50px;
+  
+  .comprar {
+    margin-right: 100px;
+    padding: 10px 20px;
+    background-color: #FFE901;
+    border-radius: 111px;
+    cursor: pointer;
+    display:flex;
+    font-size: 18px;
+    transition: 0.3s;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background-image: linear-gradient(150deg,
+    rgb(247, 247, 5),rgb(240, 240, 66),rgb(243, 243, 159));
+    box-shadow: 4px 5px 0px 0px #02187E;
+  }
 
-
+  #comprar span{
+    height: 70%;
+    font-size: 16px;
+    padding: 16px 24px;
+    border-radius: 111px;
+    transition: 0.3s;
+    display:flex;
+color: #02187E;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 900;
+line-height: 94.5%; 
+letter-spacing: 2.2px;
 }
 
-
-.comprar>div>p {
-    color: #02187E;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 94.5%;
-    letter-spacing: 2.2px;
-    text-transform: uppercase;
+#comprar:hover span{
+    color:white;
+}
+   
+#comprar:active{
+    background: linear-gradient(125deg,
+    black,red,black,red);
+background-size: 40%;
+border-radius: 8px;
+filter: blur(60px);
+animation: glowing 40s linear infinite;
 }
 
+@keyframes glowing {
+0% {
+background-position: 0 0;
+}
 
+50% {
+background-position: 400% 0;
+}
+
+100% {
+background-position: 0 0;
+}
+
+}
+#comprar:active{
+   transform: scale(0.3);
+}
 nav>.spidey {
     width: 133px;
     height: 68px;
@@ -326,7 +372,8 @@ nav>.spidey {
     position: absolute;
     margin-left: 0px;
     margin-right: 0px;
-
+    position: absolute;
+    background-repeat: repeat-x;
 }
 
 
@@ -350,15 +397,39 @@ nav>.spidey {
     display: flex;
     justify-content: center;
 
+    animation: venirDesdeAbajoEdificio 0.9s ease-out;
 }
 
+@keyframes venirDesdeAbajoEdificio {
+    from {
+        opacity: 0;
+        transform: translateY(-70%);
+    }
+    to {
+        opacity: 1;
+        transform:  translateX(0);
+    }
+}
 .portada.edificioIzq {
     width: 452px;
     height: 720px;
     background-image: url("../images/portada/edificiosIzq.svg");
     top: 144px;
     left: -47px;
+    animation: venirDesdeIzquierdaEdificio 0.9s ease-out;
 }
+
+@keyframes venirDesdeIzquierdaEdificio {
+    from {
+        opacity: 0;
+        transform: translateX(-70%);
+    }
+    to {
+        opacity: 1;
+        transform:  translateX(0);
+    }
+}
+
 
 .portada.edificioDer {
     width: 374px;
@@ -366,16 +437,43 @@ nav>.spidey {
     background-image: url("../images/portada/edificioDer.svg");
     top: 126px;
     left: 906px;
-
+    animation: venirDesdeDerechaEdificio 0.9s ease-out;
 }
 
+@keyframes venirDesdeDerechaEdificio {
+    from {
+        opacity: 0;
+        transform: translateX(70%);
+    }
+    to {
+        opacity: 1;
+        transform:  translateX(0);
+    }
+}
 .portada.personajeBlanco {
     width: 360px;
     height: 444px;
     background-image: url("../images/portada/spidermanBlanco.svg");
     top: 388px;
     left: 90px;
+/*easy out es que va a ser una transicion suave*/
+    animation: aparecerDesdeArribaIzquierda 1s ease-out;
 }
+
+
+
+@keyframes aparecerDesdeArribaIzquierda {
+    from {
+        opacity: 0;
+        transform: translateY(-100%) translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}
+
+
 
 .portada.personajeNegro {
     background-image: url("../images/portada/spidermanNegro.svg");
@@ -383,27 +481,18 @@ nav>.spidey {
     height: 393px;
     top: 335px;
     left: 695px;
+    animation: aparecerDesdeArribaDerecha 1s ease-out;
 }
-
-.portada.sogaIzq {
-    background-image: url("../images/portada/sogaIzquierda.svg");
-    top: 397px;
-    left: -27px;
-    width: 450.817px;
-    height: 627.274px;
-    transform: rotate(65.403deg);
-
+@keyframes aparecerDesdeArribaDerecha {
+    from {
+        opacity: 0;
+        transform: translateY(-100%) translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
 }
-
-.portada.personajeRojo {
-    width: 465px;
-    height: 465px;
-    background-image: url("../images/portada/spidermanRojo.svg");
-    top: 403px;
-    left: 404px;
-
-}
-
 
 .portada.sogaDer {
     background-image: url("../images/portada/sogaDerecha.svg");
@@ -412,8 +501,63 @@ nav>.spidey {
     top: 398px;
     left: 1078px;
     transform: rotate(114.6deg);
+    animation: aparecerDesdeArribaDerechaSogaDerecha 1s ease-out ;
 
 }
+
+
+
+@keyframes aparecerDesdeArribaDerechaSogaDerecha {
+    from {
+        opacity: 0;
+        transform: translateY(-100%) translateX(100%) rotate(114.6deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0) rotate(114.6deg);
+    }
+}
+
+.portada.personajeRojo {
+    width: 465px;
+    height: 465px;
+    background-image: url("../images/portada/spidermanRojo.svg");
+    top: 403px;
+    left: 404px;
+    animation: aparecerDesdeArriba 1s ease-out;
+
+}
+@keyframes aparecerDesdeArriba {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.portada.sogaIzq {
+    background-image: url("../images/portada/sogaIzquierda.svg");
+    top: 397px;
+    left: -27px;
+    width: 450.817px;
+    height: 627.274px;
+    transform: rotate(65.403deg);
+    animation: aparecerDesdeArribaSogaIzquierda 1s ease-out;
+}
+
+@keyframes aparecerDesdeArribaSogaIzquierda {
+    from {
+        opacity: 0;
+        transform: translateY(-100%) rotate(65.403deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(65.403deg);
+    }
+}
+
 
 .portada.fondoVioleta {
     background-image: url("../images/portada/fondoVioleta.svg");
