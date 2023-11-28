@@ -573,20 +573,37 @@ nav>.spidey {
 
 }
 
+
 .duendeVerde {
     background-image: url(../images/presentacion/personajeVerde.svg);
     top: -183px;
-    left: 639px;
+   left:369px;
     width: 553px;
     height: 921px;
-    position: absolute;
     /*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
+    position: absolute;
+    /* Permite que la imagen sobresalga del contenedor */ 
     overflow: visible;
-    /* Permite que la imagen sobresalga del contenedor */
-    z-index: 10;
-    /* Ajusta el índice z para que el duende aparezca encima de otros elementos si es necesario */
+        /* Ajusta el índice z para que el duende aparezca encima de otros elementos*/
+     z-index: 10;
+     animation: duendeScroll 2s alternate;
+  
 }
 
+@keyframes duendeScroll {
+    0% {
+        left: 369px;
+    }
+    25% {
+        left: 600px;
+    }
+    0% {
+        left: 800px;
+    }
+    100% {
+        left: 1000px; 
+    }
+}
 .tarjetaAmigos {
     background-image: url(../images/presentacion/spideyYsusAmigos.svg);
     left: -7.72px;
@@ -602,8 +619,10 @@ nav>.spidey {
     border: 9px solid #FFF;
     /* Drop Shadow */
     box-shadow: 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
-
+    
 }
+
+
 
 
 .textoAmigos>.titulo {
@@ -916,7 +935,7 @@ height: 302.762px;
 }
 .columnaDerecha {
     padding: 3px;
-    width: 100%; /* Ocupa el 100% del espacio disponible en la opción */
+    width: 100%; 
 }
    
 .columnaDerecha .descripcion {
@@ -962,7 +981,6 @@ height: 302.762px;
     font-style: normal;
     font-weight: 900;
     line-height: 94.5%;
-    /* 18.9px */
     letter-spacing: 0.2px;
     color: #02187E;
     text-transform: uppercase;
@@ -1021,6 +1039,37 @@ height: 302.762px;
     top: 2432.14px;
     position: absolute;
     left: 446px;
+}
+
+.poder1, .poder2, .poder3 {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.poder1.animate {
+    animation: fadeInAndMove 1.5s ease forwards;
+    animation-delay: 0.5s; 
+}
+
+.poder2.animate {
+    animation: fadeInAndMove 2s ease forwards;
+    animation-delay: 1s;
+}
+
+.poder3.animate {
+    animation: fadeInAndMove 1s ease forwards;
+    animation-delay: 0s; /* retraso*/
+}
+
+@keyframes fadeInAndMove {
+    from {
+        opacity: 0;
+        transform: translateY(100px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fondoCorreo {
@@ -1224,10 +1273,12 @@ margin-left:100px;
 }
 
 
-
+/*pagina de load */
 .contenedorLoading{
-    width: 100%;
+    width: 1280px;
+    height:900px;
     position: relative;
+    background-color: #050c28;
 }
 
 .fondoLoading{
