@@ -184,82 +184,36 @@ button {
 }
 
 /*botones*/
-/*
 .comprar{
     margin-right: 100px;
 }
-
-
 .comprar>div {
     border-radius: 111px;
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
     box-shadow: 4px 5px 0px 0px #02187E;
 }
-*/
 
-  
-  .comprar {
-    margin-right: 100px;
-    padding: 10px 20px;
-    background-color: #FFE901;
-    border-radius: 111px;
-    cursor: pointer;
-    display:flex;
-    font-size: 18px;
-    transition: 0.3s;
-    border: 8px solid var(--2982-ff, #2982FF);
-    background-image: linear-gradient(150deg,
-    rgb(247, 247, 5),rgb(240, 240, 66),rgb(243, 243, 159));
-    box-shadow: 4px 5px 0px 0px #02187E;
-  }
+/*boton comprar de la barra navegacion*/
+#comprar>div {
+    width: 200px;
+    height: 50px;
 
-  #comprar span{
-    height: 70%;
-    font-size: 16px;
-    padding: 16px 24px;
-    border-radius: 111px;
-    transition: 0.3s;
-    display:flex;
-color: #02187E;
-font-family: Lato;
-font-size: 20px;
-font-style: normal;
-font-weight: 900;
-line-height: 94.5%; 
-letter-spacing: 2.2px;
-}
-
-#comprar:hover span{
-    color:white;
-}
-   
-#comprar:active{
-    background: linear-gradient(125deg,
-    black,red,black,red);
-background-size: 40%;
-border-radius: 8px;
-filter: blur(60px);
-animation: glowing 40s linear infinite;
-}
-
-@keyframes glowing {
-0% {
-background-position: 0 0;
-}
-
-50% {
-background-position: 400% 0;
-}
-
-100% {
-background-position: 0 0;
-}
 
 }
-#comprar:active{
-   transform: scale(0.3);
+
+
+.comprar>div>p {
+    color: #02187E;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
 }
+
+
 nav>.spidey {
     width: 133px;
     height: 68px;
@@ -372,8 +326,7 @@ nav>.spidey {
     position: absolute;
     margin-left: 0px;
     margin-right: 0px;
-    position: absolute;
-    background-repeat: repeat-x;
+
 }
 
 
@@ -397,39 +350,15 @@ nav>.spidey {
     display: flex;
     justify-content: center;
 
-    animation: venirDesdeAbajoEdificio 0.9s ease-out;
 }
 
-@keyframes venirDesdeAbajoEdificio {
-    from {
-        opacity: 0;
-        transform: translateY(-70%);
-    }
-    to {
-        opacity: 1;
-        transform:  translateX(0);
-    }
-}
 .portada.edificioIzq {
     width: 452px;
     height: 720px;
     background-image: url("../images/portada/edificiosIzq.svg");
     top: 144px;
     left: -47px;
-    animation: venirDesdeIzquierdaEdificio 0.9s ease-out;
 }
-
-@keyframes venirDesdeIzquierdaEdificio {
-    from {
-        opacity: 0;
-        transform: translateX(-70%);
-    }
-    to {
-        opacity: 1;
-        transform:  translateX(0);
-    }
-}
-
 
 .portada.edificioDer {
     width: 374px;
@@ -437,40 +366,15 @@ nav>.spidey {
     background-image: url("../images/portada/edificioDer.svg");
     top: 126px;
     left: 906px;
-    animation: venirDesdeDerechaEdificio 0.9s ease-out;
+
 }
 
-@keyframes venirDesdeDerechaEdificio {
-    from {
-        opacity: 0;
-        transform: translateX(70%);
-    }
-    to {
-        opacity: 1;
-        transform:  translateX(0);
-    }
-}
 .portada.personajeBlanco {
     width: 360px;
     height: 444px;
     background-image: url("../images/portada/spidermanBlanco.svg");
     top: 388px;
     left: 90px;
-/*easy out es que va a ser una transicion suave*/
-    animation: aparecerDesdeArribaIzquierda 1s ease-out;
-}
-
-
-
-@keyframes aparecerDesdeArribaIzquierda {
-    from {
-        opacity: 0;
-        transform: translateY(-100%) translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-    }
 }
 
 .portada.personajeNegro {
@@ -479,41 +383,16 @@ nav>.spidey {
     height: 393px;
     top: 335px;
     left: 695px;
-    animation: aparecerDesdeArribaDerecha 1s ease-out;
-}
-@keyframes aparecerDesdeArribaDerecha {
-    from {
-        opacity: 0;
-        transform: translateY(-100%) translateX(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-    }
 }
 
-.portada.sogaDer {
-    background-image: url("../images/portada/sogaDerecha.svg");
-    width: 256.66px;
-    height: 372.44px;
-    top: 398px;
-    left: 1078px;
-    transform: rotate(114.6deg);
-    animation: aparecerDesdeArribaDerechaSogaDerecha 1s ease-out ;
+.portada.sogaIzq {
+    background-image: url("../images/portada/sogaIzquierda.svg");
+    top: 397px;
+    left: -27px;
+    width: 450.817px;
+    height: 627.274px;
+    transform: rotate(65.403deg);
 
-}
-
-
-
-@keyframes aparecerDesdeArribaDerechaSogaDerecha {
-    from {
-        opacity: 0;
-        transform: translateY(-100%) translateX(100%) rotate(114.6deg);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) translateX(0) rotate(114.6deg);
-    }
 }
 
 .portada.personajeRojo {
@@ -522,40 +401,19 @@ nav>.spidey {
     background-image: url("../images/portada/spidermanRojo.svg");
     top: 403px;
     left: 404px;
-    animation: aparecerDesdeArriba 1s ease-out;
 
 }
-@keyframes aparecerDesdeArriba {
-    from {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.portada.sogaIzq {
-    background-image: url("../images/portada/sogaIzquierda.svg");
-    top: 397px;
-    left: -27px;
-    width: 450.817px;
-    height: 627.274px;
-    transform: rotate(65.403deg);
-    animation: aparecerDesdeArribaSogaIzquierda 1s ease-out;
-}
 
-@keyframes aparecerDesdeArribaSogaIzquierda {
-    from {
-        opacity: 0;
-        transform: translateY(-100%) rotate(65.403deg);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) rotate(65.403deg);
-    }
-}
 
+.portada.sogaDer {
+    background-image: url("../images/portada/sogaDerecha.svg");
+    width: 256.66px;
+    height: 372.44px;
+    top: 398px;
+    left: 1078px;
+    transform: rotate(114.6deg);
+
+}
 
 .portada.fondoVioleta {
     background-image: url("../images/portada/fondoVioleta.svg");
@@ -577,20 +435,37 @@ nav>.spidey {
 
 }
 
+
 .duendeVerde {
     background-image: url(../images/presentacion/personajeVerde.svg);
     top: -183px;
-    left: 639px;
+   left:369px;
     width: 553px;
     height: 921px;
-    position: absolute;
     /*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
+    position: absolute;
+    /* Permite que la imagen sobresalga del contenedor */ 
     overflow: visible;
-    /* Permite que la imagen sobresalga del contenedor */
-    z-index: 10;
-    /* Ajusta el índice z para que el duende aparezca encima de otros elementos si es necesario */
+        /* Ajusta el índice z para que el duende aparezca encima de otros elementos*/
+     z-index: 10;
+     animation: duendeScroll 2s alternate;
+  
 }
 
+@keyframes duendeScroll {
+    0% {
+        left: 369px;
+    }
+    25% {
+        left: 600px;
+    }
+    0% {
+        left: 800px;
+    }
+    100% {
+        left: 1000px; 
+    }
+}
 .tarjetaAmigos {
     background-image: url(../images/presentacion/spideyYsusAmigos.svg);
     left: -7.72px;
@@ -606,8 +481,10 @@ nav>.spidey {
     border: 9px solid #FFF;
     /* Drop Shadow */
     box-shadow: 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
-
+    
 }
+
+
 
 
 .textoAmigos>.titulo {
@@ -920,7 +797,7 @@ height: 302.762px;
 }
 .columnaDerecha {
     padding: 3px;
-    width: 100%; /* Ocupa el 100% del espacio disponible en la opción */
+    width: 100%; 
 }
    
 .columnaDerecha .descripcion {
@@ -966,7 +843,6 @@ height: 302.762px;
     font-style: normal;
     font-weight: 900;
     line-height: 94.5%;
-    /* 18.9px */
     letter-spacing: 0.2px;
     color: #02187E;
     text-transform: uppercase;
@@ -1025,6 +901,37 @@ height: 302.762px;
     top: 2432.14px;
     position: absolute;
     left: 446px;
+}
+
+.poder1, .poder2, .poder3 {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.poder1.animate {
+    animation: fadeInAndMove 1.5s ease forwards;
+    animation-delay: 0.5s; 
+}
+
+.poder2.animate {
+    animation: fadeInAndMove 2s ease forwards;
+    animation-delay: 1s;
+}
+
+.poder3.animate {
+    animation: fadeInAndMove 1s ease forwards;
+    animation-delay: 0s; /* retraso*/
+}
+
+@keyframes fadeInAndMove {
+    from {
+        opacity: 0;
+        transform: translateY(100px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fondoCorreo {
@@ -1228,10 +1135,12 @@ margin-left:100px;
 }
 
 
-
+/*pagina de load */
 .contenedorLoading{
-    width: 100%;
+    width: 1280px;
+    height:900px;
     position: relative;
+    background-color: #050c28;
 }
 
 .fondoLoading{
@@ -1301,34 +1210,4 @@ background-size: cover;
         font-weight: bold;
         color: #FFF;
     
-}
-.spritesheets {
-    width: 94px;
-    height: 88px;
-    mix-blend-mode: darken;
-    position: absolute;
-    top: 3943px;
-    left: 1000px;
-    background-repeat: no-repeat;
-    animation: showImages 1.7s infinite linear; 
-}
-
-
-
-@keyframes showImages {
-    0%{
-        background-image: url(../images/spritesheets/movimiento1.png);
-    } 
-    25%{
-        background-image: url(../images/spritesheets/movimiento2.png);
-    } 
-    50%{
-    background-image: url(../images/spritesheets/movimiento3.png);
-    }
-    75%{
-        background-image: url(../images/spritesheets/movimiento4.png);
-     }
-     100%{
-        background-image: url(../images/spritesheets/movimiento1.png);
-     }
 }
