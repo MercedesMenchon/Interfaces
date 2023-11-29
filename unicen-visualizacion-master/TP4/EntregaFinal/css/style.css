@@ -577,14 +577,11 @@ nav>.spidey {
 .duendeVerde {
     background-image: url(../images/presentacion/personajeVerde.svg);
     top: -183px;
-   left:369px;
+    left: 630px;
     width: 553px;
     height: 921px;
-    /*posiciona a la imagen segun su padre, permite que se superpongan elementos*/
     position: absolute;
-    /* Permite que la imagen sobresalga del contenedor */ 
     overflow: visible;
-        /* Ajusta el índice z para que el duende aparezca encima de otros elementos*/
      z-index: 10;
      animation: duendeScroll 2s alternate;
   
@@ -796,9 +793,26 @@ nav>.spidey {
     top: 249px;
     position: absolute;
     margin-left: 100px;
+    
 }
 
+.testJuego1,
+.testJuego2,
+.testJuego3 {
+  transition: transform 0.3s ease;
+}
 
+.testJuego1:hover {
+  transform: rotate(10deg) skew(20deg);
+}
+
+.testJuego2:hover {
+  transform: rotate(20deg) skew(20deg);
+}
+
+.testJuego3:hover {
+  transform: rotate(30deg) skew(20deg);
+}
 
 .textoVengadores {
     width: 667px;

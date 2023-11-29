@@ -7,10 +7,7 @@ var spideyNav= document.querySelector(".spidey");
     window.addEventListener("scroll", function () {
         var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
 
-        // Aquí puedes usar el valor de scrollPos según sea necesario
-        console.log(scrollPos);
-
-        // Ejemplo: Hacer algo cuando te desplazas más allá de cierta posición
+        
         if (scrollPos > 90) {
             nav.classList.add("sticky");
             portadaTitulo.classList.add("pequeno");
