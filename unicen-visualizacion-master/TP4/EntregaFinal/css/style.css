@@ -810,6 +810,9 @@ nav>.spidey {
   transform: rotate(30deg) skew(20deg);
 }
 
+.moveUp {
+  transform: translateY(-10px);
+}
 .textoVengadores {
     width: 667px;
     height: 171px;
