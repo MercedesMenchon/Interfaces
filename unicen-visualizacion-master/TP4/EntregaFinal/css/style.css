@@ -668,19 +668,12 @@ nav>.spidey {
 /*bloque de los tres personajes*/
 .personajes {
     display: flex;
-    margin: 0px;
+    margin: 0;
     justify-content: space-between;
     position: relative;
     margin-top: -43px;
+  }
 
-}
-
-.personajes>.ColumnaPersonajes {
-    display: block;
-    border: 41px;
-
-
-}
 
 
 .personajes>.columnaPersonajes>img {
@@ -706,6 +699,49 @@ nav>.spidey {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+/*efecto actividad 9*/
+
+
+@keyframes scrollPersonajes {
+    from {
+        opacity: 0;
+        transform: translateY(100px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+  .personajes > .columnaPersonajes {
+   /* display: block;*/
+   opacity: 0;
+   transform: translateY(100px);
+   transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  
+.personajes > .columnaPersonajes.hijo2 {
+    animation: scrollPersonajes 1s ease forwards;
+    animation-delay: 0.2s; 
+}
+
+.personajes > .columnaPersonajes.hijo3 {
+    animation: scrollPersonajes 1s ease forwards;
+    animation-delay: 0.4s; 
+}
+
+.personajes > .columnaPersonajes.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: none; /* Desactiva la animación cuando se aplica la clase visible */
 }
 
 

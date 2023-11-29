@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
        
         } else {
           columnaIzquierda.classList.add('transparencia');
-          "use strict";
+        
           document.addEventListener('DOMContentLoaded', function () {
               var opciones = document.querySelectorAll('.opcion');
               var ventana = document.querySelector('.ventana');
