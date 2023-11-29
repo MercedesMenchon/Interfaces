@@ -374,6 +374,7 @@ nav>.spidey {
 
 
 .portada.fondo {
+    
     background-image: url("../images/portada/fondoPresentacion.svg");
     width: 1280px;
     height: 100%;
@@ -554,6 +555,7 @@ nav>.spidey {
 
 
 .portada.fondoVioleta {
+    opacity:1 !important;
     background-image: url("../images/portada/fondoVioleta.svg");
     width: 1280px;
     height: 844.5px;

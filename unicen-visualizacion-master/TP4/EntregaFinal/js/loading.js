@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (porcentajeValue >= 100) {
                 clearInterval(interval);
-                window.location.href = 'index.html';
+               window.location.href = 'index.html';
             }
             
         }, 80); // Ajusta la velocidad de aumento del porcentaje
