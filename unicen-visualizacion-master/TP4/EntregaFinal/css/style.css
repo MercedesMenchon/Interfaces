@@ -713,10 +713,6 @@ nav>.spidey {
 }
 
 
-
-
-
-
   .personajes > .columnaPersonajes {
    /* display: block;*/
    opacity: 0;
@@ -726,13 +722,13 @@ nav>.spidey {
   
   
 .personajes > .columnaPersonajes.hijo2 {
-    animation: scrollPersonajes 1s ease forwards;
-    animation-delay: 0.2s; 
+    animation: scrollPersonajes .3s ease forwards;
+    animation-delay: 0.1s; 
 }
 
 .personajes > .columnaPersonajes.hijo3 {
-    animation: scrollPersonajes 1s ease forwards;
-    animation-delay: 0.4s; 
+    animation: scrollPersonajes .3s ease forwards;
+    animation-delay: 0.2s; 
 }
 
 .personajes > .columnaPersonajes.visible {
