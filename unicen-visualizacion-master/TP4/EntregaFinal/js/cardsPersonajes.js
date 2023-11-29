@@ -1,32 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var columnasPersonajes = document.querySelectorAll(".columnaPersonajes");
+function handleScroll() {
+  const personajesSection = document.querySelector('.personajes');
+  const columnasPersonajes = document.querySelectorAll('.columnaPersonajes');
 
-    function handleVisibility() {
-      columnasPersonajes.forEach(function (columna) {
-        if (isElementInViewport(columna)) {
-          columna.classList.add("visible");
-        } else {
-          columna.classList.remove("visible");
-        }
+  const sectionTop = personajesSection.getBoundingClientRect().top;
+
+  if (sectionTop < window.innerHeight * 0.75) {
+      columnasPersonajes.forEach((columna, index) => {
+          setTimeout(() => {
+              columna.classList.add('visible');
+          }, index * 100); // Añade un pequeño retraso entre cada columna para un efecto secuencial
       });
-    }
+      window.removeEventListener('scroll', handleScroll); // Desactiva el evento después de animar las columnas
+  }
+}
 
-    function isElementInViewport(el) {
-      var rect = el.getBoundingClientRect();
-      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+// Agregar el evento de desplazamiento
+window.addEventListener('scroll', handleScroll);
 
-      var upperThreshold = windowHeight * 0.5;
-      var lowerThreshold = windowHeight * 0.5;
-
-      return (
-        rect.top >= -lowerThreshold &&
-        rect.bottom <= (windowHeight + upperThreshold)
-      );
-    }
-
-    window.addEventListener("scroll", handleVisibility);
-    window.addEventListener("resize", handleVisibility);
-
-    // Verificar la visibilidad inicial al cargar la página
-    handleVisibility();
-  });
+// Llamar a la función una vez para verificar al cargar la página
+handleScroll();
